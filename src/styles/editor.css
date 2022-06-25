@@ -1,0 +1,130 @@
+.content p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.A4 {
+  position: relative;
+  height: 297mm;
+  max-height: 297mm;
+  width: 210mm;
+  font-family: 'adobe-garamond-pro';
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+
+.textStroke {
+  -webkit-text-stroke: 1px black;
+}
+
+.TWTitre {
+  font-size: 44px;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+}
+
+.TWSousTitre {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+}
+
+.TWstText {
+  font-style: italic;
+  text-align: justify;
+  font-size: 16px;
+}
+
+.TWText {
+  text-align: justify;
+  font-size: 16px;
+  position: relative;
+}
+
+.TWPage {
+  position: absolute;
+  width: 45px;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+}
+
+.TWPageV {
+  display: flex;
+  padding-left: 35px;
+  padding-right: 35px;
+  height: -webkit-fill-available;
+}
+
+.TWPagePair {
+  display: flex;
+  height: -webkit-fill-available;
+  padding-left: 35px;
+  padding-right: 50px;
+  padding-bottom: 35px;
+}
+
+.TWPageImpair {
+  display: flex;
+  padding-left: 50px;
+  padding-right: 35px;
+  padding-bottom: 35px;
+  height: -webkit-fill-available;
+}
+
+.TWLateral {
+  width: 150px;
+  min-width: 150px;
+  margin-top: 70px;
+}
+
+.concealer {
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.concealer::before {
+content: "";
+border: 40px solid transparent;
+height: 200px;
+position: absolute;
+z-index: 0;
+}
+
+.gche::before {
+  left: 0;
+  border-left-color: #4f5b62;
+}
+
+.dte::before {
+right: 0;
+border-right-color: #4f5b62;
+}
+
+/*
+  TABLE
+*/
+.TWtable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.TWtable td, .TWtable th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.TWtable tr:nth-child(even){background-color: #f2f2f2;}
+
+.TWtable th {
+  text-align: left;
+  background-color: white;
+}

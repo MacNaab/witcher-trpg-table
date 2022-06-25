@@ -1,0 +1,68 @@
+[
+  {
+    "id": "auberge",
+    "nom": "Auberge",
+    "description": "Auberges et tavernes aléatoires: type d'établissement, confort, barman et particularité.",
+    "tag": ["Auberge", "Urbain", "Universel"]
+  },
+  {
+    "id": "piege",
+    "nom": "Piège",
+    "description": "Pièges et dangers aléatoires des donjons.",
+    "tag": ["Donjon", "Universel"]
+  },
+  {
+    "id": "village",
+    "nom": "Village & petite ville",
+    "description": "Retournement de situation aléatoire pour les petites villes et villages.",
+    "tag": ["Urbain", "Universel"]
+  },
+  {
+    "id": "siege",
+    "nom": "Quête lors d'un siège",
+    "description": "Quêtes aléatoires confiées à un groupe se défendant lors d'un siège.",
+    "tag": ["Quête", "Siège", "Universel"]
+  },
+  {
+    "id": "donjon_gen",
+    "nom": "Générateur de donjon",
+    "description": "Générération aléatoire de donjon avec entrée, piège et objectif.",
+    "tag": ["Donjon", "Générateur", "Universel"]
+  },
+  {
+    "id": "donjon_unique",
+    "nom": "Donjon unique",
+    "description": "100 idées de donjon.",
+    "tag": ["Donjon", "Universel"]
+  },
+  {
+    "id": "marais_gen",
+    "nom": "Générateur de marais",
+    "description": "Génération aléatoire de marais avec un danger, trésor, PNJ et rebondissement.",
+    "tag": ["Marais", "Générateur", "Universel"]
+  },
+  {
+    "id": "foret_gen",
+    "nom": "Générateur de forêt",
+    "description": "Génération aléatoire de forêt avec un danger, trésor, PNJ et rebondissement.",
+    "tag": ["Forêt", "Générateur", "Universel"]
+  },
+  {
+    "id": "posessions",
+    "nom": "Possessions aléatoires",
+    "description": "Possession aléatoire de type Ordinaire, Étrange ou Occulte.",
+    "tag": ["Witcher"]
+  },
+  {
+    "id": "parcours_mage",
+    "nom": "Parcours de Mage",
+    "description": "Génération d'un parcours de mage.",
+    "tag": ["Witcher"]
+  },
+  {
+    "id": "template",
+    "nom": "Template",
+    "description": "Template",
+    "tag": ["Universel"]
+  }
+]

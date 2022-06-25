@@ -1,0 +1,728 @@
+{
+  "location": [
+    "Royaumes du Nord: Kovir & Poviss ou Ligue de Hengfors",
+    "Royaumes du Nord: Redania ou Kaedwen",
+    "Royaumes du Nord: Aedirn, Lyria & Rivia, ou Temeria",
+    "Royaumes du Nord: Cidaris, Kerack, ou Verden",
+    "Skellige",
+    "Nilfgaard: Cintra, Angren, ou Nazair",
+    "Nilfgaard: Mettina, Toussaint, ou Mag Turga",
+    "Nilfgaard: Gheso, Ebbing, ou Maecht",
+    "Nilfgaard: Etolia, Gemmera, ou Vicovaro",
+    "Nilfgaard: Coeur de l’Empire"
+  ],
+  "location_Elderfolk": ["Dol Blathanna", "Montagnes"],
+  "family": {
+    "size": ["Minuscule", "Petit", "Moyen", "Grande", "Énorme"],
+    "personality": [
+      "Conservateur",
+      "Agressif",
+      "Bizarre",
+      "Gentil",
+      "Dépressif",
+      "Sévère",
+      "Immature",
+      "Encourageant",
+      "Soudé",
+      "Calme"
+    ],
+    "status": [
+      "Aristocratie",
+      "Artisans",
+      "Chevaliers",
+      "Marchands",
+      "Paysans",
+      "Esclaves ou prisonniers",
+      "Prêtres",
+      "Mages",
+      "Artistes",
+      "Universitaires"
+    ]
+  },
+  "discover": [
+    {
+      "nom": "Catastrophe",
+      "desc": "La découverte de votre magie était liée à une malheureuse catastrophe quand vous étiez jeune. Un jour, ignorant votre lien avec le Chaos, vous avez laissé vos émotions prendre le dessus sur vous. Vous avez peut-être brûlé vos parents vifs, déclenché un effondrement ou gelé un autre enfant solidement.",
+      "bonus": -3
+    },
+    {
+      "nom": "Malédiction accidentelle",
+      "desc": "La découverte de votre magie était liée à une haine puissante. Sans vraiment le planifier, vous avez fustigé quelqu'un dans votre petite enfance et l'avez maudit. Un sorceleur a peut-être levé la malédiction, ou peut-être qu'elle le tourmente encore à ce jour.",
+      "bonus": -2
+    },
+    {
+      "nom": "Découvert par un mage",
+      "desc": "Quand vous étiez jeune, un mage est venu chez vous et a parlé avec vos parents en privé. Ils ont expliqué à vos parents que vous aviez un don magique et que sans une formation adéquate, vous deviendriez un danger pour tout le monde.",
+      "bonus": 0
+    },
+    {
+      "nom": "Inspiré par un mage",
+      "desc": "Un jour, vous avez eu droit à une démonstration par un mage itinérant qui vous a montré les merveilles de la magie. Après la démonstration du mage, vous avez essayé de les copier et vous avez découvert que vous aviez un don. Votre inspiration pour étudier la magie était entièrement conforme aux plans du mage.",
+      "bonus": 0
+    },
+    {
+      "nom": "Développement magique terrifiant",
+      "desc": "Votre magie s'est développée sous la forme d'un petit trait magique et s'est développée à partir de là. Un jour, vous avez réalisé un petit effet magique en jouant et l'événement vous a effrayé. Vous n'aviez aucune idée de comment cela s'était passé ou de ce qui pourrait arriver si vous essayiez de le refaire.",
+      "bonus": 0
+    },
+    {
+      "nom": "Joyeux développement magique",
+      "desc": "Votre magie s'est développée sous la forme d'un petit trait magique et s'est développée à partir de là. Un jour, vous avez compris comment réaliser un petit effet magique et vous l'avez rapidement montré à votre famille et à vos amis.",
+      "bonus": 0
+    },
+    {
+      "nom": "Enrolé par un mage",
+      "desc": "Un mage voyageur a vu du potentiel en vous et a décidé qu'il était de son devoir de vous emmener vous entraîner. Ils peuvent avoir intimidé votre famille pour qu'elle vous livre, ou ils peuvent vous avoir directement volé. Mais à la fin, vous avez été amené à vous entraîner contre votre volonté.",
+      "bonus": 0
+    },
+    {
+      "nom": "Acheté par un mage",
+      "desc": "Un mage itinérant a vu votre potentiel en passant par votre ville natale et a fait une offre à vos parents. Vous ne savez peut-être même pas combien vous valez pour vos parents, mais un prix a été convenu et vous avez été emmené par le mage.",
+      "bonus": 0
+    },
+    {
+      "nom": "Malédiction de la rancune",
+      "desc": "Votre don est devenu évident lorsque vous avez maudit quelqu'un dans votre ville natale. Une rancune que vous aviez contre cette personne a grandi et s'est propagée juste sous la surface jusqu'à ce qu'elle devienne finalement assez puissante pour attirer la magie de l'au-delà et former une terrible malédiction.",
+      "bonus": -2
+    },
+    {
+      "nom": "Désastre",
+      "desc": "Vous avez appris que vous aviez des capacités magiques à un jeune âge, mais vous les avez gardées cachées et avez essayé d'étudier par vous-même. Inévitablement, cela s'est retourné contre nous. Vous avez peut-être mis le feu à votre maison familiale, provoqué une inondation ou provoqué une tempête dangereuse. De toute façon, tout s'est effondré.",
+      "bonus": -3
+    }
+  ],
+  "react": {
+    "north": [
+      "Votre famille vous a chassé.",
+      "Votre famille a eu terriblement peur de vous.",
+      "Votre famille a essayé de vous vendre à une famille de haut rang.",
+      "Votre famille vous a immédiatement envoyé à Aretuza ou à Ban Ard.",
+      "Votre famille a essayé d'ignorer votre don.",
+      "Votre famille et vos amis ont célébré votre talent."
+    ],
+    "elderlands": [
+      "Votre famille a eu terriblement peur de vous.",
+      "Votre famille a essayé d'ignorer votre don.",
+      "Votre famille vous a immédiatement envoyé vous entraîner.",
+      "Vos frères et sœurs et amis sont devenus horriblement jaloux.",
+      "Votre famille vous a poussé à devenir un grand mage.",
+      "Votre famille et vos amis ont célébré votre talent."
+    ],
+    "nilfgaard": [
+      "Votre famille vous a chassé.",
+      "Votre famille vous a envoyé à l'église.",
+      "Votre famille vous a immédiatement envoyé à Gweison Haul.",
+      "Votre famille vous a poussé à étudier la magie et à vous lancer en politique.",
+      "Votre famille a essayé d'utiliser votre pouvoir pour elle-même.",
+      "Votre famille et vos amis ont célébré votre talent."
+    ]
+  },
+  "school": {
+    "male": {
+      "north": ["Ban Ard"],
+      "skellige": ["Ban Ard"],
+      "nilfgaard": ["Gweison Haul", "Académie impériale de magie"],
+      "elderlands": ["Académie mineure"]
+    },
+    "female": {
+      "north": ["Aretuza"],
+      "skellige": ["Aretuza"],
+      "nilfgaard": ["Gweison Haul", "Académie impériale de magie"],
+      "elderlands": ["Académie mineure"]
+    },
+    "minor": "L'Académie mineure représente les nombreux mages non affiliés à travers le continent qui prennent des enfants doués comme apprentis. Souvent, ces mentors ne sont pas officiellement reconnus par le Conclave des Mages. Généralement, dans les Terres Anciennes, les Anciens ne fréquentent pas une école officielle et s'entraînent plutôt avec des mages plus âgés dans leur propre société. Peu importe d'où vous venez, vous pouvez choisir d'avoir suivi votre formation dans l'Academie mineure."
+  },
+  "academia": {
+    "Aretuza": {
+      "title": "Source",
+      "desc": "En dépensant 10 END supplémentaires à votre tour, vous pouvez augmenter votre seuil de vigueur de 2 pour la durée de ce tour. Cette augmentation se cumule avec les objets ciblés."
+    },
+    "Ban Ard": {
+      "title": "contrôle",
+      "desc": "Lorsque vous subissez un échec critique magique, vous pouvez sacrifier 10 END pour réduire le montant de 5 (minimum 1)."
+    },
+    "Gweison Haul": {
+      "title": "Tolérance",
+      "desc": "Lorsque vous entrez en contact avec du diméritium, vous pouvez dépenser 10 END pour vous donner un +3 à votre jet de Résilience pour résister aux effets."
+    },
+    "Minor": {
+      "title": "Polyvalent",
+      "desc": "En dépensant 10 END supplémentaires lorsque vous lancez un sort, vous pouvez soit ajouter +4m de portée à un sort, +2 tours de durée à un Non-Actif."
+    }
+  },
+  "life": {
+    "Aretuza": [
+      {
+        "nom": "Le sort s'est retourné contre vous",
+        "desc": "Un sort que vous avez lancé s'est retourné contre vous. Vous baissez votre Seuil de Vigueur de 1."
+      },
+      {
+        "nom": "A développé un lien avec un autre étudiant",
+        "desc": "Vous et un autre étudiant avez passé du temps ensemble pour vous détendre. Vous gagnez un mage allié."
+      },
+      {
+        "nom": "A fais expulsé un rival",
+        "desc": "Vous avez fait expulser un de vos rivaux d'Aretuza. Vous gagnez un ennemi mage."
+      },
+      {
+        "nom": "Le chouchou de l'enseignant",
+        "desc": "Vous avez reçu un traitement préférentiel de la part d'un enseignant. Commencez avec un sort Novice supplémentaire."
+      },
+      {
+        "nom": "Impressionné un dignitaire étranger",
+        "desc": "Vous commencez avec +2 de réputation à la cour d'un royaume de votre choix."
+      },
+      {
+        "nom": "Composants rituels volés",
+        "desc": "Vous avez récupéré de minuscules morceaux de composants rituels rares. Commencez avec 100 couronnes supplémentaires de composants."
+      },
+      {
+        "nom": "Faire chanter un enseignant",
+        "desc": "Vous pouvez utiliser ces informations pour leur arracher une seule faveur à la discrétion du MJ."
+      },
+      {
+        "nom": "Trouvé des indices sur l'emplacement d'une relique",
+        "desc": "Consultez le MJ pour déterminer quelle relique et ce que vous savez."
+      },
+      {
+        "nom": "Tu as été envoyé dans le monde",
+        "desc": "Vous avez été attaché à un mage vivant à l'extérieur d'Aretuza. Lancez un événement de la vie ordinaire à partir du tableau de la p. 31 du Livre de base. Vous avez été nommé apprenti."
+      },
+      {
+        "nom": "Maudit",
+        "desc": "Vous avez été maudit, soit par votre propre main, soit par la colère d'un autre de votre école. Travaillez avec le MJ pour choisir une malédiction appropriée parmi celles listées à la p. 230 du Livre de Base."
+      }
+    ],
+    "Ban Ard": [
+      {
+        "nom": "Le sort s'est retourné contre vous",
+        "desc": "Un sort que vous avez lancé s'est retourné contre vous. Vous baissez votre Seuil de Vigueur de 1."
+      },
+      {
+        "nom": "Contrebande",
+        "desc": "Vous avez fait sortir clandestinement des tomes de l'école et vous vous êtes fait prendre. Vous avez été nommé apprenti."
+      },
+      {
+        "nom": "A volé un parchemin",
+        "desc": "Commencez avec un parchemin de sorts de compagnon. Travaillez avec le MJ pour déterminer quel sort."
+      },
+      {
+        "nom": "A aidé à la recherche non autorisée",
+        "desc": "Lancez une fois sur le tableau des connaissances à la p. 31. Si la connaissance de cette recherche est révélée, vous aurez de gros problèmes avec Ban Ard Alumni."
+      },
+      {
+        "nom": "A chassé un monstre",
+        "desc": "Vous êtes parti chasser un monstre dans les forêts denses de Kaedwen. Gagnez +1 Connaissance des monstres."
+      },
+      {
+        "nom": "Erreur de lancer",
+        "desc": "Vous avez accidentellement lancé un sort sur un membre de l'école ou du corps professoral et gâché sa journée. Roulez sur le tableau Rancunes à la p. 28."
+      },
+      {
+        "nom": "Travail mercenaire",
+        "desc": "Vous vous êtes battu pour un noble mineur dans un conflit foncier. Vous avez gardé une partie de votre salaire, après que l'école ait pris sa part bien sûr. Gagnez 1d6 x 100 couronnes."
+      },
+      {
+        "nom": "Maudit",
+        "desc": "Vous avez été maudit, soit par votre propre main, soit par la colère d'un autre de votre école. Travaillez avec le MJ pour choisir une malédiction appropriée parmi celles listées à la p. 230 du Livre de Base."
+      },
+      {
+        "nom": "Initiation à la société secrète",
+        "desc": "Vous avez été intronisé dans une société secrète au sein de l'école. Gagnez +2 en réputation auprès des autres anciens élèves de Ban Ard."
+      },
+      {
+        "nom": "Traducteur",
+        "desc": "Vous avez aidé à traduire un vieux grimoire elfique. Vous gagnez +2 en Langue Ancienne."
+      }
+    ],
+    "Gweison Haul": [
+      {
+        "nom": "Le sort s'est retourné contre vous",
+        "desc": "Un sort que vous avez lancé s'est retourné contre vous. Vous baissez votre Seuil de Vigueur de 1."
+      },
+      {
+        "nom": "Hors-la-loi",
+        "desc": "Vous avez enfreint l'une des nombreuses règles de Gweison Haul mais vous avez été pris dans le processus. Vous avez été nommé apprenti."
+      },
+      {
+        "nom": "A aidé à développer des armes de guerre pour l'Empire",
+        "desc": "Commencez avec 1 formule de bombe. Travaillez avec le MJ pour déterminer quelle bombe."
+      },
+      {
+        "nom": "Porteur de loi",
+        "desc": "Vous avez aidé les autorités avec un crime lié à la magie. Gagnez une réputation de +2 auprès des autorités nilfgaardiennes."
+      },
+      {
+        "nom": "Exploré les Catacombes",
+        "desc": "Vous avez trouvé un parchemin dans les catacombes de l'école. Gagnez 1 parchemin de sort de compagnon. Travaillez avec le MJ pour déterminer quel sort."
+      },
+      {
+        "nom": "Censure",
+        "desc": "Il vous a été demandé de retrouver et d'effacer toute trace d'une œuvre interdite. Son auteur veut maintenant se venger. Roulez sur le tableau Rancunes à la p.28 pour déterminer de qui il s'agit."
+      },
+      {
+        "nom": "A aidé à traquer un mage renégat",
+        "desc": "Vous avez aidé les chasseurs de mages à retrouver un mage renégat. Gagnez +1 dans n'importe quelle compétence de combat ou commencez une nouvelle compétence de combat à +2."
+      },
+      {
+        "nom": "A hébergé un mage renégat",
+        "desc": "Vous avez aidé à abriter un mage renégat. Vous gagnez un mage allié. Rouler sur le tableau Allier à la p.30 pour voir à quel point vous êtes proche et quelle est leur valeur."
+      },
+      {
+        "nom": "Liaison avec l'église",
+        "desc": "Vous avez été envoyé pour aider l'Église du Grand Soleil avec des questions magiques. Vous gagnez un +1 Charisme et Représentation."
+      },
+      {
+        "nom": "Espion",
+        "desc": "Vous avez été formé aux bases du travail d'espionnage. Vous gagnez +1 Déguisement et pouvez tenter de vous déguiser sans Nécessaire de déguisement sans pénalité."
+      }
+    ],
+    "Minor": [
+      {
+        "nom": "Le sort s'est retourné contre vous",
+        "desc": "Un sort que vous avez lancé s'est retourné contre vous. Vous baissez votre Seuil de Vigueur de 1."
+      },
+      {
+        "nom": "Magie noire",
+        "desc": "Vous vous êtes essayé à la magie noire et avez déchaîné un démon sur le monde. Vous portez le lucifuge du démon et ils savent toujours où vous êtes."
+      },
+      {
+        "nom": "Cible de sorceleur",
+        "desc": "Votre utilisation incontrôlée de la magie a causé suffisamment de dégâts pour qu'un sorceleur de l'école des chats ait été embauché pour vous tuer. Ce sorceleur vous cherche toujours."
+      },
+      {
+        "nom": "Apothicaire",
+        "desc": "Une partie de votre apprentissage consistait à être capable de diagnostiquer et de guérir les maux des personnes de votre communauté. Gagne +2 Premiers soins."
+      },
+      {
+        "nom": "Botaniste",
+        "desc": "Vous avez entretenu le jardin de votre école. Gagnez +2 Survie."
+      },
+      {
+        "nom": "Aider les indigènes",
+        "desc": "Vous avez utilisé votre magie pour aider une région dans le besoin. Votre statut social est égal dans ce domaine. Travaillez avec le MJ pour déterminer où cela se trouve."
+      },
+      {
+        "nom": "Maudit",
+        "desc": "Vous avez été maudit, soit par votre propre main, soit par la colère d'un autre dans votre école. Travaillez avec le MJ pour choisir une malédiction appropriée parmi celles énumérées à la p.230 du livre de base."
+      },
+      {
+        "nom": "A défendu un village contre un monstre",
+        "desc": "Vous avez utilisé votre magie pour repousser une attaque de monstre contre un village. Gagnez +1 Connaissance des monstres."
+      },
+      {
+        "nom": "Apprentissage parascolaire",
+        "desc": "Vous avez étudié avec de nombreux mentors, apprenant autant que vous le pouviez. Commencez avec un sort Novice supplémentaire."
+      },
+      {
+        "nom": "Créez votre propre Focus",
+        "desc": "Vous avez construit votre premier focus. Vous gagnez une amulette qui compte pour vous comme un Focus(2)."
+      }
+    ]
+  },
+  "mentor": {
+    "like": {
+      "Personality": [
+        "Secret",
+        "Rebelle",
+        "Violent",
+        "Idéaliste",
+        "Contemplatif",
+        "Sévère",
+        "Trompeur",
+        "Amical",
+        "Arrogant",
+        "Nerveux"
+      ],
+      "Value": [
+        "Argent",
+        "Honneur",
+        "Parole",
+        "Poursuites hédonistes",
+        "Connaissance",
+        "Vengeance",
+        "Pouvoir",
+        "Amour",
+        "Survie",
+        "Amitié"
+      ],
+      "Clothing": [
+        "Utilitaire",
+        "Ostentatoire",
+        "Sobre",
+        "Militariste",
+        "Traditionnel",
+        "Confortable",
+        "En lambeaux",
+        "Inhabituel",
+        "Charmant",
+        "Étranger"
+      ],
+      "Hatred": [
+        "Arrogance",
+        "Politique",
+        "Autres races",
+        "Mondains",
+        "Violence",
+        "Manque de respect",
+        "Jeunes",
+        "Adversité",
+        "Criminels",
+        "Désorganisation"
+      ]
+    },
+    "style": [
+      "Pédagogue",
+      "Patient",
+      "Démonstration",
+      "Négligent",
+      "Autoritaire",
+      "Manipulateur"
+    ],
+    "moment": [
+      "Vous avez partagé un moment touchant",
+      "Iel vous a utilisé pour atteindre un objectif",
+      "Iel vous a abusé d'une manière ou d'une autre",
+      "Iel a risqué sa vie pour vous aider",
+      "Iel a trahi ta confiance",
+      "Iel vous a emmené rencontrer ta famille",
+      "Iel a essayé de vous abandonner",
+      "Iel vous a aidé à te remettre de quelque chose",
+      "Iel a tué ou blessé un proche",
+      "Iel vous a sauvé la vie"
+    ],
+    "end": [
+      "Iel a été assassiné",
+      "Vous l'avez empoisonné",
+      "Vous allez épouser son enfant",
+      "Vous êtes toujours avec votre mentor, mais en tant qu'amoureux maintenant",
+      "Vous vous êtes séparés après une dispute particulièrement intense",
+      "Vous avez réussi tous ses tests",
+      "Iel vous a jeté après un nouvel échec",
+      "Vous êtes devenus amis et restez toujours en contact",
+      "Vous l'avez tué en légitime défense",
+      "Vous l'avez regardé avec horreur alors qu'iel perdait le contrôle de sa magie et s'effaçaient"
+    ]
+  },
+  "danger": {
+    "Cautious": [
+      {
+        "nom": "Dette",
+        "desc": "Vous êtes endetté de 1d10 x 100 couronnes."
+      },
+      {
+        "nom": "Dépendance",
+        "desc": "Vous avez développé une dépendance à quelque chose."
+      },
+      {
+        "nom": "Est tombé malade",
+        "desc": "Vous êtes tombé malade d'une maladie débilitante. Vous avez fini par récupérer, mais cela a laissé derrière vous une fatigue durable. Malus END de -2."
+      },
+      {
+        "nom": "Recherché par les autorités",
+        "desc": "C'est peut-être quelque chose que vous avez fait (ou quelque chose que vous n'avez pas fait), mais vous avez énervé les citoyens d'une grande ville. Si vous retournez dans cette ville, les citoyens vous verront immédiatement comme une menace ou une cible."
+      },
+      {
+        "nom": "Accident",
+        "desc": "Lancez 1d10. 1-4 : Vous êtes défiguré. Changez votre statut social en Craignant, 5-6 : Vous avez été alité pendant 1d10 mois, 7-8 : Vous avez perdu 1d10 mois de mémoire de cette année-là, 9-10 : Vous faites d'horribles cauchemars (7 chances sur 10 à chaque fois que vous dormez)."
+      },
+      {
+        "nom": "Emprisonnement",
+        "desc": "Quelque chose que vous avez fait (ou une fausse accusation) vous a fait emprisonner pendant 1d10 mois."
+      },
+      {
+        "nom": "Le mentor est décédé",
+        "desc": "Si votre mentor était encore en vie, il est décédé au cours de cette décennie. Si vous n'aviez pas de mentor, vous pouvez relancer ce résultat. C'est à vous et au MJ de déterminer comment ils sont morts."
+      },
+      {
+        "nom": "Alopécie",
+        "desc": "Un sort a mal tourné et, par conséquent, tous les poils de votre corps sont tombés et refusent de repousser."
+      },
+      {
+        "nom": "Arthrite",
+        "desc": "Vos mains ont du mal à faire les gestes complexes nécessaires pour lancer des sorts sans douleur. Vous subissez un malus de -1 à vos tests d'Incantation de sorts chaque fois que vous lancez un sort nécessitant un mouvement de la main."
+      },
+      {
+        "nom": "Maudit",
+        "desc": "Vous avez été maudit, soit par votre propre main, soit par quelqu'un que vous avez irrité. Travaillez avec le MJ pour choisir une malédiction approprié."
+      }
+    ],
+    "Politicking": [
+      {
+        "nom": "Rancune",
+        "desc": "Quelqu'un a blessé vos sentiments, ou vous avez blessé les leurs. Néanmoins, l'un d'entre vous en veut à cet événement.."
+      },
+      {
+        "nom": "Fausse accusation",
+        "desc": "Vous avez été faussement accusé de quelque chose. Lancez 1d10. 1-2 : Vol, 3 : Trahison, 4 : Lâcheté, 5 : Viol, 6 : Meurtre, 7 : Fraude, 8 : Magie interdite, 9 : Evasion fiscale, 10 : Pratiques contraires à l'éthique."
+      },
+      {
+        "nom": "Trahi",
+        "desc": "Vous avez été trahi par un ami ou une connaissance. Choisissez un ami et faites-en un ennemi. Si vous n'avez actuellement aucun ami, créez-en un nouveau, puis marquez-le comme ennemi."
+      },
+      {
+        "nom": "Ami ou amant tué",
+        "desc": "Un ami ou un amant a été tué dans un accident ou peut-être à cause d'un stratagème. Choisissez un ami ou un amant. Si vous n'avez pas actuellement d'ami ou d'amant, créez-en un nouveau, puis déterminez comment il est mort."
+      },
+      {
+        "nom": "Pris la main dans le sac",
+        "desc": "Vous avez été surpris en train de tenter de manipuler les autres pour qu'ils fassent votre sale boulot."
+      },
+      {
+        "nom": "Faux-pas social",
+        "desc": "Vous avez fait un terrible faux pas social lors d'un rassemblement de mages et êtes maintenant traité comme Toléré par les autres mages au lieu d'Égal."
+      },
+      {
+        "nom": "Chassé",
+        "desc": "Il y a des primes sur vous. Un groupe de (1d6+5) chasseurs de primes vous recherche activement."
+      },
+      {
+        "nom": "Ennemi d'État",
+        "desc": "Vos stratagèmes politiques ont été découverts et vous avez été qualifié d'ennemi d'une nation contre laquelle vous conspiriez. Vous êtes détesté dans cette nation, quel que soit votre statut social."
+      },
+      {
+        "nom": "Rival",
+        "desc": "Par vos actions, vous vous êtes fait un rival d'un autre élève."
+      },
+      {
+        "nom": "Retenu par un noble",
+        "desc": "Un noble mineur vous a embauché pour vos capacités magiques et vos connaissances sur les arcanes. Chaque mois, vous gagnez une allocation de 100 couronnes. Cependant, vous devez vous rendre immédiatement à chaque fois qu'il vous convoque et exécuter les tâches qu'il exige de vous ou risquer de le mettre en colère."
+      }
+    ],
+    "Experimentation": [
+      {
+        "nom": "Surcharge",
+        "desc": "Dans votre arrogance ou votre ignorance, vous avez attiré trop de puissance dans votre corps et en avez subi les conséquences. Réduisez vos PS de 2."
+      },
+      {
+        "nom": "Rencontre démoniaque",
+        "desc": "À un moment donné, que ce soit de votre fait ou du fait d'un camarade de classe, vous êtes entré en contact avec un démon. Vous avez peut-être fui ou peut-être vous êtes-vous battu pour votre vie, mais dans tous les cas, vous portez le lucifuge du démon et il sait toujours où vous êtes."
+      },
+      {
+        "nom": "Réputé dangereux",
+        "desc": "Quelque chose que vous avez fait vous a qualifié de dangereux pour les habitants d'un royaume. Dans ce royaume, vous êtes recherché par les autorités."
+      },
+      {
+        "nom": "Incident alchimique",
+        "desc": "Vous avez mélangé les mauvais réactifs et en avez subi les conséquences. Vous prenez une pénalité de -2 END."
+      },
+      {
+        "nom": "Cicatrices durables",
+        "desc": "Une de vos expériences s'est terriblement retournée contre vous, déformant votre visage. Changez votre Statut Social en craint."
+      },
+      {
+        "nom": "Allergie magique",
+        "desc": "Vous avez développé une allergie à la magie. Chaque fois que vous buvez une potion ou un élixir, en plus des effets standard, vous souffrez également de l'état Nausée pendant la durée de l'élixir."
+      },
+      {
+        "nom": "Ivre",
+        "desc": "Vous avez essayé une concoction mal faite sur vous-même et cela a changé votre métabolisme pour toujours. Lorsque vous buvez une potion ou un élixir, vous devez lancer 1d10 inférieur au SD:CORPS ou devenir intoxiqué."
+      },
+      {
+        "nom": "Dépendance alchimique",
+        "desc": "En testant constamment des élixirs et des potions, vous avez développé une dépendance aux élixirs. Cela fonctionne exactement de la même manière que toute autre dépendance."
+      },
+      {
+        "nom": "Perdu un sens",
+        "desc": "Vos expériences vous ont coûté cher. Vous avez perdu le sens du goût, de l'odorat ou du toucher. Vous avez un malus de -2 sur les tests de compétence qui reposent sur ce sens."
+      },
+      {
+        "nom": "Mutation",
+        "desc": "Vos tentatives pour comprendre les mutations se retournent contre vous. Vous gagnez les changements physiques d'une Mutation Mineure d'un Mutagène de votre choix et les changements de Statut Social."
+      }
+    ],
+    "Magical Study": [
+      {
+        "nom": "Blocage magique",
+        "desc": "Dans vos études, vous avez négligé l'un des éléments au profit des autres. Choisissez un élément ; la terre, l'air, le feu ou l'eau. Lorsque vous lancez des sorts de cet élément, vous prenez un malus de -2 au jet d'incantation."
+      },
+      {
+        "nom": "Rencontre avec des monstres",
+        "desc": "Vous avez vécu une expérience de mort imminente en étudiant un monstre. Choisissez un monstre. Vous avez maintenant une phobie de cette créature et subissez un -2 aux tests de Courage contre elle. De plus, vous devez faire un test de Courage à SD:15 lorsque vous rencontrez pour la première fois cette créature ou être stupéfié."
+      },
+      {
+        "nom": "Surcharge d'un lieu de pouvoir",
+        "desc": "Vous avez trouvé un lieu de pouvoir, mais dans votre inexpérience, vous vous êtes surchargé et avez été marqué de façon permanente dans le processus. Chaque lieu de pouvoir d'où vous puisez nécessite un jet de Résilience comme si vous y puisiez une deuxième fois."
+      },
+      {
+        "nom": "Chassé par un Golem",
+        "desc": "Au cours de vos études, vous avez réussi à marcher sur les pieds d'un mage puissant qui a envoyé un golem après vous. Il vous cherche maintenant à travers le continent. S'il vous trouve, il essaiera de vous détruire."
+      },
+      {
+        "nom": "Télépathie forte",
+        "desc": "Vous apprenez le sort de télépathie. Vous avez essayé d'améliorer le sort de télépathie de base, mais le résultat n'est pas celui auquel vous vous attendiez. Lorsque vous espionnez une cible par télépathie, vous ne pouvez pas vous empêcher d'émettre un faible murmure dans son esprit qui peut l'alerter. Toute personne que vous espionnez peut lancer un test de Vigilance à un SD:15 pour vous détecter."
+      },
+      {
+        "nom": "Polymorphe",
+        "desc": "Vous avez passé la décennie métamorphosée par un autre mage. Il a fallu beaucoup de temps pour trouver un moyen de l'inverser. À ce jour, vous avez conservé certaines des manières de cet animal. Vous subissez un -2 à votre Représentation."
+      },
+      {
+        "nom": "Vulnérabilité extrême",
+        "desc": "Vous avez essayé de vous rendre résistant au diméritium. Vous avez obtenu le résultat inverse. Vous subissez un malus de -3 à vos tests de Résilience pour résister aux effets du diméritium."
+      },
+      {
+        "nom": "Mal de téléportation",
+        "desc": "Vous souffrez du mal de la téléportation. Chaque fois que vous vous téléportez ou voyagez à travers un portail, vous devez faire un test de Résilience à un SD:12 ou souffrir de l'état Nausée pendant 10 minutes."
+      },
+      {
+        "nom": "Recherché par les chasseurs",
+        "desc": "Vous avez fait quelque chose de si négligent et odieux avec votre magie qu'une église a envoyé une paire de chasseurs de sorcières (ou de chasseurs de mages à Nilfgaard) après vous. Ce sont des ennemis qui feront tout pour vous maîtriser ou vous tuer."
+      },
+      {
+        "nom": "Maudit",
+        "desc": "Vous vous êtes maudit par accident, en essayant de comprendre le fonctionnement des malédictions. Travaillez avec le MJ pour choisir une malédiction appropriée."
+      }
+    ]
+  },
+  "Grudges": {
+    "Profession": [
+      "Criminel",
+      "Mercenaire",
+      "Marchand",
+      "Artisan",
+      "Savant",
+      "Druide",
+      "Prêtre",
+      "Mage",
+      "Chevalier",
+      "Noble"
+    ],
+    "Cause": [
+      "A épuisé",
+      "A poignardé",
+      "A rejeté",
+      "A empêché d'acquérir quelque chose",
+      "A volé quelque chose",
+      "A causé du tort",
+      "A essayé de ruiner la réputation",
+      "A manipulé",
+      "A essayé d'empoisonner",
+      "A insulté"
+    ],
+    "Escalation": [
+      "Ils/vous avez oublié",
+      "Ils/vous êtes à l'affût",
+      "Ils/vous avez pardonné à l'agresseur mais ils pourraient être repoussés",
+      "Ils/vous complotez activement contre l'autre",
+      "Ils/vous ne voulez rien avoir à faire avec l'autre",
+      "Ils/vous envisagez de poursuivre les êtres chers de l'autre",
+      "Ils/vous essayez de saboter l'autre",
+      "Ils/vous ne faites que répandre des rumeurs nuisibles",
+      "Ils/vous êtes assez fous pour vous mettre en colère lors de votre prochaine réunion",
+      "Ils/vous cherchez des alliés pour blesser l'autre"
+    ],
+    "Power": ["Social", "Connaissance", "Physique", "Sbires", "Magie"]
+  },
+  "Benefit": [
+    {
+      "nom": "Repéré un futur mage",
+      "desc": "Vous avez trouvé un jeune doué avec le Chaos. Vous l'avez aidé à maîtriser ses pouvoirs et l'avez entraîné à devenir un mage. Vous êtes en communication constante et pouvez lui demander de faire des recherches sur des sujets magiques pour vous. Vous gagnez un mage allié."
+    },
+    {
+      "nom": "Membre d'une communauté",
+      "desc": "Vous avez déménagé près d'un petit village. Les gens là-bas se sont lentement ouverts à vous alors que vous les aidiez à surmonter leurs malheurs. Vous y serez toujours les bienvenus et ils vous offriront même un abri et de la nourriture si vous en avez besoin. Tant que vous êtes dans cette région, vous êtes toujours traité comme égal."
+    },
+    {
+      "nom": "Paiement",
+      "desc": "Quelqu'un vous doit 600 couronnes et vous avez conservé le droit de percevoir à tout moment, même après des décennies."
+    },
+    {
+      "nom": "Familier",
+      "desc": "Vous avez gagné l'amitié d'un animal qui vous suit partout. Cela peut être un chat, un chien, un oiseau ou un serpent. Cet animal est dressé et suit vos ordres sauf si vous en abusez."
+    },
+    {
+      "nom": "Amour",
+      "desc": "Vous avez trouvé un amant qui a apprécié vos talents magiques et a établi une connexion significative. Lancez 1d10. 1-6 : ça a duré quelques mois, 7-8 : ça a duré quelques années, 9-10 : ça dure encore et encore."
+    },
+    {
+      "nom": "A gagné un duel",
+      "desc": "Vous avez combattu un autre mage dans un duel magique et en êtes sorti vainqueur. Vous avez pris un objet comme trophée. Lancez 1d10. 1-4 : Un bâton de marche elfique, 5-8 : Un bâton gnome, 9-10 : Un crâne de cristal."
+    },
+    {
+      "nom": "Trouvé un portail",
+      "desc": "Vous avez découvert l'emplacement d'un ancien portail elfique. Lancez 1d10. Sur un nombre pair, il est toujours actif ; lancez à nouveau 1d10 pour la destination : 1-3 : Une ancienne clairière à Dol Blathanna, 4-5 : les montagnes de Tir Tochair, 6-8 : un marécage au nord de Kaedwen, 9-10 : profondément sous la ville de Novigrad. Le portail peut également, à la discrétion du MJ, conduire vers une autre destination."
+    },
+    {
+      "nom": "Entraînement à la magie de combat",
+      "desc": "Vous avez passé la décennie à vous entraîner pour combattre d'autres utilisateurs de magie et résister à leur pouvoir. Vous gagnez +1 à la résistance magique."
+    },
+    {
+      "nom": "Lieu de pouvoir",
+      "desc": "Vous avez trouvé l'emplacement d'un lieu de pouvoir et exploité son énergie. Vous gagnez 5 Unités de Cinquième Essence. Travaillez avec le MJ pour déterminer où il se trouve et à quel élément il est adapté."
+    },
+    {
+      "nom": "Incantation en armure",
+      "desc": "Vous avez pratiqué l'incantation en armure. Soustrayez 1 de VE total de toutes les armures que vous portez pour lancer des sorts. Si vous avez déjà cet avantage, vous relancez ce résultat."
+    }
+  ],
+  "Allies": {
+    "Profession": [
+      "Criminel",
+      "Mercenaire",
+      "Marchand",
+      "Artisan",
+      "Savant",
+      "Druide",
+      "Prêtre",
+      "Mage",
+      "Chevalier",
+      "Noble"
+    ],
+    "How": [
+      "Vous avez étudié avec",
+      "Vous l'avez sauvés d'un accident",
+      "Vous l'avez soutenus dans un moment difficile",
+      "Vous l'avez soutenus contre une trahison",
+      "Vous étiez d'anciens partenaires amoureux",
+      "Vous l'avez manipulé",
+      "Vous lui avez montré une gentillesse sincère",
+      "Vous vous êtes mis à l'étudier",
+      "Vous l'avez aidé à poignarder quelqu'un dans le dos",
+      "Vous vous êtes rencontrés pendant une punition"
+    ],
+    "Closeness": ["Connaissances", "Amis", "Lié par le lien"],
+    "Power": ["Social", "Connaissance", "Physique", "Sbires", "Magie"]
+  },
+  "Knowledge": [
+    {
+      "nom": "Perplexe par une malédiction",
+      "desc": "Vous avez commencé à vous plonger dans les rouages d'une malédiction particulièrement vile qui affecte une famille depuis des générations. Bien que vous ne puissiez pas le dissiper, vos découvertes vous ont donné un aperçu de la nature des malédictions. Vous gagnez +1 Exercice de la magie et +1 Envoûtement."
+    },
+    {
+      "nom": "Formules mémorisées",
+      "desc": "Vous avez passé votre décennie à mémoriser des formules de sorts. Choisissez un sort Novice et un sort Compagnon. Vous commencez le jeu en connaissant ces deux sorts."
+    },
+    {
+      "nom": "Biologiste magique",
+      "desc": "Vous avez passé beaucoup de temps à étudier la magie inhérente aux monstres comme les leshen et démons. Vous commencez le jeu en connaissant le Rituel du Trophée Imbue. Si vous avez déjà cette connaissance, vous relancez ce résultat."
+    },
+    {
+      "nom": "Alchimie zerrikanienne",
+      "desc": "Vous avez passé votre temps à étudier l'alchimie des savants zerrikaniens. Vous commencez la partie avec la formule du Feu Zerrikanien mémorisée."
+    },
+    {
+      "nom": "Signes et présages",
+      "desc": "Vous avez scruté l'avenir et vu un événement que vous devez empêcher ou veiller à ce qu'il se produise. Travaillez avec votre GM pour déterminer de quoi il s'agit. Cette vision était véhiculée par des symboles et des métaphores."
+    },
+    {
+      "nom": "Encyclopédie des Arcanes",
+      "desc": "Vous avez passé cette décennie à plonger dans les lois du Chaos, son évolution et ses utilisations. Vous gagnez +2 Exercice de la magie. Si vous avez déjà cette connaissance, vous relancez ce résultat."
+    },
+    {
+      "nom": "Études des lignes telluriques",
+      "desc": "Vous avez passé la décennie à étudier les lignes telluriques du continent. Lorsque vous essayez de dessiner sur une ligne tellurique, vous le faites avec un bonus de +2. De plus, vous commencez le jeu en connaissant le sort Détection des lignes telluriques."
+    },
+    {
+      "nom": "L'assistant du professeur",
+      "desc": "Vous avez passé votre temps à aider un enseignant ou peut-être votre mentor. Lorsque vous enseignez de nouveaux sorts à d'autres mages, vous réduisez de moitié le nombre de tests d'apprentissage requis."
+    },
+    {
+      "nom": "Apprenti chez un alchimiste",
+      "desc": "Vous avez passé du temps à étudier les subtilités de l'alchimie. Vous commencez le jeu avec 2 formules alchimiques novices et gagnez +1 Alchimie."
+    },
+    {
+      "nom": "Spécialiste de la divination",
+      "desc": "Vous vous êtes plongé dans l'étude de la divination et de la voyance. Vous commencez le jeu en connaissant soit le rituel de l'Hydromancie, de la Pyromancie, de la Tyromancie ou de l'Oniromancie."
+    }
+  ]
+}

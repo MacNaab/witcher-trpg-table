@@ -1,0 +1,245 @@
+{
+  "Bénéfices": [
+    {
+      "nom": "Droit de surprise",
+      "description": "Vous avez invoqué le Droit de surprise durant cette décennie. Lancez 1d10 pour savoir ce que vous avez obtenu en retour. 1 : un bébé; 2: un chien; 3: un cheval; 4: une charrue; 5 : un chat; 6: un tonneau de bière; 7: un bijou d’une valeur de 1d6 x 10 couronnes; 8: une arme d’une valeur maximale de 100 couronnes; 9: un bœuf; 10: une mule."
+    },
+    {
+      "nom": "Romance",
+      "description": "Vous avez fait la rencontre d’une personne qui a su voir au-delà de vos mutations et de votre manque de sensibilité et d’émotions. Vous avez finalement réussi à créer une connexion avec quelqu’un. Lancez 1d10 : 1-6: cela a duré quelques semaines; 7-8: cela a duré quelques mois; 9-10: cette relation se poursuit toujours."
+    },
+    {
+      "nom": "Manne providentielle",
+      "description": "Vous avez engrangé une quantité impressionnante d’argent durant cette décennie. Vous avez acheté des ingrédients alchimiques, réparé votre matériel et vous avez même réussi à mettre un petit pécule de côté. Vous gagnez 1d10 x 100 couronnes."
+    },
+    {
+      "nom": "Faveur d’un noble",
+      "description": "Vous avez entrepris une tâche pour le compte d’un noble, légale ou illégale. Quoi qu’il en soit, le noble auquel vous êtes venu en aide vous doit beaucoup et sait que vous allez un jour exiger votre dû. Vous pouvez invoquer cette faveur à tout moment, mais elle doit être raisonnable (à la discrétion du MJ)."
+    },
+    {
+      "nom": "Transmission de secrets de sorceleurs",
+      "description": "Durant vos déplacements vous avez rencontré un autre sorceleur et vous avez voyagé ensemble. Ce sorceleur a partagé avec vous quelque connaissance depuis longtemps oubliée. Vous gagnez un schéma de sorceleur: une potion, une huile ou une décoction de votre choix."
+    },
+    {
+      "nom": "Adoubé pour son courage",
+      "description": "À un moment de cette décennie, vous avez combattu pour assurer la défense d’un pays. Vous avez peut-être protégé quelqu’un, à moins que vous ne fussiez tout simplement au bon endroit au bon moment. Pour ce haut fait, vous avez été adoubé par un roi/une reine. Vous gagnez +1 en réputation dans un pays de votre choix."
+    },
+    {
+      "nom": "Acoquiné à des bandits",
+      "description": "Vous avez rejoint un groupe de bandits ou de scoia’tael durant une chasse. Vous n’étiez peut-être pas d’accord avec leurs méthodes, mais ils ne souciaient pas de vous et inversement. Vous avez même partagé quelques chopines. Vous pouvez leur demander une faveur une fois par mois tant que votre demande est raisonnable (à la discrétion du MJ)."
+    },
+    {
+      "nom": "Exploration de ruines",
+      "description": "Vous deviez traquer un monstre jusque dans une ruine aussi immense que complexe. Sur le chemin, vous avez trouvé quelque chose d’utile. Lancez 1d10 : 1-2 : une amélioration d’équipement elfe; 3-4 : un messer elfe; 5-6 : une amélioration d’équipement naine; 7-8: une arbalète de poing gnome; 9-10 : une cape naine."
+    },
+    {
+      "nom": "Faveur d’un mage",
+      "description": "Durant cette décennie, vous avez fait une faveur à un mage. Vous avez peut-être réuni des morceaux de monstres pour ses expérimentations, à moins que vous ne l’ayez laissé vous étudier ou que vous ayez capturé un monstre pour lui. Quoi qu’il en soit, ce mage vous doit une faveur en retour tant qu’elle se montre raisonnable (à la discrétion du MJ)."
+    },
+    {
+      "nom": "Professeur",
+      "description": "Vous avez étudié sous la supervision d’un mentor. Vous avez passé plusieurs semaines à apprendre, mettre en pratique et suivre les conseils de votre professeur. Vous pouvez gagner un bonus de +1 dans n’importe quelle compétence d’INT ou ouvrir une nouvelle compétence d’INT à +2."
+    }
+  ],
+  "Allié": {
+    "Genre": ["Homme", "Femme"],
+    "Statut": [
+      "Chasseur de primes",
+      "Mage",
+      "Mentor ou professeur",
+      "Ami d’enfance",
+      "Artisan",
+      "Un vieil ennemi",
+      "Duc/duchesse",
+      "Prêtre/prêtresse",
+      "Soldat",
+      "Barde"
+    ],
+    "Circonstances": [
+      "Vous lui avez sauvé la vie",
+      "Vous vous êtes rencontrés dans une taverne",
+      "Il vous a sauvé la vie",
+      "Il vous a engagé pour une tâche quelconque",
+      "Vous avez été pris au piège ensemble",
+      "Vous avez été forcés de travailler ensemble",
+      "Vous l’avez engagé pour une tâche quelconque",
+      "Vous vous êtes liés d’amitié au cours d’une beuverie",
+      "Vous vous êtes rencontrés lors d’un voyage",
+      "Vous avez combattu ensemble"
+    ],
+    "Proche": ["Connaissances", "Amis", "À la vie, à la mort"],
+    "Mort": [
+      "Attaque de bandits",
+      "Attaque de monstre",
+      "Victime de la guerre",
+      "Mort naturelle"
+    ]
+  },
+  "Chasse": {
+    "Type": [
+      "Spectre",
+      "Créature maudite",
+      "Hybride",
+      "Insectoïde",
+      "Élémentaire",
+      "Vestige",
+      "Ogroïde",
+      "Draconide",
+      "Nécrophage",
+      "Vampire"
+    ],
+    "Emplacement": [
+      "Forêt",
+      "Bâtiment",
+      "Bâtiment abandonné",
+      "Côte",
+      "Montagne",
+      "Ville",
+      "Cimetière",
+      "Hameau",
+      "Rivière",
+      "Grotte"
+    ],
+    "Résultat": [
+      "Vous êtes parti après paiement",
+      "L’employeur a refusé de payer",
+      "Vous avez été payé avec un troc",
+      "Le combat fut particulièrement âpre",
+      "Le combat a été étonnamment facile"
+    ],
+    "Retournement": [
+      "Le monstre était une mystification",
+      "Tout était dû à une malédiction",
+      "Le monstre était déjà mort",
+      "Ce n’était pas ce à quoi vous pensiez",
+      "L’employeur le voulait vivant",
+      "L’employeur est responsable de tout",
+      "Le monstre était inoffensif",
+      "C’était un piège qui vous était destiné",
+      "On vous a caché des choses",
+      "Un mage était derrière tout ça"
+    ]
+  },
+  "Danger": {
+    "Événement": [
+      {
+        "nom": "Dette",
+        "description": "À cause de destructions de matériel, de parties de gwynt ou autre, vous avez une dette de 1d10 x 100 couronnes envers un établissement ou une maison noble."
+      },
+      {
+        "nom": "Un monstre intelligent s’est échappé",
+        "description": "Un troll, un katakan, un loup-garou ou un autre monstre intelligent s’est enfui alors que vous le traquiez et court à présent en liberté. Il pourrait bien venir pour vous un de ces jours."
+      },
+      {
+        "nom": "Addiction",
+        "description": "Les temps ont été durs et vous avez succombé à une addiction (choisissez votre poison)."
+      },
+      {
+        "nom": "Emprisonné",
+        "description": "Vous avez passé 1d10 années de cette décennie en prison suite à de fausses accusations ou un crime que vous avez effectivement perpétré."
+      },
+      {
+        "nom": "Accusé à tort",
+        "description": "Soit quelqu’un veut se débarrasser de vous, soit vous faisiez un parfait bouc émissaire. Lancez 1d10. 1-3 : vol ; 4-5: trahison; 6-8: meurtre; 9-10: sorcellerie illégale"
+      },
+      {
+        "nom": "Trahi",
+        "description": "Un ami ou un amant vous a trahi. Lancez 1d10. 1-3: on vous a fait chanter; 4-7: un secret a été dévoilé; 8-10: vous avez été attaqué"
+      },
+      {
+        "nom": "Ami ou amant tué",
+        "description": "Un proche a été tué. Lancez 1d10. 1-3: tué par un monstre: 4-6: exécuté, 7-8: assassiné; 9-10: empoisonné"
+      },
+      {
+        "nom": "Hors-la-loi dans un royaume",
+        "description": "Vous avez été déclaré hors-la-loi par un royaume après avoir commis un acte odieux ou consécutivement à de fausses accusations. Dans ce royaume, la garde vous recherche."
+      },
+      {
+        "nom": "Manipulé",
+        "description": "On vous a manipulé afin que vous brisiez votre neutralité. Décidez de la façon dont cela s’est produit, mais quiconque vous connaît de réputation sait que vous n’êtes pas neutre."
+      },
+      {
+        "nom": "Maudit",
+        "description": "Vous avez été frappé par une malédiction. Sa nature est à la discrétion du MJ qui doit également décider comment vous pouvez y mettre un terme (il n’est cependant pas nécessaire qu’il vous en fasse part)."
+      }
+    ],
+    "Blessure": [
+      {
+        "nom": "Raideur au genou",
+        "malus": "–1 VIT",
+        "description": "Une horrible blessure vous a pratiquement pulvérisé la jambe. Même après des séances de chirurgie et l’absorption de nombreuses potions de sorceleur, elle ne s’est jamais entièrement remise."
+      },
+      {
+        "nom": "Œil voilé",
+        "malus": "–1 en Vigilance sur la vue",
+        "description": "D’habitude, les sorceleurs sont assez véloces pour esquiver une frappe mortelle, mais parfois, certains monstres sont trop rapides. Un coup à l’œil fait que vous voyez comme au travers d’un voile avec celui-ci."
+      },
+      {
+        "nom": "Raideur au bras",
+        "malus": "–1 en Mêlée avec ce bras",
+        "description": "Un coup dévastateur au bras a nécessité des semaines de récupération. Vous pouvez toujours tenir une épée et combattre, mais cette raideur ne vous lâche pas."
+      },
+      {
+        "nom": "Doigts blessés",
+        "malus": "vous ne pouvez pas lancer de signe avec cette main",
+        "description": "Cela peut résulter de la torture ou d’un très mauvais coup porté sur cette main en combat. Quoi qu’il en soit, vos doigts sont déformés et engourdis."
+      },
+      {
+        "nom": "Tête de flèche enfoncée",
+        "malus": "–1 Physique",
+        "description": "Une tête de flèche barbelée est restée profondément fichée dans votre corps, se logeant dans un muscle. Porter des choses est devenu douloureux depuis."
+      },
+      {
+        "nom": "Sifflement",
+        "malus": "–5 en Endurance",
+        "description": "Peut-être avez-vous été poignardé dans le poumon ou avez-vous inhalé un gaz toxique, quoi qu’il en soit vos poumons ont été endommagés et il vous est difficile de respirer normalement."
+      },
+      {
+        "nom": "Large cicatrice",
+        "malus": "–2 en Charme et Séduction",
+        "description": "Il est courant pour un sorceleur d’être couvert de cicatrices. Cependant, un coup vous a défiguré."
+      },
+      {
+        "nom": "Nez endommagé",
+        "malus": "–2 en traque olfactive",
+        "description": "Un certain nombre de coups au visage lors de bagarres de bar (ou un gaz toxique) ont endommagé votre nez et vous ont pratiquement privé de l’odorat."
+      },
+      {
+        "nom": "Dégâts dus au venin noir",
+        "malus": "–5 en Santé",
+        "description": "Des toxines qui ont un jour parcouru votre corps ont laissé des veines noirâtres autour de la blessure liée et vous ont affaibli."
+      },
+      {
+        "nom": "À moitié sourd",
+        "malus": "–1 en Vigilance sur l’ouïe",
+        "description": "De nombreux monstres usent d’attaques soniques meurtrières. Vous avez été assez chanceux pour y survivre, mais votre ouïe en a sévèrement pâti."
+      }
+    ],
+    "Ennemi": {
+      "Genre": ["Homme", "Femme"],
+      "Profession": ["Noble", "Mercenaire", "Soldat", "Marchand", "Criminel"],
+      "Cause": [
+        "Il vous a calomnié",
+        "Vous avez contrecarré ses plans",
+        "Il vous a trahi",
+        "Vous avez tué un parent",
+        "Il vous a trompé"
+      ],
+      "Influence": ["Politique", "Culturel", "Physique", "Sbires", "Magique"],
+      "Conséquence": [
+        "C’est (presque) du passé",
+        "Coup dans le dos",
+        "Violence brutale",
+        "Vous pourchasse",
+        "Veut faire couler le sang"
+      ],
+      "Mort": [
+        "Victime de la guerre",
+        "Vous l’avez tué",
+        "Attaque de monstre",
+        "Mort naturelle"
+      ]
+    }
+  },
+  "Rien": "Rien de notable ne s’est produit lors de cette décennie de votre vie. Vous avez simplement arpenté le monde, massacrant quelques monstres par-ci par-là."
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "nom": "Adoption d’un enfant",
+    "description": "Il y a peu, ce vampire a adopté un enfant qu’il continue d’élever. Il éprouve une affection sincère et ferait n’importe quoi pour le protéger. Il est même prêt à risquer sa vie pour l’enfant."
+  },
+  {
+    "nom": "Idylle inter espèce",
+    "description": "Ce vampire est tombé amoureux d’une personne issue d’une autre espèce, pour laquelle il est prêt à se sacrifier. Il est en contact régulier avec elle et lui rend souvent visite."
+  },
+  {
+    "nom": "Ennemi mortel dans la société vampirique",
+    "description": "Ce vampire s’est attiré les foudres d’un autre vampire supérieur. Les règles de la société vampirique ont empêché le conflit de dégénérer, mais rien n’est gagné."
+  },
+  {
+    "nom": "Combat contre un sorceleur",
+    "description": "Depuis qu’il a affronté un sorceleur, ce vampire connaît leurs techniques. Après plusieurs années d’expérimentations, il a réussi à immuniser son organisme aux effets de la potion de Sang noir."
+  },
+  {
+    "nom": "Dressage d’un monstre",
+    "description": "En guise d’animal de compagnie, ce vampire possède un monstre sauvage (menace normale) ou trois monstres sauvages (menace faible). Il les a dressés pour qu’ils suivent ses ordres à la lettre. Toutefois, les monstres ne donneront pas leur vie pour le vampire."
+  },
+  {
+    "nom": "Mort",
+    "description": "Ce vampire a été démembré ou brûlé sur un bûcher. Plongé dans les ténèbres silencieuses, il lui a fallu plusieurs années pour se rétablir et depuis, il fuit le danger. Il se régénère deux fois plus vite dès qu’il descend en dessous de 0 point de santé."
+  },
+  {
+    "nom": "Beuverie",
+    "description": "Ce vampire a cédé à la soif de sang et a pris une cuite, il a vidé de leur sang des dizaines de civils et a massacré la population entière d’un village. Depuis, les vampires supérieurs le surveillent de près, il a donc –3 en Réputation quand il interagit avec eux."
+  },
+  {
+    "nom": "Célébrité",
+    "description": "Les prouesses ou les crimes de ce vampire ont fait le tour du Continent. Il est devenu un vampire renommé, ou alors les gens qui ont entendu parler de ses exploits le prennent pour un humain ou un elfe. Il gagne +5 en Réputation."
+  },
+  {
+    "nom": "Chef d’une cabale",
+    "description": "Ce vampire a rallié un petit groupe de non-vampires à sa cause (à vous d’imaginer laquelle). Ses fidèles (30 humanoïdes) sont peut-être au courant de sa vraie nature."
+  },
+  {
+    "nom": "Adoubé",
+    "description": "Sous son identité humaine, ce vampire a reçu les honneurs d’un chef local après avoir accompli un exploit. Il gagne +5 en Réputation et est considéré comme un chevalier du royaume là où il vit."
+  }
+]

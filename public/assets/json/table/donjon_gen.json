@@ -1,0 +1,63 @@
+{
+  "Entrée": [
+    "Pris au piège du feu",
+    "Piégé de poison",
+    "Piégé avec de l'acide",
+    "Doit monter verticalement pour entrer",
+    "Gardé par une bête",
+    "Gardé par une abberation",
+    "Doit descendre verticalement pour entrer",
+    "Gardé par fey",
+    "Gardé par des golems",
+    "Pris au piège du froid",
+    "Pris au piège de la foudre",
+    "Pris au piège avec force"
+  ],
+  "Type de piège": ["Confiner", "Dilatoire", "Dommage", "Alarme"],
+  "Couloir": [
+    "Terrain dangereux",
+    "Température extrême",
+    "Décoré",
+    "Détruit",
+    "Haut / Bas",
+    "Sort détruit"
+  ],
+  "Obstacles": [
+    "Objet magique",
+    "Miroirs",
+    "Puzzle",
+    "Fontaine",
+    "énigme",
+    "Mural",
+    "Puzzle",
+    "Alien / étrange",
+    "énigme",
+    "Arme magique"
+  ],
+  "Objectif": [
+    "Vaincre l'avatar",
+    "Mettre fin à la malédiction",
+    "Perturber le sort",
+    "Détruisez l'objet magique",
+    "Boire le liquide",
+    "Utilisez l'article",
+    "Perturber le rituel",
+    "Lisez le livre et lancez le sort",
+    "Tuer le chef",
+    "Fermer le portail",
+    "Tuer les invoqués",
+    "Tuer le chef",
+    "Détruisez la zone",
+    "Libérez le (s) prisonnier (s)",
+    "Voler le trésor",
+    "Capturez la créature",
+    "Échapper à la région",
+    "Parlez aux cachés",
+    "Démarrer / arrêter le compte à rebours",
+    "Détruire l'artefact"
+  ],
+  "Auteur": {
+    "nom": "famoushippopotamus",
+    "lien": "https://www.reddit.com/r/DnDBehindTheScreen/comments/5i3bvt/dicing_for_dungeons/"
+  }
+}

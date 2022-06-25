@@ -1,0 +1,67 @@
+{
+  "Établissement": [
+    "Auberge de jeunesse",
+    "Auberge",
+    "Taverne",
+    "Bordel",
+    "Pension de famille",
+    "Casino",
+    "Hôtel",
+    "Chambre d'hôtes"
+  ],
+  "Confort": [
+    "Misérable",
+    "Pauvre",
+    "Modeste",
+    "Respectable",
+    "Confortable",
+    "Riche",
+    "Somptueux",
+    "Royal"
+  ],
+  "Tavernier ": [
+    "Nain",
+    "Humain",
+    "Humain",
+    "Humain",
+    "Humain",
+    "Humain",
+    "Demi-Elfe",
+    "Gnome",
+    "Elfe",
+    "Halflin"
+  ],
+  "Personnalité (tavernier)": [
+    "Vieux, grincheux et n'aimant pas les visiteurs",
+    "Nerveux, comme s'ils cachaient quelque chose",
+    "Bruyant et agité: la vie de chaque fête",
+    "Obsédé par la propreté et déteste même la vue de la boue",
+    "Essaie juste de finir sa journée de travail",
+    "Toujours ivre, quelle que soit l'heure de la journée",
+    "Connaît parfaitement le commun, mais refuse de le parler",
+    "Extrêmement compétent et professionnel"
+  ],
+  "Caractéristique": [
+    "Un portrait massif du père de l'aubergiste est accroché derrière la réception. Les yeux vous suivent partout où vous allez.",
+    "Il y a une entrée dans un système de cavernes souterraines caché dans le sous-sol.",
+    "Il y a des messages écrits en argot de voleur sous certains des lits qui dirige le lecteur vers des tombes mortes à proximité pour récupérer le butin.",
+    "Un fantôme se promène dans les couloirs la nuit, et parfois aussi pendant la journée.",
+    "Une des chambres est toujours fermée. Le propriétaire actuel est attaché à l'intérieur.",
+    "Un patron du crime local a fait de cet établissement leur base d'opérations contre la volonté du propriétaire et du personnel.",
+    "Il y a un mimétisme quelque part dans l'établissement, mais le propriétaire n'est pas tout à fait sûr où.",
+    "Les repas sont disproportionnellement bon marché, mais la viande n'a pas le même goût de tout ce que le groupe a jamais mangé auparavant."
+  ],
+  "Chambre": [
+    "Vous dormez sur un tas de foin dans les étables, et votre salle de bain est un seau, mais au moins vous êtes à l'abri de la pluie.",
+    "Ce n'est pas parce que vous pouvez gérer une auberge que vous devriez. Ces endroits ont toujours quelque chose à leur sujet qui rend l'expérience désagréable, comme des pots de chambre débordants ou une infestation de rats. Vous avez techniquement un lit, mais vous pouvez le partager avec une ou plusieurs personnes.",
+    "La qualité de l'herbergement pour cette auberge de village est moyenne. Bien entretenu, mais sans prétention. Les matelas sont encore bourrés de paille et les couvertures sont éraflées, mais tout est propre et vous n'avez pas à vous soucier de la vermine.",
+    "Une fois que vous arrivez dans des villes un peu plus grandes, vous commencez à trouver des endroits adaptés à la classe des marchands ambulants. Il y a parfois des lits en plumes, des oreillers plus moelleux et des repas qui peuvent être apportés dans votre chambre. c'est certainement un cran au-dessus de la moyenne.",
+    "C'est alors que vous avez votre propre salle de bain privée. Ce sont souvent les plus beaux hébergements que vous pouvez trouver dans les petites villes. Ils peuvent parfois se sentir un peu prétentieux et étouffants, mais cela ne rend pas les matelas moins confortables.",
+    "Le niveau d'hébergement préféré des riches marchands et des petits aristocrates. Il est à peu près équivalent au niveau de la plupart des hôtels de luxe de charme. Le nombre de fils est élevé, tout est bourré de duvet d'oie et le service est toujours rapide. Oubliez une salle de bain privée; dans des endroits comme celui-ci, vous avez votre propre baignoire.",
+    "Equivalent à la suite présidentielle d'un hôtel cinq étoiles. Il y a plusieurs salles, un personnel de service dévoué et autant d'alcool que vous pouvez en boire. Ce niveau d'hébergement ne peut être trouvé que dans les grandes villes et s'adresse à une clientèle d'élite. Si votre groupe n'est pas bien habillé, il se peut qu'ils ne soient pas autorisés à l'intérieur, peu importe le montant d'argent qu'ils peuvent faire circuler."
+  ],
+  "Auteur": {
+    "nom": "Spell Theory",
+    "lien": "https://spelltheory.com/random-tavern-generator/"
+  }
+}

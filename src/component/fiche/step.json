@@ -1,0 +1,89 @@
+{
+  "1": {
+    "name": "informations",
+    "cpnts": [
+      {
+        "name": "joueur",
+        "type": "input",
+        "label": "Prénom du joueur"
+      },
+      {
+        "name": "personnage",
+        "type": "input",
+        "label": "Prénom, nom ou surnom du personnage"
+      },
+      {
+        "name": "sexe",
+        "type": "select",
+        "label": "Sexe du personnage"
+      },
+      {
+        "name": "race",
+        "type": "select",
+        "label": "Race du personnage"
+      },
+      {
+        "name": "profession",
+        "type": "select",
+        "label": "Profession du personnage"
+      }
+    ]
+  },
+  "2": {
+    "name": "histoire",
+    "cpnts": [
+      {
+        "name": "region",
+        "type": "select",
+        "label": "Région du personnage"
+      },
+      {
+        "name": "origine",
+        "type": "select",
+        "label": "Région d'origine du personnage"
+      }
+
+      ,
+      {
+        "name": "famille",
+        "type": "select",
+        "label": "Situation familial"
+      },
+      {
+        "name": "parent",
+        "type": "select",
+        "label": "Statut parental"
+      },
+      {
+        "name": "destin_familial",
+        "type": "select",
+        "label": "Destin familial"
+      },
+      {
+        "name": "destin_parental",
+        "type": "select",
+        "label": "Destin parental"
+      },
+      {
+        "name": "statut_familial",
+        "type": "select",
+        "label": "Statut familial"
+      },
+      {
+        "name": "mentor",
+        "type": "select",
+        "label": "Mentor"
+      },
+      {
+        "name": "fratrie",
+        "type": "select",
+        "label": "Fratrie"
+      },
+      {
+        "name": "age",
+        "type": "number",
+        "label": "Âge du personnage"
+      }
+    ]
+  }
+}

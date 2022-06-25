@@ -1,0 +1,47 @@
+[
+  {
+    "nom": "Intelligence",
+    "id": "INT",
+    "desc": "Permet de résoudre des énigmes, réaliser des expériences scientifiques, construire des raisonnements logiques…"
+  },
+  {
+    "nom": "Réflexes",
+    "id": "REF",
+    "desc": "Sert à combattre, esquiver et effectuer des actions nécessitant des réactions rapides et des gestes précis."
+  },
+  {
+    "nom": "Dextérité",
+    "id": "DEX",
+    "desc": "Pour les attaques à distance et tout ce qui implique de faire appel à l’équilibre et à la coordination oeil-main."
+  },
+  {
+    "nom": "Corps",
+    "id": "COR",
+    "desc": "S’utilise lorsqu’il faut faire appel à la force brute, comme pour les bagarres ou les prouesses physiques. Le Corps représente aussi l’endurance nécessaire pour résister aux maladies ou à la fatigue."
+  },
+  {
+    "nom": "Vitesse",
+    "id": "VIT",
+    "desc": "Représente la vitesse de déplacement de votre personnage. Vous pouvez utiliser cette caractéristique pour semer des poursuivants ou calculer la distance parcourue dans un temps donné."
+  },
+  {
+    "nom": "Empathie",
+    "id": "EMP",
+    "desc": "Pour gérer les affaires de coeur et les émotions. La séduction et la persuasion font appel à cette caractéristique."
+  },
+  {
+    "nom": "Technique",
+    "id": "TECH",
+    "desc": "Pour utiliser des mécanismes ou créer des objets avec précision. La Technique sert également à manier des machines de siège et installer des pièges."
+  },
+  {
+    "nom": "Volonté",
+    "id": "VOL",
+    "desc": "Sert à intimider, mais aussi à réaliser des tests magiques et de résistance mentale. La Volonté dénote votre capacité à aller de l’avant et votre degré de maîtrise de la magie."
+  },
+  {
+    "nom": "Chance",
+    "id": "CHA",
+    "desc": "La Chance est une réserve de points que vous pouvez utiliser pour retourner les situations à votre avantage. Avant d’effectuer un jet de compétence (ou un jet de sauvegarde contre la mort), pendant votre tour ou en défense pendant le tour d’un adversaire, vous pouvez ajouter des points de Chance. Vous bénéficiez d’un bonus de +1 par point ajouté, sachant que vous devez décider du montant dépensé avant de lancer les dés. Votre réserve de Chance se reconstitue au début de chaque session de jeu."
+  }
+]

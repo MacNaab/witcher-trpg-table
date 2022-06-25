@@ -1,0 +1,239 @@
+[
+  {
+    "nom": "Humain",
+    "desc": [
+      "Dans un monde où les non-humains inspirent la méfiance, les humains paraissent plus dignes de confiance que jamais. Ils bénéficient d’un bonus naturel de +1 sur leurs jets de Charisme, de Séduction et de Persuasion lorsqu’ils interagissent avec d’autres humains.",
+      "Les humains sont intelligents et trouvent souvent des solutions brillantes pour résoudre des problèmes délicats. Ils bénéficient d’un bonus naturel de +1 en Déduction.",
+      "La grande force de la race humaine réside en partie dans sa volonté d’aller toujours de l’avant, même dans des situations où sa survie menacée. Un humain peut puiser dans sa détermination pour relancer un jet raté de Résistance à la contrainte ou de Courage. Il a droit au total à trois relances par session de jeu. Lorsque le personnage utilise cette règle, le joueur choisit le meilleur des deux jets, mais il ne peut pas renouveler sa tentative pour le même jet, même s’il échoue à nouveau."
+    ],
+    "particularité": ["Digne de confiance", "Ingénieux", "Têtu comme une mule"],
+    "source": "Livre de base"
+  },
+  {
+    "nom": "Elfe",
+    "desc": [
+      "Les elfes ont un talent inné pour les activités artistiques et une attirance pour la beauté. Ils bénéficient d’un bonus naturel de +1 dans la compétence Beaux-arts.",
+      "Des siècles de tradition et de pratique ont permis aux elfes de devenir les meilleurs archers au monde. Ils bénéficient d’un bonus naturel de +2 dans la compétence Archerie et peuvent prendre leur arc puis le bander sans dépenser d’action.",
+      "Les elfes entretiennent un lien magique profond avec la nature elle-même. Ils ne dérangent jamais les animaux, ce qui signifie qu’ils considèrent toutes les bêtes qu’ils croisent comme amicales, et que ces dernières ne les attaqueront pas, sauf en cas de provocation. Les elfes trouvent aussi automatiquement les plantes dont la disponibilité est commune (ou moins), pourvu qu’elles poussent naturellement dans la région."
+    ],
+    "particularité": ["Esthète", "Œil d’aigle", "Harmonie avec la nature"],
+    "source": "Livre de base"
+  },
+  {
+    "nom": "Nain",
+    "desc": [
+      "Comme ils passent la majorité de leur temps dans les montagnes et les mines, les nains possèdent une peau naturellement épaisse, qui leur confère un Pouvoir d’arrêt de 2. Cette valeur de PA est appliquée en plus de toute pièce d’armure et ne peut pas être réduite par des attaques avec une arme ou des dégâts d’ablation.",
+      "À cause de leur silhouette trapue et de leur propension à exercer des métiers physiques éreintants, les nains bénéficient d’un bonus de +1 dans la compétence Physique. En outre, leur Encombrement est augmenté de +25.",
+      "Dans un monde où les non-humains inspirent la méfiance, les humains paraissent plus dignes de confiance que jamais. Ils bénéficient d’un bonus naturel de +1 sur leurs jets de Charisme, de Séduction et de Persuasion lorsqu’ils interagissent avec d’autres humains.",
+      "Comme les nains ont l’oeil pour repérer les plus petits détails et possèdent un talent particulier pour évaluer les biens, il est presque impossible de les rouler dans la farine. Ils bénéficient donc d’un bonus naturel de +1 dans la compétence Négoce."
+    ],
+    "particularité": ["Tanné comme du cuir", "Coriace", "Œil de l'expert"],
+    "source": "Livre de base"
+  },
+  {
+    "nom": "Sorceleur",
+    "desc": [
+      "Grâce à leurs sens améliorés, les sorceleurs ne subissent pas de pénalité dans les zones de lumière tamisée et bénéficient d’un bonus naturel de +1 en Vigilance, ainsi que de la capacité à pister une cible en recourant uniquement à l’odorat.",
+      "Étant donné que les sorceleurs subissent de nombreuses mutations au cours de leur formation, ils deviennent immunisés aux maladies et peuvent se servir des mutagènes.",
+      "Les émotions des sorceleurs s’engourdissent au fur et à mesure des mutations et des traumatismes qu’ils endurent. C’est pourquoi ils n’ont pas besoin de faire de jet de Courage en cas d’Intimidation, mais ils subissent un malus de –4 à leur caractéristique d’Empathie. L’Empathie ne peut jamais descendre en dessous de 1.",
+      "Au bout d’une série de mutations et d’entraînements intensifs, les sorceleurs deviennent beaucoup plus rapides et agiles que le commun des mortels. Ils bénéficient d’un bonus permanent de +1 en Réflexes et en Dextérité, et peuvent améliorer ces caractéristiques au-delà de 10.",
+      "Les Sorceleurs passent les premières années de leur vie confinés entre les murs de leur forteresse où ils étudient d’énormes tomes poussiéreux et suivent un entraînement martial démentiel. De nombreux savants ont démontré que les meilleures armes d’un Sorceleur étaient sa connaissance des monstres ainsi que ses capacités d’adaptation. Il peut donc diminuer les pénalités provoquées par un environnement hostile ou un relief accidenté d’une valeur égale à la moitié de son score de Formation de sorceleur (minimum 1). Vous pouvez également utiliser Formation de sorceleur dans les situations requérant l’usage de la compétence Connaissance des monstres."
+    ],
+    "particularité": [
+      "Sens accrus",
+      "Mutation durable",
+      "Sensibilité émoussée",
+      "Réflexes hors du commun"
+    ],
+    "source": "Livre de base",
+    "compts": [
+      "DED",
+      "SUR",
+      "VIG",
+      "EQU",
+      "ESC",
+      "ESQ",
+      "ATH",
+      "FUR",
+      "ALC",
+      "INC"
+    ],
+    "exclusive": {
+      "nom": "Formation de sorceleur",
+      "caract": "INT",
+      "desc": "Les Sorceleurs passent les premières années de leur vie confinés entre les murs de leur forteresse où ils étudient d’énormes tomes poussiéreux et suivent un entraînement martial démentiel. De nombreux savants ont démontré que les meilleures armes d’un Sorceleur étaient sa connaissance des monstres ainsi que ses capacités d’adaptation. Il peut donc diminuer les pénalités provoquées par un environnement hostile ou un relief accidenté d’une valeur égale à la moitié de son score de Formation de sorceleur (minimum 1). Vous pouvez également utiliser Formation de sorceleur dans les situations requérant l’usage de la compétence Connaissance des monstres.",
+      "complexe": false
+    },
+    "vigueur": 2,
+    "magie": "Sorceleur",
+    "equiToChose": 2,
+    "equipement": [
+      {
+        "nom": "Arbalète de poing",
+        "type": "Arme"
+      },
+      {
+        "nom": "Couteaux de lancer x5",
+        "type": "Arme",
+        "id": "Couteau de lancer"
+      },
+      {
+        "nom": "Ensemble d’alchimie",
+        "type": "Item"
+      },
+      {
+        "nom": "Gambison à tissage renforcé",
+        "type": "Armure"
+      },
+      {
+        "nom": "Un cheval",
+        "type": "Autre"
+      }
+    ],
+    "equipmentStatic": [
+      {
+        "nom": "Épée d'acier de sorceleur",
+        "type": "Arme"
+      },
+      {
+        "nom": "Épée d'argent de sorceleur",
+        "type": "Arme"
+      },
+      {
+        "nom": "Médaillon de sorceleur",
+        "type": "Item"
+      }
+    ],
+    "gold": 350
+  },
+  {
+    "nom": "Halfelin",
+    "desc": [
+      "Les halfelins sont par nature souples et adroits. Ils bénéficient d’un bonus naturel de +1 dans la compétence Athlétisme.",
+      "En raison de traditions agricoles séculaires et de leur don inné pour s’occuper des bêtes, les halfelins se sentent souvent attirés par la vie rurale. Ils bénéficient d’un bonus naturel de +2 dans la compétence Survie et lorsqu’il s’agit d’apaiser, de dresser ou de conduire des animaux.",
+      "Pour des raisons inconnues, les halfelins sont assez peu sensibles aux énergies magiques. Ils bénéficient d’un bonus naturel de +1 à la compétence Résistance à la magie pour annuler les sorts susceptibles d’influencer leur esprit, même quand les règles l’interdisent en temps normal. En revanche, les potions de sorceleur et les autres breuvages magiques n’octroient aucun bonus aux halfelins (même lorsqu’ils réussissent leur jet de Résilience)."
+    ],
+    "particularité": ["Agile", "Peuple agreste", "Résilience magique"],
+    "source": "Seigneurs et fiefs"
+  },
+  {
+    "nom": "Gnome",
+    "desc": [
+      "À travers le continent, les gnomes sont connus pour leurs personnalités joyeuses qui aiment s'amuser et leur nature malicieuse. Parmi les humains, les gnomes sont souvent considérés comme les plus agréables des non-humains. Les gnomes gagnent un +1 inhérent au Charisme.",
+      "Alors que les elfes et les nains sont parmi les plus grands artisans du monde, les gnomes possèdent le meilleur sens du détail sur tout le continent, ce qui les rend excellents dans de nombreux métiers différents. Il n'est pas rare de trouver un gnome qui pratique à la fois la joaillerie, la métallurgie et l'alchimie. Les gnomes gagnent un +2 inhérent aux 3 compétences d'artisanat qu'ils choisissent. Ce bonus ignore le modificateur d'apprentissage de la compétence difficile.",
+      "Le sens aigu du détail d'un gnome s'étend à tous ses sens, y compris son odorat. Les gnomes gagnent un +1 inhérent à leur compétence Vigilance, ainsi que la capacité de suivre les choses uniquement par l'odeur.",
+      "Les gnomes sont la plus petite race du continent, mesurant environ 1 m de haut en moyenne. Bien qu'ils puissent être tout aussi résistants que les autres races, ils sont généralement physiquement plus faibles. Les gnomes subissent un -5 inhérent à Physique et calculent leurs dégâts au corps à corps, leurs dégâts de mêlée bonus et leur encombrement comme si leur CORPS était inférieur de 3 points. Cependant, un gnome peut se glisser dans n'importe quelle zone d'au moins 0,5 m de large sans problème et peut se cacher complètement derrière un objet ou une créature d'au moins 1 m sur 1 m."
+    ],
+    "particularité": [
+      "Comportement agréable",
+      "Souci du détail",
+      "Sens accrus",
+      "Petite taille"
+    ],
+    "source": "Le livre des contes"
+  },
+  {
+    "nom": "Vran",
+    "desc": [
+      "Les Vrans sont connus par beaucoup pour être des créatures sans cœur et sans empathie à proprement parler. Cependant, c'est loin de la vérité. Les Vran ont autant de capacité d'empathie que n'importe quel humain, mais ils sont beaucoup plus réservés et moins susceptibles de montrer leurs émotions. Les Vrans gagnent +1 en Résistance à la contrainte.",
+      "Alors que les vrans sont connus pour utiliser des armes, ils sont également capables d'infliger de graves dommages à leurs ennemis avec leurs griffes et leurs crocs naturels. Un vran possède deux armes naturelles qui ne peuvent pas être désarmées. Les coups de poing et de pied d'un vran infligent des dégâts mortels et il peut effectuer une attaque au corps à corps avec ses crocs, qui inflige 3d6 dégâts avec 50 % de chances d'empoisonner la cible.",
+      "Les Vrans ont une couche naturelle d'écailles qui leur confère une certaine résistance naturelle aux dégâts. Les écailles d'un vran ont un pouvoir d'arrêt naturel de 4. Ce PA ne peut pas être abaissé via des attaques d'armes ou des dégâts d'ablation.",
+      "Les vrans sont la seule race consciente acceptée qui soit également reptilienne et leur physiologie diffère très légèrement de celle des humains et des autres races non humaines. Cette différence peut être minime, mais elle a un impact important de deux manières. Premièrement, le corps d'un vran est suffisamment différent pour que tout médecin qui n'est pas un vran et qui n'a pas traité un vran avec succès dans le passé subit une pénalité de -2 lorsqu'il utilise les premiers soins sur un vran blessé et une pénalité de -5 lorsqu'il tente de stabiliser ou de soigner Blessures critiques sur un vran blessé. Deuxièmement, si un vran est affecté par l'état Gelé, il subit un -2 à toutes ses actions jusqu'à 1d6 tours après la fin de l'état."
+    ],
+    "particularité": [
+      "Cœur calme",
+      "Griffes et crocs",
+      "Peau écailleuse",
+      "Physiologie reptilienne"
+    ],
+    "source": "Le livre des contes"
+  },
+  {
+    "nom": "Marmotin",
+    "desc": [
+      "Les marmotins ne sont pas la plus grande race du continent mais ils sont parmi les plus courageux. Leur culture valorise l'héroïsme et les jeunes marmotins entendent des histoires d'anciens héros ancestraux. Les marmotins gagnent un +1 au Courage.",
+      "Le corps et le métabolisme d'un marmotin fonctionnent d'une manière totalement étrangère aux humains et à la plupart des autres races d'aînés. Lorsqu'il est grièvement blessé, certains aspects de la physiologie passent à la vitesse supérieure, lui permettant souvent de survivre à une blessure qui tuerait rapidement toute autre personne. Chaque fois qu'un marmotin subit une blessure critique, il peut effectuer un jet de résilience avec un SD égal au SD requis pour stabiliser la blessure critique. S'il réussi, la blessure critique est immédiatement considérée comme stabilisée. Les joueurs ne peuvent faire ce jet qu'au moment où le marmotin subit la blessure et ne peut pas être réessayé en cas d'échec.",
+      "Bien que les marmotins ne possèdent pas les mâchoires puissantes et les crocs venimeux du vran, leurs dents sont acérées comme des rasoirs et aiguisées à un tranchant fin. Un marmotin peut effectuer une attaque au corps à corps avec ses crocs qui inflige 2d6 dégâts et possède une pénétration d'armure améliorée.",
+      "En général, les marmotins souffrent d'une mauvaise vue. Bien que leur ouïe fine leur permette de naviguer dans le monde sans aucun problème majeur, ils sont loin d'être la race la plus perspicace du continent. Les marmotins subissent un malus -4 aux jets de Vigilance à cause de cette mauvaise vision. Si un marmotin est appelé à faire un jet de Vigilance basé uniquement sur l'ouïe (comme entendre des pas à l'étage ou écouter des loups qui grognent), cette pénalité ne s'applique pas."
+    ],
+    "particularité": [
+      "Cœur de Lion",
+      "Physiologie étrange",
+      "Dents de rasoir",
+      "Mauvaise vue"
+    ],
+    "source": "Le livre des contes"
+  },
+  {
+    "nom": "Vampire",
+    "desc": [
+      "Le Vampire a une apparence Humaine, il obtient donc les perceptions raciale selon les Régions où il se trouve, mais pas les bonus raciaux des Humains. Cependant, si sa nature est révélée, notamment s'il utilise de la magie ou l'un de ses attributs vampiriques, il est Craint et Fui, seul des personnes réussissant un jet de courage pourront rester.",
+      "Le vampire ne subit aucune pénalité en lumière tamisée, et a un Malus de -3 dan le noir complet. En parallèle, le monde lui apparaît différemment, il peut saisir certaines traces tout comme un sorceleur (mais pas olfactif)",
+      "Invisible à la Magie divinatoire, il ne peut être détecté même par de puissants sortilèges. Il a ainsi accès à la Magie Vampirique et utilise la télépathie de manière passive, notamment avec ses Goules.",
+      "Le corps du vampire est non inflammable (il peut être cependant aveuglé), et se régénère de manière infinie (+5PS par round). Il peut faire pousser des griffes terrifiantes et inflige 4d6 dégâts (saignement 25%), cela s'accompagne d'une gueule bestiale qui peut infliger 3d6 (saignement 50%). S'il utilise ces attributs, il sera Craint et Fui par les personnes environnantes.",
+      "Après plusieurs décennies passées sur cette terre, le vampire est plus réceptif pour apprendre et s'intéresser. Les compétences complexes comptent comme simple"
+    ],
+    "particularité": [
+      "Digne de confiance",
+      "Sens Vampiriques",
+      "Être Surnaturel",
+      "Corps de Vampire",
+      "Des années d'expériences"
+    ],
+    "source": "Fan Made",
+    "compts": ["DED", "EDU", "SUR", "FUR", "PSY", "INT", "INC"],
+    "exclusive": {
+      "nom": "Étreinte",
+      "caract": "COR",
+      "desc": "Après avoir été étreint, le vampire étreint à son tour pour se nourrir. Il s'agit plus d'une addiction qu'une obligation pour survivre. Afin de se saisir d'une cible, le vampire fait un jet d'étreinte et se nourrir en opposition à l'esquive ou bagarre de la victime. Il se régénère de son niveau d'étreinte x2 avec le sang de sa victime.\n\nAu niveau 1, la probabilité d'addiction au Sang est de 97%. À chaque niveau, cette probabilité baisse de 8%, donc au niveau 10, la probabilité est de 15%.\n\nSi le Vampire entre en addiction, il devra se nourrir dans la journée qui suit et subira 25% de malus pour résister à son addiction.",
+      "complexe": false
+    },
+    "vigueur": 10,
+    "magie": "Vampire",
+    "equiToChose": 3,
+    "equipement": [
+      {
+        "nom": "100 couronnes de composants",
+        "type": "Autre"
+      },
+      {
+        "nom": "Bourse de 50 couronnes",
+        "type": "Item",
+        "id": "Bourse"
+      },
+      {
+        "nom": "Instruments Chirurgicaux",
+        "type": "Item"
+      },
+      {
+        "nom": "Instrument",
+        "type": "Item"
+      },
+      {
+        "nom": "Nécessaire d'écriture",
+        "type": "Item"
+      },
+      {
+        "nom": "Outils d'artisan",
+        "type": "Item"
+      },
+      {
+        "nom": "Ensemble d'alchimie",
+        "type": "Item"
+      },
+      {
+        "nom": "Vêtements à la mode",
+        "type": "Item"
+      },
+      {
+        "nom": "Outils de voleur",
+        "type": "Item"
+      },
+      {
+        "nom": "Ustensiles de cuisine",
+        "type": "Item"
+      }
+    ],
+    "gold": 120
+  }
+]

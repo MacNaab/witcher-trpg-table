@@ -1,0 +1,174 @@
+{
+  "Chance": [
+    {
+      "nom": "Pactole",
+      "desc": "Un événement inattendu ou un coup de chance vous a permis d’obtenir 1d10 x 100 couronnes."
+    },
+    {
+      "nom": "Enseignement",
+      "desc": "Un professeur vous a dispensé des leçons. Gagnez +1 dans une compétence d’Intelligence ou obtenez une nouvelle compétence d’Intelligence avec un bonus de +2."
+    },
+    {
+      "nom": "Faveur d’un noble",
+      "desc": "Un noble vous doit une faveur pour une raison quelconque."
+    },
+    {
+      "nom": "Maître d’armes",
+      "desc": "Vous vous êtes entraîné avec un soldat. Gagnez +1 dans une compétence de combat ou obtenez une nouvelle compétence de combat avec un bonus de +2."
+    },
+    {
+      "nom": "Faveur d’un sorceleur",
+      "desc": "Vous avez un jour rencontré un sorceleur qui vous doit à présent une faveur"
+    },
+    {
+      "nom": "Entente avec des bandits",
+      "desc": "Vous avez fréquenté une bande de brigands. Vous pouvez leur demander une faveur une fois par mois."
+    },
+    {
+      "nom": "Dressage d’animal sauvage",
+      "desc": "Vous avez apprivoisé un animal sauvage lors d’un périple dans une région reculée. Lancez 1d10. 1-7 : chien sauvage (voir page 310). 8-10 : loup (voir page 286)."
+    },
+    {
+      "nom": "Faveur d’un mage",
+      "desc": "Un mage vous doit une faveur depuis que vous lui êtes venu en aide."
+    },
+    {
+      "nom": "Béni par un prêtre",
+      "desc": "VVous avez été adoubé dans un royaume quelconque pour vous récompenser de votre bravoure. Vous bénéficiez d’un bonus de réputation de +2 et êtes reconnu comme un chevalier dans le royaume en question."
+    },
+    {
+      "nom": "Adoubé",
+      "desc": "Vous avez été adoubé dans un royaume quelconque pour vous récompenser de votre bravoure. Vous bénéficiez d’un bonus de réputation de +2 et êtes reconnu comme un chevalier dans le royaume en question."
+    }
+  ],
+  "Malchance": [
+    {
+      "nom": "Dettes",
+      "desc": "Vous êtes endetté à hauteur de 1d10 x 100 couronnes."
+    },
+    {
+      "nom": "Emprisonnement",
+      "desc": "Vous avez été emprisonné pendant 1d10 mois à cause d’un crime ou de fausses accusations."
+    },
+    {
+      "nom": "Addiction",
+      "desc": "Vous avez succombé à une addiction (choisissez laquelle). Voyez l’encart dédié aux règles d’addiction."
+    },
+    {
+      "nom": "Mort d’un ami, d’un amant ou d’un parent",
+      "desc": "Lancez 1d10. 1-5 : il est mort dans un accident. 6-8 : il a été tué par des monstres. 9-10 : il a été assassiné par des bandits."
+    },
+    {
+      "nom": "Fausse accusation",
+      "desc": "Lancez 1d10. 1-3 : vous êtes accusé de vol. 4-5: accusé de lâcheté ou de traîtrise. 6-8 : accusé de meurtre. 9 : accusé de viol. 10 : accusé de pratiques magiques illégales."
+    },
+    {
+      "nom": "Recherché par les autorités",
+      "desc": "Lancez 1d10. 1-3 : des gardes veulent votre peau. 4-6 : une petite ville vous recherche. 7-8 : recherché dans une grande ville. 9-10 : un royaume entier est à vos trousses."
+    },
+    {
+      "nom": "Trahison",
+      "desc": "Lancez 1d10. 1-3 : vous avez été victime d’un chantage. 4-7 : on a révélé un de vos secrets. 8-10 : une personne très proche vous a trahi."
+    },
+    {
+      "nom": "Accident",
+      "desc": "Lancez 1d10. 1-4 : vous avez été défiguré. Changez votre statut social en craint. 5-6 : vous avez mis 1d10 mois à vous rétablir. 7-8 : 1d10 mois ont disparu de votre mémoire. 9-10 : vous souffrez de cauchemars horribles (70 % de chances chaque fois que vous dormez)."
+    },
+    {
+      "nom": "Handicap mental ou physique",
+      "desc": "Lancez 1d10. 1-3 : vous avez été empoisonné, perdez 5 PS permanents. 4-7 : vous souffrez de crises d’angoisse et devez réaliser des jets de sauvegarde d’étourdissement (tous les 5 rounds) dans les situations stressantes. 8-10: vous souffrez d’une psychose terrible. Vous entendez des voix (contrôlées par le MJ) et votre comportement peut soudain devenir violent, irrationnel ou dépressif."
+    },
+    {
+      "nom": "Maudit",
+      "desc": "Vous avez été frappé d’une malédiction. Voyez la section consacrée aux Malédictions page 230 pour plus de détails."
+    }
+  ],
+  "Allier": {
+    "Statut": [
+      "Chasseur de primes",
+      "Mage",
+      "Mentor ou professeur",
+      "Ami d’enfance",
+      "Artisan",
+      "Un vieil ennemi",
+      "Duc/duchesse",
+      "Prêtre/prêtresse",
+      "Soldat",
+      "Barde"
+    ],
+    "Rencontre": [
+      "Vous lui avez sauvé la vie",
+      "Vous vous êtes rencontrés dans une taverne",
+      "Il vous a sauvé la vie",
+      "Il vous a engagé pour une tâche quelconque",
+      "Vous avez été pris au piège ensemble",
+      "Vous avez été forcés de travailler ensemble",
+      "Vous l’avez engagé pour une tâche quelconque",
+      "Vous vous êtes liés d’amitié au cours d’une beuverie",
+      "Vous vous êtes rencontrés lors d’un voyage",
+      "Vous avez combattu ensemble"
+    ]
+  },
+  "Ennemi": {
+    "Statut": [
+      "Ancien ami",
+      "Ancien amant",
+      "Parent",
+      "Ennemi d'enfance",
+      "Membre d'une secte",
+      "Barde",
+      "Soldat",
+      "Bandit",
+      "Duc/duchesse",
+      "Mage"
+    ],
+    "Cause": [
+      "Agression",
+      "A causé la perte d’un être cher",
+      "Responsable d’une humiliation terrible",
+      "Responsable d’une malédiction",
+      "Accusé de pratiques magiques illégales",
+      "S’est vu repousser ses avances",
+      "A infligé une horrible blessure",
+      "Chantage",
+      "Ses/vos plans ont été contrecarrés",
+      "Responsable d’une attaque de monstres"
+    ],
+    "Domaine": ["Politique", "Culturel", "Physique", "Sbires", "Magique"],
+    "Rivalité": [
+      "Lui ou vous avez oublié cet épisode",
+      "Lui ou vous prévoyez un mauvais coup",
+      "Lui ou vous attaquerez en cas de rencontre",
+      "Lui ou vous vous mettez en chasse pour obtenir réparation",
+      "Lui ou vous voulez la tête de votre ennemi"
+    ]
+  },
+  "Amour": {
+    "Tragédie": [
+      "Votre amant a été capturé par des bandits il y a quelque temps. Il est toujours leur prisonnier.",
+      "Un jour, votre amant a disparu dans des circonstances mystérieuses. Vous ne savez pas où il est parti.",
+      "Votre amant a été emprisonné ou exilé pour des crimes qu’il n’avait pas commis.",
+      "Une puissante malédiction vous a enlevé votre amant.",
+      "Il s’est passé quelque chose entre votre amant et vous. Vous avez été forcé de le tuer.",
+      "Votre amant s’est suicidé. Vous ne connaissez pas forcément la raison de son geste.",
+      "Votre bien-aimé s’est fait capturer par un noble qui en a fait son amant ou sa maîtresse.",
+      "Un rival s’est interposé entre vous et votre amant dont il a gagné l’affection.",
+      "Des monstres ont tué votre amant. C’était un accident ou un plan soigneusement huilé.",
+      "Votre amant est un mage, un sorceleur ou un monstre intelligent. Votre relation est condamnée d’avance."
+    ],
+    "Problème": [
+      "La famille ou les amis de votre amant vous haïssent et désapprouvent votre relation.",
+      "Votre amant se prostitue pour gagner sa vie et refuse d’abandonner son travail.",
+      "Votre amant souffre d’une malédiction mineure qui lui cause d’horribles cauchemars ou des crises de paranoïa.",
+      "Votre amant couche à droite à gauche, et bien que vous l’ayez découvert, il refuse d’arrêter.",
+      "Votre amant éprouve une jalousie maladive et ne supporte pas de vous savoir en compagnie de rivaux potentiels.",
+      "Vous vous battez sans cesse et rien ne peut vous arrêter. Vos disputes se terminent toujours par des hurlements.",
+      "Vous êtes des rivaux sur le plan professionnel. Vous ne cessez de vous voler mutuellement des clients.",
+      "L’un de vous est un humain, l’autre est un non-humain, ce qui vous complique la vie.",
+      "Votre amant est déjà marié. Il veut ou ne veut pas quitter son conjoint.",
+      "Votre famille ou vos amis détestent votre amant et désapprouvent votre relation."
+    ],
+    "Débauche": "Ce résultat signifie que vous passez votre temps à coucher à droite à gauche et à vous payer les services de prostituées. Si vous n’avez pas fait attention, vous avez probablement semé une collection de bâtards dans votre sillage.",
+    "Idylle": "Vous aurez peut-être la chance de trouver l’amour véritable et de nager dans le bonheur, mais n’y comptez pas trop."
+  }
+}

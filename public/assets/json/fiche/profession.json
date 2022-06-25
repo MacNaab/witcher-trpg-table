@@ -1,0 +1,649 @@
+[
+  {
+    "nom": "Artisan",
+    "desc": "Rafistolage (TECH)\nUn artisan talentueux peut effectuer des réparations de fortune sur une armure ou une arme pour qu'elle reste utilisable le temps du combat. Il pourra par exemple nouer les deux parties d'une corde d'arc rompue, affûter la lame d'une épée brisée ou clouer une plaque de métal sur un bouclier fendu. L'Artisan consacre un tour à cette action. Il effectue alors un jet de Rafistolage dont le SD est égal au SD de Fabrication de l'objet –3. S'il réussit, l'armure brisée regagne la moitié de son PA total, ou la moitié de sa Fiabilité dans le cas d'une épée ou d'un bouclier. Tant qu'elle n'est pas correctement réparée à l'aide d'une forge, une arme rafistolée n'inflige que la moitié des dégâts normaux.",
+    "source": "Livre de base",
+    "compts": [
+      "CRUE",
+      "EDU",
+      "NEG",
+      "ATH",
+      "PHY",
+      "RES",
+      "BEA",
+      "PER",
+      "ALC",
+      "ART"
+    ],
+    "exclusive": {
+      "nom": "Rafistolage",
+      "caract": "TECH",
+      "desc": "Un artisan talentueux peut effectuer des réparations de fortune sur une armure ou une arme pour qu'elle reste utilisable le temps du combat. Il pourra par exemple nouer les deux parties d'une corde d'arc rompue, affûter la lame d'une épée brisée ou clouer une plaque de métal sur un bouclier fendu. L'Artisan consacre un tour à cette action. Il effectue alors un jet de Rafistolage dont le SD est égal au SD de Fabrication de l'objet –3. S'il réussit, l'armure brisée regagne la moitié de son PA total, ou la moitié de sa Fiabilité dans le cas d'une épée ou d'un bouclier. Tant qu'elle n'est pas correctement réparée à l'aide d'une forge, une arme rafistolée n'inflige que la moitié des dégâts normaux.",
+      "complexe": false
+    },
+    "vigueur": 0,
+    "magie": false,
+    "equiToChose": 5,
+    "equipement": [
+      {
+        "nom": "50 couronnes de composants",
+        "type": "Autre"
+      },
+      {
+        "nom": "Ensemble d'alchimie",
+        "type": "Item"
+      },
+      {
+        "nom": "Épée longue de fer",
+        "type": "Arme"
+      },
+      {
+        "nom": "Forge portable",
+        "type": "Item"
+      },
+      {
+        "nom": "Masse d'armes",
+        "type": "Arme"
+      },
+      {
+        "nom": "Outils d'artisan",
+        "type": "Item"
+      },
+      {
+        "nom": "Outils de marchand",
+        "type": "Item"
+      },
+      {
+        "nom": "Coffre en bois",
+        "type": "Item"
+      },
+      {
+        "nom": "Sablier heure",
+        "type": "Item"
+      },
+      {
+        "nom": "Sablier minute",
+        "type": "Item"
+      },
+      {
+        "nom": "Cadenas",
+        "type": "Item"
+      }
+    ],
+    "gold": 840
+  },
+  {
+    "nom": "Barde",
+    "desc": "Prestation (EMP)\nLe Barde est un compagnon des plus précieux, surtout quand le groupe commence à manquer d'argent. Il peut réaliser un jet de Prestation et se donner en spectacle sur la place de la ville durant une heure. Le résultat du jet correspond au montant qu'il a récolté en se produisant dans la rue. Un échec critique peut diminuer le résultat du jet, et si le total devient négatif, cela signifie que le Barde n'a pas réussi à recueillir une seule pièce. Il se fait en plus huer par les habitants pour sa piètre performance et subit un malus de –2 en Charisme lorsqu'il interagit avec les citadins jusqu'à la fin de la journée.",
+    "source": "Livre de base",
+    "compts": ["CRUE", "ETI", "BEA", "CHA", "DUP", "PER", "PSY", "REP", "SED"],
+    "exclusive": {
+      "nom": "Prestation",
+      "caract": "EMP",
+      "desc": "Le Barde est un compagnon des plus précieux, surtout quand le groupe commence à manquer d'argent. Il peut réaliser un jet de Prestation et se donner en spectacle sur la place de la ville durant une heure. Le résultat du jet correspond au montant qu'il a récolté en se produisant dans la rue. Un échec critique peut diminuer le résultat du jet, et si le total devient négatif, cela signifie que le Barde n'a pas réussi à recueillir une seule pièce. Il se fait en plus huer par les habitants pour sa piètre performance et subit un malus de –2 en Charisme lorsqu'il interagit avec les citadins jusqu'à la fin de la journée.",
+      "complexe": false
+    },
+    "vigueur": 0,
+    "magie": false,
+    "equiToChose": 5,
+    "equipement": [
+      {
+        "nom": "Bourse",
+        "type": "Item"
+      },
+      {
+        "nom": "Dague",
+        "type": "Arme"
+      },
+      {
+        "nom": "Flasque d'alcool",
+        "id": "Alcahest",
+        "type": "Item"
+      },
+      {
+        "nom": "Fourreau de jarretière",
+        "type": "Item",
+        "id": "Fourreau, jarretière"
+      },
+      {
+        "nom": "Jeu de gwynt",
+        "type": "Item"
+      },
+      {
+        "nom": "Journal cadenassé",
+        "type": "Item",
+        "id": "Journal/livre"
+      },
+      {
+        "nom": "Miroir de poche",
+        "type": "Item"
+      },
+      {
+        "nom": "Parfum",
+        "type": "Item"
+      },
+      {
+        "nom": "Piste de dés",
+        "type": "Item"
+      },
+      {
+        "nom": "Instrument",
+        "type": "Item"
+      }
+    ],
+    "gold": 840
+  },
+  {
+    "nom": "Criminel",
+    "desc": "Paranoïa exercée (INT)\nQu'ils soient assassins, voleurs, faussaires ou contrebandiers, tous les hors-la-loi ont en commun une paranoïa constante qui leur permet d'éviter les problèmes. Lorsqu'un Criminel arrive à 10 m d'un piège (ce qui inclut les pièges expérimentaux, les chausse-trappes des Hommes d'armes et les embuscades), il effectue immédiatement un jet de Paranoïa exercée dont le SD est égal à celui requis pour déceler le piège, au résultat du jet de Furtivité du groupe posté en embuscade ou au SD fixé par le MJ. Même s'il n'arrive pas à repérer le piège, il sentira au fond de lui que quelque chose ne va pas.",
+    "source": "Livre de base",
+    "compts": [
+      "CRUE",
+      "VIG",
+      "LAM",
+      "ADR",
+      "ATH",
+      "FUR",
+      "DUP",
+      "CON",
+      "CRO",
+      "INT"
+    ],
+    "exclusive": {
+      "nom": "Paranoïa exercée",
+      "caract": "INT",
+      "desc": "Qu'ils soient assassins, voleurs, faussaires ou contrebandiers, tous les hors-la-loi ont en commun une paranoïa constante qui leur permet d'éviter les problèmes. Lorsqu'un Criminel arrive à 10 m d'un piège (ce qui inclut les pièges expérimentaux, les chausse-trappes des Hommes d'armes et les embuscades), il effectue immédiatement un jet de Paranoïa exercée dont le SD est égal à celui requis pour déceler le piège, au résultat du jet de Furtivité du groupe posté en embuscade ou au SD fixé par le MJ. Même s'il n'arrive pas à repérer le piège, il sentira au fond de lui que quelque chose ne va pas.",
+      "complexe": false
+    },
+    "vigueur": 0,
+    "magie": false,
+    "equiToChose": 5,
+    "equipement": [
+      {
+        "nom": "Chloroforme",
+        "type": "Potion"
+      },
+      {
+        "nom": "Coup-de-poing",
+        "type": "Arme"
+      },
+      {
+        "nom": "Couteaux de lancer x5",
+        "type": "Arme",
+        "id": "Couteau de lancer"
+      },
+      {
+        "nom": "Dés pipés",
+        "type": "Item"
+      },
+      {
+        "nom": "Fourreau de manche",
+        "type": "Item",
+        "id": "Fourreau, manche"
+      },
+      {
+        "nom": "Lanterne sourde",
+        "type": "Item",
+        "id": "Lanterne, sourde"
+      },
+      {
+        "nom": "Outils de voleur",
+        "type": "Item"
+      },
+      {
+        "nom": "Poche secrète",
+        "type": "Item"
+      },
+      {
+        "nom": "Sacoche",
+        "type": "Item"
+      },
+      {
+        "nom": "Stylet",
+        "type": "Arme"
+      }
+    ],
+    "gold": 700
+  },
+  {
+    "nom": "Docteur",
+    "desc": "Mains thérapeutiques (TECH)\nN'importe qui est capable d'appliquer un onguent ou de bander une blessure, mais seul un Docteur a reçu la formation nécessaire pour accomplir des actes chirurgicaux d'une grande complexité. Un Docteur avec Mains thérapeutiques est le seul personnage capable de soigner une blessure critique. Pour soigner une blessure critique, il doit réussir un nombre de jets de Mains thérapeutiques qui dépend de la gravité de cette blessure. Le SD du jet est aussi basé sur ce paramètre. Mains thérapeutiques peut aussi servir lors des actions de Premiers soins.",
+    "source": "Livre de base",
+    "compts": [
+      "DED",
+      "ETI",
+      "NEG",
+      "SUR",
+      "LAM",
+      "CHA",
+      "PSY",
+      "ALC",
+      "COU",
+      "RCO"
+    ],
+    "exclusive": {
+      "nom": "Mains thérapeutiques",
+      "caract": "TECH",
+      "desc": "N'importe qui est capable d'appliquer un onguent ou de bander une blessure, mais seul un Docteur a reçu la formation nécessaire pour accomplir des actes chirurgicaux d'une grande complexité. Un Docteur avec Mains thérapeutiques est le seul personnage capable de soigner une blessure critique. Pour soigner une blessure critique, il doit réussir un nombre de jets de Mains thérapeutiques qui dépend de la gravité de cette blessure. Le SD du jet est aussi basé sur ce paramètre. Mains thérapeutiques peut aussi servir lors des actions de Premiers soins.",
+      "complexe": false
+    },
+    "vigueur": 0,
+    "magie": false,
+    "equiToChose": 5,
+    "equipement": [
+      {
+        "nom": "Bougies x10",
+        "type": "Item",
+        "id": "Bougies (×5)"
+      },
+      {
+        "nom": "Couverture",
+        "type": "Item",
+        "id": "Bache"
+      },
+      {
+        "nom": "Dague",
+        "type": "Arme"
+      },
+      {
+        "nom": "Fluides stérilisants x10",
+        "type": "Potion",
+        "id": "Fluide stérilisant"
+      },
+      {
+        "nom": "Grande tente",
+        "type": "Item"
+      },
+      {
+        "nom": "Herbes engourdissantes x10",
+        "type": "Potion",
+        "id": "Herbes engourdissantes"
+      },
+      {
+        "nom": "Instruments chirurgicaux",
+        "type": "Item"
+      },
+      {
+        "nom": "Nécessaire d'écriture",
+        "type": "Item"
+      },
+      {
+        "nom": "Poudre de coagulation x10",
+        "type": "Potion",
+        "id": "Poudre de coagulation"
+      },
+      {
+        "nom": "Sablier heure",
+        "type": "Item"
+      },
+      {
+        "nom": "Sablier minute",
+        "type": "Item"
+      }
+    ],
+    "gold": 1050
+  },
+  {
+    "nom": "Homme d'armes",
+    "desc": "Dur à cuire (COR)\nLes véritables Hommes d'armes issus par exemple des Stries Bleues témériennes ou de la brigade Impera de Nilfgaard sont des vétérans endurcis qui n'abandonnent jamais et ne se rendent pas. Lorsque les points de santé d'un Homme d'armes tombent à 0 ou moins, il peut effectuer un jet de Dur à cuire dont le SD est égal au double de son score de santé négatif. S'il échoue, il entre en état de mort imminente selon les règles habituelles. S'il le réussit, il peut continuer à se battre comme s'il avait atteint son seuil de blessures. Lorsqu'il subit des dégâts, il réalise un nouveau jet dont le SD est calculé selon son nouveau score de santé.",
+    "source": "Livre de base",
+    "compts": [
+      "SUR",
+      "ESQ",
+      "PHY",
+      "COU",
+      "INT",
+      "ARB",
+      "ARC",
+      "ATH",
+      "BAG",
+      "BAT",
+      "EQU",
+      "ESC",
+      "LAM",
+      "MEL",
+      "TAC"
+    ],
+    "exclusive": {
+      "nom": "Dur à cuire",
+      "caract": "COR",
+      "desc": "Les véritables Hommes d'armes issus par exemple des Stries Bleues témériennes ou de la brigade Impera de Nilfgaard sont des vétérans endurcis qui n'abandonnent jamais et ne se rendent pas. Lorsque les points de santé d'un Homme d'armes tombent à 0 ou moins, il peut effectuer un jet de Dur à cuire dont le SD est égal au double de son score de santé négatif. S'il échoue, il entre en état de mort imminente selon les règles habituelles. S'il le réussit, il peut continuer à se battre comme s'il avait atteint son seuil de blessures. Lorsqu'il subit des dégâts, il réalise un nouveau jet dont le SD est calculé selon son nouveau score de santé.",
+      "complexe": false
+    },
+    "vigueur": 0,
+    "magie": false,
+    "equiToChose": 5,
+    "equipement": [
+      {
+        "nom": "Arbalète et carreaux x20",
+        "type": "Arme",
+        "id": "Arbalète"
+      },
+      {
+        "nom": "Bocle d'acier",
+        "type": "Armure"
+      },
+      {
+        "nom": "Brigandine",
+        "type": "Armure"
+      },
+      {
+        "nom": "Camail",
+        "type": "Armure"
+      },
+      {
+        "nom": "Couteaux de lancer x5",
+        "type": "Arme",
+        "id": "Couteau de lancer"
+      },
+      {
+        "nom": "Hache de bataille",
+        "type": "Arme"
+      },
+      {
+        "nom": "Kord",
+        "type": "Arme"
+      },
+      {
+        "nom": "Lance",
+        "type": "Arme"
+      },
+      {
+        "nom": "Pantalon renforcé",
+        "type": "Armure"
+      },
+      {
+        "nom": "Sacoche",
+        "type": "Item"
+      }
+    ],
+    "gold": 1050
+  },
+  {
+    "nom": "Mage",
+    "desc": "Exercice de la magie (INT)\nPour devenir pleinement mage, une personne sensible à la magie doit apprendre les bases de cet art au sein d'une académie de magie. Un Mage peut réaliser un jet d'Exercice de la magie dès qu'il se trouve face à un phénomène magique ou un sort inconnu, ou encore lorsqu'il analyse une théorie de la magie. Le SD du jet est fixé par le MJ. En cas de réussite, le Mage apprend tout ce qu'il y a à savoir sur le phénomène en question. Un jet d'Exercice de la magie peut aussi servir à détecter la magie en cours d'utilisation ou les spectres, selon le même principe qu'un jet de Vigilance.",
+    "source": "Livre de base",
+    "compts": [
+      "EDU",
+      "ETI",
+      "BAT",
+      "PSY",
+      "SED",
+      "STY",
+      "ENV",
+      "INC",
+      "RMA",
+      "RIT"
+    ],
+    "exclusive": {
+      "nom": "Exercice de la magie",
+      "caract": "INT",
+      "desc": "Pour devenir pleinement mage, une personne sensible à la magie doit apprendre les bases de cet art au sein d'une académie de magie. Un Mage peut réaliser un jet d'Exercice de la magie dès qu'il se trouve face à un phénomène magique ou un sort inconnu, ou encore lorsqu'il analyse une théorie de la magie. Le SD du jet est fixé par le MJ. En cas de réussite, le Mage apprend tout ce qu'il y a à savoir sur le phénomène en question. Un jet d'Exercice de la magie peut aussi servir à détecter la magie en cours d'utilisation ou les spectres, selon le même principe qu'un jet de Vigilance.",
+      "complexe": false
+    },
+    "vigueur": 5,
+    "magie": {
+      "sort": 5,
+      "invocation": 0,
+      "rituel": 1,
+      "envoutement": 1
+    },
+    "equiToChose": 5,
+    "equipement": [
+      {
+        "nom": "100 couronnes de composants",
+        "type": "Autre"
+      },
+      {
+        "nom": "Bâton",
+        "type": "Arme"
+      },
+      {
+        "nom": "Bourse",
+        "type": "Item"
+      },
+      {
+        "nom": "Dague",
+        "type": "Arme"
+      },
+      {
+        "nom": "Fourreau de jarretière",
+        "type": "Item",
+        "id": "Fourreau, jarretière"
+      },
+      {
+        "nom": "Journal",
+        "type": "Item",
+        "id": "Journal/livre"
+      },
+      {
+        "nom": "Miroir de poche",
+        "type": "Item"
+      },
+      {
+        "nom": "Nécessaire d'écriture",
+        "type": "Item"
+      },
+      {
+        "nom": "Sablier heure",
+        "type": "Item"
+      },
+      {
+        "nom": "Sablier minute",
+        "type": "Item"
+      },
+      {
+        "nom": "Trousse de maquillage",
+        "type": "Item"
+      }
+    ],
+    "gold": 1400
+  },
+  {
+    "nom": "Marchand",
+    "desc": "Grand voyageur (INT)\nUn marchand ordinaire gagne sa vie grâce à son échoppe qui attire les clients des alentours. En revanche, un commerçant itinérant part à la rencontre de ses clients. Il parcourt les routes du monde entier, ce qui lui permet d'en apprendre beaucoup sur les peuples qu'il croise. Un Marchand peut effectuer un jet de Grand voyageur chaque fois qu'il désire connaître une anecdote concernant un objet, une culture ou une région particulière. Le MJ fixe le SD du jet. Si ce dernier est réussi, le Marchand se rappelle la réponse à la question posée grâce aux souvenirs datant de son dernier voyage dans le lieu concerné.",
+    "source": "Livre de base",
+    "compts": ["CRUE", "EDU", "NEG", "LAM", "CHA", "JEU", "PER", "PSY", "RCO"],
+    "exclusive": {
+      "nom": "Grand voyageur",
+      "caract": "COR",
+      "desc": "Un marchand ordinaire gagne sa vie grâce à son échoppe qui attire les clients des alentours. En revanche, un commerçant itinérant part à la rencontre de ses clients. Il parcourt les routes du monde entier, ce qui lui permet d'en apprendre beaucoup sur les peuples qu'il croise. Un Marchand peut effectuer un jet de Grand voyageur chaque fois qu'il désire connaître une anecdote concernant un objet, une culture ou une région particulière. Le MJ fixe le SD du jet. Si ce dernier est réussi, le Marchand se rappelle la réponse à la question posée grâce aux souvenirs datant de son dernier voyage dans le lieu concerné.",
+      "complexe": false
+    },
+    "vigueur": 0,
+    "magie": false,
+    "equiToChose": 3,
+    "equipement": [
+      {
+        "nom": "Arbalète et carreaux x20",
+        "type": "Arme",
+        "id": "Arbalète"
+      },
+      {
+        "nom": "Dague",
+        "type": "Arme"
+      },
+      {
+        "nom": "Grande tente",
+        "type": "Item"
+      },
+      {
+        "nom": "Journal",
+        "type": "Item",
+        "id": "Journal/livre"
+      },
+      {
+        "nom": "Nécessaire d'écriture",
+        "type": "Item"
+      },
+      {
+        "nom": "Outils de marchand",
+        "type": "Item"
+      }
+    ],
+    "equipmentStatic": [
+      {
+        "nom": "Charrette",
+        "type": "Autre",
+        "desc": "Une mule attelée à une charrette contenant 1 000 couronnes d’objets disponibles partout ou communs."
+      }
+    ],
+    "gold": 1260
+  },
+  {
+    "nom": "Prêtre",
+    "desc": "Initié des dieux (EMP)\nLes temples du monde entier sont bien souvent des lieux chaleureux qui aident les fidèles et accueillent les nouveaux convertis. Un Prêtre peut réaliser un jet d'Initié des dieux dont le SD est fixé par le MJ dans les églises de sa religion pour obtenir un hébergement gratuit, des soins et d'autres services, à la discrétion du MJ. Initié des dieux fonctionne aussi auprès des croyants de la même confession, bien qu'ils aient moins à offrir qu'un temple. N'oubliez pas qu'Initié des dieux ne fonctionne jamais avec les membres d'une autre religion.",
+    "source": "Livre de base",
+    "compts": [
+      "ENS",
+      "SUR",
+      "CHA",
+      "COM",
+      "PSY",
+      "PSO",
+      "COU",
+      "ENV",
+      "INC",
+      "RIT"
+    ],
+    "exclusive": {
+      "nom": "Initié des dieux",
+      "caract": "EMP",
+      "desc": "Les temples du monde entier sont bien souvent des lieux chaleureux qui aident les fidèles et accueillent les nouveaux convertis. Un Prêtre peut réaliser un jet d'Initié des dieux dont le SD est fixé par le MJ dans les églises de sa religion pour obtenir un hébergement gratuit, des soins et d'autres services, à la discrétion du MJ. Initié des dieux fonctionne aussi auprès des croyants de la même confession, bien qu'ils aient moins à offrir qu'un temple. N'oubliez pas qu'Initié des dieux ne fonctionne jamais avec les membres d'une autre religion.",
+      "complexe": false
+    },
+    "vigueur": 2,
+    "magie": {
+      "sort": 0,
+      "invocation": 2,
+      "rituel": 2,
+      "envoutement": 2
+    },
+    "equiToChose": 5,
+    "equipement": [
+      {
+        "nom": "100 couronnes de composants",
+        "type": "Autre"
+      },
+      {
+        "nom": "Bâton",
+        "type": "Arme"
+      },
+      {
+        "nom": "Dague",
+        "type": "Arme"
+      },
+      {
+        "nom": "Ensemble d'alchimie",
+        "type": "Item"
+      },
+      {
+        "nom": "Fluides stérilisants x5",
+        "type": "Potion",
+        "id": "Fluide stérilisant"
+      },
+      {
+        "nom": "Herbes engourdissantes x5",
+        "type": "Potion",
+        "id": "Herbes engourdissantes"
+      },
+      {
+        "nom": "Instruments chirurgicaux",
+        "type": "Item"
+      },
+      {
+        "nom": "Poudre de coagulation x5",
+        "type": "Potion",
+        "id": "Poudre de coagulation"
+      },
+      {
+        "nom": "Sablier heure",
+        "type": "Item"
+      },
+      {
+        "nom": "Sablier minute",
+        "type": "Item"
+      },
+      {
+        "nom": "Symbole sacré",
+        "type": "Item"
+      }
+    ],
+    "gold": 525
+  },
+  {
+    "nom": "Noble",
+    "desc": "Qu'il soit noble de naissance ou qu'il ait acquis ses  titres en  accomplissant  des  faits  d'armes, l'aristocrate affiche son statut privilégié afin que nul  ne  l'ignore.  Les  paysans  peuvent  bien maudire  les  familles  nobles  et  les  ridiculiser  à l'abris  dans  leurs  chaumières,  mais  aucun d'entre  eux  n'oserait  les  insulter  en  face.  Un Noble ajoute son niveau de Prestige à son score de  Réputation  lorsqu'il  se  trouvve  sur  sa  terre natale  ou  dans  un  pays  allié.  Lorsqu'il  se  rend dans  un  territoire  ouvertement  en  guerre  avec son pays d'origine ou qui conserve une position de  neutralité,  il  n'ajoute  que  la  moitié  de  son niveau de Prestige.",
+    "source": "Seigneurs et fiefs",
+    "compts": [
+      "COM",
+      "DUP",
+      "EDU",
+      "EQUI",
+      "ETI",
+      "PER",
+      "PSY",
+      "STY",
+      "VIG",
+      "ATH",
+      "EQU",
+      "TAC"
+    ],
+    "exclusive": {
+      "nom": "Prestige",
+      "caract": "",
+      "desc": "Qu'il soit noble de naissance ou qu'il ait acquis ses  titres en  accomplissant  des  faits  d'armes, l'aristocrate affiche son statut privilégié afin que nul  ne  l'ignore.  Les  paysans  peuvent  bien maudire  les  familles  nobles  et  les  ridiculiser  à l'abris  dans  leurs  chaumières,  mais  aucun d'entre  eux  n'oserait  les  insulter  en  face.  Un Noble ajoute son niveau de Prestige à son score de  Réputation  lorsqu'il  se  trouvve  sur  sa  terre natale  ou  dans  un  pays  allié.  Lorsqu'il  se  rend dans  un  territoire  ouvertement  en  guerre  avec son pays d'origine ou qui conserve une position de  neutralité,  il  n'ajoute  que  la  moitié  de  son niveau de Prestige.",
+      "complexe": false
+    },
+    "vigueur": 0,
+    "magie": false,
+    "equiToChose": 5,
+    "equipement": [
+      {
+        "nom": "Bijou",
+        "type": "Item",
+        "id": "Bijoux"
+      },
+      {
+        "nom": "Cheval",
+        "type": "Autre"
+      },
+      {
+        "nom": "Eau de toilette",
+        "type": "Item",
+        "id": "Parfum"
+      },
+      {
+        "nom": "Encre invisible",
+        "type": "Potion"
+      },
+      {
+        "nom": "Esboda",
+        "type": "Arme"
+      },
+      {
+        "nom": "Journal cadenassé",
+        "type": "Item",
+        "id": "Journal/livre"
+      },
+      {
+        "nom": "Nécessaire d'écriture",
+        "type": "Item"
+      },
+      {
+        "nom": "Poche secrète",
+        "type": "Item"
+      },
+      {
+        "nom": "Trousse de maquillage",
+        "type": "Item"
+      },
+      {
+        "nom": "Vêtement à la mode",
+        "type": "Item",
+        "id": "Vêtements à la mode"
+      }
+    ],
+    "gold": 1200
+  }
+]

@@ -1,0 +1,675 @@
+{
+  "patrie": {
+    "nord": [
+      {
+        "nom": "Rédania",
+        "desc": "Le royaume de Redania borde celui de Temeria au Nord. Radovid V, dit Radovid le sévère, fils du roi Vizimir assassiné, en est le souverain. Il n'avait que treize ans à la mort de son père, aussi le Conseil de Régence assura le pouvoir jusqu'à ce que le prince atteigne l'âge de régner. Après son couronnement, Radovid se rendit célèbre par sa brutalité envers quiconque l'avait maltraité ou avait malmené sa mère Hedwige. Les cités majeures de Redania sont la Capitale Tretogor, la ville libre de Novigard à l'autonomie très étendue et Oxenfurt, célèbre pour son université.\n\nRedania est l'un des royaumes nordiques. Sa richesse provient du commerce et de l'agriculture. Le royaume de Redania livre depuis très longtemps une guerre des douanes à Temeria, son principal concurrent au nord. Les services secrets de Redania sont les meilleurs qui soient. Le gouvernement est sous l'influence des magiciennes.",
+        "stat": "+1 Éducation",
+        "bonus": "EDU"
+      },
+      {
+        "nom": "Kaedwen",
+        "desc": "Plus grand des royaumes nordiques, Kaedwen a un climat froid et impitoyable. Son roi, Henselt, se querelle fréquemment avec le monarque d'Aedirn, son voisin. Kaedwen a aussi des frontières communes avec les royaumes de Redania et de Caingorn, ainsi qu'avec les duchés de Vspaden et Creyden. Les Montagnes ardentes, les Monts Kestrel et les Montagnes bleues se trouvent en partie sur le royaume de Kaedwen. La forteresse des sorceleurs de Kaer Morhen se trouve au milieu des pics de ce dernier massif. Plus au sud s'étend le territoire des elfes libérés, une enclave établie par des elfes cherchant refuge après des siècles de guerre avec les humains. Les principales villes de Kaedwen sont Ard Carraigh, sa capitale, et Ban Ard, célèbre pour son école de magie.",
+        "stat": "+1 Résilience",
+        "bonus": "RES"
+      },
+      {
+        "nom": "Téméria",
+        "desc": "Temeria est la patrie des humains, mais aussi des nains, des elfes, des gnomes et des dryades. Après la guerre dévastatrice contre Nilfgaard, de nombreuses régions ont été envahies par toutes sortes de monstres qui ne représentaient pas une menace réelle auparavant, et les routes sont désormais sillonnées par les hors-la-loi et les bandits de grand chemin. Par conséquent, les sorceleurs sont redevenus nécessaires mais ils sont traités avec prudence et mépris et certains continuent à les considérer comme des mutants et des monstres.\n\nL'emblème du royaume de Temeria représente des lys sur fond noir. Ce puissant royaume a pris de l'importance ces dernières années, sous le règne avisé du roi Foltest. Le fleuve Pontar délimite sa frontière avec Redania. Au sud et à l'est se trouvent des chaînes montagneuses et Mahakam, résidence principale des nains et des gnomes. Au-delà de ces sommets se trouvent les terres de Lyria et d'Aedrin. La capitale du royaume de Temeria est Wyzima, sur les rives du lac Wyzima. La deuxième plus grande ville est Maribor. Temeria frappe sa propre monnaie, l'orin. Les religions les plus répandues sont le culte de Melitele et celui du Feu Éternel. L'Ordre de la Rose-Ardente a établi son quartier général et de nombreuses commanderies dans Temeria.",
+        "stat": "+1 Charisme",
+        "bonus": "CHA"
+      },
+      {
+        "nom": "Aedirn",
+        "desc": "Royaume entouré de Temeria et du massif montagneux de Mahakam à l'ouest, et de Lyria au sud. Sa frontière se matérialise par les Montagnes bleues. Les armoiries d'Aedirn représentent un chevron rouge doré sur fond noir et sa capitale est Vengerberg. Le pays a failli disparaître il y a peu, car ses terres méridionales étaient occupées par Nilfgaard et son voisin du nord et soi-disant allié, Kaedwen, avait sournoisement annexé le Haut-Aedirn. Bien que les envahisseurs aient été repoussés et que Kaedwen soit retourné au nord, l'avenir du royaume ne tient toujours qu'à un fil. Les révoltes paysannes ont déchiré le pays et le pouvoir en place est instable.",
+        "stat": "+1 Artisanat",
+        "bonus": "ART"
+      },
+      {
+        "nom": "Lyrie & Rivie",
+        "desc": "Le petit pays de Lyrie et Rivie est enclavé entre le sud des montagnes Bleues et les montagnes de Mahakam. La cour d’été se tient en Lyrie, celle d’hiver en Rivie. Le royaume abrite Dol Angra, un des rares gués permettant de traverser la Iaruga. Avant de tomber sous le joug nilfgaardien, le pays était dirigé par la reine Meve qu’on surnommait souvent la « seconde Calanthe », en référence à la souveraine intransigeante mais respectée de Cintra. À l’heure actuelle, des bandes de combattants riviens rôdent encore dans les bois où ils mènent une guérilla contre l’envahisseur. Ces gens sont connus pour leur ténacité et leurs talents d’arbalétriers, tout autant que pour leur sauvagerie et leur manque de scrupules. Bien que n’étant pas né en Rivie, Geralt de Riv fut adoubé par Meve pour avoir repoussé les forces nilfgaardiennes à un moment critique de la bataille du pont de Iaruga lors de la Seconde Guerre nilfgaardienne. Ironie du sort, le sorceleur mourut en Rivie en défendant des non-humains lors d’un pogrom. J’ai appris qu’il avait été tué par un homme des plus ordinaires armé d’une fourche dénommé Rob.",
+        "stat": "+1 Résistance à la contrainte",
+        "bonus": "RCON"
+      },
+      {
+        "nom": "Kovir & Poviss",
+        "desc": "Kovir et Poviss sont unis sous la férule du roi Tancrède. Leur implication dans la guerre menée contre Nilfgaard se limite à offrir leur soutien financier aux Royaumes du Nord. Bien qu’il fût à l’origine offert à un membre exilé de la famille royale rédanienne, l’arrière-pays de Kovir et Poviss vit son statut s’accroître lorsqu’on découvrit d’énormes veines de minerais rares sur le territoire, en particulier de dimeritium. Le sous-sol abrite également environ 80 % des réserves aurifères des Royaumes du Nord. Le roi Tancrède mit également un point d’honneur à accueillir et mettre à son service les magiciennes rejetées, torturées et parfois emprisonnées par la Rédania.\n\nCertains prétendent que l’université de Lan Exeter, dont le siège se trouve dans la capitale kovirienne, a depuis longtemps raflé le titre de centre du savoir à Oxenfurt. Lan Exeter est certes une ville coquette, mais Port Vanis, la capitale d’été bâtie dans le golfe de Praxède, n’a pas son pareil en matière d’élégance. En août, les nobles délaissent tous leurs résidences pour organiser des fêtes extravagantes sur des barges décorées flottant sur le Grand Canal. Cet endroit offre une vue inégalée sur le palais d’été d’Ensenada. Les demeures estivales de l’aristocratie, des chefs des corporations minières et des riches marchands sont toutes nichées le long du canal. Elles possèdent des façades très étroites, car il existe une taxe calculée selon la surface occupée au niveau des berges.",
+        "stat": "+1 Négoce",
+        "bonus": "NEG"
+      },
+      {
+        "nom": "Skellige",
+        "desc": "Les îles de Skellige forment un archipel situé au-delà de la côte de Verden, peuplé par six clans possédant chacun leur propre territoire et régis par un jarl. Il n’existe en revanche qu’un seul roi, qui est élu. Les îles subissent les assauts des tempêtes maritimes et ne sont ni riches ni fertiles. Les côtes sauvages sont bordées de hautes falaises irrégulières et de rares ports naturels où l’on peut accoster, mais elles comptent aussi d’innombrables fjords où les navires viennent trouver refuge. Avant la Première Guerre nilfgaardienne, Skellige avait tissé une alliance solide avec le royaume de Cintra. La reine Calanthe de Cintra, aussi farouche que sage et belle, ne put monter sur le trône une fois son mari décédé en raison de son sexe. Elle se maria en secondes noces avec Eist Tuirseach, Skelligien du clan Tuirseach. Devenu roi de Cintra et de Skellige, il périt à la bataille de Marnadal en menant les guerriers des deux royaumes contre les troupes nilfgaardiennes. Depuis ce temps, les Skelligiens vouent une haine farouche à l’Empire. Ils ne sont pas pleinement rattachés au Nord, mais constituent plutôt des alliés de circonstance poursuivant un but commun.",
+        "stat": "+1 Courage",
+        "bonus": "COU"
+      },
+      {
+        "nom": "Cidaris",
+        "desc": "Cidaris sert d’entrave à la puissance maritime de Nilfgaard. C’est une région côtière située au nord de Verden, peuplée de marins intrépides et aventureux toujours prêts au combat. Le roi Ethain règne sur Cidaris depuis la capitale, bâtie sur des ruines elfiques. C’est un roi sage, bon stratège, amoureux des arts et des lettres, qui garde une âme de pirate. Sa cour est réputée pour ses manifestations culturelles. Elle reçoit souvent les meilleurs artistes, comme le très connu barde Jaskier. Il nous faut évoquer aussi Bremervoord, la cité-État portuaire vassale de Cidaris. Elle est gouvernée par le duc Algoval dont la femme était autrefois une sirène si l’on en croit les ballades. La ville est également connue pour le modèle de sabre qui porte son nom, l’arme favorite des pirates. D’ailleurs, comme Cidaris a dû résister inlassablement aux agressions des pillards skelligiens tout au long de son histoire, elle compte des corsaires dans les rangs de son armée. Les armées du royaume apportèrent un soutien considérable lors de la bataille de Brenna au cours de la Première Guerre nilfgaardienne ; elles oeuvrent à présent main dans la main avec celles de Skellige. Les navires de Nilfgaard doivent traverser l’étau formé par Skellige et Cidaris ou s’aventurer dans des eaux profondes et périlleuses pour atteindre le Nord.",
+        "stat": "+1 Navigation",
+        "bonus": "NAV"
+      },
+      {
+        "nom": "Verden",
+        "desc": "Cette longue bande de terre au sud de Kerack formant une vaste région côtière accueillante est située à l’embouchure de la terrible Iaruga, une situation qui serait idéale pour le commerce si sa frontière est ne bordait pas la forêt de Brokilone. Ces bois impénétrables peuplés de dryades firent tant rager le roi Ervyll de Verden qu’il offrit des récompenses pour les scalps de ses habitantes, s’attirant de fait l’inimitié de tous les non-humains. À l’époque de la Deuxième Guerre nilfgaardienne, le souverain fit sécession du Nord pour signer un accord avec Nilfgaard. Cette décision se révéla si impopulaire qu’Ervyll fut renversé par son fils, le prince Kistrin, avant d’être assassiné. Heureusement pour le royaume, les ambassadeurs nilfgaardiens présents sur place étaient des incapables notoires. L’opposition menée par le roi Kistrin avec le soutien de Skellige et Cintra chassa les troupes impériales de Verden. Mais depuis, le pays a été de nouveau envahi, et nul ne sait ce qu’il est advenu du roi Kistrin.",
+        "stat": "+1 Survie",
+        "bonus": "SUR"
+      },
+      {
+        "nom": "Cintra",
+        "desc": "De mémoire de Cintrasien, le pays resplendissait autrefois et bruissait d’activité grâce aux flux de marchandises qui passaient par l’océan et la Iaruga. En 1263, Nilfgaard marcha sur le royaume. Tout le monde espérait qu’Emhyr var Emreis demeurerait un voisin pacifique, mais tel ne fut pas le cas. Le roi de Cintra, Eist Tuirseach, fut tué lors des combats. Comme il était également roi de Skellige, les insulaires devinrent dès cette époque des ennemis acharnés de l’Empire. Lorsque l’armée nilfgaardienne assiégea la forteresse, la reine quasi légendaire Calanthe de Cintra se jeta du haut des murailles. Cette femme habile et déterminée avait régné pendant trois générations. Lorsqu’elle mourut, les Cintrasiens eurent le coeur brisé. Cet épisode fut connu par la suite comme le massacre de Cintra. À présent, la petite-fille de Calanthe, Cirilla, représente le dernier espoir des habitants. Disparue pendant la bataille, elle est réapparue par la suite et devait se marier avec l’Empereur de Nilfgaard. À Cintra, un roi fantoche prend directement ses ordres d’Emhyr et gouverne au nom de l’impératrice. Le mécontentement de la population encourage le trafic de marchandises avec les autres régions opprimées du Nord.",
+        "stat": "+1 Psychologie",
+        "bonus": "PSY"
+      }
+    ],
+    "nilfgaard": [
+      {
+        "nom": "Vicovaro",
+        "desc": "Vicovaro occupe le nord de la frontière de Nilfgaard, au sud-est de l’Étolie. De nombreux nobles vicovariens possèdent d’immenses châteaux forts dans les montagnes de l’est de la province dont les aristocrates nilfgaardiens s’emparèrent au cours de l’invasion. L’Alba est le seul véritable point commun qu’on puisse trouve entre l’Étolie et Vicovaro, qui a la chance de posséder une noblesse rusée et puissante. Quand les troupes de l’Empereur Fergus se mirent en marche, sachant ce qui s’était passé dans la province voisine, Vicovaro demanda poliment à rejoindre l’Empire. La population put alors continuer à mener une vie stable et confortable tant qu’elle continuait à respecter l’aristocratie et Nilfgaard. Depuis ce jour, les nobles envoient leurs enfants ainsi que les citoyens intelligents et affables à l’académie de Nilfgaard. Ainsi, les jeunes gens rentrent au pays avec une solide connaissance de l’étiquette en vigueur dans la capitale et des contacts fiables au sein de la noblesse nilfgaardienne. Cette stratégie permet aux Vicovariens d’occuper des postes dans le gouvernement central et provincial. D’ailleurs, l’actuel sénéchal de l’Empire est vicovarien. Comme les habitants ont su prendre en main leur propre assimilation, ils sont encore fiers d’annoncer à qui veut bien l’entendre : « Je suis vicovarien. »",
+        "stat": "+1 Éducation",
+        "bonus": "EDU"
+      },
+      {
+        "nom": "Angren",
+        "desc": "Angren est une grande province faiblement peuplée. La plupart de ses habitants exploitent « l’or d’Angren », à savoir des cèdres, des sycomores et des pins. Vous n’avez aucune raison de vous rendre là-bas, à moins d’être un bûcheron. Même les autochtones évitent de passer par Ysgith, dans le bas Angren. Ses forêts luxuriantes abritent des crabes araignées géants ainsi que des plantes carnivores capables d’engloutir un adulte d’une seule bouchée. À une époque, un cercle de druides s’était installé à Caed Dhu, toponyme signifiant le bosquet noir, mais on n’entend plus parler de leur communauté. Les troncs abattus par les bûcherons sont découpés en planches dans les scieries de la petite ville forestière de Cèdreval, située au bord de la Iaruga, ou envoyés directement sur des radeaux pour alimenter les grandes villes du Sud. Depuis peu, les scieries récupèrent les copeaux de bois pour fabriquer un papier abordable de belle facture. Bien que les habitants n’accueillent pas les étrangers à bras ouverts, les exploitations et les ateliers ont constamment besoin de main-d’oeuvre. Si vous cherchez une lueur de civilisation et de culture dans la région, vous la trouverez dans la partie orientale d’Angren dénommée Autre Rive, située entre la Iaruga et les Versants. La majorité de la population est installée dans cette partie du pays.",
+        "stat": "+1 Survie",
+        "bonus": "SUR"
+      },
+      {
+        "nom": "Nazair",
+        "desc": "Nazair était une région magnifique qui ressemblait beaucoup à Toussaint. Quelques années auparavant, le duc Adam de Nazair décida de modifier le cours de la rivière Sansretour, sans penser que le cours d’eau traversait d’autres terres que celles de Nazair – en particulier la vallée Sansretour, la meilleure région viticole de Nilfgaard. Il en résulta que de nombreux vignobles et vergers se transformèrent en tourbières et en marais inhospitaliers. Les Nilfgaardiens s’emparèrent récemment du pays au cours d’une bataille particulièrement ardue. Depuis, la province a connu plusieurs soulèvements dont les meneurs les plus acharnés intriguent dans les tavernes, une rose bleue de Nazair épinglée sur la poitrine. Cette fleur d’un bleu azur éclatant ne se trouve nulle part ailleurs. Il existe une forte demande pour des boutures, qu’on sort souvent en douce du pays pour les revendre à des prix indécents. Il est par ailleurs impossible de ne pas évoquer la région du lac Muredach, un écrin naturel d’une beauté inouïe. Les rives de cette étendue d’eau abritent des résidences d’été pour la noblesse, conçues pour pouvoir tenir un siège – c’est à se demander ce que les commanditaires avaient à l’esprit. Les céramiques de Nazair sont des merveilles de réalisation artisanale qui s’exportent très bien dans les grandes villes.",
+        "stat": "+1 Bagarre",
+        "bonus": "BAG"
+      },
+      {
+        "nom": "Metinna",
+        "desc": "Les deux tiers de Metinna sont occupés par la plaine de Mag Deira. Dans ce pays où les enfants sont presque nés sur leur selle, les immenses enclos à bétail sont monnaie courante, de même que les poneys de Metinna, une race autochtone au pied sûr et au pelage blanc également réputée pour sa robustesse et son intelligence. Les premiers spécimens seraient originaires du delta de la rivière Velda qui coule entre Metinna et Geso. C’est à cet endroit que les Markiens, les cavaliers du delta de Velda, mènent une vie rude, gardant les troupeaux de chevaux qui sillonnent la région, une existence qui a forgé leur caractère bien trempé. Le delta contient aussi des vignobles qui produisent entre autres le rosé de Metinna, un vin au goût passe-partout que d’aucuns qualifieraient de « vin de table ». Tous les habitants de la province en consomment. Quand des amateurs de bon vin originaires de Toussaint passent dans la région, les discussions sur le sujet ont des chances de se terminer en joute verbale, voire en duel. Le roi de Metinna verse un tribut à Nilfgaard sous forme de chevaux et de cavaliers.",
+        "stat": "+1 Équitation",
+        "bonus": "EQU"
+      },
+      {
+        "nom": "Mag Turga",
+        "desc": "Mag Turga est une petite province montagneuse, coincée entre les montagnes d’Amell et le massif du Tir Tochair. Son sol accidenté est couvert par une forêt dense, peuplée de monstres dangereux et bordée de falaises croulantes. Mais cette densité forestière est également une source de combustible inépuisable pour fondre le minerai importé de Belhaven, au nord-est. Mag Turga se trouve à proximité du col de Théodule qui permet de passer de Nazair à Autre Rive ou aux Versants. De nos jours, la région approvisionne en bois le gouvernement nilfgaardien installé à Cintra, à Nazair et à Angren, bien que certains désapprouvent cette situation. À cause de l’isolement de Mag Turga, les habitants possèdent un esprit clanique et sont réticents à s’ouvrir aux étrangers. Il paraît pourtant que les nains se sont mis à creuser des galeries au pied des montagnes. Le rattachement de Mag Turga à l’Empire s’est fait dans le calme, pour le plus grand bonheur de Nilfgaard, car les batailles au coeur des épaisses forêts et des falaises vertigineuses auraient coûté énormément de temps et de vies. Les fondeurs d’acier sont regroupés à Tergano, une ville crasseuse, la plus grande de la province. Comme les bûcherons sont obligés de s’enfoncer au coeur des bois peuplés d’arachas, des monstres à l’allure d’araignées géantes, le prix de leur matière première ne cesse d’augmenter.",
+        "stat": "+1 Résilience",
+        "bonus": "RES"
+      },
+      {
+        "nom": "Geso",
+        "desc": "Sachant que l’inévitable allait se produire, le baron de Geso se soumit temporairement à Nilfgaard. Lorsqu’une force d’armée réduite arriva pour occuper son pays, il crut qu’il pourrait dicter ses propres conditions. Le sort de la ville de Glyswen, aussi appelée Blancherive, est un parfait exemple de ce qui advient quand on essaie d’imposer sa loi à l’Empire. Les troupes ne laissèrent derrière elles que dix huttes, un morceau de palissade et une taverne. La population fut décimée et les paysans envoyés à Nilfgaard pour coloniser les régions encore désertes. Les survivants ont tellement peur des Nilfgaardiens que des nobles querelleurs et des chefs de bande ont récupéré les fonctions remplies en temps normal par l’aristocratie. Les routes de Geso ne sont pas sûres. Les bandits et les esclaves errent en liberté le long de la route de la Velda, appelée ainsi d’après la rivière qu’elle longe et qui forme la frontière entre Geso et Maecht. Elle porte aujourd’hui le nom de « route des bandits ». Elle mène jusqu’à la ville de Loredo, la tanière des bandits, où toutes sortes de gens, esclaves, fermiers ou autres, s’arrêtent pour prendre du repos, se ravitailler ou écouler leur butin. Je n’ai pas trouvé une seule raison valable de vouloir se rendre à Geso.",
+        "stat": "+1 Furtivité",
+        "bonus": "FUR"
+      },
+      {
+        "nom": "Ebbing",
+        "desc": "La première manoeuvre de l’Usurpateur fut de contourner Maecht pour attaquer Ebbing, une cible alléchante. En effet, cette immense région faiblement peuplée est plus riche que Maecht. Le réseau de rivières a donné naissance à des terres marécageuses semblables à celles de la Téméria. Une fois les marais aménagés, le sol devient riche et fertile. Nilfgaard sortit son épingle du jeu en profitant d’une crise de succession entre les quatre héritiers d’Ebbing. Le contenu des négociations changeait quotidiennement en fonction de la faction au pouvoir. En fin de compte, l’Usurpateur perdit patience et envoya l’armée. Le recrutement des troupes d’Ebbing était basé sur le statut social et non les compétences martiales, ce qui explique que les défenseurs essuyèrent des pertes colossales, à l’exception des nobles qui avaient fui le champ de bataille. Les gens étaient tellement épuisés par l’interminable chaos politique qu’ils s’adaptèrent à la situation. Comme Ebbing n’a jamais causé de problème à Nilfgaard, elle a conservé une certaine autonomie. Une note à l’attention des voyageurs : évitez de passer par Claremont. Des combats d’arène sont organisés en ville, pour le plus grand bonheur de criminels notoires et de nobles dépravés. Personne n’a encore confirmé les rumeurs sur les combats entre aardvarks et endriagues.",
+        "stat": "+1 Déduction",
+        "bonus": "DED"
+      },
+      {
+        "nom": "Maecht",
+        "desc": "La plupart des habitants de Maecht sont établis dans les forêts occidentales et le long des cours d’eau. Malgré les montagnes rocheuses et inhospitalières de Tir Tochair à l’est, des marchands ont réussi à tisser des liens commerciaux très lucratifs avec une des dernières villes gnomes, creusée dans les entrailles de ce massif. Ils acquièrent ainsi des ouvrages d’art délicats et des appareils mécaniques. Deux ans après l’absorption d’Ebbing, l’Usurpateur comprit qu’il ne pourrait pas continuer sa progression vers le nord tant que Maecht restait sans surveillance dans son dos. L’affrontement fut bref. L’Usurpateur installa ensuite un roi fantoche sur le trône. De leur côté, les gnomes se retirèrent dans les montagnes pour éviter d’être capturés et de fournir quantité d’armes et d’armures aux Nilfgaardiens. Lorsque l’Usurpateur fut renversé, le roi de Maecht fut convoqué pour un entretien privé avec Emhyr var Emreis. Depuis, il suit attentivement la ligne de conduite prônée par Nilfgaard. Il existe trois mouvements de résistance clandestins qui s’organisent autour des princes des provinces. S’ils parvenaient à s’unir, ils pourraient causer de sérieux dégâts.",
+        "stat": "+1 Charisme",
+        "bonus": "CHA"
+      },
+      {
+        "nom": "Gemmery",
+        "desc": "Durant son règne, Fergus avait incorporé l’Étolie et Vicovaro à l’Empire. Ce n’est pas un hasard si son choix se porta d’abord sur ces deux provinces. Si l’ouest de Gemmery est une vaste steppe, l’est ne compte que des terres arides et rocailleuses. Cet environnement hostile a donné vie à une communauté de mineurs, de bandits et de guerriers farouches. Fergus attendit d’avoir les ressources nécessaires et de stabiliser la situation de l’Étolie et de Vicovaro avant de fondre sur la Gemmery. Tout ce qui l’intéressait était ses combattants et ses mines, qui sont les seules à contenir du dimeritium en abondance dans le Sud. Les troupes nilfgaardiennes éradiquèrent les populations installées dans l’est du pays, ne laissant derrière elles qu’une poignée d’éleveurs de chèvres. Les plus féroces des Gemmeriens rejoignirent l’armée pour semer le chaos et amasser du butin. Ces guerriers portent une arme immense qu’on appelle le torrwr, dont la lame mesure pratiquement deux mètres de la garde à la pointe. Elle convient parfaitement aux Gemmeriens qui ont eux-mêmes une stature de géant. Les unités gemmeriennes comportent deux fois plus d’officiers nilfgaardiens que celles des autres armées provinciales, mais personne ne court après ces postes. La Gemmery ne possède pas de villes, uniquement des chemins de terre foulés depuis des siècles menant de village en village.",
+        "stat": "+1 Intimidation",
+        "bonus": "INT"
+      },
+      {
+        "nom": "Étolie",
+        "desc": "L’Étolie s’étend au-delà de la rive nord de l’Alba, la rivière qui coule à travers la capitale nilfgaardienne et constitue un point d’entrée de la ville. La province possède de nombreux avantages, parmi lesquels deux cours d’eau navigables et un accès à la mer. La vie en Étolie avant la domination impériale était simple. Les gens menaient une existence paisible. Le roi recherchait avant tout une vie confortable, comme ses sujets, qui vivaient principalement du commerce, de l’agriculture, de la pêche et du tissage. En 1216, l’Empereur Fergus var Emreis décida d’étendre le territoire de Nilfgaard. Même si l’Étolie ne faisait pas partie de ses objectifs prioritaires, elle servit son dessein. Les armées submergèrent le pays dont l’Empereur décida de faire un exemple. Il désirait que l’on comprenne son dessein sans doute possible et qu’on sache qu’il était prêt à tout pour l’accomplir. Toutes les structures qui se trouvaient au coeur de la vie des Étoliens furent détruites et l’esprit des habitants brisé. En quarante ans d’occupation, cette province ne connut aucun soulèvement populaire. À la suite de la conquête, Nilfgaard réforma le gouvernement de la province pour placer à sa tête un suzerain. Les Étoliens sont renommés pour l’élevage de barbeaux à ventre blancs, des poissons d’eau douce pesant entre cinq et sept kilos qu’ils pêchent dans l’Alba.",
+        "stat": "+1 Courage",
+        "bonus": "COU"
+      },
+      {
+        "nom": "Coeur de l'Empire",
+        "desc": "Le Débarquement des Exilés provoqua l’arrivée sur nos terres des humains qui deviendraient par la suite des Nordiens. À cette époque, les Nilfgaardiens s’étaient déjà établis dans leur contrée située au sud. La somptueuse capitale de l’Empire (qui porte aussi le nom de Nilfgaard), plus grande que Wyzima, s’étend le long de la rivière Alba. Ses bâtiments de marbre ornés de dorures lui ont valu le surnom de Ville aux tours d’or. Il faut être né dans ce pays (ou mieux, dans cette cité) pour être considéré comme un véritable Nilfgaardien. L’Empire possède sa propre langue, un dialecte dérivé de la langue ancienne, qu’elle impose à toutes ses provinces.\n\nL’exercice de la politique à Nilfgaard est périlleux, car une poignée de maisons nobles mènent une lutte incessante pour accroître leur pouvoir. L’Empereur a les pleins pouvoirs et reçoit le soutien des familles alliées. Bien qu’il existe un sénat, son avis ne pèse pas lourd dans la balance. Le règne de la famille de l’actuel Empereur, Emhyr var Emreis, est assez récent dans l’histoire de Nilfgaard. Le grand-père d’Emhyr, Torres var Emreis, fonda le royaume sur les berges de l’Alba et le transforma en puissance à ne pas négliger en repoussant les attaques de son féroce voisin gemmerien. Fergus var Emreis, le fils de Torres, fut le premier à entrer en contact avec le Nord. C’est lui qui façonna l’Empire tel que nous le connaissons. Mais en 1233, l’Usurpateur renversa Fergus. Le nouveau souverain poursuivit l’expansion de Nilfgaard en son propre nom jusqu’à ce qu’Emhyr, le fils de Fergus, rentre d’exil et le chasse du pouvoir en 1257.\n\nLes jeunes hommes (et quelques jeunes femmes) de la capitale jouent des coudes pour entrer à l’académie de Nilfgaard. Les vainqueurs pourront alors tisser un vaste réseau de relations qui révéleront toute leur importance au fil de leur existence. Au bout de deux ans, les étudiants peuvent passer un concours pour être transférés à l’académie militaire où ils suivront un entraînement rigoureux en vue d’intégrer l’armée. Ils apprennent l’art de la stratégie et de la tactique ainsi que le maniement des armes, l’équitation, la navigation, la survie en milieu hostile et les méthodes d’interrogatoire. Les châtiments corporels sont monnaie courante, puisque l’on considère que les jeunes officiers doivent connaître l’effet des punitions qu’ils dispenseront. La crème de la crème intègre la brigade Impera, la garde personnelle de l’Empereur.\n\nLa culture nilfgaardienne ne se résume pas aux arts militaires, comme en témoigne la bibliothèque impériale de l’université, qui est aussi renommée que celles d’Oxenfurt et de Lan Exeter. L’académie compte un effectif incroyable d’écrivains, de musiciens, d’érudits, de philosophes et de scientifiques. Elle soutient leurs travaux tout en les gardant dans son giron où les autorités peuvent les tenir à l’oeil. Les rares membres de la population doués pour la magie sont envoyés à l’académie de Gweision Haul, située aux abords de la capitale. Cet immense complexe à l’allure sinistre est si grand qu’il peut héberger plusieurs centaines d’étudiants, mais le confort y est assez spartiate. Des chasseurs de mages et des gardiens surveillent en permanence les apprentis mages. Ces derniers apprennent tout autant à contrôler leurs pouvoirs qu’à obéir aveuglément à l’Empire et à son souverain. Malgré la sévérité des punitions, les étudiants peuvent acquérir quantité de connaissances et accroître leur statut pourvu qu’ils sachent où est leur place et restent tranquilles.",
+        "stat": "+1 Duperie",
+        "bonus": "DUP"
+      }
+    ],
+    "ancien": [
+      {
+        "nom": "Dol Blathanna",
+        "desc": "Dol Blathanna, « la vallée des Fleurs » en langue ancienne, est aussi appelée le Bout du Monde puisque la vallée s’étend au pied des montagnes bleues. Jusqu’au siècle dernier, cette région était le royaume privilégié des Aen Seidhe. Lorsque les humains arrivèrent à Dol Blathanna, ils furent éblouis par la qualité incroyable du sol où toutes les plantes poussaient en donnant vie à une végétation luxuriante. Ils chassèrent les Aen Seidhe dans les pics rocailleux et désolés des montagnes Bleues et, bien vite, les sillons de l’agriculture humaine défigurèrent la vallée. Les terres riches et giboyeuses de Dol Blathanna avaient permis aux Aen Seidhe de vivre confortablement de la cueillette et de la chasse. Les hauteurs des massifs rocheux étant moins généreuses, les exilés menaient une vie de misérable. Ce n’était plus qu’une question de temps avant que les Aen Seidhe meurent de faim ou s’en prennent aux humains en désespoir de cause.\n\nÀ l’aube de la Deuxième Guerre nilfgaardienne, l’Empire passa un accord avec les elfes. Nilfgaard soutiendrait la refondation du royaume de Dol Blathanna, mais en échange, les Scoia’tael devaient rester sur le front pour harceler les forces du Nord. Ce statut fut renégocié après la défaite de l’Empire lors de la paix de Cintra et la région devint un duché d’Aedirn, toutefois exempté de tribut. En outre, les humains qui vivaient auparavant à Dol Blathanna étaient autorisés à regagner leurs terres situées dans la vallée même si, cette fois, ils devaient partager équitablement les ressources avec les elfes. Mais ils avaient tout détruit en quittant la vallée, comme les Aen Seidhe lorsqu’ils avaient déserté leur ville. À l’avenir, les deux peuples devront tout rebâtir ensemble. La magicienne Francesca Findabair, appelée en langue ancienne Enid an Gleanna (la Pâquerette des vallées) et reconnue comme étant la plus belle femme du monde, devint reine puis duchesse de la nouvelle nation de Dol Blathanna. Elle est conseillée par Filavandrel du Bout du Monde, seigneur des elfes des montagnes Bleues. On raconte que Dana Meadbh, la déesse elfique de la nature, est apparue de temps à autre dans la vallée sous diverses apparences. Si c’est le cas, nous n’avons aucun témoignage prouvant son soutien au camp des elfes ou son opposition aux humains, elle semble se préoccuper uniquement du bien- être de la vallée. Elle se présente souvent en été sous la forme d’une déesse rayonnante, accompagnée d’un jeune cerf et d’un énorme hérisson. Malgré la paix relative qui règne à Dol Blathanna, seule une poignée d’elfes est née sur ces terres depuis la paix de Cintra.",
+        "stat": "+1 Étiquette",
+        "bonus": "ETI"
+      },
+      {
+        "nom": "Mahakam",
+        "desc": "Les gnomes furent les premiers à s’installer dans le Nord, suivis des nains, environ cinq cents ans avant l’arrivée des elfes. Les humains débarquèrent encore plus tard et pourtant, ils ont réussi à repousser les nains dans leurs forteresses montagneuses, la plus grande étant Mahakam, située dans le massif du même nom. Les humains ne s’y rendent presque jamais, sauf à l’occasion pour conclure des accords commerciaux. Toutes les races reconnaissent la qualité exceptionnelle du fer que les nains extraient dans leurs montagnes, en particulier celui du mont Carbone. Les armes fabriquées à partir d’acier mahakamien sont à la fois légères, résistances et acérées. Mais les nains ne travaillent pas seuls. Les gnomes vivent dans les profondeurs souterraines des mines dont ils ne sortent jamais, ce qui explique que nous en croisions si peu. Les productions artisanales de ces techniciens du mont Carbone frôlent la perfection. À une époque reculée, peut-être même avant l’arrivée des nains, ils forgeaient les légendaires gwyhyr gnomes, un modèle d’épée de leur cru. Nul ne sait comment le processus de fabrication tomba dans l’oubli ; de nos jours, les nains ajoutent d’autres substances au fer et à l’acier dans leurs fonderies. Les gnomes se chargent de polir et d’aiguiser les lames forgées qui peuvent atteindre un mètre de long pour moins d’un kilogramme. Les connaisseurs en matière d’armement ne jurent que par les épées fabriquées à Mahakam avec les techniques secrètes des gnomes.\n\nLes nains sont un peuple fier et entêté qui connaît son histoire et place les intérêts du clan avant le reste. Bien qu’il existe beaucoup de clans différents, les anciens exercent une influence considérable sur l’ensemble des tribus, en particulier l’ancien Brouver Hoog du clan Hoog qui réside dans le mont Carbone. La majorité des nains conserve une attitude neutre et évite de se mêler des affaires des humains, peut-être parce qu’on ne les a pas encore dépossédés de leur territoire. À la guerre, ils se montrent d’une loyauté à toute épreuve et donnent du fil à retordre à leurs adversaires. La méconnue armée volontaire de Mahakam, une unité entièrement composée de nains, a servi parmi les fantassins pour le compte du Nord et s’est battue avec une bravoure incroyable lors de batailles décisives, à Brenna et à Maribor entre autres.\n\nHors des murs de Mahakam, les nains font toujours partie des races encourant la haine des Nordiens. Des membres de la jeune génération tressent leur barbe pour se démarquer de leurs congénères fidèles au Nord et se battent aux côtés des Scoia’tael en sachant que les Nilfgaardiens ne nourrissent pas autant de mépris envers les non-humains. Sans compter que l’Empire n’a pas oublié d’envoyer des ambassadeurs à Mahakam, comme il avait pris soin de le faire avec les dryades de Brokilone. Quand les nains quittent leur forteresse par groupes composés uniquement de mâles, ils s’installent en général dans des villes humaines pour tenir leur propre commerce. Ils nous ont apporté le « tonneau », un jeu de cartes si compliqué que, jusqu’à présent, aucune autre race n’a pris le temps d’en déchiffrer les règles. Les cartes richement décorées sont directement fabriquées à Mahakam et n’ont pas leur pareil, ce qui contredit le préjugé humain selon lequel les nains n’appliqueraient leur savoir technique qu’à l’armement. Toutes les banques les plus importantes du Nord appartiennent à des familles naines comme les Giancardi ou les Cianfanelli. Elles possèdent des succursales dans de nombreuses contrées : la banque Cianfanelli compte en effet des établissements en Zerrikanie et à Nilfgaard.\n\nLes femmes naines donnent lieu à diverses spéculations. On sait juste que leurs barbes sont moins fournies et leur carrure plus fine, aussi pourrait-on en croiser au détour d’une rue sans s’en rendre compte. Les habitantes de Mahakam s’habillent-elles de façon plus féminine à l’abri derrière les murs de ce bastion ? Nul ne le sait. Mais où que vous en rencontriez, faites bien attention. Les nains sont très protecteurs dès qu’il s’agit de leurs femmes.",
+        "stat": "+1 Artisanat",
+        "bonus": "ART"
+      }
+    ]
+  },
+  "destinF": {
+    "nord": [
+      {
+        "nom": "Éparpillé",
+        "desc": "Les membres de votre famille se sont éparpillés aux quatre vents à cause des guerres successives et vous n’avez aucune idée d’où ils se trouvent à l’heure actuelle."
+      },
+	  {
+        "nom": "Emprisonnée",
+        "desc": "Votre famille a été emprisonnée pour des crimes, peut-être sur de fausses accusations. Vous êtes le seul à en être réchappé. Vous voulez libérer vos proches… ou pas."
+      },
+	  {
+        "nom": "Malédiction",
+        "desc": "Votre maison familiale est victime d’une malédiction. Vos terres ne donnent plus de récoltes ou des spectres hantent les couloirs de votre demeure. Séjourner dans cette maison s’avérait trop dangereux."
+      },
+	  {
+        "nom": "Criminelle",
+        "desc": "Les guerres incessantes ont fini par détruire le moyen de subsistance de votre famille, qui a dû se tourner vers les activités criminelles pour survivre."
+      },
+	  {
+        "nom": "Dettes",
+        "desc": "Votre famille a accumulé de lourdes dettes à cause de paris ou d’emprunts. Vous avez désespérément besoin d’argent."
+      },
+	  {
+        "nom": "Vendetta",
+        "desc": "Votre famille est engagée dans une vendetta avec une autre famille. Vous ne souvenez peut-être même pas de l’élément déclencheur de cette rancune."
+      },
+	  {
+        "nom": "Haïe",
+        "desc": "À cause de son comportement ou de son inaction, votre famille est haïe de tout le village et plus personne ne veut avoir affaire avec elle."
+      },
+	  {
+        "nom": "Massacré",
+        "desc": "Un jour, une bande de voyous vous a pris tout ce que vous possédiez. Les bandits ont massacré tout le monde, sauf vous, qui êtes à présent complètement seul."
+      },
+	  {
+        "nom": "Secret",
+        "desc": "Votre famille possède un sombre secret qui, s’il était découvert, détruirait votre vie de fond en comble. Vous pouvez imaginer quel est ce secret ou laisser le maître de jeu s’en charger."
+      },
+	  {
+        "nom": "Détesté",
+        "desc": "Les membres de votre famille se détestent les uns les autres. Tous ceux avec lesquels vous avez grandi ne font aucun effort pour se parler, et vous avez de la chance quand vous obtenez un simple bonjour de la part de vos frères et soeurs."
+      }
+    ],
+    "nilfgaard": [
+      {
+        "nom": "Esclavage",
+        "desc": "Votre famille a été réduite en esclavage à la suite d’accusations (fondées ou non) de crimes contre l’Empire. Vous seul en être réchappé."
+      },
+	  {
+        "nom": "Exilée",
+        "desc": "Votre famille a été exilée dans le désert de Korath et vous avez passé la majorité de votre jeunesse à tenter de survivre dans cette terre hostile et désolée."
+      },
+	  {
+        "nom": "Vengeance",
+        "desc": "Un mage renégat a assassiné votre famille pour se venger ou par goût de la violence. Dans tous les cas, vous êtes le seul survivant."
+      },
+	  {
+        "nom": "Disparu",
+        "desc": "Les membres de votre famille ont disparu et vous n’avez aucune idée d’où ils se trouvent. Un jour, ils sont partis, et vous ne les avez plus jamais revus."
+      },
+	  {
+        "nom": "Trahison",
+        "desc": "Votre famille a été exécutée pour trahison envers l’Empire. Vous êtes le seul à avoir échappé à ce destin."
+      },
+	  {
+        "nom": "Déchue",
+        "desc": "Votre famille a été déchue de ses titres pour une raison quelconque. Vous avez été chassé de votre maison et deviez vous débrouiller pour survivre au milieu de la populace."
+      },
+	  {
+        "nom": "Scandale",
+        "desc": "Le nom de votre famille a été terni par un parent proche qui a fait un étalage scandaleux de ses dons magiques, à la manière d’un mage nordique."
+      },
+	  {
+        "nom": "Disgrâce",
+        "desc": "Par votre faute, votre famille est tombée en disgrâce auprès de l’Empire. Une de vos actions ou votre échec a jeté l’opprobre sur votre nom et celui de vos parents."
+      },
+	  {
+        "nom": "Secret",
+        "desc": "Votre famille possède un sombre secret qui, s’il était découvert, détruirait votre vie et celle de votre parenté de fond en comble. Vous devez le protéger au péril de votre vie."
+      },
+	  {
+        "nom": "Assassinée",
+        "desc": "Votre famille a été assassinée. Cette tragédie faisait peut-être partie d’une machination, ou alors vos proches s’en sont pris à plus fort qu’eux. Quoi qu’il en soit, tout le monde est mort."
+      }
+    ],
+    "ancien": [
+      {
+        "nom": "Accusée",
+        "desc": "Votre famille est accusée de soutenir les humains et n’est donc pas particulièrement appréciée dans votre village natal."
+      },
+	  {
+        "nom": "Ostracisée",
+        "desc": "Votre famille a été ostracisée à cause de ses opinions divergentes. Depuis, les gens vous évitent comme la peste, vous et vos proches."
+      },
+	  {
+        "nom": "Guerres",
+        "desc": "Votre famille est morte pendant les Guerres nordiques. Elle a peut-être directement pris part au conflit ou a fait partie des victimes collatérales qui se trouvaient au mauvais endroit au mauvais moment."
+      },
+	  {
+        "nom": "Vendetta",
+        "desc": "Votre famille est au coeur d’une vendetta depuis des siècles. Même si personne ne se souvient des origines de ce conflit, il n’a rien perdu de sa violence."
+      },
+	  {
+        "nom": "Déchue",
+        "desc": "Votre famille a été déchue de ses titres pour une raison quelconque. Vous avez été chassé de votre maison et deviez vous débrouiller pour survivre."
+      },
+	  {
+        "nom": "Raids",
+        "desc": "Durant votre jeunesse, votre famille menait des raids sur colonies humaines pour obtenir de la nourriture et peut-être se venger des hommes."
+      },
+	  {
+        "nom": "Hantée",
+        "desc": "La demeure familiale est hantée. Apparemment, cette malédiction est le résultat des innombrables morts qui ont eu lieu à l’emplacement de votre maison lors de la guerre contre les humains."
+      },
+	  {
+        "nom": "Divisée",
+        "desc": "Votre famille est divisée depuis qu’un de vos proches, peut-être votre frère ou votre soeur, est en couple avec un humain. Certains membres de votre parenté apprécient le nouveau venu, d’autres le détestent."
+      },
+	  {
+        "nom": "Tuée",
+        "desc": "Votre famille a été tuée par des humains qui pensaient avoir mis la main sur des Scoia’tael. Vos proches ont été massacrés ou pendus sans avoir eu droit à un procès équitable."
+      },
+	  {
+        "nom": "Traître",
+        "desc": "Votre famille descend d’un traître notoire, ce qui a un impact sur ses relations avec les autres membres des races anciennes. Ces derniers vous mènent la vie dure dans votre terre natale."
+      }
+    ]
+  },
+  "destinP": {
+    "nord": [
+      {
+        "nom": "Guerres",
+        "desc": "Votre ou vos parents se sont fait tuer au cours des Guerres nordiques. Vraisemblablement votre père, mais votre mère a pu combattre ou faire partie des victimes collatérales."
+      },
+	  {
+        "nom": "Abandonné",
+        "desc": "Votre ou vos parents vous ont abandonné dans la nature où vous étiez livré à vous-même. Ils n’avaient peut-être pas les moyens de vous élever. Ou bien était-ce un accident ?"
+      },
+	  {
+        "nom": "Maudits",
+        "desc": "Votre ou vos parents ont été maudits par un mage ou à cause de la haine intense que leur vouait une personne qu’ils ont rencontrée au cours de leur vie. Cette malédiction leur a été fatale."
+      },
+	  {
+        "nom": "Échangé",
+        "desc": "Votre ou vos parents vous ont échangé contre de l’argent, des biens ou un service. Ils avaient plus besoin de monnaie que d’un marmot."
+      },
+	  {
+        "nom": "Criminel",
+        "desc": "Votre ou vos parents ont rejoint une organisation criminelle. Vous fréquentiez souvent des bandits et étiez parfois forcé de travailler pour eux."
+      },
+	  {
+        "nom": "Tués",
+        "desc": "Votre ou vos parents ont été tués par des monstres. À vous de décider quelle créature a mis fin à leurs jours."
+      },
+	  {
+        "nom": "Exécutés",
+        "desc": "Votre ou vos parents ont été exécutés à tort. Ils ont servi de bouc émissaire ou se trouvaient au mauvais endroit au mauvais moment."
+      },
+	  {
+        "nom": "Succombé",
+        "desc": "Votre ou vos parents ont succombé à une épidémie. Il n’existait aucun remède, vous pouviez seulement tenter d’apaiser leurs souffrances."
+      },
+	  {
+        "nom": "Nilfgaard",
+        "desc": "Votre ou vos parents sont passés à Nilfgaard. Ils ont conclu un marché en échange d’informations ou ont traversé la frontière."
+      },
+	  {
+        "nom": "Kidnappés",
+        "desc": "Votre ou vos parents ont été kidnappés par des aristocrates. La victime était probablement votre mère, qui a attiré l’attention du suzerain local et de son fils."
+      }
+    ],
+    "nilfgaard": [
+      {
+        "nom": "Guerres",
+        "desc": "Votre père est mort au cours des Guerres nordiques. Il faisait déjà partie de l’armée ou a été enrôlé à l’occasion de ce conflit."
+      },
+	  {
+        "nom": "Empoisonnés",
+        "desc": "Votre ou vos parents ont été empoisonnés. C’est peut-être l’oeuvre d’un rival issu du même milieu, ou bien on a voulu se débarrasser d’eux, car ils devenaient gênants."
+      },
+	  {
+        "nom": "Enlevé",
+        "desc": "Les services secrets ont enlevé votre ou vos parents pour les soumettre à la question. La semaine suivante, leurs corps étaient pendus dans les rues de la ville."
+      },
+	  {
+        "nom": "Assassinés",
+        "desc": "Votre ou vos parents ont été assassinés par un mage renégat. Ils ont vraisemblablement voulu le dénoncer aux autorités impériales et en ont payé le prix."
+      },
+	  {
+        "nom": "Enfermés",
+        "desc": "Votre ou vos parents ont été enfermés pour utilisation illégale de la magie. Ils ont peut-être bel et bien commis ce crime ou ont été victimes d’un complot."
+      },
+	  {
+        "nom": "Exilés",
+        "desc": "Votre ou vos parents ont été exilés dans le désert de Korath. Il semblerait qu’ils aient commis un crime grave, mais leur exécution aurait fait trop de bruit."
+      },
+	  {
+        "nom": "Maudits",
+        "desc": "Votre ou vos parents ont été maudits par un mage, qui cherchait apparemment à se venger d’eux."
+      },
+	  {
+        "nom": "Disparu",
+        "desc": "Un jour, vos parents vous ont quitté. Vous ne savez peut-être même pas pourquoi. Ils ont juste disparu du jour au lendemain."
+      },
+	  {
+        "nom": "Esclave",
+        "desc": "Votre ou vos parents ont été réduits en esclavage, car ils ont commis un crime contre l’Empire ou ont été piégés par un rival."
+      },
+	  {
+        "nom": "Agents",
+        "desc": "Votre ou vos parents ont été envoyés dans le Nord en tant qu’agents doubles. Vous ne savez peut-être pas où ils se trouvent actuellement, mais vous savez qu’ils servent l’Empereur."
+      }
+    ],
+    "ancien": [
+      {
+        "nom": "Accusés",
+        "desc": "Votre ou vos parents ont été accusés d’oeuvrer pour la Scoia’tael. Leurs voisins leur jettent des regards en coin."
+      },
+	  {
+        "nom": "Trahison",
+        "desc": "Votre ou vos parents se sont retournés contre leur propre peuple et ont trahi les races anciennes en faveur des humains. Ils ne sont plus les bienvenus dans votre terre natale."
+      },
+	  {
+        "nom": "Suicidés",
+        "desc": "Votre ou vos parents ont sombré dans le désespoir et se sont suicidés. Comme ils ne pensaient plus retrouver la gloire passée de leur peuple, ils ont définitivement baissé les bras."
+      },
+	  {
+        "nom": "Pogrom",
+        "desc": "Au cours d’un voyage, vos parents ont été victimes de la xénophobie des humains. Ils sont morts au cours d’un pogrom et leurs corps ont été exposés sur des piques."
+      },
+	  {
+        "nom": "Obsédés",
+        "desc": "Votre ou vos parents sont devenus obsédés par l’idée de retrouver la gloire passée de leur race. Ils ont tout sacrifié pour cette cause."
+      },
+	  {
+        "nom": "Exilés",
+        "desc": "Votre ou vos parents ont été exilés de leur terre natale, à cause d’un crime ou d’opinions divergentes par exemple."
+      },
+	  {
+        "nom": "Malédiction",
+        "desc": "Votre ou vos parents ont été victimes d’une malédiction. À vous de choisir laquelle ou de laisser le maître de jeu en décider."
+      },
+	  {
+        "nom": "Confié",
+        "desc": "Vos parents vous ont confié à une autre famille pour que vous puissiez survivre, car ils ne pouvaient pas prendre soin de vous."
+      },
+	  {
+        "nom": "Scoia’tael",
+        "desc": "Votre ou vos parents ont rejoint les Scoia’tael dans l’espoir de se venger des humains qui détruisent leur vie."
+      },
+	  {
+        "nom": "Accident",
+        "desc": "Votre ou vos parents sont morts dans un soi-disant accident. En réalité, ils se sont fait un ennemi puissant qui a fini par trouver le moyen de se débarrasser d’eux."
+      }
+    ]
+  },
+  "situation": {
+    "nord": [
+      {
+        "nom": "Aristocratie",
+        "desc": "Vous avez grandi dans le manoir d’un noble où des serviteurs prenaient soin de vous. Vous deviez observer un comportement irréprochable et faire bonne impression en permanence.",
+        "objet": "Lettre de noblesse (Réputation +2)"
+      },
+	  {
+        "nom": "Adopté par un mage",
+        "desc": "On vous a confié à un mage dès votre plus jeune âge. Vous avez vécu confortablement, mais vous n’avez guère eu l’occasion de voir votre protecteur qui était sans cesse occupé.",
+        "objet": "Une chronique (Éducation +1)"
+      },
+	  {
+        "nom": "Chevalier",
+        "desc": "Vous avez grandi dans un manoir où vous avez appris à devenir un seigneur ou une dame digne de ce nom. Votre destin a été scellé dès votre naissance.",
+        "objet": "Armoiries personnelles (Réputation +1)"
+      },
+	  {
+        "nom": "Marchands",
+        "desc": "Vous avez grandi dans une famille de marchands, baignant en permanence dans les cris, les âpres négociations et le tintement de la monnaie.",
+        "objet": "2 connaissances"
+      },
+	  {
+        "nom": "Artisans",
+        "desc": "Vous avez grandi dans l’atelier d’un artisan. Vos journées, souvent longues, étaient marquées par le vacarme incessant qui accompagne le processus de création.",
+        "objet": "3 schémas/formules communes"
+      },
+	  {
+        "nom": "Bateleurs",
+        "desc": "Vous avez grandi dans une famille d’artistes. Vous avez peut-être commencé à exercer le métier dans un théâtre.",
+        "objet": "1 instrument et 1 ami"
+      },
+	  {
+        "nom": "Paysans",
+        "desc": "Vous avez grandi dans une ferme à la campagne. Vous ne possédiez pas grand-chose et meniez une existence humble, mais dangereuse.",
+        "objet": "un porte-bonheur (Chance +1)"
+      }
+    ],
+    "nilfgaard": [
+      {
+        "nom": "Aristocratie",
+        "desc": "Vous avez grandi dans un manoir où l’on vous a appris à évoluer dans l’univers de la cour. La richesse était votre source de motivation.",
+        "objet": "Lettre de noblesse (Réputation +2)"
+      },
+	  {
+        "nom": "Haut clergé",
+        "desc": "Vous avez été élevé au sein de l’Église du Grand Soleil, qui n’a cessé de vous guider. Vous êtes devenu très pieux.",
+        "objet": "Un symbole sacré (Courage +2)"
+      },
+	  {
+        "nom": "Chevalier",
+        "desc": "Vous avez grandi en sachant que vous devriez exercer votre devoir envers l’Empereur, et que les richesses ne seraient qu’une récompense pour vos bons et loyaux services.",
+        "objet": "Armoiries personnelles (Réputation +1)"
+      },
+	  {
+        "nom": "Artisans",
+        "desc": "Vous avez grandi dans l’atelier d’un artisan où vous avez appris à fabriquer des objets qui s’exportent dans le monde entier. Vous connaissez la valeur du travail bien fait.",
+        "objet": "3 schémas/formules communes"
+      },
+	  {
+        "nom": "Marchands",
+        "desc": "Pendant votre jeunesse, votre famille vendait ses produits aux quatre coins de l’Empire. Vous avez vu passer toutes sortes de biens exotiques venus du monde entier.",
+        "objet": "2 connaissances"
+      },
+	  {
+        "nom": "Serfs",
+        "desc": "Vous êtes né dans la servitude et vivez dans un logement modeste. Vous possédez peu de biens et travaillez dur.",
+        "objet": "Un oiseau ou un serpent apprivoisé"
+      },
+	  {
+        "nom": "Paysans",
+        "desc": "Vous avez grandi dans l’une des milliers de fermes que compte l’Empire. Vous ne possédiez pas grand-chose, mais la vie était simple.",
+        "objet": "Un porte-bonheur (Chance +1)"
+      }
+    ],
+    "ancien": [
+      {
+        "nom": "Aristocratie",
+        "desc": "Vous avez grandi dans un palais où vous l’on rappelait sans cesse le glorieux passé de votre peuple. Vous devez être à la hauteur de cet héritage.",
+        "objet": "Lettre de noblesse (Réputation +2)"
+      },
+	  {
+        "nom": "Guerrier noble",
+        "desc": "Vous êtes le fils d’un noble guerrier. Vous devez faire honneur à la réputation de votre famille sans jamais renier votre héritage. ",
+        "objet": "Armoiries personnelles (Réputation +1)"
+      },
+	  {
+        "nom": "Marchands",
+        "desc": " Vous avez grandi dans une famille de marchands itinérants. La vie n’était pas toujours facile, mais l’artisanat non-humain est toujours très recherché.",
+        "objet": "2 connaissances"
+      },
+	  {
+        "nom": "Scribes",
+        "desc": "Vous êtes le fils d’un couple de scribes, chargés de perpétuer l’histoire des races anciennes et de la protéger autant que faire se peut.",
+        "objet": "Une chronique (Éducation +1)"
+      },
+	  {
+        "nom": "Bateleurs",
+        "desc": "Le chant et la musique vous ont accompagné toute votre jeunesse. Vous avez aussi travaillé en coulisses pour aider à écrire des chansons et à réparer des instruments.",
+        "objet": "1 instrument et 1 ami"
+      },
+	  {
+        "nom": "Artisans",
+        "desc": "Vous avez grandi dans une famille d’artisans qui visitait d’anciens palais pour trouver l’inspiration et consacrait de nombreuses heures à la réalisation de ses projets.",
+        "objet": "3 schémas/formules communes"
+      },
+	  {
+        "nom": "Famille pauvre",
+        "desc": "Vous avez grandi dans une famille modeste qui s’occupait de l’entretien des manoirs des plus riches ou exerçait de petits boulots dans les environs de votre ville natale.",
+        "objet": "Un porte-bonheur (Chance +1)"
+      }
+    ]
+  },
+  "mentor": {
+    "nord": [
+      {
+        "nom": "Une Église",
+        "desc": "Vous avez grandi sous l’influence de votre religion locale et passiez des heures à l’église.",
+        "objet": "Un texte sacré"
+      },
+	  {
+        "nom": "Un artisan",
+        "desc": "Un artisan vous a appris à apprécier l’art et le savoir-faire.",
+        "objet": "Un objet que vous avez fabriqué"
+      },
+	  {
+        "nom": "Un comte",
+        "desc": "Vous étiez sous l’influence d’un comte ou d’une comtesse qui vous a appris à rester digne en toutes circonstances.",
+        "objet": "Une bague en argent"
+      },
+	  {
+        "nom": "Un mage",
+        "desc": "Un mage vous a appris à ne pas avoir peur de la magie et à toujours tout remettre en question.",
+        "objet": "Un petit pendentif"
+      },
+	  {
+        "nom": "Une sorcière",
+        "desc": "Vous avez saisi l’importance du savoir auprès d’une sorcière de village.",
+        "objet": "Une poupée de magie noire"
+      },
+	  {
+        "nom": "Une personne maudite",
+        "desc": "Cette personne souffrant d’une malédiction vous a appris à ne pas juger les autres de façon trop sévère.",
+        "objet": "Une statuette sculptée"
+      },
+	  {
+        "nom": "Un bateleur",
+        "desc": "Un artiste vous a enseigné tous les secrets du spectacle et de la mise en scène.",
+        "objet": "Une affiche ou un ticket"
+      },
+	  {
+        "nom": "Un marchand",
+        "desc": "Un négociant vous a appris l’art de la ruse et les bienfaits de l’intelligence.",
+        "objet": "Une pièce que vous avez gagnée"
+      },
+	  {
+		"nom": "Un criminel",
+        "desc": "Un voyou vous a appris à faire passer votre intérêt avant celui des autres.",
+        "objet": "Un masque"
+      },
+	  {
+        "nom": "Un homme d’armes",
+        "desc": "Vous avez côtoyé un soldat qui vous a appris à vous défendre.",
+        "objet": "Un trophée de guerre"
+      }
+    ],
+    "nilfgaard": [
+      {
+        "nom": "Le Culte du Grand Soleil",
+        "desc": "L’Église a exercé une influence majeure sur vous. Vous avez passé des années à apprendre les chants et les rituels consacrés.",
+        "objet": "Un masque de cérémonie"
+      },
+	  {
+        "nom": "Un paria",
+        "desc": "Un proscrit vous a montré qu’il fallait toujours remettre la société en question.",
+        "objet": "Un insigne aux couleurs vives"
+      },
+	  {
+        "nom": "Un comte",
+        "desc": "Un comte vous a enseigné l’art du commandement.",
+        "objet": "Un collier en argent"
+      },
+	  {
+        "nom": "Un mage",
+        "desc": "Un mage vous a enseigné l’importance de la discipline et de la prudence.",
+        "objet": "Un emblème"
+      },
+	  {
+        "nom": "Un détective",
+        "desc": "Vous avez passé des heures aux côtés d’un enquêteur impérial à résoudre des mystères.",
+        "objet": "Une loupe"
+      },
+	  {
+        "nom": "Un chasseur de mages",
+        "desc": "Aux côtés d’un chasseur de mage, vous avez appris à vous méfier des sorciers et de leurs sortilèges",
+        "objet": "Une bague en dimeritium"
+      },
+	  {
+        "nom": "Un homme d’armes",
+        "desc": "Vous avez passé des heures à écouter un soldat raconter des histoires pleines de danger et de rebondissements.",
+        "objet": "Un trophée de guerre"
+      },
+	  {
+        "nom": "Un artisan",
+        "desc": "Un artisan vous a appris à apprécier le savoir-faire et la précision.",
+        "objet": "Un objet que vous avez fabriqué"
+      },
+	  {
+        "nom": "Un monstre intelligent",
+        "desc": "Vous avez découvert aux côtés d’une créature intelligente que tous les monstres n’étaient pas mauvais.",
+        "objet": "Une étrange statuette"
+      },
+	  {
+        "nom": "Un bateleur",
+        "desc": "Un artiste a influencé votre état d’esprit en vous apprenant à laisser libre cours à votre créativité.",
+        "objet": "Un cadeau d’un admirateur"
+      }
+    ],
+    "ancien": [
+      {
+        "nom": "Un humain",
+        "desc": "La personne la plus influente a été un humain qui vous a appris que le racisme n’était pas toujours justifié.",
+        "objet": "Une poupée de chiffon"
+      },
+	  {
+        "nom": "Un artisan",
+        "desc": "Un artisan vous a appris à admirer l’art sublime des races anciennes.",
+        "objet": "Un petit objet que vous avez fabriqué"
+      },
+	  {
+        "nom": "Un guerrier noble",
+        "desc": "Un danseur de guerre ou un défenseur de Mahakam vous a expliqué ce qu’était l’honneur.",
+        "objet": "Un trophée"
+      },
+	  {
+        "nom": "Un aristocrate",
+        "desc": "Un membre d’une grande famille vous a appris la fierté et les subtilités de l’étiquette.",
+        "objet": "Une chevalière"
+      },
+	  {
+        "nom": "Un bateleur",
+        "desc": "Vous avez côtoyé un artiste qui vous a appris l’importance de la gaieté et de la beauté.",
+        "objet": "Une affiche ou un ticket"
+      },
+	  {
+        "nom": "Un bandit",
+        "desc": "Un pillard vous a convaincu que vous avez le droit de prendre ce dont vous avez besoin par la force.",
+        "objet": "Une sacoche"
+      },
+	  {
+        "nom": "Un sage",
+        "desc": "Vous avez été sous l’influence d’un sage qui vous a enseigné l’importance de l’histoire des races anciennes.",
+        "objet": "Un livre de contes"
+      },
+	  {
+        "nom": "Un criminel",
+        "desc": "Vous avez suivi les enseignements d’un hors-la-loi qui vous a poussé à suivre vos propres règles.",
+        "objet": "Un masque"
+      },
+	  {
+        "nom": "Un chasseur",
+        "desc": "Vous avez connu un chasseur qui vous a montré comment survivre dans les contrées sauvages.",
+        "objet": "Un trophée de chasse"
+      },
+	  {
+        "nom": "Un fermier pauvre",
+        "desc": "Vous avez appris auprès d’un paysan modeste à vivre heureux.",
+        "objet": "une bêche"
+      }
+    ]
+  }
+}

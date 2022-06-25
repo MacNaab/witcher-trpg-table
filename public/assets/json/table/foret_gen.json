@@ -1,0 +1,72 @@
+{
+  "Danger": [
+    "Monstre",
+    "Piège à animaux",
+    "Gouffre",
+    "Sumac vénéneux",
+    "Essaim de moustiques",
+    "Eau contaminée"
+  ],
+  "Trésor": [
+    "Cape d'Elvenkind",
+    "Bottes des fausses pistes",
+    "Driftglobe",
+    "10, +1 flèches",
+    "Bâton des cris d'oiseaux",
+    "Lanterne Everbright",
+    "Armure mithrale",
+    "Ventilateur"
+  ],
+  "Rebondissement": [
+    "Un enfant perdu pleure seul dans une clairière. Ils n'ont aucun souvenir de qui ils sont ou comment ils y sont arrivés.",
+    "Le groupe tombe sur un coven de sorcières qui organise une cérémonie pour profaner le sol de la région.",
+    "Un gobelin a été séparé de son clan. En réalité, il a été abandonné après avoir commencé à développer une conscience.",
+    "Une grande parcelle de rasoir a mystérieusement poussé sur le chemin. Le parti s'aperçoit rapidement qu'il continue de croître à un rythme rapide.",
+    "Une meute de loups a adopté un enfant humanoïde. Ils ne sont pas agressifs mais refusent de permettre à quiconque de s'en approcher.",
+    "Un chariot s'est écrasé sur un ancien chemin. Il n'y a aucun signe de personne ou de marchandise dans le chariot. Le cheval est ligoté à proximité.",
+    "Une tempête a emporté les os d'une tombe anonyme près d'un chêne. Les os semblent être des enfants de différentes races.",
+    "Un jeune Kenku est attaqué par un groupe de monstres locaux. Il est trop jeune pour avoir formé un large dialogue et ne peut que répéter ce qu'il entend.",
+    "Un groupe de worgs sauvages est combattu par des gobelins qui tentent de les apprivoiser. Les worgs sont largement en infériorité numérique.",
+    "Plusieurs demi-orques sont conduits à travers les bois par un petit groupe d'humains. Les humains sont des esclavagistes avec un biais sévère contre les orckinds."
+  ],
+  "PNJ": [
+    "Caramip Goodearth, Gnome - Charpentier expert, utilise des serments et des exclamations colorés",
+    "Hadarai Othronus, M, Elfe - Chasseur, Calme",
+    "Myria Glenfellow, F, Halfling - Braconnier, se mord les ongles",
+    "Tana Tealeaf, F, Gnome - Druid, utilise un discours fleuri",
+    "Avice Rothwell, F, Humain - Ranger, Paces",
+    "Astaro Poetry, M, Tiefling - Logger, Parle en rime",
+    "Birgit O’Higgens, F, Humaine - Marchande itinérante, Rude",
+    "Sabastian Flores, M, Humain - Herboriste local, Honnête",
+    "Aramil Freddrick, M, demi-elfe - Aventurier, irritable",
+    "Kettlewhistle, F, Half-Orc - Outlander, tribu abandonnée",
+    "Thodris Frostbeard, F, Dwarf - Miner, fait des jeux de mots constants",
+    "Haruki Othronus, M, demi-elfe - Moine, utilise fréquemment le mauvais mot"
+  ],
+  "Lieu": [
+    "Mine abandonnée",
+    "Hutte de sorcière",
+    "Avant-poste de garde",
+    "Cabane du chasseur",
+    "Cabane dans les arbres",
+    "Distillerie Moonshine",
+    "Temple antique",
+    "Cimetière décrépit",
+    "Propriété du bûcheron",
+    "Camp des gobelins",
+    "Domaine Noble",
+    "Repaire des bandits",
+    "Fort de l'armée",
+    "Résidence d'été de Soveign",
+    "Totem sacré",
+    "Portail planaire",
+    "Règlement de clan barbare",
+    "Ferme",
+    "Repaire de licorne",
+    "Grotte de la Dryade"
+  ],
+  "Auteur": {
+    "nom": "Quincy0807",
+    "lien": "https://www.reddit.com/r/DnDBehindTheScreen/comments/hw8a35/dicing_for_forests/"
+  }
+}
