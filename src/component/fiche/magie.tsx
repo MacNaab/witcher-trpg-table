@@ -127,7 +127,7 @@ function GigaList(props: any) {
           <>
             <Heading>{conversion[e]}</Heading>
             <Wrap px={4} spacing="30px">
-              {[...Array(nb)].map((el, n) => (
+              {[...Array(nb)].map((_el, n) => (
                 <Affichage
                   label={conversion[e]}
                   n={n}

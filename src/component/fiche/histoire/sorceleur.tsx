@@ -16,7 +16,7 @@ function Decade(props: any) {
   const d = Math.floor((age - 11) / 10);
   return (
     <Wrap pt={2} pb={4} spacing="30px" justify="center">
-      {[...Array(d > 0 ? d : 1)].map((elem, index) => (
+      {[...Array(d > 0 ? d : 1)].map((_e, index) => (
         <WrapItem key={`WrapItem_decade#${index}`}>
           <MyForm
             data={{

@@ -101,6 +101,11 @@ export default function BasicUsage() {
     setBody((oldArray) => [...oldArray, newArray]);
   }
 
+  // A SUPPRIMER:
+  if (myHeader === ['false']) {
+    setHead(heads);
+  }
+
   return (
     <>
       <Button onClick={onOpen}>Open Modal</Button>
