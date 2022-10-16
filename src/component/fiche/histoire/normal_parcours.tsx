@@ -40,7 +40,7 @@ export default function Sample({ data }: any) {
         <b>Origine: </b>
         {data.origine} ({data.region})
       </Text>
-      <Text>
+      <Text as="div">
         <b>Famille: </b>
         <div className="mx-3">
           {data.famille}

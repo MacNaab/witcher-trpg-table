@@ -60,6 +60,7 @@ export default function Sample(props: any) {
     updateData,
     max = 44,
     compt,
+    exclusive,
   } = props;
   const myForm = useRef(null);
   const [sums, setS] = useState(max);
@@ -72,6 +73,7 @@ export default function Sample(props: any) {
     setTimeout(() => {
       // eslint-disable-next-line no-return-assign
       compt.forEach((e: any) => (sum += Number(form[e].value)));
+      sum += Number(form.EXC.value);
       setS(Number(max) - Number(sum));
     }, 1);
   };
@@ -100,6 +102,18 @@ export default function Sample(props: any) {
       <form ref={myForm} onSubmit={handleSubmit}>
         <Wrap px={4} spacing="30px" justify="center">
           {myCompts}
+          <WrapItem>
+            <ComptNumber
+              data={{
+                min: 1,
+                nom: 'EXC',
+                label: exclusive.nom,
+                desc: exclusive.desc,
+                complexe: exclusive.complexe,
+                update: check,
+              }}
+            />
+          </WrapItem>
         </Wrap>
         <Center>
           <Button

@@ -41,6 +41,7 @@ export default function Sample() {
     initialStep: 0,
   });
   const [myData, setData] = useState<any>({});
+
   function updateData(etape: any, valeur: any) {
     const updatedValue: any = {};
     updatedValue[etape] = valeur;
