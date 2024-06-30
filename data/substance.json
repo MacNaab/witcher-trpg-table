@@ -1,0 +1,684 @@
+{
+  "BASE": [
+    {
+      "Nom": "Calcium equum",
+      "Rareté": "C",
+      "Localisation": "Montagnes et sous-sols",
+      "Quantité": "1d10 unité(s)",
+      "SD de recherche": 12,
+      "Poids": "0,1 kg",
+      "Coût": 12,
+      "Substance": "VITRIOL"
+    },
+    {
+      "Nom": "Dent de nekker",
+      "Rareté": "I",
+      "Localisation": "Nekkers",
+      "Quantité": "–",
+      "SD de recherche": null,
+      "Poids": "0,1 kg",
+      "Coût": 30,
+      "Substance": "VITRIOL"
+    },
+    {
+      "Nom": "Fruit de balisse",
+      "Rareté": "C",
+      "Localisation": "Champs",
+      "Quantité": "1d10 unité(s)",
+      "SD de recherche": 12,
+      "Poids": "0,1 kg",
+      "Coût": 8,
+      "Substance": "VITRIOL"
+    },
+    {
+      "Nom": "Griffe de goule",
+      "Rareté": "R",
+      "Localisation": "Goules",
+      "Quantité": "–",
+      "SD de recherche": null,
+      "Poids": "0,1 kg",
+      "Coût": 60,
+      "Substance": "VITRIOL"
+    },
+    {
+      "Nom": "Œil de corbeau",
+      "Rareté": "I",
+      "Localisation": "Champs et forêts",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": 15,
+      "Poids": "0,1 kg",
+      "Coût": 17,
+      "Substance": "VITRIOL"
+    },
+    {
+      "Nom": "Orge",
+      "Rareté": "C",
+      "Localisation": "Champs",
+      "Quantité": "1d10 unité(s)",
+      "SD de recherche": 12,
+      "Poids": "0,1 kg",
+      "Coût": 9,
+      "Substance": "VITRIOL"
+    },
+    {
+      "Nom": "Peau de troll",
+      "Rareté": "R",
+      "Localisation": "Trolls de pierre",
+      "Quantité": "–",
+      "SD de recherche": null,
+      "Poids": "4,5 kg",
+      "Coût": 147,
+      "Substance": "VITRIOL"
+    },
+    {
+      "Nom": "Pétales de myrte blanc",
+      "Rareté": "C",
+      "Localisation": "Champs",
+      "Quantité": "1d10 unité(s)",
+      "SD de recherche": 12,
+      "Poids": "0,1 kg",
+      "Coût": 8,
+      "Substance": "VITRIOL"
+    },
+    {
+      "Nom": "Vitriocybe",
+      "Rareté": "I",
+      "Localisation": "Grottes",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": 15,
+      "Poids": "0,1 kg",
+      "Coût": 17,
+      "Substance": "VITRIOL"
+    },
+    {
+      "Nom": "Célandine",
+      "Rareté": "C",
+      "Localisation": "Champs et forêts",
+      "Quantité": "1d10 unité(s)",
+      "SD de recherche": 12,
+      "Poids": "0,1 kg",
+      "Coût": 8,
+      "Substance": "REBIS"
+    },
+    {
+      "Nom": "Cerveau de noyeur",
+      "Rareté": "I",
+      "Localisation": "Noyeurs",
+      "Quantité": "–",
+      "SD de recherche": null,
+      "Poids": "1 kg",
+      "Coût": 80,
+      "Substance": "REBIS"
+    },
+    {
+      "Nom": "Cœur de nekker",
+      "Rareté": "I",
+      "Localisation": "Nekkers",
+      "Quantité": "–",
+      "SD de recherche": null,
+      "Poids": "0,5 kg",
+      "Coût": 30,
+      "Substance": "REBIS"
+    },
+    {
+      "Nom": "Dent de guenaude",
+      "Rareté": "R",
+      "Localisation": "Guenaudes sépulcrales",
+      "Quantité": "–",
+      "SD de recherche": null,
+      "Poids": "0,1 kg",
+      "Coût": 90,
+      "Substance": "REBIS"
+    },
+    {
+      "Nom": "Éclats de lune",
+      "Rareté": "R",
+      "Localisation": "Montagnes ou sous-sols",
+      "Quantité": "1d6/2 unité(s)",
+      "SD de recherche": 18,
+      "Poids": "0,1 kg",
+      "Coût": 91,
+      "Substance": "REBIS"
+    },
+    {
+      "Nom": "Fibre de han",
+      "Rareté": "I",
+      "Localisation": "Champs",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": 15,
+      "Poids": "0,1 kg",
+      "Coût": 17,
+      "Substance": "REBIS"
+    },
+    {
+      "Nom": "Pierre de vin",
+      "Rareté": "R",
+      "Localisation": "Brasseries",
+      "Quantité": "1d6/2 unité(s)",
+      "SD de recherche": 18,
+      "Poids": "0,5 kg",
+      "Coût": 88,
+      "Substance": "REBIS"
+    },
+    {
+      "Nom": "Essence de fantôme",
+      "Rareté": "R",
+      "Localisation": "Fantômes",
+      "Quantité": "-",
+      "SD de recherche": null,
+      "Poids": "0,1 kg",
+      "Coût": 95,
+      "Substance": "ÉTHER"
+    },
+    {
+      "Nom": "Fruit de berbéris",
+      "Rareté": "C",
+      "Localisation": "Montagnes et marais",
+      "Quantité": "1d10 unité(s)",
+      "SD de recherche": 12,
+      "Poids": "0.1 kg",
+      "Coût": 9,
+      "Substance": "ÉTHER"
+    },
+    {
+      "Nom": "Perle",
+      "Rareté": "R",
+      "Localisation": "Fond des océans et rivages",
+      "Quantité": "1d6/3 unité(s)",
+      "SD de recherche": 20,
+      "Poids": "0,1 kg",
+      "Coût": 100,
+      "Substance": "ÉTHER"
+    },
+    {
+      "Nom": "Pétales de ginatia",
+      "Rareté": "I",
+      "Localisation": "Champs",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": 15,
+      "Poids": "0,1 kg",
+      "Coût": 17,
+      "Substance": "ÉTHER"
+    },
+    {
+      "Nom": "Pétales d’ellébore",
+      "Rareté": "I",
+      "Localisation": "Forêts",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": 15,
+      "Poids": "0,1 kg",
+      "Coût": 19,
+      "Substance": "ÉTHER"
+    },
+    {
+      "Nom": "Racine de pimenta dioica",
+      "Rareté": "I",
+      "Localisation": "Champs",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": 15,
+      "Poids": "0,1 kg",
+      "Coût": 18,
+      "Substance": "ÉTHER"
+    },
+    {
+      "Nom": "Sclerodermie",
+      "Rareté": "P",
+      "Localisation": "Forêts et grottes",
+      "Quantité": "2d6 unités",
+      "SD de recherche": 10,
+      "Poids": "0,1 kg",
+      "Coût": 5,
+      "Substance": "ÉTHER"
+    },
+    {
+      "Nom": "Solution de mercure",
+      "Rareté": "R",
+      "Localisation": "Montagnes et sous-sols",
+      "Quantité": "1d6/2 unité(s)",
+      "SD de recherche": 18,
+      "Poids": "0,1 kg",
+      "Coût": 77,
+      "Substance": "ÉTHER"
+    },
+    {
+      "Nom": "Chèvrefeuille",
+      "Rareté": "C",
+      "Localisation": "Champs",
+      "Quantité": "1d10 unité(s)",
+      "SD de recherche": 12,
+      "Poids": "0,1 kg",
+      "Coût": 21,
+      "Substance": "QUEBRITH"
+    },
+    {
+      "Nom": "Eau ducale",
+      "Rareté": "C",
+      "Localisation": "Montagnes et sous-sols",
+      "Quantité": "1d10 unité(s)",
+      "SD de recherche": 12,
+      "Poids": "0,1 kg",
+      "Coût": 20,
+      "Substance": "QUEBRITH"
+    },
+    {
+      "Nom": "Feuilles de balisse",
+      "Rareté": "C",
+      "Localisation": "Champs",
+      "Quantité": "1d10 unité(s)",
+      "SD de recherche": 12,
+      "Poids": "0,1 kg",
+      "Coût": 8,
+      "Substance": "QUEBRITH"
+    },
+    {
+      "Nom": "Moelle de goule",
+      "Rareté": "R",
+      "Localisation": "Goules",
+      "Quantité": "–",
+      "SD de recherche": null,
+      "Poids": "0,5 kg",
+      "Coût": 80,
+      "Substance": "QUEBRITH"
+    },
+    {
+      "Nom": "Optima mater",
+      "Rareté": "R",
+      "Localisation": "Montagnes et sous-sols",
+      "Quantité": "1d6/2 unité(s)",
+      "SD de recherche": 18,
+      "Poids": "0,1 kg",
+      "Coût": 100,
+      "Substance": "QUEBRITH"
+    },
+    {
+      "Nom": "Petite ciguë",
+      "Rareté": "P",
+      "Localisation": "Champs",
+      "Quantité": "2d6 unités",
+      "SD de recherche": 10,
+      "Poids": "0,1 kg",
+      "Coût": 2,
+      "Substance": "QUEBRITH"
+    },
+    {
+      "Nom": "Soufre",
+      "Rareté": "C",
+      "Localisation": "Montagnes et sous-sols",
+      "Quantité": "1d10 unité(s)",
+      "SD de recherche": 12,
+      "Poids": "0,1 kg",
+      "Coût": 14,
+      "Substance": "QUEBRITH"
+    },
+    {
+      "Nom": "Cortinaire",
+      "Rareté": "I",
+      "Localisation": "Forêts",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": 15,
+      "Poids": "0,1 kg",
+      "Coût": 18,
+      "Substance": "HYDRAGENUM"
+    },
+    {
+      "Nom": "Essence d’eau",
+      "Rareté": "R",
+      "Localisation": "Noyeurs et sirènes",
+      "Quantité": "–",
+      "SD de recherche": null,
+      "Poids": "0,1 kg",
+      "Coût": 46,
+      "Substance": "HYDRAGENUM"
+    },
+    {
+      "Nom": "Foie de troll",
+      "Rareté": "R",
+      "Localisation": "Trolls de pierre",
+      "Quantité": "–",
+      "SD de recherche": null,
+      "Poids": "1 kg",
+      "Coût": 87,
+      "Substance": "HYDRAGENUM"
+    },
+    {
+      "Nom": "Griffe de nekker",
+      "Rareté": "I",
+      "Localisation": "Nekkers",
+      "Quantité": "–",
+      "SD de recherche": null,
+      "Poids": "0,5 kg",
+      "Coût": 40,
+      "Substance": "HYDRAGENUM"
+    },
+    {
+      "Nom": "Gui",
+      "Rareté": "I",
+      "Localisation": "Champs et forêts",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": 15,
+      "Poids": "0,1 kg",
+      "Coût": 8,
+      "Substance": "HYDRAGENUM"
+    },
+    {
+      "Nom": "Poussière imprégnée",
+      "Rareté": "R",
+      "Localisation": "Fantômes, spectres de midi, griffons et golems",
+      "Quantité": "–",
+      "SD de recherche": null,
+      "Poids": "0,1 kg",
+      "Coût": 146,
+      "Substance": "HYDRAGENUM"
+    },
+    {
+      "Nom": "Salive de loup-garou",
+      "Rareté": "R",
+      "Localisation": "Loups-garous",
+      "Quantité": "–",
+      "SD de recherche": null,
+      "Poids": "0,1 kg",
+      "Coût": 60,
+      "Substance": "HYDRAGENUM"
+    },
+    {
+      "Nom": "Aconit",
+      "Rareté": "I",
+      "Localisation": "Champs, forêts et montagnes",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": "15",
+      "Poids": "0,1 kg",
+      "Coût": "9",
+      "Substance": "VERMILLON"
+    },
+    {
+      "Nom": "Chitine",
+      "Rareté": "R",
+      "Localisation": "Arachas et endriagues",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "5 kg",
+      "Coût": "106",
+      "Substance": "VERMILLON"
+    },
+    {
+      "Nom": "Mucus d’endriague",
+      "Rareté": "I",
+      "Localisation": "Endriagues",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": "15",
+      "Poids": "0,1 kg",
+      "Coût": "38",
+      "Substance": "VERMILLON"
+    },
+    {
+      "Nom": "Œuf de griffon",
+      "Rareté": "R",
+      "Localisation": "Griffons et nids de griffons",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "1 kg",
+      "Coût": "150",
+      "Substance": "VERMILLON"
+    },
+    {
+      "Nom": "Phosphore",
+      "Rareté": "I",
+      "Localisation": "Montagnes et sous-sols",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": "15",
+      "Poids": "0,5 kg",
+      "Coût": "20",
+      "Substance": "VERMILLON"
+    },
+    {
+      "Nom": "Plumes de griffon",
+      "Rareté": "R",
+      "Localisation": "Griffons",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,1 kg",
+      "Coût": "148",
+      "Substance": "VERMILLON"
+    },
+    {
+      "Nom": "Racine de mandragore",
+      "Rareté": "R",
+      "Localisation": "Champs et forêts",
+      "Quantité": "1d6/2 unité(s)",
+      "SD de recherche": "18",
+      "Poids": "0,1 kg",
+      "Coût": "65",
+      "Substance": "VERMILLON"
+    },
+    {
+      "Nom": "Aloès du loup",
+      "Rareté": "I",
+      "Localisation": "Montagnes Bleues",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": "15",
+      "Poids": "0,1 kg",
+      "Coût": "39",
+      "Substance": "SOL"
+    },
+    {
+      "Nom": "Cordes vocales de sirène",
+      "Rareté": "R",
+      "Localisation": "Sirènes",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,1 kg",
+      "Coût": "65",
+      "Substance": "SOL"
+    },
+    {
+      "Nom": "Essence de lumière",
+      "Rareté": "I",
+      "Localisation": "Spectres de midi",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,1 kg",
+      "Coût": "43",
+      "Substance": "SOL"
+    },
+    {
+      "Nom": "Œil de fiellon",
+      "Rareté": "R",
+      "Localisation": "Fiellons",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,5 kg",
+      "Coût": "149",
+      "Substance": "SOL"
+    },
+    {
+      "Nom": "Œil de wyvern",
+      "Rareté": "R",
+      "Localisation": "Wyverns",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,1 kg",
+      "Coût": "75",
+      "Substance": "SOL"
+    },
+    {
+      "Nom": "Salive de vampire",
+      "Rareté": "R",
+      "Localisation": "Katakans",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,5 kg",
+      "Coût": "155",
+      "Substance": "SOL"
+    },
+    {
+      "Nom": "Verveine",
+      "Rareté": "I",
+      "Localisation": "Champs",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": "15",
+      "Poids": "0,1 kg",
+      "Coût": "18",
+      "Substance": "SOL"
+    },
+    {
+      "Nom": "Bryone",
+      "Rareté": "C",
+      "Localisation": "Montagnes et cités",
+      "Quantité": "1d10 unité(s)",
+      "SD de recherche": "12",
+      "Poids": "0,1 kg",
+      "Coût": "8",
+      "Substance": "CAELUM"
+    },
+    {
+      "Nom": "Crocs de vampire",
+      "Rareté": "R",
+      "Localisation": "Katakans",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,1 kg",
+      "Coût": "150",
+      "Substance": "CAELUM"
+    },
+    {
+      "Nom": "Excréments de fiellon",
+      "Rareté": "R",
+      "Localisation": "Fiellons ou territoires fiellons",
+      "Quantité": "1d6/2 unité(s)",
+      "SD de recherche": "20",
+      "Poids": "1 kg",
+      "Coût": "106",
+      "Substance": "CAELUM"
+    },
+    {
+      "Nom": "Extrait de venin",
+      "Rareté": "I",
+      "Localisation": "Goules, guenaudes sépulcrales, endriagues, arachas, wyverns",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,1 kg",
+      "Coût": "38",
+      "Substance": "CAELUM"
+    },
+    {
+      "Nom": "Langue de guenaude sépulcrale",
+      "Rareté": "R",
+      "Localisation": "Guenaudes sépulcrales",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,5 kg",
+      "Coût": "80",
+      "Substance": "CAELUM"
+    },
+    {
+      "Nom": "Langue de noyeur",
+      "Rareté": "R",
+      "Localisation": "Noyeurs",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,5 kg",
+      "Coût": "86",
+      "Substance": "CAELUM"
+    },
+    {
+      "Nom": "Moisissure verte",
+      "Rareté": "C",
+      "Localisation": "Grottes",
+      "Quantité": "1d10 unité(s)",
+      "SD de recherche": "12",
+      "Poids": "0,1 kg",
+      "Coût": "5",
+      "Substance": "CAELUM"
+    },
+    {
+      "Nom": "Venin d’arachas",
+      "Rareté": "R",
+      "Localisation": "Arachas",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,5 kg",
+      "Coût": "76",
+      "Substance": "CAELUM"
+    },
+    {
+      "Nom": "Cœur de golem",
+      "Rareté": "R",
+      "Localisation": "Golems",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "1 kg",
+      "Coût": "167",
+      "Substance": "FULGUR"
+    },
+    {
+      "Nom": "Embryon d’endriague",
+      "Rareté": "R",
+      "Localisation": "Nids d’endriagues",
+      "Quantité": "1d6",
+      "SD de recherche": "–",
+      "Poids": "1,5 kg",
+      "Coût": "55",
+      "Substance": "FULGUR"
+    },
+    {
+      "Nom": "Immortelle",
+      "Rareté": "R",
+      "Localisation": "Sous-sols",
+      "Quantité": "1d6/2 unité(s)",
+      "SD de recherche": "18",
+      "Poids": "0,1 kg",
+      "Coût": "75",
+      "Substance": "FULGUR"
+    },
+    {
+      "Nom": "Œil d’arachas",
+      "Rareté": "R",
+      "Localisation": "Arachas",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,5 kg",
+      "Coût": "95",
+      "Substance": "FULGUR"
+    },
+    {
+      "Nom": "Œuf de wyvern",
+      "Rareté": "R",
+      "Localisation": "Wyverns",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "2 kg",
+      "Coût": "150",
+      "Substance": "FULGUR"
+    },
+    {
+      "Nom": "Oreille de guenaude sépulcrale",
+      "Rareté": "R",
+      "Localisation": "Guenaudes sépulcrales",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,1 kg",
+      "Coût": "134",
+      "Substance": "FULGUR"
+    },
+    {
+      "Nom": "Poussière de spectre",
+      "Rareté": "I",
+      "Localisation": "Spectres",
+      "Quantité": "1d6 unité(s)",
+      "SD de recherche": "–",
+      "Poids": "–",
+      "Coût": "30",
+      "Substance": "FULGUR"
+    },
+    {
+      "Nom": "Suif de chien",
+      "Rareté": "C",
+      "Localisation": "Chiens et loups",
+      "Quantité": "–",
+      "SD de recherche": "–",
+      "Poids": "0,1 kg",
+      "Coût": "10",
+      "Substance": "FULGUR"
+    }
+  ]
+}

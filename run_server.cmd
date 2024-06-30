@@ -1,6 +1,6 @@
 @ECHO OFF
 CLS
-ECHO === Witcher TRPG Table ===
+ECHO === WITCHER TRPG PWA ===
 ECHO --- Creation du serveur ---
 ECHO 1.Run dev
 ECHO 2.Run build
@@ -28,6 +28,8 @@ npm run start
 :prod
 ECHO Create an optimized production build:
 npm run build-prod
+CHOICE /C ENTER /M "Exit:"
+
 
 :fix
 ECHO eslint --fix:
