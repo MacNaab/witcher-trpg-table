@@ -1,10 +1,10 @@
 {
-    "name": "Witcher TRPG PWA", 
-    "short_name": "witcher-trpg-pwa",
+    "name": "The Witcher TRPG, app for GMs", 
+    "short_name": "The Witcher TRPG - GM app",
     "theme_color": "#35155D",
     "background_color": "#ffffff",
     "display": "standalone",
-    "orientation": "portrait",
+    "orientation": "any",
     "scope": "/",
     "start_url": "/",
     "icons": [
