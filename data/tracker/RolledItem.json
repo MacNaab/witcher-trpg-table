@@ -1,0 +1,19 @@
+{
+	"id": 1,
+	"nom": "Test",
+	"preset": {
+		"groupe": "",
+		"nombre": "",
+		"data": {}
+	},
+	"initiative": {
+		"total": 0,
+		"formula": "formula",
+		"explosive": false,
+		"rolls": [],
+		"modifiers": 0
+	},
+	"active": false,
+	"END": 1,
+	"PS": 1
+}

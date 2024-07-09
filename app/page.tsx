@@ -12,10 +12,7 @@ export default function Home() {
           height={37}
           priority
         />
-        |
-        <h1 className="text-lg font-medium">PWA with Next.js</h1>
-        |
-        <p className="opacity-80">©imvinojanv</p>
+        |<h1 className="text-lg font-medium">PWA with Next.js</h1>
       </div>
     </main>
   );

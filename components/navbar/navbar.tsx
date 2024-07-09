@@ -17,7 +17,10 @@ export default function Navbar() {
     { label: "Accueil", href: "/" },
     { label: "Substances", href: "/substance/" },
     { label: "Tracker de Combat", href: "/tracker/" },
+    { label: "Carte", href: "/map/" },
+    { label: "Générateur de rencontres", href: "/rencontre/" },
   ];
+  
 
   return (
     <div className="w-full max-w-7xl">

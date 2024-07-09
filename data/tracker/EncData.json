@@ -1,0 +1,10 @@
+{
+    "id": 1,
+    "nom": "Fight Club",
+    "starred": false,
+    "combattants": [],
+    "groups": [],
+    "rolled": false,
+    "active_index": 0,
+    "rolledFighters": []
+}
