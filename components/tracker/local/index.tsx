@@ -2,21 +2,43 @@
 import Table from "@/components/tracker/localTable";
 import Heading from "@/components/typographie/heading";
 import NewUnit from "./newUnit";
+import EditUnit from "./editUnit";
 import React, { useState } from "react";
 import { db, db_units_reset, UnitInterface } from "@/db/data";
 import { useLiveQuery } from "dexie-react-hooks";
 
+async function deleteEncounter(id: number) {
+  try {
+    // Add the new friend!
+    await db.units.delete(id);
+  } catch (error) {
+    console.log(`Failed to add ${id}: ${error}`);
+  }
+}
+
 export default function Home() {
   const [query, setQuery] = useState("");
+  const [editedUnit, setEditedUnit] = useState<UnitInterface>()
   const friends = useLiveQuery(() => db.units.toArray());
+
+  const [showModal, setShowModal] = useState(false);
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
+  };
+
+  const editUnit = (unit: UnitInterface) => {
+    setEditedUnit(unit);
+    setShowModal(true);
   };
   return (
     <div>
       <Heading level={2}>Bestiaire local</Heading>
       <NewUnit />
+      <EditUnit unit={editedUnit} toggleModal={toggleModal} showModal={showModal}  />
       <div className="my-2 mx-12">
         <input
           type="text"
@@ -30,9 +52,15 @@ export default function Home() {
         <Table
           heads={["Nom", "Categorie", "Menace", "Source", "Éditer", "Supprimer"]}
           rows={
-            friends?.filter((option: UnitInterface) =>
-              option.Nom.toLowerCase().includes(query.toLowerCase())
-            ) || []
+            friends
+              ?.map((e) => ({
+                ...e,
+                Supprimer: () => deleteEncounter(e.id),
+                Éditer: () => editUnit(e),
+              }))
+              ?.filter((option: UnitInterface) =>
+                option.Nom.toLowerCase().includes(query.toLowerCase())
+              ) || []
           }
         />
       </div>

@@ -84,7 +84,7 @@ export default function Home() {
         <Alert
           type="warning"
           boldText="Attention !"
-          normalText="Aucune rencontre selectionnée.."
+          normalText="Aucune rencontre sélectionnée."
         />
       )}
       <Heading level={2}>Liste des rencontres</Heading>
@@ -120,7 +120,7 @@ export default function Home() {
           type="text"
           value={query}
           onChange={handleChange}
-          placeholder="Rechercher..."
+          placeholder="Rechercher par Nom..."
           className="block w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         />
       </div>

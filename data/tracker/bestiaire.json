@@ -12519,7 +12519,7 @@
 		"Armure": "8",
 		"Taille": "Humaine",
 		"Poids": "Humain",
-		"Environnement": "Fôret",
+		"Environnement": "Forêt",
 		"Intelligence": "Aussi intelligent qu’un humain",
 		"Organisation": "Solitaire",
 		"Caract": {
@@ -12599,7 +12599,7 @@
 		"Armure": "15",
 		"Taille": "Au moins 2 mètres de hauteur",
 		"Poids": "Au moins 200 Kg",
-		"Environnement": "Fôret; Montagnes",
+		"Environnement": "Forêt; Montagnes",
 		"Intelligence": "Fureur, combatif, animal",
 		"Organisation": "Solitaire ou en petite meute",
 		"Caract": {
@@ -12677,7 +12677,7 @@
 		"Armure": "20",
 		"Taille": "Au moins 2 mètres de hauteur",
 		"Poids": "Au moins 200 Kg",
-		"Environnement": "Fôret; Montagnes",
+		"Environnement": "Forêt; Montagnes",
 		"Intelligence": "Fureur, combatif, animal",
 		"Organisation": "Solitaire ou en petite meute",
 		"Caract": {
@@ -12758,7 +12758,7 @@
 		"Armure": "10",
 		"Taille": "Environ 1,5 mètres de hauteur",
 		"Poids": "Au moins 100 Kg",
-		"Environnement": "Fôret; Montagnes",
+		"Environnement": "Forêt; Montagnes",
 		"Intelligence": "Fureur, combatif, animal",
 		"Organisation": "Solitaire ou en petite meute",
 		"Caract": {

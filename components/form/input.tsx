@@ -6,12 +6,16 @@ export default function Input({
   placeholder = "",
   size = "",
   required = false,
+  onChange,
+  value,
 }: {
   label: string;
   name: string;
   placeholder?: string;
   size?: string;
   required?: boolean;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
 }) {
   const inputId = nanoid();
 
@@ -46,6 +50,8 @@ export default function Input({
         className={css}
         placeholder={placeholder}
         required={required}
+        onChange={onChange}
+        value={value}
       />
     </div>
   );

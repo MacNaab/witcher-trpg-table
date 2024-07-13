@@ -63,7 +63,7 @@ function Tbody({
                 </td>
               );
             }
-            if (head == "Éditer" || head == "Supprimer") {
+            if (head == "Éditer" || head == "Supprimer" || head == "Copier") {
               return (
                 <td key={nanoid()} className="px-6 py-4">
                   <button

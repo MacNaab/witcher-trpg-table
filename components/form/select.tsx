@@ -1,3 +1,4 @@
+'use client';
 import { nanoid } from "nanoid";
 
 export default function Select({
@@ -5,11 +6,13 @@ export default function Select({
   name = "",
   options,
   onChange,
+  value,
 }: {
   label: string;
   name?: string;
   options: string[];
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  value?: string;
 }) {
   const id = nanoid();
   return (
@@ -26,8 +29,9 @@ export default function Select({
         onChange={(event) => {
           if (onChange) {
             onChange(event);
-          }
+         }
         }}
+        value={value}
         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       >
         {options.map((option) => (
