@@ -1,0 +1,6 @@
+{
+  "name": "The Witcher TRPG — GM Grimoire",
+  "description": "Modular multilingual Game Master toolkit for The Witcher Tabletop RPG: random tables, urban & encounter generators, combat tracker, travel planner, character generator, EN-FR reference, and combat simulator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

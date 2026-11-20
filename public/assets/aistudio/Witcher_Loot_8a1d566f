@@ -1,0 +1,263 @@
+﻿Introduction
+Hello and welcome to my own custom built loot table rules. In this guide I will walk you step by step in order to recreate it for your own use, as well as how to tweak and edit the values so that you can change it to your liking. It should be noted that this will only work in Roll20, whether playing full sessions in Roll20 or playing in person with a nearby laptop just to automate some rolls. The loot system exists purely in macros and rollable tables. It is VERY IMPORTANT to name all of your macros and rollable tables as the exact names that I have them set to, since they reference each other (unless you’re an advanced user and know how to change all name values yourself). In the walkthrough will be results of macros and tables, and at the end will be all the code that you need. Let’s begin.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creating the Macro - Step 1
+The first thing you’ll want to do is be in your Roll20 lobby. Navigate to your COLLECTION tab, which is located at the top right above the chat   . The first macro we’re going to create is the first roll you’ll do: determining what exactly might drop in a loot chest.
+
+In the example to the left, I have it configured where if the number on the right is highlighted in green (like scoring a critical hit), it means that item dropped. There are multiple instances of the same category (Armor 1, Armor 2, etc) which is just to give the same category multiple chances to drop. So in the example, you’ll see that 1 weapon, 1 armor, and 2 formula has been rolled, along with 193 crowns.
+  
+If you want to change the drop rates, what you’ll need to do is change the cs<# section of the macro. For example, if I wanted to increase weapons to be a 40% chance, I would change it to read “{{Weapon 1 (40%)=[[1d100cs<40cf0]]}}”. 
+
+
+EF stands for “Elderfolk”.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creating the Macro - Step 2
+Next, we need to determine what exactly the weapon, armor, and 2 formulas are. Click on the “Roll” button at the bottom right of the loot macro in the chat.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this macro, simply click on the category you need. So we’ll click weapon once, armor once, and Craft twice (I’ve compiled diagrams and formulae into the same result). Here are our results after clicking on the matching category buttons:
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Macro Commands
+In this next section, I will just post all macro commands.
+
+
+Name: Loot
+&{template:default} {{name=Loot Roll}} {{Crowns=[[1d300]]}} {{Gear 1 (50%)=[[1d100cs<50cf0]]}} {{Gear 2 (50%)=[[1d100cs<50cf0]]}} {{Gear 3 (50%)=[[1d100cs<50cf0]]}} {{Weapon 1 (25%)=[[1d100cs<25cf0]]}} {{Weapon 2 (25%)=[[1d100cs<25cf0]]}} {{Armor 1 (20%)=[[1d100cs<20cf0]]}} {{Armor 2 (20%)=[[1d100cs<20cf0]]}} {{Diagram 1 (15%)=[[1d100cs<15cf0]]}} {{Diagram 2 (15%)=[[1d100cs<15cf0]]}} {{Formula 1 (15%)=[[1d100cs<15cf0]]}} {{Formula 2 (15%)=[[1d100cs<15cf0]]}} {{Alchemy (10%)=[[1d100cs<10cf0]]}} {{Glyph (3%)=[[1d100cs<3cf0]]}} {{Rune (3%)=[[1d100cs<3cf0]]}} {{EF Weapon (1%)=[[1d100cs1cf0]]}} {{EF Armor (1%)=[[1d100cs1cf0]]}} {{Relic (0.10%)=[[1d1000cs<1cf0]]}} {{Category=[Roll](!
+#Category)}}
+
+
+
+Name: CatArmor
+&{template:default} {{name=Armor Roll}} {{[[1t[Rarity]]]=[[1t[ArmorCat1]]] [[1t[ArmorCat2]]]}}
+
+
+Name: CatCraft
+&{template:default} {{name=Crafting Diagram or Formula}} {{[[1t[Rarity2]]]}} {{[[1t[CraftCat]]]}}
+
+
+Name: CatGear
+&{template:default} {{name=Gear Roll}} {{[[1t[Rarity]]]=[[1t[GearCat]]]}}
+
+
+Name: CatRarity
+&{template:default} {{name=Availability}} {{Roll=[[1t[Rarity]]]}}
+
+
+Name: CatWeapon
+&{template:default} {{name=Weapon Roll}} {{[[1t[Rarity]]]=[[1t[WeaponCat]]]}}
+
+
+Name: Category
+/w gm &{template:default}{{name=Loot Category}} {{[Weapon](!
+#CatWeapon)}} {{[Armor](!
+#CatArmor)}} {{[Gear](!
+#CatGear)}} {{[Craft](!
+#CatCraft)}} {{[Rarity](!
+#CatRarity)}}
+
+
+Table Commands
+In this section, I will post the name and values of the rollable tables. It is very important that you set the “weight” of an item to the exact percentage in the name of the entry. For example, if it says “Sword (15%)” then you set the weight to 15. You can change these values yourself afterwards, since the “weight” basically means it’s percent chance to be drawn when rolled. If an entry does not have a percentage next to it (like in the weapon category table), all entries are set to the default 1 weight. If you change the percentages and weight, it’s important to make the total weight of all entries add up to 100.  
+  
+  
+
+
+
+
+
+
+
+*More on the next page!*      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+And that should be it! If you entered all macros and tables as I’ve posted them here with the exact names, everything should work for you. I recommend just having the “Loot” macro in your bar, as that macro then leads to all the other things you need within it. If you have any questions, feedback, or need help, you can find me in the R. Talsorian Games Discord server, where my username is “Burning”. Thank you for reading this! It took me over 3 hours to create the first iteration of this loot system. I hope you find some use from this and have fun in your games.
