@@ -1,18 +1,28 @@
 import { ARMOR_DATA } from './armorData';
 import { COMPONENTS_DATA } from './componentsData';
 import { DIAGRAMS_DATA } from './diagramsData';
+import { EXPERIMENTAL_TECH_DATA } from './experimentalTechData';
 import { FORMULAE_DATA } from './formulaeData';
 import { GEAR_ITEMS } from './gearData';
+import { MAGIC_ITEMS_DATA, TROPHIES_DATA } from './magicItemsData';
+import { MUTAGENS_DATA } from './mutagensData';
 import { POTIONS_DATA } from './potionsData';
+import { RELICS_DATA } from './relicsData';
+import { RUNES_GLYPHS_DATA } from './runesGlyphsData';
 import { WEAPONS_DATA } from './weaponsData';
 
 export * from './types';
 export { ARMOR_DATA } from './armorData';
 export { COMPONENTS_DATA } from './componentsData';
 export { DIAGRAMS_DATA } from './diagramsData';
+export { EXPERIMENTAL_TECH_DATA } from './experimentalTechData';
 export { FORMULAE_DATA } from './formulaeData';
 export { GEAR_ITEMS } from './gearData';
+export { MAGIC_ITEMS_DATA, TROPHIES_DATA } from './magicItemsData';
+export { MUTAGENS_DATA } from './mutagensData';
 export { POTIONS_DATA } from './potionsData';
+export { RELICS_DATA } from './relicsData';
+export { RUNES_GLYPHS_DATA } from './runesGlyphsData';
 export { WEAPONS_DATA } from './weaponsData';
 
 /**
@@ -62,4 +72,10 @@ export const ITEMS_COMPENDIUM_COUNTS = {
   formulae: FORMULAE_DATA.length,
   components: COMPONENTS_DATA.length,
   diagrams: DIAGRAMS_DATA.length,
+  relics: RELICS_DATA.length,
+  experimentalTech: EXPERIMENTAL_TECH_DATA.length,
+  runesGlyphs: RUNES_GLYPHS_DATA.length,
+  magicItems: MAGIC_ITEMS_DATA.length,
+  trophies: TROPHIES_DATA.length,
+  mutagens: MUTAGENS_DATA.length,
 } as const;

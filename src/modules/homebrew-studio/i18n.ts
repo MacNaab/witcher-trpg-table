@@ -1,3 +1,4 @@
+import { ALL_BESTIARY_ENTRIES } from '@/src/data/bestiary';
 import type { ModuleLanguage } from './types';
 
 export interface HomebrewStudioCopy {
@@ -268,7 +269,7 @@ const FR_COPY: HomebrewStudioCopy = {
     blankMonsterInsertedName: 'Modèle vierge Monstre',
     characterSearchPlaceholder: 'Rechercher un PJ ou PNJ (Générateur / Hub MJ)…',
     monsterSearchPlaceholder: 'Rechercher un monstre ou une catégorie…',
-    bestiaryTab: 'Bestiaire (174)',
+    bestiaryTab: `Bestiaire (${ALL_BESTIARY_ENTRIES.length})`,
     hubMonstersTab: 'Monstres du Hub MJ',
     chargenDraftBadge: 'Générateur PJ (En cours)',
     kindPcBadge: 'PJ · Fiche 1 page',
@@ -438,7 +439,7 @@ const EN_COPY: HomebrewStudioCopy = {
     blankMonsterInsertedName: 'Blank Monster Template',
     characterSearchPlaceholder: 'Search PCs or NPCs (PC Generator / GM Hub)…',
     monsterSearchPlaceholder: 'Search Bestiary entries or GM Hub monsters…',
-    bestiaryTab: 'Bestiary (174)',
+    bestiaryTab: `Bestiary (${ALL_BESTIARY_ENTRIES.length})`,
     hubMonstersTab: 'GM Hub Monsters',
     chargenDraftBadge: 'PC Generator (Draft)',
     kindPcBadge: 'PC · 1-page sheet',

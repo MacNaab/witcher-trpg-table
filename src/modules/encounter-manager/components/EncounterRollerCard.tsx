@@ -82,6 +82,7 @@ interface PersistedEncounterRollerState {
   selectedEnvironments: EncounterEnvId[];
   includeFanMade: boolean;
   includeEverywhere: boolean;
+  includeUniqueNpcs?: boolean;
   history: PersistedRollerSnapshotItem[];
 }
 
@@ -97,12 +98,14 @@ function loadStoredRollerState(
   selectedEnvironments: EncounterEnvId[];
   includeFanMade: boolean;
   includeEverywhere: boolean;
+  includeUniqueNpcs: boolean;
   history: RollHistoryItem[];
 } {
   const fallback = {
     selectedEnvironments: ['everywhere'] as EncounterEnvId[],
     includeFanMade: true,
     includeEverywhere: false,
+    includeUniqueNpcs: false,
     history: [] as RollHistoryItem[],
   };
   if (typeof window === 'undefined') return fallback;
@@ -148,6 +151,10 @@ function loadStoredRollerState(
         typeof parsed.includeEverywhere === 'boolean'
           ? parsed.includeEverywhere
           : false,
+      includeUniqueNpcs:
+        typeof parsed.includeUniqueNpcs === 'boolean'
+          ? parsed.includeUniqueNpcs
+          : false,
       history,
     };
   } catch {
@@ -188,6 +195,9 @@ export function EncounterRollerCard({
   const [includeEverywhere, setIncludeEverywhere] = useState<boolean>(
     initialStored.includeEverywhere
   );
+  const [includeUniqueNpcs, setIncludeUniqueNpcs] = useState<boolean>(
+    initialStored.includeUniqueNpcs
+  );
   const [history, setHistory] = useState<RollHistoryItem[]>(
     initialStored.history
   );
@@ -204,6 +214,7 @@ export function EncounterRollerCard({
         selectedEnvironments,
         includeFanMade,
         includeEverywhere,
+        includeUniqueNpcs,
         history: history.slice(0, MAX_HISTORY_ITEMS).map((item) => ({
           rollId: item.rollId,
           entryId: item.entry.id,
@@ -218,14 +229,22 @@ export function EncounterRollerCard({
     } catch {
       // Ignore storage quota errors
     }
-  }, [history, includeEverywhere, includeFanMade, kind, selectedEnvironments]);
+  }, [
+    history,
+    includeEverywhere,
+    includeFanMade,
+    includeUniqueNpcs,
+    kind,
+    selectedEnvironments,
+  ]);
 
   const filterOptions = useMemo(
     () => ({
       includeFanMade: isMonster ? includeFanMade : true,
       includeEverywhere,
+      includeUniqueNpcs: isMonster ? false : includeUniqueNpcs,
     }),
-    [includeEverywhere, includeFanMade, isMonster]
+    [includeEverywhere, includeFanMade, includeUniqueNpcs, isMonster]
   );
 
   const eligiblePool = useMemo(
@@ -404,7 +423,7 @@ export function EncounterRollerCard({
                 </Label>
               </div>
 
-              {isMonster && (
+              {isMonster ? (
                 <div className="flex items-center gap-2.5">
                   <Switch
                     id={`encounter-${kind}-fanmade`}
@@ -416,6 +435,20 @@ export function EncounterRollerCard({
                     className="cursor-pointer text-xs font-medium text-foreground"
                   >
                     {copy.roller.includeFanMade}
+                  </Label>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2.5">
+                  <Switch
+                    id={`encounter-${kind}-uniquenpcs`}
+                    checked={includeUniqueNpcs}
+                    onCheckedChange={(checked) => setIncludeUniqueNpcs(checked)}
+                  />
+                  <Label
+                    htmlFor={`encounter-${kind}-uniquenpcs`}
+                    className="cursor-pointer text-xs font-medium text-foreground"
+                  >
+                    {copy.roller.includeUniqueNpcs}
                   </Label>
                 </div>
               )}
@@ -474,6 +507,14 @@ export function EncounterRollerCard({
                         <span aria-hidden="true">·</span>
                         <span className="rounded border border-border bg-background px-1.5 py-0.5 font-mono text-[11px] text-foreground">
                           {d.fanMadeTag}
+                        </span>
+                      </>
+                    )}
+                    {currentResult.entry.isUniqueNpc && (
+                      <>
+                        <span aria-hidden="true">·</span>
+                        <span className="rounded border border-primary/40 bg-primary/10 px-1.5 py-0.5 font-mono text-[11px] text-primary">
+                          {d.uniqueNpcTag}
                         </span>
                       </>
                     )}

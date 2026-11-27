@@ -1,4 +1,4 @@
-import { BookOpen, Minus, Plus } from 'lucide-react';
+import { BookOpen, Minus, Plus, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -56,6 +56,7 @@ export function StepGeneralSkillsCard({
   const remaining = budget - spent;
   const maxRank =
     state.mode === 'advanced' && state.allowSkillCap13 ? 13 : 6;
+  const waiveDoubleCost = state.raceId === 'vampire';
   const availableIds = getAvailableGeneralSkills(state);
 
   const adjustRank = (skillId: SkillId, delta: number) => {
@@ -65,8 +66,10 @@ export function StepGeneralSkillsCard({
       const next = Math.max(0, Math.min(cap, current + delta));
       if (next === current) return prev;
 
+      const prevWaiveDouble = prev.raceId === 'vampire';
       const deltaCost =
-        getSkillPointCost(skillId, next) - getSkillPointCost(skillId, current);
+        getSkillPointCost(skillId, next, prevWaiveDouble) -
+        getSkillPointCost(skillId, current, prevWaiveDouble);
       if (
         delta > 0 &&
         !prev.ignoreSkillBudgets &&
@@ -128,6 +131,13 @@ export function StepGeneralSkillsCard({
           {state.ignoreSkillBudgets ? ` ${copy.generalSkills.ignoreBudgetNote}` : ''}
         </p>
 
+        {waiveDoubleCost && (
+          <div className="flex items-start gap-2 rounded-lg border border-emerald-500/35 bg-emerald-500/10 p-3 text-xs text-emerald-800 dark:text-emerald-300">
+            <Sparkles className="mt-0.5 size-4 shrink-0" />
+            <span>{copy.professionSkills.vampireNoDoubleCostNote}</span>
+          </div>
+        )}
+
         <div className="flex flex-col gap-5">
           {SKILL_ATTRIBUTE_ORDER.map((attr) => {
             const groupSkills = availableIds
@@ -172,8 +182,12 @@ export function StepGeneralSkillsCard({
                   <TableBody>
                     {groupSkills.map((def) => {
                       const rank = state.generalSkillRanks[def.id] ?? 0;
-                      const stepCost = def.doubleCost ? 2 : 1;
-                      const cost = getSkillPointCost(def.id, rank);
+                      const stepCost = def.doubleCost && !waiveDoubleCost ? 2 : 1;
+                      const cost = getSkillPointCost(
+                        def.id,
+                        rank,
+                        waiveDoubleCost
+                      );
                       const statVal = state.stats[def.attribute] ?? 0;
                       const canInc =
                         rank < maxRank &&
@@ -189,10 +203,20 @@ export function StepGeneralSkillsCard({
                                 kind="skill"
                                 skillId={def.id}
                                 lang={lang}
+                                waiveDoubleCost={waiveDoubleCost}
                               />
                               {def.doubleCost && (
-                                <span className="rounded bg-amber-500/15 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-amber-600 dark:text-amber-400">
-                                  {copy.professionSkills.doubleCostTag}
+                                <span
+                                  className={`rounded px-1.5 py-0.5 font-mono text-[10px] font-semibold ${
+                                    waiveDoubleCost
+                                      ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400'
+                                      : 'bg-amber-500/15 text-amber-600 dark:text-amber-400'
+                                  }`}
+                                >
+                                  {waiveDoubleCost
+                                    ? copy.professionSkills
+                                        .vampireDoubleCostWaivedTag
+                                    : copy.professionSkills.doubleCostTag}
                                 </span>
                               )}
                             </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {
   AlertTriangle,
+  BookOpen,
   BookOpenCheck,
   Coins,
   Globe2,
@@ -110,6 +111,8 @@ export function StepIdentityCard({
     state.raceId,
     state.professionId
   );
+  const showHalflingDruidNote =
+    state.raceId === 'halfling' && state.professionId === 'druid';
 
   const availableProfessions = PROFESSIONS_DATA.filter((prof) => {
     if (selectedRace?.lockedProfessionId) {
@@ -151,11 +154,19 @@ export function StepIdentityCard({
       );
     }
     if (cfg.invocations) {
-      parts.push(
-        lang === 'fr'
-          ? `${cfg.invocations} invocations de novice`
-          : `${cfg.invocations} Novice Invocations`
-      );
+      if (showHalflingDruidNote) {
+        parts.push(
+          lang === 'fr'
+            ? '0 invocation (Halfelin)'
+            : '0 Invocations (Halfling)'
+        );
+      } else {
+        parts.push(
+          lang === 'fr'
+            ? `${cfg.invocations} invocations de novice`
+            : `${cfg.invocations} Novice Invocations`
+        );
+      }
     }
     if (cfg.rituals) {
       parts.push(
@@ -174,8 +185,8 @@ export function StepIdentityCard({
     if (cfg.vampirePowers) {
       parts.push(
         lang === 'fr'
-          ? `${cfg.vampirePowers} pouvoirs vampiriques`
-          : `${cfg.vampirePowers} Vampire Powers`
+          ? `${cfg.vampirePowers} sortilèges vampiriques de novice`
+          : `${cfg.vampirePowers} Novice Vampiric Spells`
       );
     }
     return parts.join(' · ');
@@ -341,6 +352,13 @@ export function StepIdentityCard({
           </div>
         )}
 
+        {showHalflingDruidNote && (
+          <div className="flex items-start gap-2 rounded-lg border border-amber-500/40 bg-amber-500/10 p-3 text-xs text-amber-700 dark:text-amber-300">
+            <AlertTriangle className="mt-0.5 size-4 shrink-0" />
+            <span>{copy.professionSkills.halflingDruidNote}</span>
+          </div>
+        )}
+
         <Separator />
 
         {/* Racial Perks & Profession Snapshot */}
@@ -394,6 +412,24 @@ export function StepIdentityCard({
                         <li key={idx}>{perk[lang]}</li>
                       ))}
                     </ul>
+                  )}
+
+                  {selectedRaceRef?.societyNote && (
+                    <div className="rounded-md border border-border/80 bg-background/75 p-2.5 text-xs">
+                      <div className="mb-1 flex items-center gap-1.5 font-semibold text-foreground">
+                        <BookOpen
+                          className="size-3.5 text-primary"
+                          aria-hidden="true"
+                        />
+                        <span>
+                          {copy.identity.societyRuleLabel} —{' '}
+                          {selectedRaceRef.societyNote.title[lang]}
+                        </span>
+                      </div>
+                      <p className="leading-relaxed text-muted-foreground">
+                        {selectedRaceRef.societyNote.text[lang]}
+                      </p>
+                    </div>
                   )}
 
                   {socialGroup && (

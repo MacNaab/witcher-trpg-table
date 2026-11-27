@@ -19,6 +19,7 @@ export interface EncounterManagerCopy {
     clearAll: string;
     includeFanMade: string;
     includeEverywhere: string;
+    includeUniqueNpcs: string;
     allEnvironmentsOption: string;
     rollMonster: string;
     rollHumanoid: string;
@@ -45,11 +46,14 @@ export interface EncounterManagerCopy {
     baseStats: string;
     fanMadeTag: string;
     officialTag: string;
+    uniqueNpcTag: string;
     humanoidTag: string;
     monsterTag: string;
     animalTag: string;
     combatStats: string;
     combatSkills: string;
+    keySkills: string;
+    favoredMagic: string;
     weapons: string;
     weaponName: string;
     weaponDamage: string;
@@ -133,6 +137,7 @@ const FR_COPY: EncounterManagerCopy = {
     clearAll: 'Tout décocher',
     includeFanMade: 'Inclure créatures fan-made',
     includeEverywhere: 'Inclure « Partout »',
+    includeUniqueNpcs: 'Inclure PNJ nommés & Mages célèbres',
     allEnvironmentsOption: 'Tous les environnements',
     rollMonster: 'Tirer un monstre',
     rollHumanoid: 'Tirer un humanoïde',
@@ -162,11 +167,14 @@ const FR_COPY: EncounterManagerCopy = {
     baseStats: 'Caractéristiques de référence',
     fanMadeTag: 'Fan-made',
     officialTag: 'Officiel',
+    uniqueNpcTag: 'PNJ unique',
     humanoidTag: 'Humanoïde',
     monsterTag: 'Monstre',
     animalTag: 'Animal / Monture',
     combatStats: 'Caractéristiques',
     combatSkills: 'Compétences',
+    keySkills: 'Compétences clés de profession',
+    favoredMagic: 'Magie de prédilection',
     weapons: 'Attaques & Armes',
     weaponName: 'Attaque / Arme',
     weaponDamage: 'Dégâts',
@@ -227,10 +235,10 @@ const FR_COPY: EncounterManagerCopy = {
     inspect: 'Fiche',
     emptyTable: 'Aucune créature ou faction ne correspond à votre recherche.',
     dialogClose: 'Fermer',
-    rulesBtn: 'Guide du Bestiaire',
-    rulesDialogTitle: 'Guide officiel du Bestiaire (Livre de base)',
+    rulesBtn: 'Guide & Décrypter un monstre',
+    rulesDialogTitle: 'Guide du Bestiaire & Décrypter un monstre',
     rulesDialogDesc:
-      'Niveaux de menace et de complexité, règle des attaques par round, primes et les 12 catégories de créatures.',
+      'Règles officielles (menace, attaques/round, 12 catégories), anatomie du Journal du Sorcelleur et système d’Enquête.',
   },
 };
 
@@ -255,6 +263,7 @@ const EN_COPY: EncounterManagerCopy = {
     clearAll: 'Clear',
     includeFanMade: 'Include fan-made creatures',
     includeEverywhere: 'Include "Everywhere"',
+    includeUniqueNpcs: 'Include Unique NPCs & Famous Mages',
     allEnvironmentsOption: 'All environments',
     rollMonster: 'Roll monster',
     rollHumanoid: 'Roll humanoid',
@@ -283,11 +292,14 @@ const EN_COPY: EncounterManagerCopy = {
     baseStats: 'Reference Attributes',
     fanMadeTag: 'Fan-made',
     officialTag: 'Official',
+    uniqueNpcTag: 'Unique NPC',
     humanoidTag: 'Humanoid',
     monsterTag: 'Monster',
     animalTag: 'Animal / Mount',
     combatStats: 'Attributes',
     combatSkills: 'Skills',
+    keySkills: 'Key Profession Skills',
+    favoredMagic: 'Favored Magic',
     weapons: 'Attacks & Weapons',
     weaponName: 'Attack / Weapon',
     weaponDamage: 'DMG',
@@ -348,10 +360,10 @@ const EN_COPY: EncounterManagerCopy = {
     inspect: 'Inspect',
     emptyTable: 'No monsters or humanoids match the active filters.',
     dialogClose: 'Close',
-    rulesBtn: 'Bestiary Guide',
-    rulesDialogTitle: 'Official Bestiary Guide (Core Rulebook)',
+    rulesBtn: 'Bestiary Guide & Deciphering',
+    rulesDialogTitle: 'Official Bestiary Guide & Monster Deciphering',
     rulesDialogDesc:
-      'Threat and complexity ratings, attacks-per-round rule, bounties, and the 12 core creature categories.',
+      'Core threat ratings, attacks-per-round, 12 creature categories, Witcher’s Journal anatomy, and Investigation rules.',
   },
 };
 

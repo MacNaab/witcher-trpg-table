@@ -1,7 +1,7 @@
 import type { LocalizedText } from '../bestiary/types';
 
 /**
- * Canonical profession identifiers across all 14 Witcher TRPG skill trees.
+ * Canonical profession identifiers across all 15 Witcher TRPG skill trees.
  */
 export type ProfessionId =
   | 'craftsman'
@@ -12,6 +12,7 @@ export type ProfessionId =
   | 'mage'
   | 'merchant'
   | 'priest'
+  | 'druid'
   | 'witcher'
   | 'noble'
   | 'vampire'

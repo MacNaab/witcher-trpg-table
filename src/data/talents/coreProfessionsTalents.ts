@@ -831,7 +831,7 @@ export const CORE_PROFESSIONS_TALENTS: readonly TalentEntry[] = [
     },
     "branch": "Prêcheur",
     "name": "Puissance divine",
-    "description": "Le Prêtre entre en harmonie avec son dieu, son seuil de Vigueur augmente alors de 1 point par niveau de Puissance divine. Cela signifie qu’au niveau 10, son seuil de Vigueur total sera de 12. Le personnage peut s’entraîner pour progresser dans cette compétence dont les effets se cumulent avec ceux d’Harmonisation naturelle, les seuils de Vigueur n’étant pas propres à chaque compétence.",
+    "description": "Le Prêtre entre en harmonie avec son dieu et gagne 1 point de seuil de Vigueur par niveau de Puissance divine jusqu’au niveau 9. Au niveau 10, son seuil de Vigueur augmente de 5 points supplémentaires (pour un total de 16). Puissance divine peut être entraînée comme n’importe quelle compétence.",
     "isCoreProfession": true
   },
   {
@@ -857,45 +857,46 @@ export const CORE_PROFESSIONS_TALENTS: readonly TalentEntry[] = [
     "branch": "Prêcheur",
     "name": "Précognition (VOL)",
     "attribute": "VOL",
-    "description": "Quand le MJ le désire, le Prêtre peut être assailli de visions prophétiques qui le plongent dans un état catatonique pendant 3 rounds. Passé ce délai, le Prêtre effectue un jet de Précognition dont le SD est fixé par le MJ afin d’interpréter le sens de ces révélations. Les visions s’articulent en général autour de symboles et de métaphores.",
+    "description": "Quand le MJ le désire, le Prêtre peut être assailli de visions prophétiques qui le plongent dans un état catatonique pendant 3 rounds. Passé ce délai, le Prêtre effectue un jet de Précognition dont le SD dépend du MJ afin d’interpréter le sens de ces révélations faites de symboles et de métaphores.",
     "isCoreProfession": true
   },
   {
-    "id": "tl-priest-harmonisation-naturelle",
+    "id": "tl-priest-mystagogue",
     "professionId": "priest",
     "profession": {
       "en": "Priest",
       "fr": "Prêtre"
     },
-    "branch": "Druide",
-    "name": "Harmonisation naturelle",
-    "description": "Le Prêtre entre en harmonie avec la nature, son seuil de Vigueur augmente alors de 1 point par niveau d’Harmonisation naturelle. Cela signifie qu’au niveau 10, son seuil de Vigueur total sera de 12. Le personnage peut s’entraîner pour progresser dans cette compétence dont les effets se cumulent avec ceux de Puissance divine, les seuils de Vigueur n’étant pas propres à chaque compétence.",
+    "branch": "Mystagogue",
+    "name": "Mystagogue (EMP)",
+    "attribute": "EMP",
+    "description": "Dans une localité, le Prêtre peut consacrer une journée et réussir un jet de Mystagogue (SD selon la taille de la localité) pour ériger un sanctuaire dédié à sa divinité qui attire et convertit des fidèles. Tant qu’il se trouve dans un rayon de 20 m autour de ce sanctuaire, le Prêtre peut s’en servir comme d’un Focus d’une valeur de 3.",
     "isCoreProfession": true
   },
   {
-    "id": "tl-priest-dechiffrer-la-nature",
+    "id": "tl-priest-mystere-du-culte",
     "professionId": "priest",
     "profession": {
       "en": "Priest",
       "fr": "Prêtre"
     },
-    "branch": "Druide",
-    "name": "Déchiffrer la nature (INT)",
-    "attribute": "INT",
-    "description": "Lorsqu’il se trouve en pleine nature, le druide peut effectuer un jet de Déchiffrer la nature dont le SD est fixé par le MJ. En cas de réussite, il interprète les signes de son environnement pour apprendre ce qui s’est passé dans les environs. La compétence dresse un tableau qui reste centré sur le lieu où se trouve le Prêtre et ne permet pas de remonter une piste.",
-    "isCoreProfession": true
-  },
-  {
-    "id": "tl-priest-pacte-animal",
-    "professionId": "priest",
-    "profession": {
-      "en": "Priest",
-      "fr": "Prêtre"
-    },
-    "branch": "Druide",
-    "name": "Pacte animal (VOL)",
+    "branch": "Mystagogue",
+    "name": "Mystère du culte (VOL)",
     "attribute": "VOL",
-    "description": "Le druide ajoute son niveau de Pacte animal lors de ses jets de Survie visant à dresser des animaux. Il peut aussi établir un pacte avec une bête. Il doit alors consacrer un round entier et un jet de Pacte animal pour qu’elle devienne son alliée pendant un nombre d’heures égal à son niveau de Pacte animal. Cette compétence ne fonctionne pas sur les monstres.",
+    "description": "Aux rangs supérieurs, le Prêtre est initié aux secrets internes de sa religion. L’effet exact de Mystère du culte dépend de la catégorie de culte suivie : Églises organisées (bonus aux jets d’Initié des Dieux), Dieux anciens (lancer Mystère du culte ou Rituels et garder le meilleur score) ou Cultes sombres (dissimulation magique et bonus en Duperie).",
+    "isCoreProfession": true
+  },
+  {
+    "id": "tl-priest-benedictions",
+    "professionId": "priest",
+    "profession": {
+      "en": "Priest",
+      "fr": "Prêtre"
+    },
+    "branch": "Mystagogue",
+    "name": "Bénédictions (VOL)",
+    "attribute": "VOL",
+    "description": "Le Prêtre peut bénir un groupe de personnes au terme d’une cérémonie d’une heure en réussissant un jet de Bénédictions SD 16. Pendant une journée entière, un nombre de personnes égal à son niveau en Bénédictions reçoit le bonus correspondant à son type de culte (Autorité/Réputation, PA/Résistance à la magie, ou Furtivité/Initiative).",
     "isCoreProfession": true
   },
   {

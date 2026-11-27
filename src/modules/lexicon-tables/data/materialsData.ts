@@ -471,6 +471,69 @@ export const ANIMAL_PARTS_DATA: readonly MaterialLexiconEntry[] = [
     "forageDc": "N/A",
     "weight": "3",
     "cost": "14"
+  },
+  {
+    "id": "animal-parts-10-bear-hide",
+    "tabId": "animal-parts",
+    "rowKind": "material",
+    "name": {
+      "en": "Bear Hide",
+      "fr": "Peau d’ours"
+    },
+    "rarity": "C",
+    "location": {
+      "en": "Found on bears",
+      "fr": "Trouvé sur les ours"
+    },
+    "quantity": {
+      "en": "Variable",
+      "fr": "Variable"
+    },
+    "forageDc": "N/A",
+    "weight": "6",
+    "cost": "30"
+  },
+  {
+    "id": "animal-parts-11-boar-hide",
+    "tabId": "animal-parts",
+    "rowKind": "material",
+    "name": {
+      "en": "Boar Hide",
+      "fr": "Peau de sanglier"
+    },
+    "rarity": "C",
+    "location": {
+      "en": "Found on boars",
+      "fr": "Trouvé sur les sangliers"
+    },
+    "quantity": {
+      "en": "Variable",
+      "fr": "Variable"
+    },
+    "forageDc": "N/A",
+    "weight": "2",
+    "cost": "10"
+  },
+  {
+    "id": "animal-parts-12-panther-hide",
+    "tabId": "animal-parts",
+    "rowKind": "material",
+    "name": {
+      "en": "Panther Hide",
+      "fr": "Peau de panthère"
+    },
+    "rarity": "P",
+    "location": {
+      "en": "Found on panthers",
+      "fr": "Trouvé sur les panthères"
+    },
+    "quantity": {
+      "en": "Variable",
+      "fr": "Variable"
+    },
+    "forageDc": "N/A",
+    "weight": "3",
+    "cost": "38"
   }
 ];
 

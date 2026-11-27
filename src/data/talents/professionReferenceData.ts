@@ -108,8 +108,24 @@ export const CORE_DEFINING_SKILLS_REF: Partial<
     name: { fr: 'Initié des Dieux', en: 'Initiate of the Gods' },
     attribute: 'EMP',
     description: {
-      fr: 'Dans les temples de sa religion (ou auprès des croyants de sa confession, avec moins de moyens), un jet réussi (SD fixé par le MJ) octroie hébergement gratuit, soins et services. Ne fonctionne jamais avec une autre religion.',
-      en: 'Roll in temples or among worshippers of your faith for free lodging, healing, and aid. Never works on followers of another faith.',
+      fr: 'Dans les temples de sa religion (ou auprès des croyants de sa confession, avec moins de moyens), un jet réussi (SD fixé par le MJ) octroie hébergement gratuit, soins et services. À la discrétion du MJ, fonctionne aussi avec les fidèles de divinités apparentées, jamais avec une autre religion.',
+      en: 'Roll in temples or among worshippers of your faith (or related deities at GM discretion) for free lodging, healing, and aid. Never works on followers of unrelated faiths.',
+    },
+  },
+  druid: {
+    professionId: 'druid',
+    name: { fr: 'Rite du Chêne et du Gui', en: 'Rite of Oak and Mistletoe' },
+    attribute: 'INT',
+    description: {
+      fr: 'En 1 jour (1 round complet au rang 10), un jet d’INT permet de façonner un bâton-focalisateur personnel (SD : Forêt 14, Marais 16, Montagne 18, Mer 20). Valeur de Focalisation : 1 au rang 1, +1 tous les 2 rangs (max 4 au rang 7), Focalisation supérieure au rang 9. Tant qu’il le porte : ignore les pénalités de végétation dense/marais (rang 2), neige/glace (rang 4), chaleur extrême (rang 6) et combat sous-marin (rang 8).',
+      en: 'Spend 1 day (1 full round at rank 10) rolling INT (DC: Forest 14, Swamp 16, Mountain 18, Sea 20) to craft a personal Focus staff (Focus 1 at rank 1, +1 every 2 ranks up to 4 at rank 7, Greater Focus at rank 9). While carried, ignore penalties for overgrown/swampy terrain (rank 2), snow/ice (rank 4), extreme heat (rank 6), and underwater combat (rank 8).',
+    },
+    sidebar: {
+      title: { fr: 'Druides Halfelins & Cercles', en: 'Halfling Druids & Circles' },
+      text: {
+        fr: 'Bien que les Halfelins ne puissent pas lancer d’invocations ni tracer de sigils en raison de leur résistance innée à la magie, quelques familles halfelines siègent au Cercle de Bleobheris. Grands cercles : Gwyn Carn, Clan des Corbeaux, Bleobheris, Caed Myrkvid et Gedyneith.',
+        en: 'While halflings cannot cast invocations or sigils due to innate magic deterrence, several halfling families serve within the Circle of Bleobheris. Major circles: Gwyn Carn, Crow Clan, Bleobheris, Caed Myrkvid, and Gedyneith.',
+      },
     },
   },
   witcher: {
@@ -127,6 +143,15 @@ export const CORE_DEFINING_SKILLS_REF: Partial<
     description: {
       fr: 'Un Noble ajoute son niveau de Prestige à son score de Réputation lorsqu’il se trouve sur sa terre natale ou dans un pays allié. Lorsqu’il se rend dans un territoire ouvertement en guerre avec son pays d’origine ou qui conserve une position de neutralité, il n’ajoute que la moitié de son niveau de Prestige.',
       en: 'A Noble adds their Notoriety rank to their Reputation score when in their homeland or an allied country. In neutral or openly hostile/warring territories, they add only half their Notoriety rank.',
+    },
+  },
+  vampire: {
+    professionId: 'vampire',
+    name: { fr: 'Étreinte', en: 'Embrace' },
+    attribute: 'COR',
+    description: {
+      fr: 'Pour se saisir d’une cible et se nourrir, le Vampire effectue un jet d’Étreinte (COR) en opposition à l’Esquive ou la Bagarre de la victime. Il se régénère de son rang d’Étreinte × 2 PS grâce au sang absorbé. Il s’agit d’une addiction plus que d’un besoin vital : 97 % de risque d’addiction au rang 1, réduit de 8 % par rang (soit 15 % au rang 10). En cas d’addiction, il doit se nourrir le jour suivant ou subir un malus de 25 % pour y résister.',
+      en: 'To grapple and feed, roll Embrace (BODY) opposed by the victim’s Dodge or Brawling, regenerating Embrace rank × 2 HP. Blood is an addiction rather than a survival necessity: 97% addiction chance at rank 1, reduced by 8% per rank (15% at rank 10). Once addicted, the vampire must feed within the next day or suffer a -25% penalty to resist.',
     },
   },
 };
@@ -450,8 +475,70 @@ export const TALENT_REFERENCE_EXTRAS: Readonly<Record<string, TalentReferenceExt
       },
     ],
   },
-  'tl-priest-pacte-animal': {
-    talentId: 'tl-priest-pacte-animal',
+  'tl-priest-mystagogue': {
+    talentId: 'tl-priest-mystagogue',
+    tables: [
+      {
+        title: { fr: 'SD d’Érection de Sanctuaire (Mystagogue)', en: 'Shrine Settlement DC (Mystagogue)' },
+        columns: [
+          { fr: 'Localité', en: 'Settlement' },
+          { fr: 'SD', en: 'DC' },
+        ],
+        rows: [
+          ['Hameau', '22'],
+          ['Ville / Bourg', '20'],
+          ['Petite cité', '18'],
+          ['Capitale', '14'],
+        ],
+      },
+    ],
+  },
+  'tl-priest-mystere-du-culte': {
+    talentId: 'tl-priest-mystere-du-culte',
+    tables: [
+      {
+        title: { fr: 'Mystère du culte & Divinités', en: 'Cult Mystery & Deities' },
+        columns: [
+          { fr: 'Type de clergé', en: 'Priesthood Type' },
+          { fr: 'Divinités & Effet', en: 'Deities & Effect' },
+        ],
+        rows: [
+          ['Églises organisées (Feu Éternel, Kreve, Grand Soleil, Melitele, Prophète Lebioda)', 'Ajoute le rang de Mystère du culte aux jets d’Initié des Dieux.'],
+          ['Anciens Dieux (Dana Meadbh, Epona, Freya, Lilvani, Morrigan, Nehaleni, Veyopatis)', 'Lors d’un rituel, lance Mystère du culte ET Rituels et garde le meilleur résultat.'],
+          ['Cultes sombres (Coram Agh Tera, Svalblod)', 'Contre la détection magique de la foi, oppose Mystère du culte ; ajoute ce rang en Duperie contre la scrutation ordinaire.'],
+        ],
+      },
+    ],
+  },
+  'tl-priest-benedictions': {
+    talentId: 'tl-priest-benedictions',
+    tables: [
+      {
+        title: { fr: 'Bénédictions (SD 16 · 1 jour)', en: 'Blessings (DC 16 · 1 day)' },
+        columns: [
+          { fr: 'Type de clergé', en: 'Priesthood Type' },
+          { fr: 'Bénéfice', en: 'Benefit' },
+        ],
+        rows: [
+          ['Églises organisées', '+4 en Commandement et +4 en Réputation.'],
+          ['Anciens Dieux', '+3 en PA (SP) et +2 en Résistance à la magie.'],
+          ['Cultes sombres', '+4 en Furtivité et +4 en Initiative.'],
+        ],
+      },
+    ],
+  },
+  'tl-priest-emissaire-des-dieux': {
+    talentId: 'tl-priest-emissaire-des-dieux',
+    sidebar: {
+      title: { fr: 'Guider vos Apôtres', en: 'Guiding Your Apostles' },
+      text: {
+        fr: 'Chaque ordre étrange ou contraire à la doctrine demande un jet d’Émissaire des dieux (SD fixé par le MJ). Au bout de trois échecs consécutifs, les apôtres vous abandonnent — et vous attaquent ou vous marquent hérétique si le 3e jet est un échec critique.',
+        en: 'Each strange or uncharacteristic command requires a Word of God roll (GM DC). Three consecutive failures cause followers to abandon you — or attack/brand you a heretic if the 3rd is a fumble.',
+      },
+    },
+  },
+  'tl-druid-pacte-animal': {
+    talentId: 'tl-druid-pacte-animal',
     tables: [
       {
         title: { fr: 'SD d’ordre (Pacte animal)', en: 'Animal Command DC' },
@@ -484,13 +571,53 @@ export const TALENT_REFERENCE_EXTRAS: Readonly<Record<string, TalentReferenceExt
       },
     ],
   },
-  'tl-priest-emissaire-des-dieux': {
-    talentId: 'tl-priest-emissaire-des-dieux',
+  'tl-druid-forme-bestiale': {
+    talentId: 'tl-druid-forme-bestiale',
+    tables: [
+      {
+        title: { fr: 'Aspects de Métamorphose (Forme bestiale)', en: 'Shapeshift Aspects (Bestial Form)' },
+        columns: [
+          { fr: 'Animal', en: 'Animal' },
+          { fr: 'Effet de la forme hybride', en: 'Hybrid Form Effect' },
+        ],
+        rows: [
+          ['Sanglier (Boar)', 'Peau épaissie et soies : +3 PA sur toutes les localisations.'],
+          ['Ours (Bear)', 'Griffes naturelles : 4d6 tranchants, Fiabilité 10 (+1 Fiab/jour si endommagées).'],
+          ['Loup (Wolf)', 'Sens aiguisés : +1 Vigilance et pistage à l’odorat (Scent Tracking).'],
+          ['Panthère (Panther)', 'Pattes digitigrades : Saut ×2 horizontalement ou verticalement (action de mouvement, sans élan).'],
+          ['Serpent', 'Crocs venimeux : morsure 3d6 avec 100 % de chance d’Empoisonnement.'],
+          ['Hibou (Owl)', 'Yeux élargis et plumes faciales : Vision nocturne supérieure.'],
+          ['Corbeau (Crow)', '+1 INT (peut dépasser 10) et Repositionnement sur toute la valeur de VIT au lieu de la moitié.'],
+        ],
+      },
+    ],
+  },
+  'tl-druid-bosquet-sacre': {
+    talentId: 'tl-druid-bosquet-sacre',
+    tables: [
+      {
+        title: { fr: 'Protections de Bosquet sacré', en: 'Sacred Grove Protections' },
+        columns: [
+          { fr: 'Protection & Effet', en: 'Protection & Effect' },
+          { fr: 'Coût', en: 'Cost' },
+        ],
+        rows: [
+          ['Végétation envahissante : plantes prolifèrent, –2 en Esquive/Évasion et Athlétisme.', '2'],
+          ['Récolte miraculeuse : double le nombre d’ingrédients végétaux récoltés sur place.', '4'],
+          ['Récolte empoisonnée : toute culture poussant dans le bosquet inflige Empoisonnement si consommée.', '6'],
+          ['Égaré : brouillard magique ; Résistance à la magie SD 16 requise pour entrer sans être renvoyé dehors.', '10'],
+          ['Ronces : mur d’épines en bordure ; Athlétisme SD 16 ou Saignement au passage.', '10'],
+        ],
+      },
+    ],
+  },
+  'tl-druid-gardien-du-savoir': {
+    talentId: 'tl-druid-gardien-du-savoir',
     sidebar: {
-      title: { fr: 'Apôtres', en: 'Zealots / Followers' },
+      title: { fr: 'Faucille de druide & Cercles', en: 'Druid’s Sickle & Circles' },
       text: {
-        fr: 'Chaque ordre étrange ou inapproprié demande un jet d’Émissaire des dieux (SD fixé par le MJ). Au bout de trois échecs, les apôtres vous abandonnent — et vous attaquent ou vous marquent hérétique si le dernier jet est un échec critique.',
-        en: 'Each strange or inappropriate command requires a Roll (GM DC). Three failures cause followers to abandon you — or attack/brand you a heretic on a fumble.',
+        fr: 'Faucille de druide (T/P, PR +0, 3d6, Fiab. 15, 1 main, Saisie & Saignement 30%, 540 c. ; Schéma Compagnon SD 17). Cercles majeurs : Gwyn Carn (Montagnes du Dragon), Clan des Corbeaux (Skellige), Bleobheris (Témérie), Caed Myrkvid (Toussaint), Gedyneith (Ard Skellig).',
+        en: 'Druid’s Sickle (S/P, WA +0, 3d6, Rel 15, 1H, Grappling & Bleed 30%, 540 cr.; Journeyman Diagram DC 17). Major Circles: Gwyn Carn, Crow Clan, Bleobheris, Caed Myrkvid, Gedyneith.',
       },
     },
   },
@@ -567,5 +694,149 @@ export const TALENT_REFERENCE_EXTRAS: Readonly<Record<string, TalentReferenceExt
         en: 'When a Noble negates a Critical Wound with Quality Armor, they also negate its bonus Critical damage, though they still take normal weapon damage after subtracting armor SP.',
       },
     },
+  },
+  'tl-vampire-repaire': {
+    talentId: 'tl-vampire-repaire',
+    tables: [
+      {
+        title: { fr: 'Tableau de Repaire de Vampire', en: 'Vampire Lair Allocation Table' },
+        columns: [
+          { fr: 'Catégorie / Option', en: 'Category / Option' },
+          { fr: 'Coût', en: 'Cost' },
+        ],
+        rows: [
+          ['Localisation — Caverne et galerie', '1'],
+          ['Localisation — Cave', '2'],
+          ['Localisation — Ruine en campagne', '3'],
+          ['Localisation — Égouts de ville', '3'],
+          ['Localisation — Ruine dans une ville', '5'],
+          ['Localisation — Maison de Faubourg', '7'],
+          ['Localisation — Ruines Elfiques', '10'],
+          ['Localisation — Maison de Ville', '10'],
+          ['Localisation — Manoir', '13'],
+          ['Localisation — Petit Domaine', '15'],
+          ['Sécurité — Aéré', '1'],
+          ['Sécurité — Portes ouvertes', '3'],
+          ['Sécurité — Porte cadenassée', '5'],
+          ['Sécurité — Portes et fenêtres blindées', '7'],
+          ['Sécurité — Illusion', '10'],
+          ['Sécurité — Illusion Interactive', '15'],
+          ['Sécurité — Portail Magique', '20'],
+          ['Espace — Exigu (quelques m²)', '1'],
+          ['Espace — Loge (10–20 m²)', '3'],
+          ['Espace — Petite maison (40–50 m²)', '5'],
+          ['Espace — Demeure (+ de 70 m²)', '8'],
+          ['Espace — Manoir (150 m²)', '10'],
+          ['Espace — Domaine (Manoir + Jardin 300 m²)', '13'],
+          ['Espace — Vaste (petit Château ou ruine Elfique)', '16'],
+        ],
+      },
+    ],
+  },
+  'tl-vampire-seigneur-de-la-nuit': {
+    talentId: 'tl-vampire-seigneur-de-la-nuit',
+    sidebar: {
+      title: { fr: 'Forme du Seigneur de la Nuit', en: 'Lord of the Night Rules' },
+      text: {
+        fr: 'Transformation : SD 24 (SD 30 en plein jour) et SD 28 pour garder le contrôle ; consomme la moitié de l’Endurance totale. Dure un nombre d’heures égal au rang, puis le Vampire redevient humain nu et inconscient autant d’heures. 1 round pour s’envoler ; attaque avec 1 main tout en bloquant avec les autres (Mains : 15 PS, Ailes : 30 PS chacune — si une aile est tranchée, vol impossible jusqu’à régénération complète ; les membres ne régénèrent que s’ils sont inutilisables). Seule la Nuée de Chauve-souris reste incantable sous cette forme.',
+        en: 'Transform DC 24 (DC 30 in daylight) and Control DC 28; costs half total Stamina. Lasts ranks hours, followed by an equal number of unconscious naked hours. Taking flight takes 1 round; attacks with 1 arm while parrying with the others (Arms: 15 HP, Wings: 30 HP each—crippled wings ground him until fully restored; limbs only regenerate when unusable). Only Bat Swarm may be cast in this form.',
+      },
+    },
+    tables: [
+      {
+        title: { fr: 'Progression — Seigneur de la Nuit', en: 'Lord of the Night Scaling (Ranks 1–10)' },
+        columns: [
+          { fr: 'Niv.', en: 'Rank' },
+          { fr: 'PS bonus', en: 'Bonus HP' },
+          { fr: 'Griffes', en: 'Claws' },
+          { fr: 'Morsures', en: 'Bite' },
+        ],
+        rows: [
+          ['1', '10', '4d6+3 (Saignement 25%)', '3d6+3 (Saignement 50%)'],
+          ['2', '15', '5d6 (Saignement 25%)', '4d6 (Saignement 50%)'],
+          ['3', '20', '5d6+3 (Saignement 30%)', '4d6+3 (Saignement 55%)'],
+          ['4', '25', '6d6 (Saignement 35%)', '5d6 (Saignement 60%)'],
+          ['5', '30', '6d6+3 (Saignement 40%)', '5d6+3 (Saignement 65%)'],
+          ['6', '35', '7d6 (Saignement 45%)', '6d6 (Saignement 70%)'],
+          ['7', '40', '7d6+3 (Saignement 50%)', '6d6+3 (Saignement 75%)'],
+          ['8', '45', '8d6 (Saignement 55%)', '7d6 (Saignement 80%)'],
+          ['9', '50', '8d6+1 (Saignement 60%)', '7d6+1 (Saignement 90%)'],
+          ['10', '55', '8d6+3 (Saignement 65%)', '7d6+3 (Saignement 100%)'],
+        ],
+      },
+    ],
+  },
+  'tl-vampire-goule': {
+    talentId: 'tl-vampire-goule',
+    sidebar: {
+      title: { fr: 'Coût en PS & Durée du lien de sang', en: 'HP Cost & Blood Bond Duration' },
+      text: {
+        fr: 'Les PS dépensés pour créer une Goule ne se régénèrent pas pendant 2 jours, sauf si le Vampire se nourrit. Le lien d’attachement dure un nombre de jours égal au rang de Goule et doit être renouvelé pour maintenir le palier : sinon, il baisse d’un palier tous les 2 jours sans jamais descendre sous Connaissance.',
+        en: 'HP spent creating a Ghoul cannot regenerate for 2 days unless the Vampire feeds. The attachment bond lasts Goule rank in days; if unrenewed, it drops one tier every 2 days (minimum Acquaintance).',
+      },
+    },
+    tables: [
+      {
+        title: { fr: 'Tableau des Goules (Créatures & Attachement)', en: 'Ghoul Creation & Bond Table' },
+        columns: [
+          { fr: 'Créature / Attachement', en: 'Creature / Bond Tier' },
+          { fr: 'Coût', en: 'Cost' },
+          { fr: 'Dépense PS', en: 'HP Spent' },
+          { fr: 'SD', en: 'DC' },
+        ],
+        rows: [
+          ['Créature — Chat', '1', '5', '12'],
+          ['Créature — Chien', '2', '8', '10'],
+          ['Créature — Loup', '4', '10', '12'],
+          ['Créature — Oiseaux', '4', '15', '14'],
+          ['Créature — Insectes', '4', '15', '10'],
+          ['Créature — Humain', '10', '20', '18'],
+          ['Créature — Cheval', '12', '22', '14'],
+          ['Créature — Alpyre', '16', '25', '20'],
+          ['Créature — Ekimme', '18', '30', '24'],
+          ['Créature — Katakan', '20', '35', '28'],
+          ['Attachement — Connaissance', '1', '1 à 5', 'Gratuit'],
+          ['Attachement — Amis', '3', '7', '3'],
+          ['Attachement — Amis proches', '8', '10', '6'],
+          ['Attachement — Inséparables', '10', '15', '8'],
+          ['Attachement — À la vie, à la mort', '15', '20', '10'],
+          ['Attachement — Soumission Totale', '20', '30', '15'],
+        ],
+      },
+    ],
+  },
+  'tl-vampire-appel-de-la-nuit': {
+    talentId: 'tl-vampire-appel-de-la-nuit',
+    tables: [
+      {
+        title: { fr: 'Tableau Appel de la Nuit', en: 'Call of the Night Table' },
+        columns: [
+          { fr: 'Catégorie / Option', en: 'Category / Option' },
+          { fr: 'Coût', en: 'Cost' },
+        ],
+        rows: [
+          ['Créatures — Chiens', '2'],
+          ['Créatures — Loup', '4'],
+          ['Créatures — Warg', '6'],
+          ['Créatures — Chauves-souris (par nuées)', '8'],
+          ['Créatures — Goules (déjà soumises au Sang)', '12'],
+          ['Créatures — Noctule', '14'],
+          ['Créatures — Alpyre', '16'],
+          ['Créatures — Ekimme', '18'],
+          ['Créatures — Katakan', '20'],
+          ['Créatures — Vampire de rang inférieur', '22'],
+          ['Durée — Quelques minutes', '1'],
+          ['Durée — Une demi-heure', '5'],
+          ['Durée — Une heure', '8'],
+          ['Durée — 1d6 heures', '12'],
+          ['Durée — 1d10 heures', '15'],
+          ['Durée — Nuit entière', '20'],
+          ['Discipline — Sanguinaires', '1'],
+          ['Discipline — Rugissants', '3'],
+          ['Discipline — Ordonnés', '5'],
+          ['Discipline — Au doigt et à l’œil', '8'],
+        ],
+      },
+    ],
   },
 };

@@ -121,115 +121,115 @@ export const EXTENDED_PROFESSIONS_TALENTS: readonly TalentEntry[] = [
     "id": "tl-vampire-incognito",
     "professionId": "vampire",
     "profession": {
-      "en": "Vampire",
-      "fr": "Vampire"
+      "en": "Higher Vampire",
+      "fr": "Vampire supérieur"
     },
     "branch": "Humaniste",
     "name": "Incognito (INT)",
     "attribute": "INT",
-    "description": "Le Vampire a apprit de son observation des Humains et est capable de se faire passer pour n'importe qui (un médecin, un bandit, un vétéran, un marchand, un noble, un ermite....) Le Vampire fait un jet d'incognito en opposition au SD de la cible selon la circonstance ; duperie, résistance à la contrainte, étiquette, vigilance, éducation",
+    "description": "Le Vampire a appris de son observation des Humains et est capable de se faire passer pour n'importe qui (médecin, bandit, vétéran, marchand, noble, ermite…). Il effectue un jet d'Incognito en opposition au SD de la cible selon la circonstance (Duperie, Résistance à la contrainte, Étiquette, Vigilance ou Éducation).",
     "isCoreProfession": false
   },
   {
     "id": "tl-vampire-repaire",
     "professionId": "vampire",
     "profession": {
-      "en": "Vampire",
-      "fr": "Vampire"
+      "en": "Higher Vampire",
+      "fr": "Vampire supérieur"
     },
     "branch": "Humaniste",
     "name": "Repaire (INT)",
     "attribute": "INT",
-    "description": "De part sa nature, le Vampire peut trouver et réclamer un repaire d'un point de vue animal (ne donne pas acte de propriété dans une ville) Il fait un jet de repaire et réparti les points dans le tableau de Repaire. Si l'endroit est habité, il faudra tuer ou faire fuir le ou les occupants.",
+    "description": "De par sa nature, le Vampire peut trouver et réclamer un repaire d'un point de vue animal (ne confère pas d'acte de propriété officiel en ville). Il effectue un jet de Repaire et répartit les points obtenus dans le tableau de Repaire. Si l'endroit est habité, il devra tuer ou chasser ses occupants.",
     "isCoreProfession": false
   },
   {
     "id": "tl-vampire-a-travers-les-ages",
     "professionId": "vampire",
     "profession": {
-      "en": "Vampire",
-      "fr": "Vampire"
+      "en": "Higher Vampire",
+      "fr": "Vampire supérieur"
     },
     "branch": "Humaniste",
     "name": "À travers les Âges",
-    "description": "Avec le temps, le vampire est allé au delà de toutes capacités humaines. Par pallier de 2, le Vampire obtient +1 à chaque Caractéristiques. Il obtient en fin de compte +5 au niveau 10, et peut aller au-dessus de 10 en caractéristiques.",
+    "description": "Avec le temps, le Vampire a dépassé les limites humaines. Tous les 2 rangs dans cette compétence, il gagne +1 à chaque Caractéristique (soit +5 au rang 10) et peut ainsi dépasser le plafond humain de 10.",
     "isCoreProfession": false
   },
   {
     "id": "tl-vampire-invisibilite",
     "professionId": "vampire",
     "profession": {
-      "en": "Vampire",
-      "fr": "Vampire"
+      "en": "Higher Vampire",
+      "fr": "Vampire supérieur"
     },
     "branch": "Vampire",
     "name": "Invisibilité (VOL)",
     "attribute": "VOL",
-    "description": "Lorsqu'il est Invisible, le Vampire obtient +10 en Furtivité et +5 en attaque. Il redevient visible dès qu'il effectue une attaque même si une cible réussi un jet de Vigilance (en ce cas, il subit un malus de -3 pour attaquer ou se défendre). Yrden et Poussière de Lune rend le Vampire visible. Endurance requise : 8 Durée : round / niveau",
+    "description": "Lorsqu'il est invisible, le Vampire obtient +10 en Furtivité et +5 en attaque. Il redevient visible dès qu'il attaque ou si une cible réussit un jet de Vigilance (auquel cas il subit –3 pour attaquer ou se défendre). Yrden et Poussière de Lune le rendent visible. Endurance requise : 8 · Durée : 1 round / niveau.",
     "isCoreProfession": false
   },
   {
     "id": "tl-vampire-puissance-vampirique",
     "professionId": "vampire",
     "profession": {
-      "en": "Vampire",
-      "fr": "Vampire"
+      "en": "Higher Vampire",
+      "fr": "Vampire supérieur"
     },
     "branch": "Vampire",
     "name": "Puissance Vampirique",
-    "description": "À force de maîtrise, le Vampire augmente sa vigueur et sa capacité à lancer des sortilèges vampirique. Pour chaque point, il obtient +3 de Vigueur, il atteindra donc 40 points au niveau 10",
+    "description": "À force de maîtrise, le Vampire augmente sa Vigueur et sa capacité à lancer des sortilèges vampiriques. Chaque rang octroie +3 de Vigueur, atteignant ainsi 40 points au niveau 10.",
     "isCoreProfession": false
   },
   {
     "id": "tl-vampire-seigneur-de-la-nuit",
     "professionId": "vampire",
     "profession": {
-      "en": "Vampire",
-      "fr": "Vampire"
+      "en": "Higher Vampire",
+      "fr": "Vampire supérieur"
     },
     "branch": "Vampire",
     "name": "Seigneur de la Nuit (VOL)",
     "attribute": "VOL",
-    "description": "Le Vampire se transforme en une Créature de combat sanguinaire. À sa vue, toute personne doit faire un jet de Courage en SD égale à la VOL du Vampire x3 pour ne pas être terrifiés. Le Vampire doit réussir un jet SD 24 pour se transformer, et un autre SD 28 s'il souhaite rester aux commandes.",
+    "description": "Le Vampire se métamorphose en créature de carnage (3 m, 220 kg, 4 bras et 2 ailes, déchirant vêtements et armures). Toute personne qui le voit doit réussir un jet de Courage (SD = VOL × 3) pour ne pas être terrifiée. Transformation : SD 24 (SD 30 de jour), maintien du contrôle : SD 28, pour la moitié de l'Endurance totale.",
     "isCoreProfession": false
   },
   {
     "id": "tl-vampire-charme",
     "professionId": "vampire",
     "profession": {
-      "en": "Vampire",
-      "fr": "Vampire"
+      "en": "Higher Vampire",
+      "fr": "Vampire supérieur"
     },
     "branch": "Séducteur",
     "name": "Charme (EMP)",
     "attribute": "EMP",
-    "description": "Le vampire peut obtenir un bonus afin de charmer une cible. Il ajoute ainsi son charme à la compétence requise dans la liste suivante : Charisme, Commandement, Duperie, Persuasion, Séduction Au niveau 10, le Charme peut s'ajouter à Appel de la Nuit. Cependant, cette action fait briller les yeux et risque de révéler votre nature..",
+    "description": "Le Vampire ajoute son rang de Charme à un jet de Charisme, Commandement, Duperie, Persuasion ou Séduction (et à Appel de la Nuit au rang 10). Toutefois, cette action fait briller ses yeux et risque de révéler sa véritable nature.",
     "isCoreProfession": false
   },
   {
     "id": "tl-vampire-goule",
     "professionId": "vampire",
     "profession": {
-      "en": "Vampire",
-      "fr": "Vampire"
+      "en": "Higher Vampire",
+      "fr": "Vampire supérieur"
     },
     "branch": "Séducteur",
     "name": "Goule (EMP)",
     "attribute": "EMP",
-    "description": "Le Vampire peut se faire des alliés en donnant volontairement son sang à d'autres créatures de la nuit. Il doit réussir un jet de Goule selon le SD des créatures visées (cf tableau des créatures). Selon la créature, le Vampire dépense plus ou moins de PS",
+    "description": "Le Vampire peut se lier des alliés en leur faisant volontairement boire son sang. Il effectue un jet de Goule (EMP) selon le SD de la créature visée et du degré d'attachement souhaité, tout en sacrifiant les PS correspondants (voir tableau).",
     "isCoreProfession": false
   },
   {
     "id": "tl-vampire-appel-de-la-nuit",
     "professionId": "vampire",
     "profession": {
-      "en": "Vampire",
-      "fr": "Vampire"
+      "en": "Higher Vampire",
+      "fr": "Vampire supérieur"
     },
     "branch": "Séducteur",
     "name": "Appel de la Nuit (EMP)",
     "attribute": "EMP",
-    "description": "Soumet par sa volonté les créatures de la nuit environnantes afin qu'elles viennent à son aide. Le Vampire jet un jet d'Appel de la Nuit et réparti les points dans le tableau correspondant.",
+    "description": "Soumet par sa volonté les créatures de la nuit environnantes afin qu'elles viennent à son aide. Le Vampire effectue un jet d'Appel de la Nuit et répartit ses points dans le tableau correspondant (Créatures, Durée et Discipline).",
     "isCoreProfession": false
   },
   {

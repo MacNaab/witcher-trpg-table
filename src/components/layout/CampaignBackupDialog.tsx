@@ -56,6 +56,9 @@ function SummaryGrid({
     { label: s.rollerHistories, value: summary.rollerHistories },
     { label: s.chronicleCampaigns, value: summary.chronicleCampaigns },
     { label: s.chronicleEvents, value: summary.chronicleEvents },
+    { label: s.investigationsCount, value: summary.investigationsCount },
+    { label: s.estatesCount, value: summary.estatesCount },
+    { label: s.demonsCount, value: summary.demonsCount },
     {
       label: s.chargenDraft,
       value: summary.hasCharGenDraft ? s.yes : s.no,

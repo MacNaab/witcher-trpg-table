@@ -3371,11 +3371,13 @@ export const MONSTERS_EXTENDED_DATA: readonly BestiaryEntry[] = [
     "notes": {
       "fr": [
         "Plus massifs et territoriaux que les ours communs, ces ours gris des forêts profondes et de Skellige affrontent fréquemment des monstres de la Conjonction.",
-        "Armure améliorée (PA 14), résistance au perforant, tranchant et contondant, base d’attaque de 17 (14 pour Frappe brutale)."
+        "Armure améliorée (PA 14), résistance au perforant, tranchant et contondant, base d’attaque de 17 (14 pour Frappe brutale).",
+        "A Tome of Chaos — Le Culte de Svalblod : Utilisé également comme profil officiel du « Grand Ours » (Great Bear) pour les Berserkers de Svalblod sous transformation rituelle."
       ],
       "en": [
         "Larger and fiercely territorial compared to common bears, grizzlies in deep forests and Skellige regularly battle Conjunction monsters.",
-        "Upgraded armor (14 SP), resistance to piercing, slashing, and bludgeoning damage, and attack base 17 (14 for Heavy Strike)."
+        "Upgraded armor (14 SP), resistance to piercing, slashing, and bludgeoning damage, and attack base 17 (14 for Heavy Strike).",
+        "A Tome of Chaos — Cult of Svalblod: Also serves as the official Great Bear statblock for Svalblod Berserkers under ritual transformation."
       ]
     },
     "isFanMade": false,

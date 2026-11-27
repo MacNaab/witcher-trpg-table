@@ -34,7 +34,7 @@ export type RaceId =
   | 'vampire';
 
 /**
- * All 15 playable professions (9 core + 6 extended/supplement).
+ * All 16 playable professions (10 core — Priest & Druid separated — + 6 supplement).
  */
 export type CharacterProfessionId =
   | 'craftsman'
@@ -45,6 +45,7 @@ export type CharacterProfessionId =
   | 'mage'
   | 'merchant'
   | 'priest'
+  | 'druid'
   | 'witcher'
   | 'vampire'
   | 'noble'
@@ -213,15 +214,68 @@ export interface WitcherLifepathState {
   decadeEvents: [string, string, string];
 }
 
+export type MageAcademyId =
+  | 'aretuza'
+  | 'ban-ard'
+  | 'gweison-haul'
+  | 'minor-academia'
+  | 'nilfgaard'
+  | 'druid-circle';
+
+export type MageDecadeStyleId =
+  | 'cautious'
+  | 'politicking'
+  | 'experimentation'
+  | 'study';
+
+export type MageDecadeEventOutcomeId =
+  | 'benefit'
+  | 'ally'
+  | 'knowledge'
+  | 'nothing';
+
+export interface MageChaosDecadeEntry {
+  style: MageDecadeStyleId;
+  dangerTriggered?: boolean | null;
+  dangerRoll?: number | null;
+  dangerIndex?: number | null;
+  grudgeText?: string;
+  eventOutcome?: MageDecadeEventOutcomeId | '';
+  eventIndex?: number | null;
+  eventDetail?: string;
+}
+
 export interface MageLifepathState {
+  // Core / legacy summary fields (kept in sync with Tome of Chaos for backwards compatibility & PDF export)
   ageEntered: '2-6' | '7-12' | '12+' | '';
-  academy: 'aretuza' | 'ban-ard' | 'nilfgaard' | 'druid-circle' | '';
+  academy: MageAcademyId | '';
   trainingResult: string;
   graduationResult: string;
   importantEventIndex: number | null;
   currentStatusIndex: number | null;
   decadeSafety: [DecadeRiskLevel | '', DecadeRiskLevel | '', DecadeRiskLevel | ''];
   decadeEvents: [string, string, string];
+
+  // Tome of Chaos complete Mage Lifepath fields
+  birthLocationIndex?: number | null;
+  elderlandConclave?: boolean;
+  familySizeIndex?: number | null;
+  familyPersonalityIndex?: number | null;
+  familyStatusIndex?: number | null;
+  discoveryIndex?: number | null;
+  reactionRegion?: RegionId | '';
+  reactionIndex?: number | null;
+  academiaDecade1Index?: number | null;
+  academiaDecade2Index?: number | null;
+  wasApprentice?: boolean | null;
+  mentorPersonalityIndex?: number | null;
+  mentorValueIndex?: number | null;
+  mentorClothingIndex?: number | null;
+  mentorHatredIndex?: number | null;
+  mentorTeachingIndex?: number | null;
+  mentorMomentIndex?: number | null;
+  mentorEndingIndex?: number | null;
+  chaosDecades?: MageChaosDecadeEntry[];
 }
 
 export interface CustomLifepathState {
@@ -303,11 +357,13 @@ export interface CharacterSheetState {
   selectedLanguages: SkillId[];
 
   includeUnofficialMagic: boolean;
+  includeDarkArtsMagic: boolean;
   selectedSpells: string[];
   selectedInvocations: string[];
   selectedRituals: string[];
   selectedHexes: string[];
   selectedVampirePowers: string[];
+  magicalGiftId: string;
 
   // Step 5: General / Pickup Skills
   /** Stored as RANK (effective skill level; double-cost skills spend rank * 2 points). */

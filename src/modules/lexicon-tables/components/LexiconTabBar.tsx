@@ -17,7 +17,7 @@ const GROUP_ORDER: readonly LexiconGroupId[] = [
 ];
 
 /**
- * Responsive 10-category selector grouped into Materials, Crafting Diagrams, and Alchemy.
+ * Responsive 11-category selector grouped into Materials, Crafting Diagrams, and Alchemy.
  * Preserves clear visibility across desktop, tablet, and mobile without horizontal crushing.
  */
 export function LexiconTabBar({

@@ -6,6 +6,7 @@ export type SocialStatusLevel =
   | 'tolerated'
   | 'feared'
   | 'hated'
+  | 'tolerated_feared'
   | 'feared_hated';
 
 export type SocialTerritoryId =
@@ -107,6 +108,15 @@ export const SOCIAL_STATUS_DEFINITIONS: Record<
       en: '-2 to Seduction, Charisma, Persuasion, and Leadership; frequent targets of xenophobic hostility.',
     },
   },
+  tolerated_feared: {
+    id: 'tolerated_feared',
+    label: { fr: 'Toléré et craint', en: 'Tolerated & Feared' },
+    shortLabel: { fr: 'Toléré & craint', en: 'Tolerated/Feared' },
+    effect: {
+      fr: 'Cumule Toléré et Craint : +1 en Intimidation, –1 en Séduction, Persuasion et Commandement, et –2 au total en Charisme.',
+      en: 'Combines Tolerated and Feared: +1 Intimidation, -1 Seduction/Persuasion/Leadership, and -2 total Charisma.',
+    },
+  },
   feared_hated: {
     id: 'feared_hated',
     label: { fr: 'Craint et haï', en: 'Hated & Feared' },
@@ -186,7 +196,7 @@ export const SOCIAL_STATUS_MATRIX: readonly SocialTerritoryRow[] = [
       mage: 'tolerated',
       halfling: 'neutral',
       gnome: 'neutral',
-      vran: 'feared_hated',
+      vran: 'tolerated_feared',
       werebbub: 'tolerated',
     },
   },
@@ -463,12 +473,9 @@ export const RACES_REFERENCE_DATA: readonly RaceReferenceEntry[] = [
     raceId: 'gnome',
     title: { fr: 'Gnomes', en: 'Gnomes' },
     sourceNote: {
-      fr: 'Supplément (source anglaise)',
-      en: 'Supplement (English source)',
+      fr: 'A Book of Tales (Officiel)',
+      en: 'A Book of Tales (Official)',
     },
-    hasEnglishSourceText: true,
-    englishSourceExcerpt:
-      'Gnomes are the finest craftsmen on the Continent, famed for Gwyhyr blades, alchemy, metallurgy, and engineering, living mostly in democratic communes across Tir Tochair and Mahakam.',
     lore: {
       fr: 'Plus fins artisans du Continent — célèbres pour les épées Gwyhyr, l’alchimie, la métallurgie et l’ingénierie — les gnomes vivent surtout en communes démocratiques dans les montagnes de Tir Tochair et de Mahakam, alliés de longue date des nains.',
       en: 'The finest craftsmen on the Continent—famed for Gwyhyr swords, alchemy, metallurgy, and engineering—gnomes dwell primarily in peaceful democratic communes in Tir Tochair and Mahakam alongside dwarves.',
@@ -478,7 +485,7 @@ export const RACES_REFERENCE_DATA: readonly RaceReferenceEntry[] = [
         id: 'gn-demeanor',
         name: { fr: 'Nature agréable (Pleasant Demeanor)', en: 'Pleasant Demeanor' },
         effect: {
-          fr: 'Bonus naturel de +1 en Charisme. [EN: Gnomes gain an inherent +1 to Charisma.]',
+          fr: 'Bonus naturel de +1 en Charisme.',
           en: 'Inherent +1 bonus to Charisma.',
         },
       },
@@ -486,7 +493,7 @@ export const RACES_REFERENCE_DATA: readonly RaceReferenceEntry[] = [
         id: 'gn-detail',
         name: { fr: 'Œil du détail (Eye for Detail)', en: 'Eye for Detail' },
         effect: {
-          fr: 'Bonus naturel de +2 à 3 compétences d’Artisanat/Technique (Craft Skills) au choix, en ignorant le modificateur de compétence difficile. [EN: +2 to any 3 Craft Skills they choose, ignoring Difficult Skill modifier.]',
+          fr: 'Bonus naturel de +2 à 3 compétences d’Artisanat/Technique (Craft Skills) au choix, en ignorant le modificateur de compétence difficile.',
           en: 'Inherent +2 to any 3 chosen Craft Skills, ignoring the Difficult Skill learning modifier.',
         },
       },
@@ -494,7 +501,7 @@ export const RACES_REFERENCE_DATA: readonly RaceReferenceEntry[] = [
         id: 'gn-scent',
         name: { fr: 'Pistage olfactif (Scent Tracking)', en: 'Scent Tracking' },
         effect: {
-          fr: 'Bonus naturel de +1 en Vigilance et capacité à pister uniquement à l’odorat. [EN: Inherent +1 to Awareness and ability to track by scent alone.]',
+          fr: 'Bonus naturel de +1 en Vigilance et capacité à pister uniquement à l’odorat.',
           en: 'Inherent +1 to Awareness plus the ability to track targets by scent alone.',
         },
       },
@@ -512,12 +519,9 @@ export const RACES_REFERENCE_DATA: readonly RaceReferenceEntry[] = [
     raceId: 'vran',
     title: { fr: 'Vran', en: 'Vran' },
     sourceNote: {
-      fr: 'Supplément (source anglaise)',
-      en: 'Supplement (English source)',
+      fr: 'A Book of Tales (Officiel)',
+      en: 'A Book of Tales (Official)',
     },
-    hasEnglishSourceText: true,
-    englishSourceExcerpt:
-      'Sometimes referred to as Lizardfolk, the vran were a proud reptilian civilization crushed between elven wars and the Landing of the Exiles, now surviving as rare third-class wanderers.',
     lore: {
       fr: 'Ancienne civilisation reptilienne jadis prospère des Montagnes Bleues à la Grande Mer, décimée par les guerres elfiques puis l’arrivée des humains. Ne croyant pas à l’au-delà, les Vran chérissent la vie et survivent aujourd’hui en rares exilés.',
       en: 'Ancient reptilian people once famed for grand cities, cool-headed politics, and scholarship before being pushed to the brink by elven conflicts and Nordling settlers.',
@@ -527,7 +531,7 @@ export const RACES_REFERENCE_DATA: readonly RaceReferenceEntry[] = [
         id: 'vr-calm',
         name: { fr: 'Cœur calme (Calm Hearted)', en: 'Calm Hearted' },
         effect: {
-          fr: 'Bonus naturel de +1 en Résistance à la contrainte. [EN: Inherent +1 Resist Coercion.]',
+          fr: 'Bonus naturel de +1 en Résistance à la contrainte.',
           en: 'Inherent +1 bonus to Resist Coercion.',
         },
       },
@@ -561,12 +565,9 @@ export const RACES_REFERENCE_DATA: readonly RaceReferenceEntry[] = [
     raceId: 'werebbub',
     title: { fr: 'Werebbubs', en: 'Werebbubs' },
     sourceNote: {
-      fr: 'Supplément (source anglaise)',
-      en: 'Supplement (English source)',
+      fr: 'A Book of Tales (Officiel)',
+      en: 'A Book of Tales (Official)',
     },
-    hasEnglishSourceText: true,
-    englishSourceExcerpt:
-      'Proud mountain-dwelling Elder Race who revere ancestral heroes, living in reclusive high-peak communities and trading almost exclusively with dwarves.',
     lore: {
       fr: 'Race ancienne et fière vénérant la mémoire des héros et héroïnes ancêtres plutôt que des dieux. Repoussés dans les hautes montagnes par l’expansion elfique puis les armées humaines, les Werebbubs vivent en clans reclus et commercent surtout avec les nains.',
       en: 'Proud, heroic Elder Race pushed into high mountain enclaves after resisting both elven expansion and human mining armies; they honor ancestral heroes and trade mostly with dwarves.',
@@ -608,43 +609,64 @@ export const RACES_REFERENCE_DATA: readonly RaceReferenceEntry[] = [
   },
   {
     raceId: 'vampire',
-    title: { fr: 'Vampires supérieurs', en: 'Higher Vampires' },
-    sourceNote: { fr: 'Supplément communautaire', en: 'Community Supplement' },
+    title: { fr: 'Les Vampires Supérieurs', en: 'Higher Vampires' },
+    sourceNote: {
+      fr: 'Supplément non-officiel · Lancelot Von See',
+      en: 'Fan-Made Supplement · Lancelot Von See',
+    },
     lore: {
-      fr: 'Créatures immortelles d’une puissance surnaturelle évoluant clandestinement parmi les mortels à travers les âges.',
-      en: 'Immortal beings of immense supernatural power walking quietly among mortals across the centuries.',
+      fr: 'Êtres immortels aussi proches des humains par l’apparence et l’intelligence que mortels au combat. Même le médaillon d’un sorceleur ne vibre pas en leur présence. Bien qu’ils aiment le sang, ils n’ont pas besoin d’en boire pour survivre ; certains y ont même renoncé. À son réveil, un vampire est dans le dénuement : sa monnaie n’a plus cours ou il a été dépouillé comme un cadavre.',
+      en: 'Immortal beings sharing human appearance and intellect, yet nearly unkillable predators. Even a Witcher medallion fails to react to them. Though they enjoy blood, they do not need it to survive and awaken destitute with obsolete coin or stripped belongings.',
+    },
+    societyNote: {
+      title: {
+        fr: 'Apparence Humaine & Nature révélée',
+        en: 'Human Appearance & Revealed Nature',
+      },
+      text: {
+        fr: 'Le Vampire possède une apparence humaine et utilise les perceptions raciales régionales des Humains, mais ne reçoit aucun atout racial humain. Si sa véritable nature est révélée (usage de magie ou d’attributs vampiriques), il est immédiatement Craint et Fui : seul un témoin réussissant un jet de Courage peut rester.',
+        en: 'Higher Vampires appear Human and use Human regional social standing without gaining Human racial perks. Once their true nature is exposed (by magic or vampiric traits), they become Feared and Fled—witnesses must pass a Courage check to remain.',
+      },
     },
     perks: [
       {
         id: 'vp-senses',
-        name: { fr: 'Sens vampiriques', en: 'Vampiric Senses' },
+        name: { fr: 'Sens Vampiriques', en: 'Vampiric Senses' },
         effect: {
-          fr: 'Vision nocturne, ouïe et odorat surnaturels permettant de pister et détecter les proies vivantes.',
-          en: 'Supernatural night sight, hearing, and blood scent detection.',
+          fr: 'Aucune pénalité en lumière tamisée et malus de –3 seulement dans le noir complet. Perçoit certaines traces comme un sorceleur (hors pistage olfactif).',
+          en: 'No penalty in dim light and only -3 in complete darkness. Perceives certain tracks like a Witcher (excluding scent/olfactory tracking).',
         },
       },
       {
         id: 'vp-supernatural',
-        name: { fr: 'Être surnaturel', en: 'Supernatural Being' },
+        name: { fr: 'Être Surnaturel', en: 'Supernatural Being' },
         effect: {
-          fr: 'Immunité aux maladies, poisons ordinaires et vieillissement ; régénération accélérée.',
-          en: 'Immune to diseases, common toxins, and aging; accelerated regeneration.',
+          fr: 'Invisible à la magie divinatoire, même face à de puissants sortilèges. Accès à la Magie Vampirique et télépathie passive, notamment avec ses Goules.',
+          en: 'Invisible to divination magic, even powerful spells. Grants access to Vampiric Magic and passive telepathy, especially with bound Ghouls.',
         },
       },
       {
         id: 'vp-body',
-        name: { fr: 'Corps de vampire', en: 'Vampire Body' },
+        name: { fr: 'Corps de Vampire', en: 'Vampire Body' },
         effect: {
-          fr: 'Griffes et crocs naturels ainsi qu’une résistance physique exceptionnelle.',
-          en: 'Natural claws, fangs, and extraordinary physical resilience.',
+          fr: 'Corps non inflammable (peut toutefois être aveuglé) avec régénération infinie (+5 PS/round). Griffes rétractiles 4d6 (Saignement 25 %) et gueule bestiale 3d6 (Saignement 50 %). Leur usage provoque Craint et Fui.',
+          en: 'Non-flammable body (still susceptible to blinding) with infinite regeneration (+5 HP/round). Extendable claws 4d6 (25% Bleed) and bestial jaws 3d6 (50% Bleed); using them triggers Feared & Fled.',
         },
       },
       {
         id: 'vp-years',
-        name: { fr: "Des années d'expérience", en: 'Years of Experience' },
+        name: { fr: "Des années d'expériences", en: 'Years of Experience' },
         effect: {
-          fr: 'Connaissances et maîtrise accumulées au fil des siècles.',
-          en: 'Centuries of accumulated worldly knowledge and skill.',
+          fr: 'Après plusieurs décennies d’existence, les compétences complexes (×2) comptent comme des compétences simples (×1).',
+          en: 'After decades of existence, complex (×2) skills cost single (×1) points to learn and improve.',
+        },
+      },
+      {
+        id: 'vp-vulnerable',
+        name: { fr: 'Vulnérable', en: 'Vulnerable' },
+        effect: {
+          fr: 'Vulnérable à l’argent et aux huiles contre les vampires. En plein soleil, la régénération tombe à +3 PS/round. Chaque gorgée de sang bue augmente le risque d’addiction de +5 %, et il subit les substances contenues dans le sang (alcool, drogues, maladies…), y compris le Sang Noir.',
+          en: 'Vulnerable to silver and Vampire Oil. In direct sunlight, regeneration drops to +3 HP/round. Each sip of blood adds +5% addiction risk, and blood-borne toxins/alcohol/drugs/diseases—including Black Blood—affect him normally.',
         },
       },
     ],
@@ -668,6 +690,7 @@ export function resolveSocialGroupForCharacter(
 ): SocialGroupId | null {
   if (professionId === 'mage') return 'mage';
   if (!raceId) return null;
+  if (raceId === 'vampire') return 'human';
   switch (raceId) {
     case 'human':
     case 'elf':

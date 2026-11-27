@@ -1,7 +1,7 @@
 import type { DiagramCatalogEntry } from './types';
 
 /**
- * Unified crafting blueprints & diagrams catalog (126 entries).
+ * Unified crafting blueprints & diagrams catalog (183 entries).
  */
 export const DIAGRAMS_DATA: readonly DiagramCatalogEntry[] = [
   {
@@ -1764,8 +1764,806 @@ export const DIAGRAMS_DATA: readonly DiagramCatalogEntry[] = [
     "pool": "A",
     "dc": "12",
     "time": "2 Heures",
-    "components": "Acier(x3),Bois Ducri(x5), Cuir(x1),Graisse Ester(x1)",
+    "components": "Acier(x3),Bois durci(x5), Cuir(x1),Graisse Ester(x1)",
     "investment": "260",
     "price": 790
+  },
+  {
+    "id": "dg-bludgeon-stick",
+    "name": {
+      "en": "Bludgeon Stick",
+      "fr": "Bâton de matraque"
+    },
+    "tier": "novice",
+    "pool": "A",
+    "dc": "8",
+    "time": "1 heure",
+    "components": "Bois durci x1 Cuir durci x1 Acier x1 Filetage x2",
+    "investment": "72",
+    "price": 125
+  },
+  {
+    "id": "dg-blunt-maul",
+    "name": {
+      "en": "Blunt Maul",
+      "fr": "Blunt Maul"
+    },
+    "tier": "novice",
+    "pool": "A",
+    "dc": "10",
+    "time": "2 heures",
+    "components": "Bois durci x1 Cuir durci x1 Cire d'ogre x3 Acier x2 Fer x21 Résine x1",
+    "investment": "148",
+    "price": 306
+  },
+  {
+    "id": "dg-traditional-bow",
+    "name": {
+      "en": "Traditional Bow",
+      "fr": "Arc traditionnel"
+    },
+    "tier": "novice",
+    "pool": "A",
+    "dc": "15",
+    "time": "8 heures",
+    "components": "Bois durci x5 Fil x4 Cire x2 Résine x2 Graisse ester x3 Fer x1 Cuir x2",
+    "investment": "210",
+    "price": 434
+  },
+  {
+    "id": "dg-woodcutters-axe",
+    "name": {
+      "en": "Woodcutter’s Axe",
+      "fr": "Hache de bûcheron"
+    },
+    "tier": "novice",
+    "pool": "A",
+    "dc": "10",
+    "time": "3 heures",
+    "components": "Bois durci x1 Cuir durci x1 Cuir x1 Résine x4 Acier x1",
+    "investment": "148",
+    "price": 306
+  },
+  {
+    "id": "dg-glaive",
+    "name": {
+      "en": "Glaive",
+      "fr": "Glaive"
+    },
+    "tier": "journeyman",
+    "pool": "A",
+    "dc": "15",
+    "time": "8 heures",
+    "components": "Bois durci x5, Acier x4, Fil x5, Cire d'ogre x3, Cuir x3",
+    "investment": "481",
+    "price": 974
+  },
+  {
+    "id": "dg-redanian-mace",
+    "name": {
+      "en": "Redanian Mace",
+      "fr": "Masse redanienne"
+    },
+    "tier": "journeyman",
+    "pool": "A",
+    "dc": "15",
+    "time": "6 heures",
+    "components": "Bois durci x2, Cuir durci x1, Cire d'ogre x3, Acier x3, Fer x2, Résine x1",
+    "investment": "250",
+    "price": 502
+  },
+  {
+    "id": "dg-temerian-slip-axe",
+    "name": {
+      "en": "Temerian Slip Axe",
+      "fr": "Hache coulissante temerienne"
+    },
+    "tier": "journeyman",
+    "pool": "A",
+    "dc": "16",
+    "time": "4 heures",
+    "components": "Bois durci x1, Cuir durci x1, Cuir x1, Résine x4, Acier x2, Cire d'ogre x2",
+    "investment": "252",
+    "price": 712
+  },
+  {
+    "id": "dg-strong-crossbow",
+    "name": {
+      "en": "Strong Crossbow",
+      "fr": "Arbalète lourde"
+    },
+    "tier": "master",
+    "pool": "A",
+    "dc": "22",
+    "time": "11 heures",
+    "components": "Bois durci x6, Cuir durci x2, Fil x6, Cire x2, Résine x3, Acier x4, Graisse ester x2, Cire Ogre x3, Fer x2",
+    "investment": "525",
+    "price": 1012
+  },
+  {
+    "id": "dg-mancatcher",
+    "name": {
+      "en": "Mancatcher",
+      "fr": "Attrape-coquin"
+    },
+    "tier": "journeyman",
+    "pool": "A",
+    "dc": "16",
+    "time": "8 heures",
+    "components": "Fil (x1), Pierre à aiguiser (x1), Cire (x2), Graisse ester (x2), Acier (x3), Cuir (x3), Bois durci (x4)",
+    "investment": "347",
+    "price": 679
+  },
+  {
+    "id": "dg-parrying-dagger",
+    "name": {
+      "en": "Parrying Dagger",
+      "fr": "Dague de parade"
+    },
+    "tier": "journeyman",
+    "pool": "A",
+    "dc": "16",
+    "time": "4 heures",
+    "components": "Acier (x1), Acier noir (x1), Bois durci (x1), Cire d’ogre (x2), Cuir durci (x2)",
+    "investment": "262",
+    "price": 525
+  },
+  {
+    "id": "dg-flail",
+    "name": {
+      "en": "Flail",
+      "fr": "Fléau"
+    },
+    "tier": "journeyman",
+    "pool": "A",
+    "dc": "16",
+    "time": "8 heures",
+    "components": "Bois (x1), Cire d’ogre (x1), Résine (x1), Fer (x2), Huile de dermoptère (x2), Pierre à aiguiser (x2), Acier (x4)",
+    "investment": "421",
+    "price": 843
+  },
+  {
+    "id": "dg-whip",
+    "name": {
+      "en": "Whip",
+      "fr": "Fouet"
+    },
+    "tier": "novice",
+    "pool": "A",
+    "dc": "10",
+    "time": "2 heures",
+    "components": "Cire (x1), Cuir (x4)",
+    "investment": "114",
+    "price": 228
+  },
+  {
+    "id": "dg-lamia-whip",
+    "name": {
+      "en": "Lamia Whip",
+      "fr": "Lamia"
+    },
+    "tier": "master",
+    "pool": "A",
+    "dc": "24",
+    "time": "12 heures",
+    "components": "Bois durci (x1), Acier noir (x2), Acier de Tretogor (x2), Cuir durci (x2), Pierre à aiguiser (x2), Huile (x3), Charbon (x10)",
+    "investment": "487",
+    "price": 937
+  },
+  {
+    "id": "dg-armored-trousers",
+    "name": {
+      "en": "Armored Trousers",
+      "fr": "Pantalon renforcé"
+    },
+    "tier": "journeyman",
+    "pool": "A",
+    "dc": "16",
+    "time": "8 heures",
+    "components": "Cuir durci x2, Acier x1, Fil x5, Acier x1",
+    "investment": "187",
+    "price": 374
+  },
+  {
+    "id": "dg-interwoven-helm",
+    "name": {
+      "en": "Interwoven Helm",
+      "fr": "Heaume entrelacé"
+    },
+    "tier": "journeyman",
+    "pool": "A",
+    "dc": "19",
+    "time": "9 heures",
+    "components": "Lin tissé double x3, cuir x2, fil x7, cire x4, cuir Lyrian x1",
+    "investment": "192",
+    "price": 374
+  },
+  {
+    "id": "dg-interwoven-gambeson",
+    "name": {
+      "en": "Interwoven Gambeson",
+      "fr": "Gambison entrelacé"
+    },
+    "tier": "journeyman",
+    "pool": "A",
+    "dc": "19",
+    "time": "9 heures",
+    "components": "Lin tissé double x6, Fil x6, Lin x4, Coton x11, Cuir Lyrian x1",
+    "investment": "295",
+    "price": 600
+  },
+  {
+    "id": "dg-interwoven-trousers",
+    "name": {
+      "en": "Interwoven Trousers",
+      "fr": "Pantalon entrelacé"
+    },
+    "tier": "journeyman",
+    "pool": "A",
+    "dc": "19",
+    "time": "9 heures",
+    "components": "Lin tissé double x5, fil x6, cuir Lyrian x1",
+    "investment": "228",
+    "price": 450
+  },
+  {
+    "id": "dg-lyrian-leather-jacket",
+    "name": {
+      "en": "Lyrian Leather Jacket",
+      "fr": "Veste de cuir lyrienne"
+    },
+    "tier": "journeyman",
+    "pool": "A",
+    "dc": "18",
+    "time": "9 heures",
+    "components": "Cuir Lyrian x4, Cuir x2, Fil x4, Lin x4, Acier x1",
+    "investment": "392",
+    "price": 786
+  },
+  {
+    "id": "dg-lyrian-leather-trousers",
+    "name": {
+      "en": "Lyrian Leather Trousers",
+      "fr": "Pantalon de cuir lyrien"
+    },
+    "tier": "journeyman",
+    "pool": "A",
+    "dc": "18",
+    "time": "9 heures",
+    "components": "Cuir Lyrian x4, Cuir x2, Fil x4, Lin x2, Acier x1",
+    "investment": "392",
+    "price": 786
+  },
+  {
+    "id": "dg-fine-mail-hood",
+    "name": {
+      "en": "Fine Mail Hood",
+      "fr": "Capuche fine en mailles"
+    },
+    "tier": "master",
+    "pool": "A",
+    "dc": "22",
+    "time": "8 heures",
+    "components": "Cuir durci x3, Acier Tretogor x3, Lin x2, Fil x6, Cire Ogre x2",
+    "investment": "431",
+    "price": 862
+  },
+  {
+    "id": "dg-fine-mail-shirt",
+    "name": {
+      "en": "Fine Mail Shirt",
+      "fr": "Armure fine en maille"
+    },
+    "tier": "master",
+    "pool": "A",
+    "dc": "22",
+    "time": "8 heures",
+    "components": "Cuir durci x3, Acier Tretogor x5, Lin x2, Fil x6, Cire d'ogre x2, Huile draconide x2, Coton x3",
+    "investment": "565",
+    "price": 1124
+  },
+  {
+    "id": "dg-fine-mail-trousers",
+    "name": {
+      "en": "Fine Mail Trousers",
+      "fr": "Pantalon fin en maille"
+    },
+    "tier": "master",
+    "pool": "A",
+    "dc": "22",
+    "time": "5 heures",
+    "components": "Cuir durci x3, Acier Tretogor x4, Lin x2, Fil x6, Cire d'ogre x2, Huile draconide x2, Coton x2",
+    "investment": "450",
+    "price": 900
+  },
+  {
+    "id": "dg-koviri-battle-cap",
+    "name": {
+      "en": "Koviri Battle Cap",
+      "fr": "Casque de combat Koviri"
+    },
+    "tier": "master",
+    "pool": "A",
+    "dc": "26",
+    "time": "12 heures",
+    "components": "Cuir draconide x2, Acier mahakamien x5, Cuir Lyrian x1, Huile assombrissante x1, Huile de dermoptère x4, Lin x2, Huile x5",
+    "investment": "758",
+    "price": 1385
+  },
+  {
+    "id": "dg-koviri-battle-armor",
+    "name": {
+      "en": "Koviri Battle Armor",
+      "fr": "Armure de combat Koviri"
+    },
+    "tier": "master",
+    "pool": "A",
+    "dc": "28",
+    "time": "14 heures",
+    "components": "Cuir draconide x4, Acier mahakamien x5, Cuir Lyrian x2, Huile assombrissante x1, Huile de dermoptère x3, Lin x4",
+    "investment": "1012",
+    "price": 1524
+  },
+  {
+    "id": "dg-koviri-battle-greaves",
+    "name": {
+      "en": "Koviri Battle Greaves",
+      "fr": "Jambière de combat Koviri"
+    },
+    "tier": "master",
+    "pool": "A",
+    "dc": "26",
+    "time": "12 heures",
+    "components": "Cuir draconide x3, Acier mahakamien x5, Cuir Lyrian x2, Huile assombrissante x1, Huile x1, Huile de dermoptère x3, Lin x4",
+    "investment": "836",
+    "price": 1422
+  },
+  {
+    "id": "dg-chomper-trap",
+    "name": {
+      "en": "Chomper Trap",
+      "fr": "Carnassier"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "16",
+    "time": "½ heure",
+    "components": "Fer (x1), Poudre zerrikanienne (x2), Fil (x5), Bois (x7)",
+    "investment": "96",
+    "price": 144
+  },
+  {
+    "id": "dg-conflagration-trap",
+    "name": {
+      "en": "Conflagration Trap",
+      "fr": "Déflagration"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "18",
+    "time": "½ heure",
+    "components": "Embryon d’endriague (x1), Argile alluviale (x2), Bois (x2), Cire (x2), Fil (x2)",
+    "investment": "81",
+    "price": 121
+  },
+  {
+    "id": "dg-shredder-trap",
+    "name": {
+      "en": "Shredder Trap",
+      "fr": "Écorcheur"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "16",
+    "time": "½ heure",
+    "components": "Charbon (x1), Extrait de venin (x1), Lin (x1), Pierre (x2), Bois (x3), Fil (x3)",
+    "investment": "74",
+    "price": 111
+  },
+  {
+    "id": "dg-fury-trap",
+    "name": {
+      "en": "Fury Trap",
+      "fr": "Furie"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "16",
+    "time": "½ heure",
+    "components": "Cœur de nekker (x1), Argile alluviale (x2), Bois (x3), Huile (x4), Fil (x5)",
+    "investment": "76",
+    "price": 144
+  },
+  {
+    "id": "dg-talgarian-winter-trap",
+    "name": {
+      "en": "Talgarian Winter Trap",
+      "fr": "Hiver talgarien"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "18",
+    "time": "½ heure",
+    "components": "Essence d’eau (x1), Vitriocybe (x1), Bois (x3), Fil (x4)",
+    "investment": "84",
+    "price": 126
+  },
+  {
+    "id": "dg-marking-trap",
+    "name": {
+      "en": "Marking Trap",
+      "fr": "Marquage"
+    },
+    "tier": "novice",
+    "pool": "S",
+    "dc": "14",
+    "time": "½ heure",
+    "components": "Bois (x1), Cendres (x1), Fil (x1), Lin (x1), Soufre (x1), Pétales de ginatia (x3)",
+    "investment": "38",
+    "price": 57
+  },
+  {
+    "id": "dg-explosive-ammunition-x5",
+    "name": {
+      "en": "Explosive Ammunition (x5)",
+      "fr": "Projectiles explosifs (x5)"
+    },
+    "tier": "master",
+    "pool": "S",
+    "dc": "20",
+    "time": "½ heure",
+    "components": "Bois durci (x1), Huile (x1), Plumes (x1), Acier noir (x2), Argile alluviale (x3), Cire d’ogre (x3), Poudre zerrikanienne (x4)",
+    "investment": "362",
+    "price": 540
+  },
+  {
+    "id": "dg-splitter-ammunition-x5",
+    "name": {
+      "en": "Splitter Ammunition (x5)",
+      "fr": "Projectiles à fragmentation (x5)"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "18",
+    "time": "½ heure",
+    "components": "Toile de lin (x1), Acier (x2), Argile alluviale (x2), Bois durci (x2), Fil (x3), Plumes (x3)",
+    "investment": "181",
+    "price": 270
+  },
+  {
+    "id": "dg-tracking-ammunition-x5",
+    "name": {
+      "en": "Tracking Ammunition (x5)",
+      "fr": "Projectiles pisteurs (x5)"
+    },
+    "tier": "novice",
+    "pool": "S",
+    "dc": "14",
+    "time": "½ heure",
+    "components": "Acier (x1), Bois durci (x1), Plumes (x1), Résine (x1), Herbe à tanner (x2)",
+    "investment": "76",
+    "price": 110
+  },
+  {
+    "id": "dg-runeword-burning",
+    "name": {
+      "en": "Runeword: Burning",
+      "fr": "Mot runique : Combustion"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "15",
+    "time": "1 heure",
+    "components": "Rune de Tchernobog (x1), Rune de Dajbog (x1)",
+    "investment": "1175",
+    "price": 2150
+  },
+  {
+    "id": "dg-runeword-placation",
+    "name": {
+      "en": "Runeword: Placation",
+      "fr": "Mot runique : Apaisement"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "15",
+    "time": "1 heure",
+    "components": "Rune de Morana (x1), Rune de Stribog (x1)",
+    "investment": "1075",
+    "price": 2150
+  },
+  {
+    "id": "dg-runeword-preservation",
+    "name": {
+      "en": "Runeword: Preservation",
+      "fr": "Mot runique : Préservation"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "15",
+    "time": "1 heure",
+    "components": "Rune de Devana (x1), Rune de Morana (x1)",
+    "investment": "1150",
+    "price": 2300
+  },
+  {
+    "id": "dg-runeword-prolongation",
+    "name": {
+      "en": "Runeword: Prolongation",
+      "fr": "Mot runique : Prolongation"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "15",
+    "time": "1 heure",
+    "components": "Rune de Péroun (x1), Rune de Svarog (x1)",
+    "investment": "1175",
+    "price": 2150
+  },
+  {
+    "id": "dg-runeword-shearing",
+    "name": {
+      "en": "Runeword: Shearing",
+      "fr": "Mot runique : Cisaillement"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "15",
+    "time": "1 heure",
+    "components": "Rune de Vélès (x1), Rune de Zoria (x1)",
+    "investment": "1150",
+    "price": 2300
+  },
+  {
+    "id": "dg-runeword-deflection",
+    "name": {
+      "en": "Runeword: Deflection",
+      "fr": "Mot runique : Déviation"
+    },
+    "tier": "master",
+    "pool": "S",
+    "dc": "21",
+    "time": "1 heure",
+    "components": "Rune de Tchernobog (x1), Rune de Péroun (x1), Rune de Stribog (x1)",
+    "investment": "1650",
+    "price": 3300
+  },
+  {
+    "id": "dg-runeword-depletion",
+    "name": {
+      "en": "Runeword: Depletion",
+      "fr": "Mot runique : Épuisement"
+    },
+    "tier": "master",
+    "pool": "S",
+    "dc": "21",
+    "time": "1 heure",
+    "components": "Rune de Stribog (x1), Rune de Triglav (x1), Rune de Vélès (x1)",
+    "investment": "1675",
+    "price": 3350
+  },
+  {
+    "id": "dg-runeword-rejuvenation",
+    "name": {
+      "en": "Runeword: Rejuvenation",
+      "fr": "Mot runique : Jouvence"
+    },
+    "tier": "master",
+    "pool": "S",
+    "dc": "21",
+    "time": "1 heure",
+    "components": "Rune de Péroun (x1), Rune de Svarog (x1), Rune de Triglav (x1)",
+    "investment": "1750",
+    "price": 3500
+  },
+  {
+    "id": "dg-glyphword-balance",
+    "name": {
+      "en": "Glyphword: Balance",
+      "fr": "Mot glyphique : Équilibre"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "15",
+    "time": "1 heure",
+    "components": "Glyphe de Guérison (x1), Glyphe de Renforcement (x1)",
+    "investment": "550",
+    "price": 1100
+  },
+  {
+    "id": "dg-glyphword-beguilement",
+    "name": {
+      "en": "Glyphword: Beguilement",
+      "fr": "Mot glyphique : Séduction"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "15",
+    "time": "1 heure",
+    "components": "Glyphe de Feu (x1), Glyphe d’Eau (x1)",
+    "investment": "1150",
+    "price": 2300
+  },
+  {
+    "id": "dg-glyphword-heft",
+    "name": {
+      "en": "Glyphword: Heft",
+      "fr": "Mot glyphique : Lourdeur"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "15",
+    "time": "1 heure",
+    "components": "Glyphe de Guérison (x1), Glyphe de Renforcement (x1)",
+    "investment": "550",
+    "price": 1100
+  },
+  {
+    "id": "dg-glyphword-rotation",
+    "name": {
+      "en": "Glyphword: Rotation",
+      "fr": "Mot glyphique : Rotation"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "15",
+    "time": "1 heure",
+    "components": "Glyphe de Coagulation (x1), Glyphe de Renforcement (x1)",
+    "investment": "300",
+    "price": 600
+  },
+  {
+    "id": "dg-glyphword-shining",
+    "name": {
+      "en": "Glyphword: Shining",
+      "fr": "Mot glyphique : Éclat"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "15",
+    "time": "1 heure",
+    "components": "Glyphe d’Air (x1), Glyphe de Protection (x1)",
+    "investment": "875",
+    "price": 1750
+  },
+  {
+    "id": "dg-glyphword-protection",
+    "name": {
+      "en": "Glyphword: Protection",
+      "fr": "Mot glyphique : Protection"
+    },
+    "tier": "master",
+    "pool": "S",
+    "dc": "21",
+    "time": "1 heure",
+    "components": "Glyphe de Terre (x1), Glyphe de Magie (x1), Glyphe de Protection (x1)",
+    "investment": "1450",
+    "price": 2900
+  },
+  {
+    "id": "dg-glyphword-retribution",
+    "name": {
+      "en": "Glyphword: Retribution",
+      "fr": "Mot glyphique : Représailles"
+    },
+    "tier": "master",
+    "pool": "S",
+    "dc": "21",
+    "time": "1 heure",
+    "components": "Glyphe de Terre (x1), Glyphe de Feu (x1), Glyphe de Renforcement (x1)",
+    "investment": "1250",
+    "price": 2500
+  },
+  {
+    "id": "dg-enhancement-slot",
+    "name": {
+      "en": "Enhancement Slot",
+      "fr": "Emplacement d’amélioration"
+    },
+    "tier": "master",
+    "pool": "S",
+    "dc": "25",
+    "time": "4 heures",
+    "components": "Météorite (x4), Poussière imprégnée (x2)",
+    "investment": "684",
+    "price": 1368
+  },
+  {
+    "id": "dg-bloodstone-dagger",
+    "name": {
+      "en": "Bloodstone Dagger",
+      "fr": "Dague en pierre de sang"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "14",
+    "time": "4 heures",
+    "components": "Cendres (x2), Os de bête (x1), Huile assombrissante (x1), Eau-forte (x4), Pierre à aiguiser (x2), Acier (x1), Gemme (x1)",
+    "investment": "254",
+    "price": 500
+  },
+  {
+    "id": "dg-wand-of-banishment",
+    "name": {
+      "en": "Wand of Banishment",
+      "fr": "Baguette de bannissement"
+    },
+    "tier": "journeyman",
+    "pool": "S",
+    "dc": "17",
+    "time": "9 heures",
+    "components": "Bois (x1), Cinquième essence (x2), Graisse ester (x2), Acier noir (x2), Eau-forte (x5), Cire d’ogre (x3), Optima mater (x1)",
+    "investment": "405",
+    "price": 800
+  },
+  {
+    "id": "dg-earthly-ribbons",
+    "name": {
+      "en": "Earthly Ribbons",
+      "fr": "Rubans terrestres"
+    },
+    "tier": "master",
+    "pool": "S",
+    "dc": "22",
+    "time": "10 heures",
+    "components": "Soie (x8), Cinquième essence (x3), Fil (x10)",
+    "investment": "676",
+    "price": 1352
+  },
+  {
+    "id": "dg-cerebral-elixir",
+    "name": {
+      "en": "Cerebral Elixir",
+      "fr": "Élixir cérébral"
+    },
+    "tier": "master",
+    "pool": "S",
+    "dc": "22",
+    "time": "10 heures",
+    "components": "Alcohest (x3), Cerveau félin (x1), Hallucinogène (x1), Pétales d’ellébore (x3), Racine de mandragore (x5), Œil de corbeau (x3), Aconit (x4), Argent (x1), Fibre de han (x4)",
+    "investment": "666",
+    "price": 1332
+  },
+  {
+    "id": "dg-centerpiece",
+    "name": {
+      "en": "Centerpiece",
+      "fr": "Pièce maîtresse"
+    },
+    "tier": "master",
+    "pool": "S",
+    "dc": "22",
+    "time": "10 heures",
+    "components": "Au moins 3 matériaux distincts pour 700+ couronnes (jet de Beaux-Arts)",
+    "investment": "700",
+    "price": 0
+  },
+  {
+    "id": "dg-staff-of-binding",
+    "name": {
+      "en": "Staff of Binding",
+      "fr": "Bâton de lien"
+    },
+    "tier": "master",
+    "pool": "S",
+    "dc": "19",
+    "time": "12 heures",
+    "components": "Bois (x4), Cinquième essence (x5), Cendres (x1), Graisse ester (x1), Huile de dermoptère (x3), Cire d’ogre (x5), Gemme (x1)",
+    "investment": "666",
+    "price": 1332
+  },
+  {
+    "id": "dg-true-staff-of-binding",
+    "name": {
+      "en": "True Staff of Binding",
+      "fr": "Véritable Bâton de lien"
+    },
+    "tier": "grandmaster",
+    "pool": "S",
+    "dc": "25",
+    "time": "13 heures",
+    "components": "Bâton de lien, Météorite (x3), Optima mater (x2)",
+    "investment": "1160",
+    "price": 2320
   }
 ];

@@ -126,6 +126,8 @@ export interface BestiaryCombatBlock {
   vulnerabilities: readonly string[];
   abilities: readonly string[];
   variants?: readonly BestiaryCombatVariant[];
+  keySkills?: Record<string, string>;
+  favoredMagic?: readonly string[];
 }
 
 /**
@@ -138,6 +140,7 @@ export interface BestiaryEntry {
   typeId: CreatureTypeId;
   source: BestiarySourceTier;
   isFanMade: boolean;
+  isUniqueNpc?: boolean;
   name: LocalizedText;
   threat: LocalizedText;
   reward: LocalizedText;

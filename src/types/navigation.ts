@@ -17,7 +17,10 @@ export type ModuleId =
   | 'verbal-combat'
   | 'campaign-calendar'
   | 'campaign-chronicle'
-  | 'homebrew-studio';
+  | 'investigation-contracts'
+  | 'estate-manager'
+  | 'homebrew-studio'
+  | 'chaos-ley-goetia';
 
 /**
  * Logical grouping used for sidebar sections and overview filtering.

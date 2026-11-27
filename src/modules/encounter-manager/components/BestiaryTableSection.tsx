@@ -370,6 +370,11 @@ export function BestiaryTableSection({
                             {copy.dossier.fanMadeTag}
                           </span>
                         )}
+                        {entry.isUniqueNpc && (
+                          <span className="rounded border border-primary/40 bg-primary/10 px-1.5 py-0.5 font-mono text-[10px] text-primary">
+                            {copy.dossier.uniqueNpcTag}
+                          </span>
+                        )}
                       </div>
                     </TableCell>
                     <TableCell className="text-xs text-muted-foreground">

@@ -1,7 +1,7 @@
 import type { ComponentCatalogEntry } from './types';
 
 /**
- * Unified crafting and alchemical components catalog (114 entries).
+ * Unified crafting and alchemical components catalog (187 entries).
  */
 export const COMPONENTS_DATA: readonly ComponentCatalogEntry[] = [
   {
@@ -1544,8 +1544,8 @@ export const COMPONENTS_DATA: readonly ComponentCatalogEntry[] = [
   {
     "id": "cp-sewnt",
     "name": {
-      "en": "Sewant Mushrooms",
-      "fr": "Immortelle"
+      "en": "Dwarven Immortelle",
+      "fr": "Immortelle naine"
     },
     "rarity": "R",
     "location": "Sous-sols",
@@ -1630,5 +1630,1094 @@ export const COMPONENTS_DATA: readonly ComponentCatalogEntry[] = [
     "price": 10,
     "craftCost": "10",
     "substance": "Fulgur"
+  },
+  {
+    "id": "cp-bear-hide",
+    "name": {
+      "en": "Bear Hide",
+      "fr": "Peau d’ours"
+    },
+    "rarity": "C",
+    "location": "Trouvé sur les ours",
+    "quantity": "Variable",
+    "dc": "–",
+    "weight": "6 kg",
+    "price": 30
+  },
+  {
+    "id": "cp-boar-hide",
+    "name": {
+      "en": "Boar Hide",
+      "fr": "Peau de sanglier"
+    },
+    "rarity": "C",
+    "location": "Trouvé sur les sangliers",
+    "quantity": "Variable",
+    "dc": "–",
+    "weight": "2 kg",
+    "price": 10
+  },
+  {
+    "id": "cp-panther-hide",
+    "name": {
+      "en": "Panther Hide",
+      "fr": "Peau de panthère"
+    },
+    "rarity": "I",
+    "location": "Trouvé sur les panthères",
+    "quantity": "Variable",
+    "dc": "–",
+    "weight": "3 kg",
+    "price": 38
+  },
+  {
+    "id": "cp-cockatrice-tail-feathers",
+    "name": {
+      "en": "Cockatrice Tail Feathers",
+      "fr": "Plumes de queue de Cockatrice"
+    },
+    "rarity": "R",
+    "location": "Cockatrices",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 135,
+    "craftCost": "135",
+    "substance": "Éther"
+  },
+  {
+    "id": "cp-cyclops-bones",
+    "name": {
+      "en": "Cyclops' Bones",
+      "fr": "Os de cyclope"
+    },
+    "rarity": "R",
+    "location": "Cyclopes",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "4 kg",
+    "price": 87,
+    "craftCost": "87",
+    "substance": "Éther"
+  },
+  {
+    "id": "cp-foglet-essence",
+    "name": {
+      "en": "Foglet Essence",
+      "fr": "Essence de Brumelin"
+    },
+    "rarity": "R",
+    "location": "Brumelins",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 43,
+    "craftCost": "43",
+    "substance": "Éther"
+  },
+  {
+    "id": "cp-godling-eyes",
+    "name": {
+      "en": "Godling Eyes",
+      "fr": "Œil de célicole"
+    },
+    "rarity": "R",
+    "location": "Célicoles",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 55,
+    "craftCost": "55",
+    "substance": "Éther"
+  },
+  {
+    "id": "cp-naezan-salts",
+    "name": {
+      "en": "Naezan Salts",
+      "fr": "Sels de Naezan"
+    },
+    "rarity": "R",
+    "location": "Bruxae",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 146,
+    "craftCost": "146",
+    "substance": "Éther"
+  },
+  {
+    "id": "cp-plumard-stomach",
+    "name": {
+      "en": "Plumard Stomach",
+      "fr": "Estomac de plumeur"
+    },
+    "rarity": "R",
+    "location": "Plumeurs",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 30,
+    "craftCost": "30",
+    "substance": "Éther"
+  },
+  {
+    "id": "cp-troll-tongue",
+    "name": {
+      "en": "Troll Tongue",
+      "fr": "Langue de troll"
+    },
+    "rarity": "R",
+    "location": "Trolls",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 66,
+    "craftCost": "66",
+    "substance": "Éther"
+  },
+  {
+    "id": "cp-vendigo-heart",
+    "name": {
+      "en": "Vendigo Heart",
+      "fr": "Cœur de Vendigo"
+    },
+    "rarity": "R",
+    "location": "Vendigos",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "1 kg",
+    "price": 167,
+    "craftCost": "167",
+    "substance": "Éther"
+  },
+  {
+    "id": "cp-botchling-brains",
+    "name": {
+      "en": "Botchling Brains",
+      "fr": "Cerveau de couvin"
+    },
+    "rarity": "R",
+    "location": "Couvins",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 164,
+    "craftCost": "164",
+    "substance": "Caelum"
+  },
+  {
+    "id": "cp-giant-centipede-discharge",
+    "name": {
+      "en": "Giant Centipede Discharge",
+      "fr": "Sécrétions de scolopendromorphe"
+    },
+    "rarity": "R",
+    "location": "Scolopendromorphes",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 40,
+    "craftCost": "40",
+    "substance": "Caelum"
+  },
+  {
+    "id": "cp-harpy-talons",
+    "name": {
+      "en": "Harpy Talons",
+      "fr": "Serres de harpie"
+    },
+    "rarity": "R",
+    "location": "Harpies",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 40,
+    "craftCost": "40",
+    "substance": "Caelum"
+  },
+  {
+    "id": "cp-rotfiend-liver",
+    "name": {
+      "en": "Rotfiend Liver",
+      "fr": "Foie de putréfacteur"
+    },
+    "rarity": "R",
+    "location": "Putréfacteurs",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,5 kg",
+    "price": 42,
+    "craftCost": "42",
+    "substance": "Caelum"
+  },
+  {
+    "id": "cp-shaelmaar-hair",
+    "name": {
+      "en": "Shaelmaar Hair",
+      "fr": "Poils de Shaelmaar"
+    },
+    "rarity": "R",
+    "location": "Shaelmaars",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 100,
+    "craftCost": "100",
+    "substance": "Caelum"
+  },
+  {
+    "id": "cp-slyzard-talons",
+    "name": {
+      "en": "Slyzard Talons",
+      "fr": "Serres de Slyzard"
+    },
+    "rarity": "R",
+    "location": "Slyzards",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,5 kg",
+    "price": 69,
+    "craftCost": "69",
+    "substance": "Caelum"
+  },
+  {
+    "id": "cp-succubus-horn",
+    "name": {
+      "en": "Succubus Horn",
+      "fr": "Corne de succube"
+    },
+    "rarity": "R",
+    "location": "Succubes",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,5 kg",
+    "price": 87,
+    "craftCost": "87",
+    "substance": "Caelum"
+  },
+  {
+    "id": "cp-botchling-ear",
+    "name": {
+      "en": "Botchling Ear",
+      "fr": "Oreille de couvin"
+    },
+    "rarity": "R",
+    "location": "Couvins",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 100,
+    "craftCost": "100",
+    "substance": "Fulgur"
+  },
+  {
+    "id": "cp-bullvore-brain",
+    "name": {
+      "en": "Bullvore Brain",
+      "fr": "Cerveau de bullvore"
+    },
+    "rarity": "R",
+    "location": "Bullvores",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "1 kg",
+    "price": 150,
+    "craftCost": "150",
+    "substance": "Fulgur"
+  },
+  {
+    "id": "cp-cyclops-tongue",
+    "name": {
+      "en": "Cyclops' Tongue",
+      "fr": "Langue de cyclope"
+    },
+    "rarity": "R",
+    "location": "Cyclopes",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "1 kg",
+    "price": 90,
+    "craftCost": "90",
+    "substance": "Fulgur"
+  },
+  {
+    "id": "cp-dragon-teeth",
+    "name": {
+      "en": "Dragon Teeth",
+      "fr": "Dents de dragon"
+    },
+    "rarity": "R",
+    "location": "Trouvé sur les vrais dragons",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "1 kg",
+    "price": 192,
+    "craftCost": "192",
+    "substance": "Fulgur"
+  },
+  {
+    "id": "cp-frightener-claws",
+    "name": {
+      "en": "Frightener Claws",
+      "fr": "Griffe d’épouvanteur"
+    },
+    "rarity": "R",
+    "location": "Épouvanteurs",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "5 kg",
+    "price": 205,
+    "craftCost": "205",
+    "substance": "Fulgur"
+  },
+  {
+    "id": "cp-higher-vampire-fangs",
+    "name": {
+      "en": "Higher Vampire Fangs",
+      "fr": "Crocs de vampire supérieurs"
+    },
+    "rarity": "R",
+    "location": "Vampires supérieurs",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 250,
+    "craftCost": "250",
+    "substance": "Fulgur"
+  },
+  {
+    "id": "cp-phoenix-feathers",
+    "name": {
+      "en": "Phoenix Feathers",
+      "fr": "Plumes de phénix"
+    },
+    "rarity": "R",
+    "location": "Phénix",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 176,
+    "craftCost": "176",
+    "substance": "Fulgur"
+  },
+  {
+    "id": "cp-slyzard-scales",
+    "name": {
+      "en": "Slyzard Scales",
+      "fr": "Écailles de Slyzard"
+    },
+    "rarity": "R",
+    "location": "Slyzards",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "3 kg",
+    "price": 82,
+    "craftCost": "82",
+    "substance": "Fulgur"
+  },
+  {
+    "id": "cp-vendigo-fur",
+    "name": {
+      "en": "Vendigo Fur",
+      "fr": "Peau de vendigo"
+    },
+    "rarity": "R",
+    "location": "Vendigos",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 76,
+    "craftCost": "76",
+    "substance": "Fulgur"
+  },
+  {
+    "id": "cp-barbegazi-fur",
+    "name": {
+      "en": "Barbegazi Fur",
+      "fr": "Fourrure de barbegazi"
+    },
+    "rarity": "R",
+    "location": "Barbegazis",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 21,
+    "craftCost": "21",
+    "substance": "Hydragenum"
+  },
+  {
+    "id": "cp-botchling-bones",
+    "name": {
+      "en": "Botchling Bones",
+      "fr": "Os de couvin"
+    },
+    "rarity": "R",
+    "location": "Couvins",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 55,
+    "craftCost": "55",
+    "substance": "Hydragenum"
+  },
+  {
+    "id": "cp-cockatrice-carapace",
+    "name": {
+      "en": "Cockatrice Carapace",
+      "fr": "Carapace de cockatrix"
+    },
+    "rarity": "R",
+    "location": "Cockatrices",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "2 kg",
+    "price": 75,
+    "craftCost": "75",
+    "substance": "Hydragenum"
+  },
+  {
+    "id": "cp-crystallized-essence",
+    "name": {
+      "en": "Crystallized Essence",
+      "fr": "Essence cristallisée"
+    },
+    "rarity": "R",
+    "location": "Blêmes, pestas, vendigos, leshens, cyclopes, harpies célénos",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 292,
+    "craftCost": "292",
+    "substance": "Hydragenum"
+  },
+  {
+    "id": "cp-dragon-tail",
+    "name": {
+      "en": "Dragon Tail",
+      "fr": "Queue de dragon"
+    },
+    "rarity": "R",
+    "location": "Trouvé sur les vrais dragons",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "4 kg",
+    "price": 310,
+    "craftCost": "310",
+    "substance": "Hydragenum"
+  },
+  {
+    "id": "cp-leshes-bone",
+    "name": {
+      "en": "Leshes Bone",
+      "fr": "Os de leshen"
+    },
+    "rarity": "R",
+    "location": "Leshens",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "1 kg",
+    "price": 92,
+    "craftCost": "92",
+    "substance": "Hydragenum"
+  },
+  {
+    "id": "cp-manticore-horn",
+    "name": {
+      "en": "Manticore Horn",
+      "fr": "Corne de Manticore"
+    },
+    "rarity": "R",
+    "location": "Manticores",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "1 kg",
+    "price": 120,
+    "craftCost": "120",
+    "substance": "Hydragenum"
+  },
+  {
+    "id": "cp-abomination-lymph",
+    "name": {
+      "en": "Abomination Lymph",
+      "fr": "Lymphe abominable"
+    },
+    "rarity": "R",
+    "location": "Bruxae, Garkains",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 152,
+    "craftCost": "152",
+    "substance": "Quebrith"
+  },
+  {
+    "id": "cp-archespore-tendrils",
+    "name": {
+      "en": "Archespore Tendrils",
+      "fr": "Vrille d’ékinoppyre"
+    },
+    "rarity": "R",
+    "location": "Ékinoppyres",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,5 kg",
+    "price": 44,
+    "craftCost": "44",
+    "substance": "Quebrith"
+  },
+  {
+    "id": "cp-elemental-stone",
+    "name": {
+      "en": "Elemental Stone",
+      "fr": "Pierre élémentaire"
+    },
+    "rarity": "R",
+    "location": "Tous les élémentaires",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,5 kg",
+    "price": 134,
+    "craftCost": "134",
+    "substance": "Quebrith"
+  },
+  {
+    "id": "cp-garkain-saliva",
+    "name": {
+      "en": "Garkain Saliva",
+      "fr": "Salive de garkain"
+    },
+    "rarity": "R",
+    "location": "Garkains",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 70,
+    "craftCost": "70",
+    "substance": "Quebrith"
+  },
+  {
+    "id": "cp-harpy-eggs",
+    "name": {
+      "en": "Harpy Eggs",
+      "fr": "Œufs de harpie"
+    },
+    "rarity": "R",
+    "location": "Nids de harpies",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,5 kg",
+    "price": 50,
+    "craftCost": "50",
+    "substance": "Quebrith"
+  },
+  {
+    "id": "cp-knocker-hair",
+    "name": {
+      "en": "Knocker Hair",
+      "fr": "Poil de frappeur"
+    },
+    "rarity": "R",
+    "location": "Frappeurs",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 33,
+    "craftCost": "33",
+    "substance": "Quebrith"
+  },
+  {
+    "id": "cp-manticore-stomach",
+    "name": {
+      "en": "Manticore Stomach",
+      "fr": "Estomac de Manticore"
+    },
+    "rarity": "R",
+    "location": "Manticores",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "2 kg",
+    "price": 189,
+    "craftCost": "189",
+    "substance": "Quebrith"
+  },
+  {
+    "id": "cp-bear-fat",
+    "name": {
+      "en": "Bear Fat",
+      "fr": "Graisse d'ours"
+    },
+    "rarity": "R",
+    "location": "Ours",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,5 kg",
+    "price": 90,
+    "craftCost": "90",
+    "substance": "Rebis"
+  },
+  {
+    "id": "cp-bullvore-blood",
+    "name": {
+      "en": "Bullvore Blood",
+      "fr": "Sang de Bullvore"
+    },
+    "rarity": "R",
+    "location": "Bullvores",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 85,
+    "craftCost": "85",
+    "substance": "Rebis"
+  },
+  {
+    "id": "cp-cyclops-brains",
+    "name": {
+      "en": "Cyclops' Brains",
+      "fr": "Cerveaux de cyclopes"
+    },
+    "rarity": "R",
+    "location": "Cyclopes",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "2 kg",
+    "price": 136,
+    "craftCost": "136",
+    "substance": "Rebis"
+  },
+  {
+    "id": "cp-dragon-blood",
+    "name": {
+      "en": "Dragon Blood",
+      "fr": "Sang de dragon"
+    },
+    "rarity": "R",
+    "location": "Vrais dragons",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "1 kg",
+    "price": 250,
+    "craftCost": "250",
+    "substance": "Rebis"
+  },
+  {
+    "id": "cp-foglet-teeth",
+    "name": {
+      "en": "Foglet Teeth",
+      "fr": "Dent de brumelin"
+    },
+    "rarity": "R",
+    "location": "Brumelins",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 40,
+    "craftCost": "40",
+    "substance": "Rebis"
+  },
+  {
+    "id": "cp-knocker-toes",
+    "name": {
+      "en": "Knocker Toes",
+      "fr": "Orteil de frappeur"
+    },
+    "rarity": "R",
+    "location": "Frappeurs",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 62,
+    "craftCost": "62",
+    "substance": "Rebis"
+  },
+  {
+    "id": "cp-rotfiend-blood",
+    "name": {
+      "en": "Rotfiend Blood",
+      "fr": "Sang de putréfacteur"
+    },
+    "rarity": "R",
+    "location": "Putréfacteurs",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 30,
+    "craftCost": "30",
+    "substance": "Rebis"
+  },
+  {
+    "id": "cp-shaelmaar-dust",
+    "name": {
+      "en": "Shaelmaar Dust",
+      "fr": "Poussière de Shaelmaar"
+    },
+    "rarity": "R",
+    "location": "Shaelmaars",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 79,
+    "craftCost": "79",
+    "substance": "Rebis"
+  },
+  {
+    "id": "cp-substances-92-wing-membrane",
+    "name": {
+      "en": "Wing Membrane",
+      "fr": "Membrane d'aile"
+    },
+    "rarity": "R",
+    "location": "Garkains, plumeurs",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,5 kg",
+    "price": 36,
+    "craftCost": "36",
+    "substance": "Rebis"
+  },
+  {
+    "id": "cp-dragon-tears",
+    "name": {
+      "en": "Dragon Tears",
+      "fr": "Larmes de dragon"
+    },
+    "rarity": "R",
+    "location": "Trouvé sur les vrais dragons",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 276,
+    "craftCost": "276",
+    "substance": "Sol"
+  },
+  {
+    "id": "cp-essence-of-fire",
+    "name": {
+      "en": "Essence of Fire",
+      "fr": "Essence de feu"
+    },
+    "rarity": "R",
+    "location": "Phénix, élémentaires de feu",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 46,
+    "craftCost": "46",
+    "substance": "Sol"
+  },
+  {
+    "id": "cp-frightener-eyes",
+    "name": {
+      "en": "Frightener Eyes",
+      "fr": "Œil d’épouvanteur"
+    },
+    "rarity": "R",
+    "location": "Épouvanteurs",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 192,
+    "craftCost": "192",
+    "substance": "Sol"
+  },
+  {
+    "id": "cp-manticore-wing-membranes",
+    "name": {
+      "en": "Manticore Wing Membranes",
+      "fr": "Membranes d'aile de Manticore"
+    },
+    "rarity": "R",
+    "location": "Manticores",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "2 kg",
+    "price": 145,
+    "craftCost": "145",
+    "substance": "Sol"
+  },
+  {
+    "id": "cp-phoenix-ash",
+    "name": {
+      "en": "Phoenix Ash",
+      "fr": "Cendres de phénix"
+    },
+    "rarity": "R",
+    "location": "Phénix",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 94,
+    "craftCost": "94",
+    "substance": "Sol"
+  },
+  {
+    "id": "cp-barghest-essence",
+    "name": {
+      "en": "Barghest Essence",
+      "fr": "Essence de Barghest"
+    },
+    "rarity": "R",
+    "location": "Barghests",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 36,
+    "craftCost": "36",
+    "substance": "Vermillon"
+  },
+  {
+    "id": "cp-bohun-upas-poison",
+    "name": {
+      "en": "Bohun Upas Poison",
+      "fr": "Poison de Bohun Upas"
+    },
+    "rarity": "R",
+    "location": "Manticores",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 200,
+    "craftCost": "200",
+    "substance": "Vermillon"
+  },
+  {
+    "id": "cp-burdock-root",
+    "name": {
+      "en": "Burdock Root",
+      "fr": "Racine de bardane"
+    },
+    "rarity": "I",
+    "location": "Champs et forêts",
+    "quantity": "1d6 unité(s)",
+    "dc": "16",
+    "weight": "0,1 kg",
+    "price": 32,
+    "craftCost": "32",
+    "substance": "Vermillon"
+  },
+  {
+    "id": "cp-cockatrice-stomach",
+    "name": {
+      "en": "Cockatrice Stomach",
+      "fr": "Estomac de cockatrice"
+    },
+    "rarity": "R",
+    "location": "Cockatrices",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "1 kg",
+    "price": 92,
+    "craftCost": "92",
+    "substance": "Vermillon"
+  },
+  {
+    "id": "cp-cyclops-eye",
+    "name": {
+      "en": "Cyclops' Eye",
+      "fr": "Oeil de cyclope"
+    },
+    "rarity": "R",
+    "location": "Cyclopes",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "1 kg",
+    "price": 159,
+    "craftCost": "159",
+    "substance": "Vermillon"
+  },
+  {
+    "id": "cp-harpy-feathers",
+    "name": {
+      "en": "Harpy Feathers",
+      "fr": "Plumes de harpie"
+    },
+    "rarity": "R",
+    "location": "Harpies",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 28,
+    "craftCost": "28",
+    "substance": "Vermillon"
+  },
+  {
+    "id": "cp-knocker-teeth",
+    "name": {
+      "en": "Knocker Teeth",
+      "fr": "Dent de frappeur"
+    },
+    "rarity": "R",
+    "location": "Frappeurs",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 46,
+    "craftCost": "46",
+    "substance": "Vermillon"
+  },
+  {
+    "id": "cp-leshen-fiber",
+    "name": {
+      "en": "Leshen Fiber",
+      "fr": "Fibre de leshen"
+    },
+    "rarity": "R",
+    "location": "Leshens",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 106,
+    "craftCost": "106",
+    "substance": "Vermillon"
+  },
+  {
+    "id": "cp-succubus-heart",
+    "name": {
+      "en": "Succubus Heart",
+      "fr": "Coeur de succube"
+    },
+    "rarity": "R",
+    "location": "Succubes",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,5 kg",
+    "price": 95,
+    "craftCost": "95",
+    "substance": "Vermillon"
+  },
+  {
+    "id": "cp-archespore-juice",
+    "name": {
+      "en": "Archespore Juice",
+      "fr": "Jus d’ékinoppyre"
+    },
+    "rarity": "R",
+    "location": "Ékinoppyres",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 38,
+    "craftCost": "38",
+    "substance": "Vitriol"
+  },
+  {
+    "id": "cp-boar-tusks",
+    "name": {
+      "en": "Boar Tusks",
+      "fr": "Défenses de sanglier"
+    },
+    "rarity": "R",
+    "location": "Sangliers",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 82,
+    "craftCost": "82",
+    "substance": "Vitriol"
+  },
+  {
+    "id": "cp-botchling-blood",
+    "name": {
+      "en": "Botchling Blood",
+      "fr": "Sang de couvin"
+    },
+    "rarity": "R",
+    "location": "Couvins",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 66,
+    "craftCost": "66",
+    "substance": "Vitriol"
+  },
+  {
+    "id": "cp-bruxa-blood",
+    "name": {
+      "en": "Bruxa Blood",
+      "fr": "Sang de Bruxa"
+    },
+    "rarity": "R",
+    "location": "Bruxae",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 97,
+    "craftCost": "97",
+    "substance": "Vitriol"
+  },
+  {
+    "id": "cp-bullvore-eyes",
+    "name": {
+      "en": "Bullvore Eyes",
+      "fr": "Œil de bullvore"
+    },
+    "rarity": "R",
+    "location": "Bullvores",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,5 kg",
+    "price": 87,
+    "craftCost": "87",
+    "substance": "Vitriol"
+  },
+  {
+    "id": "cp-giant-centipede-mandibles",
+    "name": {
+      "en": "Giant Centipede Mandibles",
+      "fr": "Mandibule de scolopendromorphe"
+    },
+    "rarity": "R",
+    "location": "Scolopendromorphes",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,5 kg",
+    "price": 48,
+    "craftCost": "48",
+    "substance": "Vitriol"
+  },
+  {
+    "id": "cp-leshen-resin",
+    "name": {
+      "en": "Leshen Resin",
+      "fr": "Résine de leshen"
+    },
+    "rarity": "R",
+    "location": "Leshens",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 140,
+    "craftCost": "140",
+    "substance": "Vitriol"
+  },
+  {
+    "id": "cp-manticore-fangs",
+    "name": {
+      "en": "Manticore Fangs",
+      "fr": "Crocs de Manticore"
+    },
+    "rarity": "R",
+    "location": "Manticores",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 132,
+    "craftCost": "132",
+    "substance": "Vitriol"
+  },
+  {
+    "id": "cp-slyzard-vocal-cords",
+    "name": {
+      "en": "Slyzard Vocal Cords",
+      "fr": "Corde vocale de slyzard"
+    },
+    "rarity": "R",
+    "location": "Slyzards",
+    "quantity": "–",
+    "dc": "–",
+    "weight": "0,1 kg",
+    "price": 99,
+    "craftCost": "99",
+    "substance": "Vitriol"
   }
 ];

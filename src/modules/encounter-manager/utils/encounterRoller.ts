@@ -12,6 +12,7 @@ import type {
 export interface EncounterFilterOptions {
   includeFanMade: boolean;
   includeEverywhere: boolean;
+  includeUniqueNpcs?: boolean;
 }
 
 export interface BestiaryFilterParams {
@@ -53,6 +54,9 @@ export function getMatchingEncounterPool(
 
   const pool = entries.filter((entry) => {
     if (!options.includeFanMade && entry.isFanMade) {
+      return false;
+    }
+    if (!options.includeUniqueNpcs && entry.isUniqueNpc) {
       return false;
     }
 
@@ -148,6 +152,8 @@ export function filterBestiaryEntries(
       ...entry.environments.map((env) => getEnvironmentLabel(env, 'en')),
       ...entry.notes.fr,
       ...entry.notes.en,
+      ...(entry.combat?.favoredMagic ?? []),
+      ...Object.keys(entry.combat?.keySkills ?? {}),
     ];
 
     return searchableParts.some((part) =>
@@ -203,6 +209,17 @@ export function formatEncounterAsText(
       .map(([k, v]) => `${k} +${v}`)
       .join(' · ');
     if (skillsList) lines.push(`${d.combatSkills}: ${skillsList}`);
+
+    if (entry.combat.keySkills && Object.keys(entry.combat.keySkills).length > 0) {
+      const keySkillsList = Object.entries(entry.combat.keySkills)
+        .map(([k, v]) => `${k} ${v}`)
+        .join(' · ');
+      lines.push(`${d.keySkills}: ${keySkillsList}`);
+    }
+
+    if (entry.combat.favoredMagic && entry.combat.favoredMagic.length > 0) {
+      lines.push(`${d.favoredMagic}: ${entry.combat.favoredMagic.join(', ')}`);
+    }
 
     if (entry.combat.weapons.length > 0) {
       lines.push('', `${d.weapons}:`);

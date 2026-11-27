@@ -208,6 +208,14 @@ export const MAGIC_CORE_RULES: MagicRulesBundle = {
         en: 'All listed components are consumed at the end of a ritual regardless of success or failure.',
       },
     },
+    {
+      id: 'reverse-engineering-portals',
+      title: { fr: 'Rétro-ingénierie de portail & Signes avancés', en: 'Portal Tracing & Advanced Signs' },
+      summary: {
+        fr: 'Tout Portail actif laisse une trace résiduelle durant 30 s pouvant être rouverte par Réouverture de portail. Somne et Supirre étendent l’arsenal des Sorceleurs (plafond 7 END, soumis au Seuil de Vigueur).',
+        en: 'Standing Portals leave a residual trace for 30s re-openable via Reopen Portal. Somne and Supirre expand Witcher Signs (7 STA cap, still bound by Vigor Threshold).',
+      },
+    },
   ],
   hexLifting: {
     intro: {
@@ -305,8 +313,8 @@ export const MAGIC_CORE_RULES: MagicRulesBundle = {
       en: 'Learning a spell requires: (1) a teacher or grimoire, (2) required I.P., and (3) passing the listed number of magical skill rolls. Each failed roll delays learning by 1 day.',
     },
     prerequisiteRule: {
-      fr: 'Vous devez débuter avec une Vigueur > 0 pour apprendre la magie. Mages : sorts, rituels, envoûtements, signes. Prêtres : invocations, rituels, envoûtements, signes. Sorceleurs : signes uniquement (Base = Novice, Alternatifs = Compagnon).',
-      en: 'Requires starting Vigor > 0. Mages: spells, rituals, hexes, signs. Priests: invocations, rituals, hexes, signs. Witchers: signs only (Basic = Novice, Alternate = Journeyman).',
+      fr: 'Vous devez débuter avec une Vigueur > 0 pour apprendre la magie (hors Dons magiques). Mages : sorts, rituels, envoûtements, signes. Prêtres & Druides : invocations propres, rituels, envoûtements, signes. Sorceleurs : signes uniquement (Base = Novice, Alternatifs/Avancés = Compagnon).',
+      en: 'Requires starting Vigor > 0 (except Magical Gifts, which grant Vigor 2 and cannot learn spells). Mages: spells, rituals, hexes, signs. Priests & Druids: own invocations, rituals, hexes, signs. Witchers: signs only (Basic = Novice, Alt/Advanced = Journeyman).',
     },
     tiers: [
       {

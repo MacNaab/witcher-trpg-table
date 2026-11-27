@@ -129,6 +129,11 @@ export function EncounterDetailDialog({
                 <span className="rounded border border-border bg-muted/60 px-1.5 py-0.5 font-mono text-[11px] font-medium text-foreground">
                   {entry.isFanMade ? d.fanMadeTag : d.officialTag}
                 </span>
+                {entry.isUniqueNpc && (
+                  <span className="rounded border border-primary/40 bg-primary/10 px-1.5 py-0.5 font-mono text-[11px] font-medium text-primary">
+                    {d.uniqueNpcTag}
+                  </span>
+                )}
               </div>
               <DialogTitle className="text-xl font-semibold tracking-tight text-foreground">
                 {entry.name[lang]}
@@ -296,6 +301,55 @@ export function EncounterDetailDialog({
                         </div>
                       </div>
                     )}
+
+                    {entry.combat?.keySkills &&
+                      Object.keys(entry.combat.keySkills).length > 0 && (
+                        <div className="flex flex-col gap-2 rounded-lg border border-border bg-muted/20 p-3.5">
+                          <h4 className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+                            {d.keySkills}
+                          </h4>
+                          <div className="flex flex-wrap gap-1.5">
+                            {Object.entries(entry.combat.keySkills).map(
+                              ([skill, val]) => (
+                                <span
+                                  key={skill}
+                                  className="rounded border border-border bg-background px-2 py-1 text-xs text-foreground"
+                                >
+                                  <span className="text-muted-foreground">
+                                    {skill}:{' '}
+                                  </span>
+                                  <span className="font-mono font-semibold tabular-nums">
+                                    {val}
+                                  </span>
+                                </span>
+                              )
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                    {entry.combat?.favoredMagic &&
+                      entry.combat.favoredMagic.length > 0 && (
+                        <div className="flex flex-col gap-2 rounded-lg border border-border bg-muted/20 p-3.5">
+                          <h4 className="flex items-center gap-1.5 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+                            <Sparkles
+                              className="size-3.5 text-primary"
+                              aria-hidden="true"
+                            />
+                            <span>{d.favoredMagic}</span>
+                          </h4>
+                          <div className="flex flex-wrap gap-1.5">
+                            {entry.combat.favoredMagic.map((spell) => (
+                              <span
+                                key={spell}
+                                className="rounded border border-primary/30 bg-primary/5 px-2 py-0.5 text-xs font-medium text-foreground"
+                              >
+                                {spell}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
 
                     {activeCombat.weapons.length > 0 && (
                       <div className="flex flex-col gap-2 rounded-lg border border-border bg-muted/20 p-3.5">

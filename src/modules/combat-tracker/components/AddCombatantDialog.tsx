@@ -65,7 +65,7 @@ interface AddCombatantDialogProps {
 /**
  * Modal dialog supporting 4 fast workflows for adding combatants:
  * 1. GM Hub (saved PCs & reusable encounter groups)
- * 2. Canonical Bestiary search (174 entries with caste variants & group initiative)
+ * 2. Canonical Bestiary search (official & extended entries with caste variants & group initiative)
  * 3. Character Generator JSON import & Archetype quick-starts
  * 4. Manual custom combatant builder
  */

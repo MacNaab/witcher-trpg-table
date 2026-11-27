@@ -1,6 +1,6 @@
-import { ARMOR_DATA, FORMULAE_DATA, WEAPONS_DATA } from '@/src/data/items';
-import type { ArmorCatalogEntry, WeaponCatalogEntry } from '@/src/data/items/types';
-import { getMagicEntryById } from '@/src/data/magic';
+import { ARMOR_DATA, FORMULAE_DATA, RELICS_DATA, WEAPONS_DATA } from '@/src/data/items';
+import type { ArmorCatalogEntry, RelicCatalogEntry, WeaponCatalogEntry } from '@/src/data/items/types';
+import { getMagicEntryById, getMagicalGiftById } from '@/src/data/magic';
 import { getProfessionDefinition } from '@/src/modules/character-generator/data/racesAndProfessions';
 import { SKILLS_CATALOG } from '@/src/modules/character-generator/data/skillsCatalog';
 import {
@@ -40,6 +40,15 @@ const ARMOR_BY_NAME = new Map<string, ArmorCatalogEntry>();
 for (const a of ARMOR_DATA) {
   ARMOR_BY_NAME.set(a.name.fr.trim().toLowerCase(), a);
   ARMOR_BY_NAME.set(a.name.en.trim().toLowerCase(), a);
+}
+
+const RELIC_BY_ID = new Map<string, RelicCatalogEntry>(
+  RELICS_DATA.map((r) => [r.id, r])
+);
+const RELIC_BY_NAME = new Map<string, RelicCatalogEntry>();
+for (const r of RELICS_DATA) {
+  RELIC_BY_NAME.set(r.name.fr.trim().toLowerCase(), r);
+  RELIC_BY_NAME.set(r.name.en.trim().toLowerCase(), r);
 }
 
 function generateWeaponId(): string {
@@ -246,6 +255,59 @@ export function extractPcGearFromCharacterSheet(
       return;
     }
 
+    const relicEntry =
+      (params.catalogId ? RELIC_BY_ID.get(params.catalogId) : undefined) ??
+      RELIC_BY_NAME.get(normalizedName);
+
+    if (relicEntry) {
+      if (relicEntry.relicType === 'weapon') {
+        if (seenWeaponCatalogIds.has(relicEntry.id)) return;
+        seenWeaponCatalogIds.add(relicEntry.id);
+
+        const syntheticWeapon: WeaponCatalogEntry = {
+          id: relicEntry.id,
+          name: relicEntry.name,
+          category: relicEntry.subType.fr,
+          shopKind: 'weapon',
+          damageType: relicEntry.damageType ?? 'P/T',
+          accuracy: relicEntry.accuracy ?? '+0',
+          availability: relicEntry.availability,
+          damage: relicEntry.damage ?? '4d6',
+          reliability: relicEntry.reliability ?? '15',
+          hands: relicEntry.hands ?? '2',
+          range: relicEntry.range ?? '–',
+          effect: `${relicEntry.subType[lang]} · ${relicEntry.effect}`,
+          concealment: relicEntry.concealment ?? '–',
+          enhancements: relicEntry.enhancements,
+          weight: relicEntry.weight,
+          price: null,
+          priceDisplay: relicEntry.priceDisplay,
+        };
+        const lowerSub = `${relicEntry.subType.fr} ${relicEntry.subType.en} ${relicEntry.effect}`.toLowerCase();
+        const converted = weaponCatalogToCombatantWeapon(syntheticWeapon, lang);
+        if (lowerSub.includes('argent') || lowerSub.includes('silver')) {
+          converted.isSilver = true;
+        }
+        primaryWeapons.push(converted);
+      } else {
+        const sp = Math.max(0, Number.parseInt(relicEntry.sp ?? '0', 10) || 0);
+        const cov = (relicEntry.coverage?.en ?? '').toLowerCase();
+        if (sp > 0) {
+          if (cov.includes('head')) armor.head = Math.max(armor.head, sp);
+          if (cov.includes('torso')) armor.torso = Math.max(armor.torso, sp);
+          if (cov.includes('arm')) {
+            armor.rightArm = Math.max(armor.rightArm, sp);
+            armor.leftArm = Math.max(armor.leftArm, sp);
+          }
+          if (cov.includes('leg')) {
+            armor.rightLeg = Math.max(armor.rightLeg, sp);
+            armor.leftLeg = Math.max(armor.leftLeg, sp);
+          }
+        }
+      }
+      return;
+    }
+
     // Homebrew custom weapon without catalog link
     if (params.category === 'weapon' && params.name.trim()) {
       primaryWeapons.push({
@@ -386,6 +448,16 @@ export function extractPcSheetProfileDetails(
       if (!magicSet.has(sign.name[lang])) {
         magicSet.add(sign.name[lang]);
         magic.push(sign.name[lang]);
+      }
+    }
+  }
+  if (sheet.magicalGiftId) {
+    const gift = getMagicalGiftById(sheet.magicalGiftId);
+    if (gift) {
+      const label = `${gift.name[lang]} (${lang === 'fr' ? 'Don' : 'Gift'})`;
+      if (!magicSet.has(label)) {
+        magicSet.add(label);
+        magic.push(label);
       }
     }
   }

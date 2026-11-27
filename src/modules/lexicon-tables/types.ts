@@ -23,11 +23,12 @@ export type LexiconTabId =
   | 'weapon-diagrams'
   | 'armor-diagrams'
   | 'elderfolk-diagrams'
+  | 'special-diagrams'
   | 'substances'
   | 'formulae';
 
 /**
- * High-level grouping of the 10 reference tables.
+ * High-level grouping of the 11 reference tables.
  */
 export type LexiconGroupId = 'materials' | 'diagrams' | 'alchemy';
 
@@ -83,7 +84,7 @@ export interface MaterialLexiconEntry {
 }
 
 /**
- * Crafting Diagram entry (Ingredient, Weapon, Armor, or Elderfolk).
+ * Crafting Diagram entry (Ingredient, Weapon, Armor, Elderfolk, or Special).
  */
 export interface DiagramLexiconEntry {
   id: string;
@@ -91,7 +92,8 @@ export interface DiagramLexiconEntry {
     | 'ingredient-diagrams'
     | 'weapon-diagrams'
     | 'armor-diagrams'
-    | 'elderfolk-diagrams';
+    | 'elderfolk-diagrams'
+    | 'special-diagrams';
   rowKind: 'diagram';
   name: BilingualText;
   level: CraftLevelId;

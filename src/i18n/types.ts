@@ -145,6 +145,12 @@ export interface TranslationDictionary {
     shieldKind: string;
     alchemyKind: string;
     gearKind: string;
+    relicKind: string;
+    experimentalKind: string;
+    runeGlyphKind: string;
+    magicItemKind: string;
+    trophyKind: string;
+    mutagenKind: string;
     categoryLabel: string;
     availabilityLabel: string;
     priceLabel: string;
@@ -160,6 +166,15 @@ export interface TranslationDictionary {
     evLabel: string;
     durationLabel: string;
     toxicityLabel: string;
+    dcLabel: string;
+    slotsLabel: string;
+    targetLabel: string;
+    craftTimeLabel: string;
+    componentsLabel: string;
+    colorLabel: string;
+    monsterCategoryLabel: string;
+    alchemyDcLabel: string;
+    mutationLabel: string;
     effectLabel: string;
     sourceLabel: string;
     copyBtn: string;
@@ -210,6 +225,9 @@ export interface TranslationDictionary {
       rollerHistories: string;
       chronicleCampaigns: string;
       chronicleEvents: string;
+      investigationsCount: string;
+      estatesCount: string;
+      demonsCount: string;
       yes: string;
       no: string;
     };

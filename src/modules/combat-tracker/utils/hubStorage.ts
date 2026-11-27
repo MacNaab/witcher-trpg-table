@@ -412,7 +412,10 @@ export function createSavedNpcFromProfession(
     professionId === 'nomad' ||
     professionId === 'outlaw' ||
     professionId === 'vampire';
-  const isCaster = professionId === 'mage' || professionId === 'priest';
+  const isCaster =
+    professionId === 'mage' ||
+    professionId === 'priest' ||
+    professionId === 'druid';
   const isAgile =
     professionId === 'criminal' ||
     professionId === 'bard' ||

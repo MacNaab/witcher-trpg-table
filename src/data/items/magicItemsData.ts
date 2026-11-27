@@ -1,0 +1,480 @@
+import type { MagicItemCatalogEntry, TrophyCatalogEntry } from './types';
+
+/**
+ * Magical Marketplace items from A Tome of Chaos.
+ * Priced entries reflect each official purchase tier in the Purchasing Magic Items table.
+ */
+export const MAGIC_ITEMS_DATA: readonly MagicItemCatalogEntry[] = [
+  {
+    id: 'mag-crystal-skull',
+    name: { en: 'Crystal Skull', fr: 'Crâne de cristal' },
+    category: 'Objet magique',
+    educationDc: '16',
+    availability: 'R',
+    weight: '0.5',
+    effect:
+      'Crâne animal cristallisé se transformant en chat, chien, oiseau ou serpent qui obéit mentalement jusqu’à 50 m. Rechargé par le rituel Create Crystal Skull (2 × Cinquième essence).',
+    price: 700,
+    priceDisplay: '700',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-bonding-pair',
+    name: { en: 'Bonding Pair', fr: 'Anneaux liés' },
+    category: 'Objet magique',
+    educationDc: '16',
+    availability: 'R',
+    weight: '0.1',
+    effect:
+      'Paire d’anneaux d’argent liés : transmet un message d’une vingtaine de mots en moins d’un jour et vibre lorsque le porteur de l’autre anneau est en danger mortel.',
+    price: 550,
+    priceDisplay: '550',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-enchanted-amulet-1',
+    name: { en: 'Enchanted Amulet (1 spell)', fr: 'Amulette enchantée (1 sort)' },
+    category: 'Amulette enchantée',
+    educationDc: '14',
+    availability: 'R',
+    weight: '0.1',
+    effect:
+      'Compte comme un Focus (2) et stocke 1 sort utilisable en puisant dans l’Endurance du porteur (avec Vigueur suffisante). Permet aux prêtres et druides de lancer le sort imbriqué.',
+    price: 550,
+    priceDisplay: '550',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-enchanted-amulet-2',
+    name: { en: 'Enchanted Amulet (2 spells)', fr: 'Amulette enchantée (2 sorts)' },
+    category: 'Amulette enchantée',
+    educationDc: '14',
+    availability: 'R',
+    weight: '0.1',
+    effect:
+      'Focus (2) renfermant 2 sorts. Impose un inconvénient tant qu’elle est portée et pendant 24h après (–5 PV max, ou –1 INT/VOL/RÉF, ou –10 END max).',
+    price: 750,
+    priceDisplay: '750',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-enchanted-amulet-3',
+    name: { en: 'Enchanted Amulet (3 spells)', fr: 'Amulette enchantée (3 sorts)' },
+    category: 'Amulette enchantée',
+    educationDc: '14',
+    availability: 'R',
+    weight: '0.1',
+    effect:
+      'Focus (2) renfermant 3 sorts. Impose un inconvénient tant qu’elle est portée et pendant 24h après (–5 PV max, ou –1 INT/VOL/RÉF, ou –10 END max).',
+    price: 950,
+    priceDisplay: '950',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-enchanted-amulet-4',
+    name: { en: 'Enchanted Amulet (4 spells)', fr: 'Amulette enchantée (4 sorts)' },
+    category: 'Amulette enchantée',
+    educationDc: '14',
+    availability: 'R',
+    weight: '0.1',
+    effect:
+      'Focus (2) renfermant 4 sorts. Impose un inconvénient tant qu’elle est portée et pendant 24h après (–5 PV max, ou –1 INT/VOL/RÉF, ou –10 END max).',
+    price: 1150,
+    priceDisplay: '1150',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-eye-of-nehaleni',
+    name: { en: 'Eye of Nehaleni', fr: 'Œil de Nehaleni' },
+    category: 'Objet magique',
+    educationDc: '16',
+    availability: 'R',
+    weight: '0.5',
+    effect:
+      'Tablette de pierre gravée : par une action, permet un jet d’Incantation à +4 sans dépenser d’Endurance pour dissiper une illusion.',
+    price: 575,
+    priceDisplay: '575',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-four-leaf-clover',
+    name: { en: 'Four-Leaf Clover', fr: 'Trèfle à quatre feuilles' },
+    category: 'Charme magique',
+    educationDc: '10',
+    availability: 'R',
+    weight: '0.1',
+    effect:
+      'Confère +1 temporaire en Chance. Dépensable sans action pour obtenir +1 au prochain jet avant de se désintégrer.',
+    price: 150,
+    priceDisplay: '150',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-elven-rope',
+    name: { en: 'Magical Elven Rope', fr: 'Corde elfique magique' },
+    category: 'Objet magique',
+    educationDc: '18',
+    availability: 'R',
+    weight: '1',
+    effect:
+      'Corde animée se nouant et se rétractant à la volonté du porteur. +5 en Athlétisme pour escalader ; supporte 300 kg et possède 50 PV.',
+    price: 350,
+    priceDisplay: '350',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-megascope',
+    name: { en: 'Megascope', fr: 'Mégascope' },
+    category: 'Appareil arcanique',
+    educationDc: '14',
+    availability: 'R',
+    weight: '10',
+    effect:
+      'Appareil à gemmes et lentilles (Seuil de Vigueur 1+) : communication sans limite terrestre, vision à distance 10 min (Incantation SD 16) et ancrage sans jet de Téléportation. Détruit par le diméritium à moins de 3 m.',
+    price: 3500,
+    priceDisplay: '3500',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-power-stone-guardian',
+    name: { en: 'Power Stone Guardian', fr: 'Pierre de pouvoir gardienne' },
+    category: 'Objet magique',
+    educationDc: '16',
+    availability: 'R',
+    weight: '0.5',
+    effect:
+      'Gemme programmée liée à ses propriétaires : Alarme (télépathie 6 m), Arc électrique (Base 10, 2d6 foudre à 6 m) ou Gardien illusoire (8h, 10 m).',
+    price: 525,
+    priceDisplay: '525',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-runewrights-tools',
+    name: { en: "Runewright's Tools", fr: 'Outils d’enchanteur runique' },
+    category: 'Outils arcaniques',
+    educationDc: '16',
+    availability: 'R',
+    weight: '2',
+    effect:
+      'Requis pour graver des Mots runiques et Mots glyphiques. En ½ h, améliore l’effet de toute pierre runique ou glyphique gravée (+10 % chance, +1 SD, +1 PA, etc.).',
+    price: 550,
+    priceDisplay: '550',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-spell-formula-novice',
+    name: { en: 'Spell Formula (Novice)', fr: 'Formule de sort (Novice)' },
+    category: 'Formule magique',
+    educationDc: '14',
+    availability: 'R',
+    weight: '0.1',
+    effect:
+      'Parchemin théorique conférant +2 au jet d’apprentissage d’un sort, invocation, signe, rituel ou envoûtement de niveau Novice.',
+    price: 100,
+    priceDisplay: '100',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-spell-formula-journeyman',
+    name: { en: 'Spell Formula (Journeyman)', fr: 'Formule de sort (Compagnon)' },
+    category: 'Formule magique',
+    educationDc: '14',
+    availability: 'R',
+    weight: '0.1',
+    effect:
+      'Parchemin théorique conférant +2 au jet d’apprentissage d’un sort, invocation, signe, rituel ou envoûtement de niveau Compagnon.',
+    price: 200,
+    priceDisplay: '200',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-spell-formula-master',
+    name: { en: 'Spell Formula (Master)', fr: 'Formule de sort (Maître)' },
+    category: 'Formule magique',
+    educationDc: '14',
+    availability: 'R',
+    weight: '0.1',
+    effect:
+      'Parchemin théorique conférant +2 au jet d’apprentissage d’un sort, invocation, signe, rituel ou envoûtement de niveau Maître.',
+    price: 300,
+    priceDisplay: '300',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-wishing-mirror',
+    name: { en: 'Wishing Mirror', fr: 'Miroir aux souhaits' },
+    category: 'Objet maudit / magique',
+    educationDc: '16',
+    availability: 'R',
+    weight: '5',
+    effect:
+      'Montre les désirs les plus profonds. Résistance à la magie SD 18 ou compulsion d’observer 1 h/jour (+1 h par échec jusqu’à 24 h mortelles). Sa destruction inflige –2 à toutes les actions pendant 1 mois.',
+    price: 880,
+    priceDisplay: '880',
+    source: 'ToC',
+  },
+  {
+    id: 'mag-gateway-portal',
+    name: { en: 'Gateway Portal', fr: 'Portail d’accès elfique' },
+    category: 'Site / Relique arcanique',
+    educationDc: '18',
+    availability: 'R',
+    weight: 'N/A',
+    effect:
+      'Portail elfique fixe entre deux points ; Formation magique SD 14 pour connaître sa destination avant de le traverser.',
+    price: null,
+    priceDisplay: 'N/A',
+    source: 'ToC',
+  },
+];
+
+/**
+ * 33 Magical Monster Trophies imbued via the Imbue Trophy Ritual (A Tome of Chaos).
+ * Each trophy grants +1 Reputation (max +4) when carried by a slayer who helped defeat the monster.
+ */
+export const TROPHIES_DATA: readonly TrophyCatalogEntry[] = [
+  // Cursed Ones
+  {
+    id: 'trp-botchling',
+    name: { en: 'Botchling Trophy', fr: 'Trophée de Couvin' },
+    monsterCategory: { en: 'Cursed Ones', fr: 'Créatures maudites' },
+    effect: 'Vous devenez Redouté (ou doublez les bonus de Redouté si vous l’étiez déjà).',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-wendigo',
+    name: { en: 'Vendigo Trophy', fr: 'Trophée de Vendigo' },
+    monsterCategory: { en: 'Cursed Ones', fr: 'Créatures maudites' },
+    effect: 'Vous êtes immunisé aux maladies.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-werewolf',
+    name: { en: 'Werewolf Trophy', fr: 'Trophée de Loup-garou' },
+    monsterCategory: { en: 'Cursed Ones', fr: 'Créatures maudites' },
+    effect: 'Bonus de +2 en Physique et en Survie.',
+    source: 'ToC',
+  },
+  // Draconids
+  {
+    id: 'trp-cockatrice',
+    name: { en: 'Cockatrice Trophy', fr: 'Trophée de Cockatrix' },
+    monsterCategory: { en: 'Draconids', fr: 'Draconides' },
+    effect: 'Vos attaques ont 10 % de chances de stupéfier votre adversaire.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-phoenix',
+    name: { en: 'Phoenix Trophy', fr: 'Trophée de Phénix' },
+    monsterCategory: { en: 'Draconids', fr: 'Draconides' },
+    effect: 'Réduit vos chances de prendre feu de 50 % (minimum 0 %).',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-slyzard',
+    name: { en: 'Slyzard Trophy', fr: 'Trophée de Slyzard' },
+    monsterCategory: { en: 'Draconids', fr: 'Draconides' },
+    effect: '+2 en Incantation lors du lancement de sorts et signes de feu.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-wyvern',
+    name: { en: 'Wyvern Trophy', fr: 'Trophée de Wyvern' },
+    monsterCategory: { en: 'Draconids', fr: 'Draconides' },
+    effect: 'Les créatures blessées par vos attaques ont 25 % de chances d’être empoisonnées.',
+    source: 'ToC',
+  },
+  // Elementa
+  {
+    id: 'trp-earth-elemental',
+    name: { en: 'Earth Elemental Trophy', fr: 'Trophée d’Élémentaire de terre' },
+    monsterCategory: { en: 'Elementa', fr: 'Élémentaires' },
+    effect: 'Vos attaques infligent le double de dégâts d’usure aux armes, boucliers et armures.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-fire-elemental',
+    name: { en: 'Fire Elemental Trophy', fr: 'Trophée d’Élémentaire de feu' },
+    monsterCategory: { en: 'Elementa', fr: 'Élémentaires' },
+    effect: 'Les créatures blessées par vos attaques ont 25 % de chances de prendre feu.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-golem',
+    name: { en: 'Golem Trophy', fr: 'Trophée de Golem' },
+    monsterCategory: { en: 'Elementa', fr: 'Élémentaires' },
+    effect: 'Vous êtes immunisé au saignement.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-ice-elemental',
+    name: { en: 'Ice Elemental Trophy', fr: 'Trophée d’Élémentaire de glace' },
+    monsterCategory: { en: 'Elementa', fr: 'Élémentaires' },
+    effect: 'Les créatures blessées par vos attaques ont 25 % de chances d’être gelées.',
+    source: 'ToC',
+  },
+  // Hybrids
+  {
+    id: 'trp-griffin',
+    name: { en: 'Griffin Trophy', fr: 'Trophée de Griffon' },
+    monsterCategory: { en: 'Hybrids', fr: 'Hybrides' },
+    effect: 'Lors d’un jet de blessure critique, lancez deux fois et conservez le résultat de votre choix.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-manticore',
+    name: { en: 'Manticore Trophy', fr: 'Trophée de Manticore' },
+    monsterCategory: { en: 'Hybrids', fr: 'Hybrides' },
+    effect: 'Augmente de +2 le SD pour résister ou dissiper les poisons que vous utilisez.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-succubus',
+    name: { en: 'Succubus Trophy', fr: 'Trophée de Succube' },
+    monsterCategory: { en: 'Hybrids', fr: 'Hybrides' },
+    effect: 'Votre statut social s’améliore d’un cran (Haï -> Toléré, Toléré -> Égal).',
+    source: 'ToC',
+  },
+  // Insectoid
+  {
+    id: 'trp-arachasae',
+    name: { en: 'Arachasae Trophy', fr: 'Trophée d’Arachas' },
+    monsterCategory: { en: 'Insectoid', fr: 'Insectoïdes' },
+    effect: 'Vous êtes immunisé au poison.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-frightener',
+    name: { en: 'Frightener Trophy', fr: 'Trophée d’Épouvanteur' },
+    monsterCategory: { en: 'Insectoid', fr: 'Insectoïdes' },
+    effect: 'Confère une résistance aux dégâts tranchants, perforants ou contondants (modifiable chaque jour).',
+    source: 'ToC',
+  },
+  // Necrophages
+  {
+    id: 'trp-bullvore',
+    name: { en: 'Bullvore Trophy', fr: 'Trophée de Bullvore' },
+    monsterCategory: { en: 'Necrophages', fr: 'Nécrophages' },
+    effect: 'Si un nécrophage vous cible alors qu’une autre cible est à portée, il choisit l’autre cible.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-foglet',
+    name: { en: 'Foglet Trophy', fr: 'Trophée de Brumelin' },
+    monsterCategory: { en: 'Necrophages', fr: 'Nécrophages' },
+    effect: 'Bonus de +2 en Furtivité et en Adresse.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-grave-hag',
+    name: { en: 'Grave Hag Trophy', fr: 'Trophée de Guenaude sépulcrale' },
+    monsterCategory: { en: 'Necrophages', fr: 'Nécrophages' },
+    effect: 'Bonus de +2 en Préparation de rituels et Tissage d’envoûtements.',
+    source: 'ToC',
+  },
+  // Relicts
+  {
+    id: 'trp-fiend',
+    name: { en: 'Fiend Trophy', fr: 'Trophée de Fiellon' },
+    monsterCategory: { en: 'Relicts', fr: 'Vestiges' },
+    effect: 'Bonus de +2 en Incantation et Résistance à la magie.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-leshen',
+    name: { en: 'Leshen Trophy', fr: 'Trophée de Leshen' },
+    monsterCategory: { en: 'Relicts', fr: 'Vestiges' },
+    effect:
+      'Les bêtes et animaux vous comprennent et vous pouvez négocier avec eux en combat verbal (sans jamais exiger d’eux qu’ils se sacrifient).',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-shaelmaar',
+    name: { en: 'Shaelmaar Trophy', fr: 'Trophée de Shaelmaar' },
+    monsterCategory: { en: 'Relicts', fr: 'Vestiges' },
+    effect: '+2 en Incantation lors du lancement de sorts et signes de terre.',
+    source: 'ToC',
+  },
+  // Specters
+  {
+    id: 'trp-hym',
+    name: { en: 'Hym Trophy', fr: 'Trophée d’Hym' },
+    monsterCategory: { en: 'Specters', fr: 'Spectres' },
+    effect: 'Lorsque vos dégâts sont bloqués par une armure, la cible subit quand même 4 points de dégâts directs.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-noonwraith',
+    name: { en: 'Noonwraith Trophy', fr: 'Trophée de Spectre de midi' },
+    monsterCategory: { en: 'Specters', fr: 'Spectres' },
+    effect: 'Vous êtes immunisé à la peur.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-pesta',
+    name: { en: 'Pesta Trophy', fr: 'Trophée de Pesta' },
+    monsterCategory: { en: 'Specters', fr: 'Spectres' },
+    effect:
+      'Nuée de mouches : adversaires en mêlée subissent –2 à leurs actions et 10 % de chances de contracter une maladie (vous subissez –2 en Séduction, Persuasion et Soins personnels).',
+    source: 'ToC',
+  },
+  // Vampires
+  {
+    id: 'trp-bruxa',
+    name: { en: 'Bruxa Trophy', fr: 'Trophée de Brouxe' },
+    monsterCategory: { en: 'Vampires', fr: 'Vampires' },
+    effect: 'Communication télépathique jusqu’à 20 m.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-garkain',
+    name: { en: 'Garkain Trophy', fr: 'Trophée de Garkain' },
+    monsterCategory: { en: 'Vampires', fr: 'Vampires' },
+    effect: 'Réduit de 1 toute pénalité à votre score d’Étourdissement (ou +1 à l’Étourdissement s’il n’y a aucune pénalité).',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-katakan',
+    name: { en: 'Katakan Trophy', fr: 'Trophée de Katakan' },
+    monsterCategory: { en: 'Vampires', fr: 'Vampires' },
+    effect: 'Les créatures blessées par vos attaques ont 25 % de chances de saigner.',
+    source: 'ToC',
+  },
+  // Ogroids
+  {
+    id: 'trp-cyclops',
+    name: { en: 'Cyclops Trophy', fr: 'Trophée de Cyclope' },
+    monsterCategory: { en: 'Ogroid', fr: 'Ogroïdes' },
+    effect: 'Lorsque vous êtes étourdi par un sort, vous pouvez attaquer la créature vivante la plus proche pour annuler l’étourdissement.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-rock-troll',
+    name: { en: 'Rock Troll Trophy', fr: 'Trophée de Troll de pierre' },
+    monsterCategory: { en: 'Ogroid', fr: 'Ogroïdes' },
+    effect: 'Ajoute +1 au multiplicateur de portée de vos armes de jet.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-troll',
+    name: { en: 'Troll Trophy', fr: 'Trophée de Troll' },
+    monsterCategory: { en: 'Ogroid', fr: 'Ogroïdes' },
+    effect: 'Double la dose d’alcool nécessaire pour vous enivrer ; jamais de gueule de bois.',
+    source: 'ToC',
+  },
+  // Beasts
+  {
+    id: 'trp-bear',
+    name: { en: 'Bear Trophy', fr: 'Trophée d’Ours' },
+    monsterCategory: { en: 'Beasts', fr: 'Bêtes' },
+    effect: 'Les cibles que vous agrippez subissent –2 pour s’échapper.',
+    source: 'ToC',
+  },
+  {
+    id: 'trp-panther',
+    name: { en: 'Panther Trophy', fr: 'Trophée de Panthère' },
+    monsterCategory: { en: 'Beasts', fr: 'Bêtes' },
+    effect: 'Double votre vitesse d’escalade.',
+    source: 'ToC',
+  },
+];

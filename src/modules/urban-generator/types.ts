@@ -95,7 +95,7 @@ export interface DiagramCatalogItem {
   name: BilingualLabel;
   tier: CraftTier;
   price: number;
-  pool: 'A' | 'B' | 'M';
+  pool: 'A' | 'B' | 'M' | 'S';
 }
 
 export interface GrimoireSpellItem {

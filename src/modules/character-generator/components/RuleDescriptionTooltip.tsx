@@ -28,6 +28,7 @@ type RuleDescriptionTooltipProps =
       kind: 'skill';
       skillId: SkillId;
       lang: ModuleLanguage;
+      waiveDoubleCost?: boolean;
     };
 
 /**
@@ -145,7 +146,7 @@ export function RuleDescriptionTooltip(props: RuleDescriptionTooltipProps) {
           <div className="flex items-center gap-1">
             {def.doubleCost && (
               <span className="rounded bg-background/20 px-1.5 py-0.5 font-mono text-[10px] font-semibold">
-                ×2
+                {props.waiveDoubleCost ? '×2 → ×1' : '×2'}
               </span>
             )}
             <span className="rounded bg-background/15 px-1.5 py-0.5 font-mono text-[10px] font-medium">

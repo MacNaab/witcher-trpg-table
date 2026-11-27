@@ -66,6 +66,7 @@ const MAGIC_TIER_LABELS: Record<MagicTier, { fr: string; en: string }> = {
   journeyman: { fr: 'Compagnon', en: 'Journeyman' },
   master: { fr: 'Maître', en: 'Master' },
   archpriest: { fr: 'Archiprêtre', en: 'Archpriest' },
+  hierophant: { fr: 'Hiérophante / Flaminika', en: 'Hierophant' },
   sign: { fr: 'Signe', en: 'Sign' },
 };
 

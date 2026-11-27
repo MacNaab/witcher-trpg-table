@@ -404,7 +404,11 @@ export function formatHubEntityAsCharacterSheet(
         lang === 'fr'
           ? ['Signe d’Aard', 'Signe d’Axii', 'Signe d’Igni', 'Signe de Quen', 'Signe d’Yrden']
           : ['Aard Sign', 'Axii Sign', 'Igni Sign', 'Quen Sign', 'Yrden Sign'];
-    } else if (npc.professionId === 'mage' || npc.professionId === 'priest') {
+    } else if (
+      npc.professionId === 'mage' ||
+      npc.professionId === 'priest' ||
+      npc.professionId === 'druid'
+    ) {
       magicList =
         lang === 'fr'
           ? ['Incantation', 'Bouclier arcanique', 'Projectiles magiques', 'Dissipation']

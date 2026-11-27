@@ -2107,5 +2107,243 @@ export const GEAR_ITEMS: readonly GearCatalogEntry[] = [
     "weight": "1",
     "effect": "Tenue de cour ou vêtements de qualité.",
     "urbanOnly": "tailor-extra"
+  },
+  {
+    "id": "eq-enh-steel",
+    "name": {
+      "en": "Armor Enhancement: Steel",
+      "fr": "Amélioration d’armure : Acier"
+    },
+    "category": "Amélioration d'armure",
+    "shopKind": "general",
+    "availability": "I",
+    "price": 145,
+    "priceDisplay": "145",
+    "weight": "3.5",
+    "size": "-",
+    "effect": "+4 PA ; résistance aux dégâts tranchants et perforants.",
+    "race": "Humain",
+    "source": "Base"
+  },
+  {
+    "id": "eq-enh-chainmail",
+    "name": {
+      "en": "Armor Enhancement: Chainmail",
+      "fr": "Amélioration d’armure : Cotte de mailles"
+    },
+    "category": "Amélioration d'armure",
+    "shopKind": "general",
+    "availability": "I",
+    "price": 125,
+    "priceDisplay": "125",
+    "weight": "3",
+    "size": "-",
+    "effect": "+3 PA ; résistance aux dégâts contondants et tranchants.",
+    "race": "Humain",
+    "source": "Base"
+  },
+  {
+    "id": "eq-enh-studded-leather",
+    "name": {
+      "en": "Armor Enhancement: Studded Leather",
+      "fr": "Amélioration d’armure : Cuir clouté"
+    },
+    "category": "Amélioration d'armure",
+    "shopKind": "general",
+    "availability": "C",
+    "price": 80,
+    "priceDisplay": "80",
+    "weight": "1",
+    "size": "-",
+    "effect": "+2 PA ; résistance aux dégâts tranchants.",
+    "race": "Humain",
+    "source": "Base"
+  },
+  {
+    "id": "eq-enh-reinforced-leather",
+    "name": {
+      "en": "Armor Enhancement: Reinforced Leather",
+      "fr": "Amélioration d’armure : Cuir renforcé"
+    },
+    "category": "Amélioration d'armure",
+    "shopKind": "general",
+    "availability": "C",
+    "price": 130,
+    "priceDisplay": "130",
+    "weight": "1.5",
+    "size": "-",
+    "effect": "+2 PA ; résistance au feu, contondant et tranchant.",
+    "race": "Humain",
+    "source": "Base"
+  },
+  {
+    "id": "eq-enh-elven",
+    "name": {
+      "en": "Armor Enhancement: Elven",
+      "fr": "Amélioration d’armure : Elfe"
+    },
+    "category": "Amélioration d'armure",
+    "shopKind": "general",
+    "availability": "R",
+    "price": 200,
+    "priceDisplay": "200",
+    "weight": "0.5",
+    "size": "-",
+    "effect": "+3 PA ; +1 en Furtivité ; résistance aux dégâts contondants et tranchants.",
+    "race": "Non Humain",
+    "source": "Base"
+  },
+  {
+    "id": "eq-enh-fibers",
+    "name": {
+      "en": "Armor Enhancement: Fibers",
+      "fr": "Amélioration d’armure : Fibres"
+    },
+    "category": "Amélioration d'armure",
+    "shopKind": "general",
+    "availability": "P",
+    "price": 40,
+    "priceDisplay": "40",
+    "weight": "0.5",
+    "size": "-",
+    "effect": "+1 PA ; résistance au saignement.",
+    "race": "Humain",
+    "source": "Base"
+  },
+  {
+    "id": "eq-enh-dwarven",
+    "name": {
+      "en": "Armor Enhancement: Dwarven",
+      "fr": "Amélioration d’armure : Nain(e)"
+    },
+    "category": "Amélioration d'armure",
+    "shopKind": "general",
+    "availability": "R",
+    "price": 195,
+    "priceDisplay": "195",
+    "weight": "3.5",
+    "size": "-",
+    "effect": "+5 PA ; résistance aux dégâts tranchants et perforants.",
+    "race": "Non Humain",
+    "source": "Base"
+  },
+  {
+    "id": "eq-gold-plating",
+    "name": {
+      "en": "Gold Plating",
+      "fr": "Placage doré"
+    },
+    "category": "Général",
+    "shopKind": "general",
+    "availability": "I",
+    "price": 100,
+    "priceDisplay": "100",
+    "weight": "0.5",
+    "size": "-",
+    "effect": "Offre un bonus de +1 en Réputation sur une arme ou armure (non cumulable).",
+    "race": "Humain",
+    "source": "Seigneur & Fiefs"
+  },
+  {
+    "id": "eq-bot-plague-mask",
+    "name": {
+      "en": "Plague Mask (Toussaint)",
+      "fr": "Masque contre la peste"
+    },
+    "category": "Vêtements",
+    "shopKind": "clothing",
+    "availability": "R",
+    "price": 400,
+    "priceDisplay": "400",
+    "weight": "0.5",
+    "size": "P",
+    "effect": "Bonus de +3 en Endurance pour résister aux maladies aéroportées, poisons et nausées.",
+    "race": "Humain",
+    "source": "Book of Tales"
+  },
+  {
+    "id": "eq-ice-skates",
+    "name": {
+      "en": "Ice Skates",
+      "fr": "Patins à glace"
+    },
+    "category": "Vêtements",
+    "shopKind": "clothing",
+    "availability": "C",
+    "price": 100,
+    "priceDisplay": "100",
+    "weight": "1",
+    "size": "P",
+    "effect": "Ignore les effets de Neige et Glace ; compte comme une monture (VIT 12, Mod. Contrôle +2, sans charge ni percussion).",
+    "race": "Humain",
+    "source": "Book of Tales"
+  },
+  {
+    "id": "eq-goetia-goat-mantle",
+    "name": {
+      "en": "Goat Skin Mantle",
+      "fr": "Manteau en peau de chèvre"
+    },
+    "category": "Outils de goétie",
+    "shopKind": "general",
+    "availability": "R",
+    "price": 800,
+    "priceDisplay": "800",
+    "weight": "0.5",
+    "size": "M",
+    "effect": "Protège l’invocateur des réactions immédiates des Bes, Casglydd et Mari Lwyd lors d’une invocation contrôlée.",
+    "race": "Humain",
+    "source": "Tome of Chaos"
+  },
+  {
+    "id": "eq-goetia-earthly-ribbons",
+    "name": {
+      "en": "Earthly Ribbons",
+      "fr": "Rubans terrestres"
+    },
+    "category": "Outils de goétie",
+    "shopKind": "general",
+    "availability": "R",
+    "price": 1352,
+    "priceDisplay": "1352",
+    "weight": "0.1",
+    "size": "P",
+    "effect": "Rubans de soie runiques empêchant un Mari Lwyd de changer de forme pendant 1 an.",
+    "race": "Humain",
+    "source": "Tome of Chaos"
+  },
+  {
+    "id": "eq-goetia-centerpiece",
+    "name": {
+      "en": "Centerpiece",
+      "fr": "Pièce maîtresse"
+    },
+    "category": "Outils de goétie",
+    "shopKind": "general",
+    "availability": "R",
+    "price": null,
+    "priceDisplay": "700+",
+    "weight": "N/A",
+    "size": "M",
+    "effect": "Objet unique complexe offert à un Casglydd pour capter sa fascination et l’empêcher de se lier à vous.",
+    "race": "Humain",
+    "source": "Tome of Chaos"
+  },
+  {
+    "id": "eq-goetia-wand-banishment",
+    "name": {
+      "en": "Wand of Banishment",
+      "fr": "Baguette de bannissement"
+    },
+    "category": "Outils de goétie",
+    "shopKind": "tool",
+    "availability": "R",
+    "price": 800,
+    "priceDisplay": "800",
+    "weight": "0.5",
+    "size": "P",
+    "effect": "Une attaque de mêlée réussie bannit le démon nommé pour 24 heures (50 % de risque de rupture ; 100 % contre un démon majeur).",
+    "race": "Humain",
+    "source": "Tome of Chaos"
   }
 ];

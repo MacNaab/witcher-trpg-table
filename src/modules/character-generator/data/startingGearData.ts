@@ -3,9 +3,15 @@ import {
   ARMOR_DATA,
   COMPONENTS_DATA,
   DIAGRAMS_DATA,
+  EXPERIMENTAL_TECH_DATA,
   FORMULAE_DATA,
   GEAR_ITEMS,
+  MAGIC_ITEMS_DATA,
+  MUTAGENS_DATA,
   POTIONS_DATA,
+  RELICS_DATA,
+  RUNES_GLYPHS_DATA,
+  TROPHIES_DATA,
   WEAPONS_DATA,
 } from '@/src/data/items';
 import type {
@@ -182,15 +188,40 @@ export const PROFESSION_STARTER_KITS: Record<
           fr: 'Herbes consacrées et composants rituels d’une valeur de 100 couronnes.',
         },
       },
-      { id: 'pr-alch', name: { en: 'Alchemy Set', fr: 'Ensemble d’alchimie' }, weight: 3, category: 'gear', catalogItemId: 'eq-alchemy-set' },
-      { id: 'pr-str', name: { en: 'Sterilizing Fluid (x5)', fr: 'Fluide stérilisant x5' }, weight: 0.5, category: 'component', catalogItemId: 'al-sterilizing-fluid' },
-      { id: 'pr-hrb', name: { en: 'Numbing Herbs (x5)', fr: 'Herbes engourdissantes x5' }, weight: 0.5, category: 'component', catalogItemId: 'al-numbing-herbs' },
-      { id: 'pr-kit', name: { en: "Surgeon's Kit", fr: 'Instruments chirurgicaux' }, weight: 1, category: 'gear', catalogItemId: 'eq-surgeons-kit' },
       { id: 'pr-cld', name: { en: 'Clotting Powder (x5)', fr: 'Poudre de coagulation x5' }, weight: 0.5, category: 'component', catalogItemId: 'al-clotting-powder' },
-      { id: 'pr-hr', name: { en: 'Hourglass', fr: 'Sablier' }, weight: 1, category: 'gear', catalogItemId: 'eq-hourglass' },
-      { id: 'pr-sym', name: { en: 'Sacred Symbol', fr: 'Symbole sacré' }, weight: 0.1, category: 'gear', catalogItemId: 'eq-holy-symbol' },
-      { id: 'pr-stf', name: { en: 'Walking Staff', fr: 'Bâton' }, weight: 3, category: 'weapon', catalogItemId: 'wp-quarterstaff-tool' },
       { id: 'pr-dag', name: { en: 'Dagger', fr: 'Dague' }, weight: 0.5, category: 'weapon', catalogItemId: 'wp-dagger' },
+      { id: 'pr-gmb', name: { en: 'Double Woven Gambeson', fr: 'Gambison à tissage renforcé' }, weight: 2.5, category: 'armor', catalogItemId: 'ar-double-woven-gambeson' },
+      { id: 'pr-sym', name: { en: 'Sacred Symbol', fr: 'Symbole sacré' }, weight: 0.1, category: 'gear', catalogItemId: 'eq-holy-symbol' },
+      { id: 'pr-hr', name: { en: 'Hourglass', fr: 'Sablier' }, weight: 1, category: 'gear', catalogItemId: 'eq-hourglass' },
+      { id: 'pr-jwl', name: { en: 'Jewelry', fr: 'Bijoux' }, weight: 0.5, category: 'gear', catalogItemId: 'eq-jewelry' },
+      { id: 'pr-hrb', name: { en: 'Numbing Herbs (x5)', fr: 'Herbes engourdissantes x5' }, weight: 0.5, category: 'component', catalogItemId: 'al-numbing-herbs' },
+      { id: 'pr-stf', name: { en: 'Staff', fr: 'Bâton' }, weight: 3, category: 'weapon', catalogItemId: 'wp-quarterstaff-tool' },
+      { id: 'pr-kit', name: { en: "Surgeon's Kit", fr: 'Instruments chirurgicaux' }, weight: 1, category: 'gear', catalogItemId: 'eq-surgeons-kit' },
+    ],
+  },
+  druid: {
+    pickLimit: 5,
+    freeItems: [],
+    selectableItems: [
+      {
+        id: 'dr-comp',
+        name: { en: '100 Crowns of Components', fr: '100 couronnes de composants' },
+        weight: 0,
+        category: 'component',
+        description: {
+          en: 'Wild herbs and ritual components worth 100 crowns.',
+          fr: 'Herbes sauvages et composants rituels d’une valeur de 100 couronnes.',
+        },
+      },
+      { id: 'dr-bdr', name: { en: 'Bedroll', fr: 'Sac de couchage' }, weight: 1.5, category: 'gear', catalogItemId: 'eq-bedroll' },
+      { id: 'dr-prs', name: { en: 'Belt Pouch', fr: 'Bourse de ceinture' }, weight: 0.1, category: 'gear', catalogItemId: 'eq-purse' },
+      { id: 'dr-cnd', name: { en: 'Candles (x5)', fr: 'Bougies (x5)' }, weight: 0.5, category: 'gear', catalogItemId: 'eq-candles-5' },
+      { id: 'dr-wrm', name: { en: 'Cold Weather Clothing', fr: 'Vêtements chauds' }, weight: 3, category: 'gear', catalogItemId: 'eq-warm-clothing' },
+      { id: 'dr-sck', name: { en: "Druid's Sickle", fr: 'Faucille de druide' }, weight: 1.5, category: 'weapon', catalogItemId: 'wp-druids-sickle' },
+      { id: 'dr-hrb', name: { en: 'Numbing Herbs (x3)', fr: 'Herbes engourdissantes x3' }, weight: 0.3, category: 'component', catalogItemId: 'al-numbing-herbs' },
+      { id: 'dr-pip', name: { en: 'Pipe & Tobacco', fr: 'Pipe et tabac' }, weight: 0.1, category: 'gear', catalogItemId: 'eq-pipe' },
+      { id: 'dr-sml', name: { en: 'Smelling Salts (x2)', fr: 'Sels de pâmoison x2' }, weight: 0.2, category: 'component', catalogItemId: 'al-smelling-salts' },
+      { id: 'dr-stf', name: { en: 'Staff', fr: 'Bâton' }, weight: 3, category: 'weapon', catalogItemId: 'wp-quarterstaff-tool' },
     ],
   },
   witcher: {
@@ -223,17 +254,27 @@ export const PROFESSION_STARTER_KITS: Record<
     selectableItems: [
       {
         id: 'vp-comp',
-        name: { en: '100 Crowns of Components', fr: '100 couronnes de composants' },
+        name: { en: '100 Crowns of Components', fr: '100 Couronnes de composants' },
         weight: 0,
         category: 'component',
         description: {
-          en: 'Assorted rare components worth 100 crowns.',
-          fr: 'Assortiment de composants d’une valeur de 100 couronnes.',
+          en: 'Assorted rare alchemical and crafting components worth 100 crowns.',
+          fr: 'Assortiment de composants d’une valeur totale de 100 couronnes.',
         },
       },
-      { id: 'vp-50c', name: { en: 'Purse with 50 Crowns', fr: 'Bourse de 50 couronnes' }, weight: 0.1, category: 'gear', catalogItemId: 'eq-purse' },
+      {
+        id: 'vp-50c',
+        name: { en: 'Purse with 50 Crowns', fr: 'Bourse de 50 couronnes' },
+        weight: 0.1,
+        category: 'gear',
+        catalogItemId: 'eq-purse',
+        description: {
+          en: 'Coin purse containing 50 crowns.',
+          fr: 'Bourse en cuir contenant 50 couronnes.',
+        },
+      },
       { id: 'vp-kit', name: { en: "Surgeon's Kit", fr: 'Instruments chirurgicaux' }, weight: 1, category: 'gear', catalogItemId: 'eq-surgeons-kit' },
-      { id: 'vp-inst', name: { en: 'Musical Instrument', fr: 'Instrument' }, weight: 1, category: 'gear', catalogItemId: 'eq-instrument' },
+      { id: 'vp-inst', name: { en: 'Musical Instrument', fr: 'Instrument de musique' }, weight: 1, category: 'gear', catalogItemId: 'eq-instrument' },
       { id: 'vp-wrt', name: { en: 'Writing Kit', fr: 'Nécessaire d’écriture' }, weight: 1, category: 'gear', catalogItemId: 'eq-writing-kit' },
       { id: 'vp-art', name: { en: 'Artisan Tools', fr: "Outils d'artisan" }, weight: 5, category: 'gear', catalogItemId: 'eq-crafting-tools' },
       { id: 'vp-alch', name: { en: 'Alchemy Set', fr: "Ensemble d'alchimie" }, weight: 3, category: 'gear', catalogItemId: 'eq-alchemy-set' },
@@ -432,6 +473,68 @@ export const COMPENDIUM_PICKER_ITEMS: readonly CompendiumPickerItem[] = [
     weight: 0,
     summary: `SD ${d.dc} · ${d.time} · ${d.components}`,
   })),
+  ...RELICS_DATA.map((r) => ({
+    id: r.id,
+    name: r.name,
+    category: (r.relicType === 'armor' ? 'armor' : 'weapon') as StarterEquipmentCategory,
+    groupLabel:
+      r.relicType === 'armor'
+        ? { en: 'Relic Armor', fr: 'Armure relique' }
+        : { en: 'Relic Weapon', fr: 'Arme relique' },
+    weight: parseNumericWeight(r.weight),
+    summary:
+      r.relicType === 'armor'
+        ? `PA ${r.sp ?? '—'} · VE ${r.ev ?? '0'} · ${r.effect}`
+        : `${r.damage ?? '—'} · ${r.effect}`,
+  })),
+  ...EXPERIMENTAL_TECH_DATA.map((e) => ({
+    id: e.id,
+    name: e.name,
+    category: 'weapon' as const,
+    groupLabel:
+      e.techType === 'bomb'
+        ? { en: 'Bomb', fr: 'Bombe' }
+        : e.techType === 'trap'
+          ? { en: 'Trap', fr: 'Piège' }
+          : { en: 'Experimental Ammo', fr: 'Munition exp.' },
+    weight: parseNumericWeight(e.weight),
+    summary: `${e.damage} · ${e.range} · ${e.effect}`,
+  })),
+  ...RUNES_GLYPHS_DATA.map((rg) => ({
+    id: rg.id,
+    name: rg.name,
+    category: 'gear' as const,
+    groupLabel:
+      rg.kind === 'rune' || rg.kind === 'runeword'
+        ? { en: 'Rune / Runeword', fr: 'Rune / Mot runique' }
+        : { en: 'Glyph / Glyphword', fr: 'Glyphe / Mot glyphique' },
+    weight: parseNumericWeight(rg.weight),
+    summary: `${rg.target.fr} (${rg.slots} emp.) · ${rg.effect}`,
+  })),
+  ...MAGIC_ITEMS_DATA.map((m) => ({
+    id: m.id,
+    name: m.name,
+    category: 'gear' as const,
+    groupLabel: { en: 'Magic Item', fr: 'Objet magique' },
+    weight: parseNumericWeight(m.weight),
+    summary: `${m.category} · ${m.effect}`,
+  })),
+  ...TROPHIES_DATA.map((t) => ({
+    id: t.id,
+    name: t.name,
+    category: 'gear' as const,
+    groupLabel: { en: 'Monster Trophy', fr: 'Trophée' },
+    weight: 1,
+    summary: `${t.monsterCategory.fr} · ${t.effect}`,
+  })),
+  ...MUTAGENS_DATA.map((m) => ({
+    id: m.id,
+    name: m.name,
+    category: 'component' as const,
+    groupLabel: { en: 'Mutagen', fr: 'Mutagène' },
+    weight: parseNumericWeight(m.weight),
+    summary: `${m.sourceMonster.fr} · SD ${m.alchemyDc} · ${m.effect}`,
+  })),
   ...COMPONENTS_DATA.map((c) => ({
     id: c.id,
     name: c.name,
@@ -508,6 +611,12 @@ const POTION_BY_ID = new Map(POTIONS_DATA.map((p) => [p.id, p]));
 const FORMULA_BY_ID = new Map(FORMULAE_DATA.map((f) => [f.id, f]));
 const DIAGRAM_BY_ID = new Map(DIAGRAMS_DATA.map((d) => [d.id, d]));
 const COMPONENT_BY_ID = new Map(COMPONENTS_DATA.map((c) => [c.id, c]));
+const RELIC_BY_ID = new Map(RELICS_DATA.map((r) => [r.id, r]));
+const EXPERIMENTAL_BY_ID = new Map(EXPERIMENTAL_TECH_DATA.map((e) => [e.id, e]));
+const RUNE_GLYPH_BY_ID = new Map(RUNES_GLYPHS_DATA.map((rg) => [rg.id, rg]));
+const MAGIC_ITEM_BY_ID = new Map(MAGIC_ITEMS_DATA.map((m) => [m.id, m]));
+const TROPHY_BY_ID = new Map(TROPHIES_DATA.map((t) => [t.id, t]));
+const MUTAGEN_BY_ID = new Map(MUTAGENS_DATA.map((m) => [m.id, m]));
 
 /**
  * Resolves full localized equipment stats and description for tooltips
@@ -631,6 +740,69 @@ export function resolveEquipmentTooltip(
         categoryLabel: lang === 'fr' ? 'Composant' : 'Component',
         statsLine: `${component.rarity} · ${dcLabel} ${component.dc} · ${component.price} cr.`,
         description: `${locLabel}: ${component.location}${component.substance ? ` · ${component.substance}` : ''}`,
+      };
+    }
+
+    const relic = RELIC_BY_ID.get(catalogItemId);
+    if (relic) {
+      return {
+        title: relic.name[lang],
+        categoryLabel: `${lang === 'fr' ? 'Relique' : 'Relic'} · ${relic.subType[lang]}`,
+        statsLine:
+          relic.relicType === 'armor'
+            ? `PA ${relic.sp ?? '—'} · VE ${relic.ev ?? '0'} · ${relic.coverage?.[lang] ?? ''}`
+            : `DMG ${relic.damage ?? '—'} · WA ${relic.accuracy ?? '0'} · Rel. ${relic.reliability ?? '—'}`,
+        description: relic.effect,
+      };
+    }
+
+    const experimental = EXPERIMENTAL_BY_ID.get(catalogItemId);
+    if (experimental) {
+      return {
+        title: experimental.name[lang],
+        categoryLabel: experimental.techType.toUpperCase(),
+        statsLine: `${experimental.damage} · ${experimental.range} · SD ${experimental.craftDc} · ${experimental.priceDisplay} cr.`,
+        description: experimental.effect,
+      };
+    }
+
+    const runeGlyph = RUNE_GLYPH_BY_ID.get(catalogItemId);
+    if (runeGlyph) {
+      return {
+        title: runeGlyph.name[lang],
+        categoryLabel: runeGlyph.target[lang],
+        statsLine: `${lang === 'fr' ? 'Emp.' : 'Slots'} ${runeGlyph.slots} · ${runeGlyph.priceDisplay} cr.`,
+        description: runeGlyph.effect,
+      };
+    }
+
+    const magicItem = MAGIC_ITEM_BY_ID.get(catalogItemId);
+    if (magicItem) {
+      return {
+        title: magicItem.name[lang],
+        categoryLabel: magicItem.category,
+        statsLine: `Éduc. ${magicItem.educationDc} · ${magicItem.priceDisplay} cr.`,
+        description: magicItem.effect,
+      };
+    }
+
+    const trophy = TROPHY_BY_ID.get(catalogItemId);
+    if (trophy) {
+      return {
+        title: trophy.name[lang],
+        categoryLabel: `${lang === 'fr' ? 'Trophée' : 'Trophy'} · ${trophy.monsterCategory[lang]}`,
+        statsLine: trophy.source,
+        description: trophy.effect,
+      };
+    }
+
+    const mutagen = MUTAGEN_BY_ID.get(catalogItemId);
+    if (mutagen) {
+      return {
+        title: mutagen.name[lang],
+        categoryLabel: `${lang === 'fr' ? 'Mutagène' : 'Mutagen'} (${mutagen.sourceMonster[lang]})`,
+        statsLine: `SD ${mutagen.alchemyDc} · ${mutagen.minorMutation}`,
+        description: mutagen.effect,
       };
     }
   }

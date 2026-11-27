@@ -1290,5 +1290,194 @@ export const WEAPON_DIAGRAMS_DATA: readonly DiagramLexiconEntry[] = [
     },
     "investment": "626",
     "cost": "1296"
+  },
+  {
+    "id": "weapon-diagrams-48-mancatcher",
+    "tabId": "weapon-diagrams",
+    "rowKind": "diagram",
+    "name": {
+      "en": "Mancatcher",
+      "fr": "Attrape-coquin"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "8 Hours",
+      "fr": "8 heures"
+    },
+    "components": {
+      "en": "Thread (x1), Sharpening Grit (x1), Wax (x2), Ester Grease (x2), Steel (x3), Leather (x3), Hardened Timber (x4)",
+      "fr": "Fil (x1), Pierre à aiguiser (x1), Cire (x2), Graisse ester (x2), Acier (x3), Cuir (x3), Bois durci (x4)"
+    },
+    "investment": "347",
+    "cost": "679"
+  },
+  {
+    "id": "weapon-diagrams-49-parrying-dagger",
+    "tabId": "weapon-diagrams",
+    "rowKind": "diagram",
+    "name": {
+      "en": "Parrying Dagger",
+      "fr": "Dague de parade"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "4 Hours",
+      "fr": "4 heures"
+    },
+    "components": {
+      "en": "Steel (x1), Dark Steel (x1), Hardened Timber (x1), Ogre Wax (x2), Hardened Leather (x2)",
+      "fr": "Acier (x1), Acier noir (x1), Bois durci (x1), Cire d’ogre (x2), Cuir durci (x2)"
+    },
+    "investment": "262",
+    "cost": "525"
+  },
+  {
+    "id": "weapon-diagrams-50-flail",
+    "tabId": "weapon-diagrams",
+    "rowKind": "diagram",
+    "name": {
+      "en": "Flail",
+      "fr": "Fléau"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "8 Hours",
+      "fr": "8 heures"
+    },
+    "components": {
+      "en": "Timber (x1), Ogre Wax (x1), Resin (x1), Iron (x2), Drake Oil (x2), Sharpening Grit (x2), Steel (x4)",
+      "fr": "Bois (x1), Cire d’ogre (x1), Résine (x1), Fer (x2), Huile de dermoptère (x2), Pierre à aiguiser (x2), Acier (x4)"
+    },
+    "investment": "421",
+    "cost": "843"
+  },
+  {
+    "id": "weapon-diagrams-51-whip",
+    "tabId": "weapon-diagrams",
+    "rowKind": "diagram",
+    "name": {
+      "en": "Whip",
+      "fr": "Fouet"
+    },
+    "level": "novice",
+    "dc": "10",
+    "time": {
+      "en": "2 Hours",
+      "fr": "2 heures"
+    },
+    "components": {
+      "en": "Wax (x1), Leather (x4)",
+      "fr": "Cire (x1), Cuir (x4)"
+    },
+    "investment": "114",
+    "cost": "228"
+  },
+  {
+    "id": "weapon-diagrams-52-lamia-whip",
+    "tabId": "weapon-diagrams",
+    "rowKind": "diagram",
+    "name": {
+      "en": "Lamia Whip",
+      "fr": "Lamia"
+    },
+    "level": "master",
+    "dc": "24",
+    "time": {
+      "en": "12 Hours",
+      "fr": "12 heures"
+    },
+    "components": {
+      "en": "Hardened Timber (x1), Dark Steel (x2), Tretogor Steel (x2), Hardened Leather (x2), Sharpening Grit (x2), Oil (x3), Coal (x10)",
+      "fr": "Bois durci (x1), Acier noir (x2), Acier de Tretogor (x2), Cuir durci (x2), Pierre à aiguiser (x2), Huile (x3), Charbon (x10)"
+    },
+    "investment": "487",
+    "cost": "937"
+  },
+  {
+    "id": "weapon-diagrams-53-crossbow-nilfgaardian-sights",
+    "tabId": "weapon-diagrams",
+    "rowKind": "diagram",
+    "name": {
+      "en": "Crossbow: Nilfgaardian Sights",
+      "fr": "Arbalète : Visée nilfgaardienne"
+    },
+    "level": "journeyman",
+    "dc": "15",
+    "time": {
+      "en": "4 Hours",
+      "fr": "4 heures"
+    },
+    "components": {
+      "en": "Steel (x1), Sharpening Grit (x4)",
+      "fr": "Acier (x1), Pierre à aiguiser (x4)"
+    },
+    "investment": "176",
+    "cost": "550"
+  },
+  {
+    "id": "weapon-diagrams-54-crossbow-improved-cranequin",
+    "tabId": "weapon-diagrams",
+    "rowKind": "diagram",
+    "name": {
+      "en": "Crossbow: Improved Cranequin",
+      "fr": "Arbalète : Guindeau amélioré"
+    },
+    "level": "master",
+    "dc": "20",
+    "time": {
+      "en": "10 Hours",
+      "fr": "10 heures"
+    },
+    "components": {
+      "en": "Steel (x4), Cotton (x3), Thread (x10), Ester Grease (x7)",
+      "fr": "Acier (x4), Coton (x3), Fil (x10), Graisse ester (x7)"
+    },
+    "investment": "284",
+    "cost": "880"
+  },
+  {
+    "id": "weapon-diagrams-55-crossbow-high-tension-string",
+    "tabId": "weapon-diagrams",
+    "rowKind": "diagram",
+    "name": {
+      "en": "Crossbow: High-Tension String",
+      "fr": "Arbalète : Corde haute tension"
+    },
+    "level": "journeyman",
+    "dc": "17",
+    "time": {
+      "en": "4 Hours",
+      "fr": "4 heures"
+    },
+    "components": {
+      "en": "Ogre Wax (x10), Thread (x10), Silk (x3)",
+      "fr": "Cire d’ogre (x10), Fil (x10), Soie (x3)"
+    },
+    "investment": "280",
+    "cost": "850"
+  },
+  {
+    "id": "weapon-diagrams-56-crossbow-stabilizing-stock",
+    "tabId": "weapon-diagrams",
+    "rowKind": "diagram",
+    "name": {
+      "en": "Crossbow: Stabilizing Stock",
+      "fr": "Arbalète : Garde stabilisatrice"
+    },
+    "level": "novice",
+    "dc": "12",
+    "time": {
+      "en": "2 Hours",
+      "fr": "2 heures"
+    },
+    "components": {
+      "en": "Steel (x3), Hardened Timber (x5), Leather (x1), Ester Grease (x1)",
+      "fr": "Acier (x3), Bois durci (x5), Cuir (x1), Graisse ester (x1)"
+    },
+    "investment": "260",
+    "cost": "790"
   }
 ];

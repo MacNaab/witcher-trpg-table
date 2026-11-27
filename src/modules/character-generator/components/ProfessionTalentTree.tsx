@@ -223,7 +223,9 @@ export function ProfessionTalentTree({
                           <TableHead
                             key={col.fr}
                             className={`h-8 text-xs ${
-                              cIdx === tbl.columns.length - 1 ? 'w-20 text-right' : ''
+                              tbl.columns.length === 2 && cIdx === 1
+                                ? 'w-20 text-right'
+                                : ''
                             }`}
                           >
                             {col[lang]}
@@ -238,9 +240,11 @@ export function ProfessionTalentTree({
                             <TableCell
                               key={cIdx}
                               className={`py-1.5 text-xs whitespace-normal ${
-                                cIdx === row.length - 1 && row.length === 2 && cell.length <= 8
+                                row.length === 2 && cIdx === 1 && cell.length <= 8
                                   ? 'text-right font-mono font-semibold text-primary'
-                                  : ''
+                                  : row.length > 2 && cell.length <= 6
+                                    ? 'font-mono font-semibold text-primary'
+                                    : ''
                               }`}
                             >
                               {cell}

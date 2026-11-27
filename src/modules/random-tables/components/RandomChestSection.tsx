@@ -49,8 +49,11 @@ import {
 } from '@/components/ui/table';
 import {
   ARMOR_DATA,
+  EXPERIMENTAL_TECH_DATA,
   GEAR_ITEMS,
   POTIONS_DATA,
+  RELICS_DATA,
+  RUNES_GLYPHS_DATA,
   WEAPONS_DATA,
 } from '@/src/data/items';
 import { ALL_LEXICON_ENTRIES } from '@/src/modules/lexicon-tables/data';
@@ -79,8 +82,15 @@ interface RandomChestSectionProps {
   ) => void;
 }
 
+const CHEST_LEXICON_ALIASES: Record<string, string> = {
+  'dwarven impact bolt': 'dwarven impact',
+  'mahakaman armor': 'mahakaman plate armor',
+  'red halberd': 'redanian halberd',
+  'hallebarde redanienne': 'hallebarde redanienne',
+};
+
 function normalizeLootLookup(value: string): string {
-  return value
+  const normalized = value
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/[’']/g, "'")
@@ -88,6 +98,7 @@ function normalizeLootLookup(value: string): string {
     .replace(/\s*\(?\s*x\d+\s*\)?$/i, '')
     .toLowerCase()
     .trim();
+  return CHEST_LEXICON_ALIASES[normalized] ?? normalized;
 }
 
 const CHEST_RATES_STORAGE_KEY = 'witcher-gm-chest-rates-v1';
@@ -187,13 +198,34 @@ export function RandomChestSection({
       catalogSummaryMap.set(normalizeLootLookup(g.name.en), summary);
       catalogSummaryMap.set(normalizeLootLookup(g.name.fr), summary);
     }
+    for (const r of RELICS_DATA) {
+      const summary =
+        r.relicType === 'armor'
+          ? `PA ${r.sp ?? '—'} · ${r.priceDisplay}`
+          : `${r.damage ?? '—'} · ${r.priceDisplay}`;
+      catalogSummaryMap.set(normalizeLootLookup(r.name.en), summary);
+      catalogSummaryMap.set(normalizeLootLookup(r.name.fr), summary);
+    }
+    for (const rg of RUNES_GLYPHS_DATA) {
+      const summary = `${rg.target.fr} · ${rg.priceDisplay}`;
+      catalogSummaryMap.set(normalizeLootLookup(rg.name.en), summary);
+      catalogSummaryMap.set(normalizeLootLookup(rg.name.fr), summary);
+    }
+    for (const ex of EXPERIMENTAL_TECH_DATA) {
+      const summary = `${ex.damage} · ${ex.priceDisplay}`;
+      catalogSummaryMap.set(normalizeLootLookup(ex.name.en), summary);
+      catalogSummaryMap.set(normalizeLootLookup(ex.name.fr), summary);
+    }
 
     const resolveLootMeta = (entry: ChestLootEntry) => {
       const enKey = normalizeLootLookup(entry.name.en);
       const frKey = normalizeLootLookup(entry.name.fr);
 
       const lexiconMatch =
-        entry.category === 'diagram' || entry.category === 'formula'
+        entry.category === 'diagram' ||
+        entry.category === 'formula' ||
+        entry.category === 'efWeapon' ||
+        entry.category === 'efArmor'
           ? lexiconMap.get(enKey) ?? lexiconMap.get(frKey) ?? null
           : null;
 

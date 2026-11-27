@@ -48,6 +48,8 @@ export function getSocialStatusBadgeClass(status: SocialStatusLevel): string {
       return 'border-sky-500/35 bg-sky-500/10 text-sky-700 dark:text-sky-300';
     case 'feared':
       return 'border-amber-500/40 bg-amber-500/15 text-amber-800 dark:text-amber-300';
+    case 'tolerated_feared':
+      return 'border-amber-500/45 bg-amber-500/15 text-amber-800 dark:text-amber-300';
     case 'hated':
       return 'border-orange-500/40 bg-orange-500/15 text-orange-800 dark:text-orange-300';
     case 'feared_hated':

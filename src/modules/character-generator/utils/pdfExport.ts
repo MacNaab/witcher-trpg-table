@@ -7,11 +7,14 @@ import {
   POTIONS_DATA,
   WEAPONS_DATA,
 } from '@/src/data/items';
-import { ALL_MAGIC_ENTRIES, getMagicEntryById } from '@/src/data/magic';
+import {
+  ALL_MAGIC_ENTRIES,
+  getMagicEntryById,
+  getMagicalGiftById,
+} from '@/src/data/magic';
 import {
   FAMILY_FATES,
   FAMILY_STANDINGS,
-  MAGE_ACADEMIES,
   MAGE_AGES,
   MAGE_CURRENT_STATUS,
   MAGE_IMPORTANT_EVENTS,
@@ -23,6 +26,19 @@ import {
   WITCHER_IMPORTANT_EVENTS,
   WITCHER_SCHOOLS,
 } from '../data/lifepathData';
+import {
+  MAGE_ACADEMIA_EVENTS,
+  MAGE_BIRTH_LOCATIONS,
+  MAGE_DANGER_TABLES,
+  MAGE_DISCOVERIES,
+  MAGE_FAMILY_REACTIONS,
+  MAGE_FAMILY_SIZES,
+  MAGE_FAMILY_STATUSES,
+  MAGE_MENTOR_ENDINGS,
+  MAGE_MENTOR_PERSONALITIES,
+  getChaosSchoolDefinition,
+  resolveChaosSchoolId,
+} from '../data/mageLifepathChaosData';
 import {
   PRIMARY_STAT_KEYS,
   getProfessionDefinition,
@@ -98,9 +114,8 @@ function resolveAgeAndOrigin(
     const m = state.mageLifepath;
     const ageLabel =
       MAGE_AGES.find((a) => a.id === m.ageEntered)?.label[lang] ?? '';
-    const academyLabel =
-      MAGE_ACADEMIES.find((a) => a.id === m.academy)?.label[lang] ?? '';
-    return { age: ageLabel, origin: academyLabel };
+    const schoolDef = getChaosSchoolDefinition(m.academy);
+    return { age: ageLabel, origin: schoolDef.name[lang] };
   }
 
   const s = state.standardLifepath;
@@ -194,13 +209,71 @@ function buildHistoriqueNarrative(
     });
   } else if (track === 'mage') {
     const m = state.mageLifepath;
-    const academyLabel =
-      MAGE_ACADEMIES.find((a) => a.id === m.academy)?.label[lang] ?? '-';
+    const schoolDef = getChaosSchoolDefinition(m.academy);
+    const schoolId = resolveChaosSchoolId(m.academy);
     const ageLabel =
       MAGE_AGES.find((a) => a.id === m.ageEntered)?.label[lang] ?? '-';
-    lines.push(`${isFr ? 'Académie' : 'Academy'} : ${academyLabel} (${ageLabel})`);
-    if (m.trainingResult) {
+    lines.push(
+      `${isFr ? 'Académie' : 'School'} : ${schoolDef.name[lang]} (${ageLabel}) - ${schoolDef.perkName[lang]}`
+    );
+    if (m.birthLocationIndex !== null && m.birthLocationIndex !== undefined) {
+      const birthLoc = MAGE_BIRTH_LOCATIONS[m.birthLocationIndex]?.label[lang];
+      if (birthLoc) {
+        lines.push(`${isFr ? 'Naissance' : 'Birthplace'} : ${birthLoc}`);
+      }
+    }
+    if (m.familySizeIndex !== null && m.familySizeIndex !== undefined) {
+      const fSize = MAGE_FAMILY_SIZES[m.familySizeIndex]?.[lang] ?? '';
+      const fStatus =
+        m.familyStatusIndex !== null && m.familyStatusIndex !== undefined
+          ? MAGE_FAMILY_STATUSES[m.familyStatusIndex]?.[lang] ?? ''
+          : '';
+      lines.push(
+        `${isFr ? 'Famille' : 'Family'} : ${[fSize, fStatus].filter(Boolean).join(', ')}`
+      );
+    }
+    if (m.discoveryIndex !== null && m.discoveryIndex !== undefined) {
+      const disc = MAGE_DISCOVERIES[m.discoveryIndex]?.title[lang] ?? '';
+      const rRegion =
+        m.reactionRegion || (m.elderlandConclave ? 'elderlands' : 'north');
+      const react =
+        m.reactionIndex !== null && m.reactionIndex !== undefined
+          ? MAGE_FAMILY_REACTIONS[rRegion]?.[m.reactionIndex]?.[lang] ?? ''
+          : '';
+      lines.push(
+        `${isFr ? 'Découverte' : 'Discovery'} : ${disc}${react ? ` -> ${react}` : ''}`
+      );
+    }
+    if (
+      (m.academiaDecade1Index !== null && m.academiaDecade1Index !== undefined) ||
+      (m.academiaDecade2Index !== null && m.academiaDecade2Index !== undefined)
+    ) {
+      const ac1 =
+        m.academiaDecade1Index !== null && m.academiaDecade1Index !== undefined
+          ? MAGE_ACADEMIA_EVENTS[schoolId][m.academiaDecade1Index]?.[lang]
+          : '';
+      const ac2 =
+        m.academiaDecade2Index !== null && m.academiaDecade2Index !== undefined
+          ? MAGE_ACADEMIA_EVENTS[schoolId][m.academiaDecade2Index]?.[lang]
+          : '';
+      lines.push(
+        `${isFr ? 'Vie en académie' : 'Academia'} : ${[ac1, ac2].filter(Boolean).join(' | ')}`
+      );
+    } else if (m.trainingResult) {
       lines.push(`${isFr ? 'Formation' : 'Training'} : ${m.trainingResult}`);
+    }
+    if (m.wasApprentice) {
+      const mPers =
+        m.mentorPersonalityIndex !== null && m.mentorPersonalityIndex !== undefined
+          ? MAGE_MENTOR_PERSONALITIES[m.mentorPersonalityIndex]?.[lang]
+          : '';
+      const mEnd =
+        m.mentorEndingIndex !== null && m.mentorEndingIndex !== undefined
+          ? MAGE_MENTOR_ENDINGS[m.mentorEndingIndex]?.[lang]
+          : '';
+      lines.push(
+        `${isFr ? 'Apprentissage' : 'Apprenticeship'} : ${[mPers, mEnd].filter(Boolean).join(' - ') || (isFr ? 'Apprenti lié' : 'Leashed Apprentice')}`
+      );
     }
     if (m.graduationResult) {
       lines.push(`${isFr ? 'Diplôme' : 'Graduation'} : ${m.graduationResult}`);
@@ -215,13 +288,27 @@ function buildHistoriqueNarrative(
         `${isFr ? 'Situation actuelle' : 'Current Status'} : ${MAGE_CURRENT_STATUS[m.currentStatusIndex]?.[lang] ?? ''}`
       );
     }
-    m.decadeEvents.forEach((ev, idx) => {
-      if (ev) {
+    if (m.chaosDecades && m.chaosDecades.length > 0) {
+      m.chaosDecades.forEach((dec, idx) => {
+        const dTxt =
+          dec.dangerTriggered &&
+          dec.dangerIndex !== null &&
+          dec.dangerIndex !== undefined
+            ? MAGE_DANGER_TABLES[dec.style][dec.dangerIndex]?.[lang] ?? ''
+            : '';
         lines.push(
-          `${isFr ? 'Décennie' : 'Decade'} ${idx + 1} : ${ev}`
+          `${isFr ? 'Décennie' : 'Decade'} ${idx + 1} : ${dec.eventDetail || '-'}${dTxt ? ` | ${dTxt}` : ''}${dec.grudgeText ? ` | ${dec.grudgeText}` : ''}`
         );
-      }
-    });
+      });
+    } else {
+      m.decadeEvents.forEach((ev, idx) => {
+        if (ev) {
+          lines.push(
+            `${isFr ? 'Décennie' : 'Decade'} ${idx + 1} : ${ev}`
+          );
+        }
+      });
+    }
   } else {
     const s = state.standardLifepath;
     const regionDef = REGIONS_DATA.find((r) => r.id === s.region);
@@ -643,9 +730,40 @@ export async function fillCharacterPdfBytes(
       .filter((e): e is NonNullable<typeof e> => Boolean(e)),
   ];
 
-  nonRitualEntries.forEach((entry, idx) => {
+  const selectedGift = state.magicalGiftId
+    ? getMagicalGiftById(state.magicalGiftId)
+    : undefined;
+
+  const nonRitualRows: Array<{
+    name: string;
+    stamina: string;
+    range: string;
+    duration: string;
+    effect: string;
+  }> = [
+    ...(selectedGift
+      ? [
+          {
+            name: `${selectedGift.name[lang]} (${isFr ? 'Don Magique' : 'Magical Gift'})`,
+            stamina: selectedGift.stamina,
+            range: '8m / Self',
+            duration: selectedGift.castTime[lang],
+            effect: `${selectedGift.effect[lang]} | ${isFr ? 'Effet sec.' : 'Side Effect'}: ${selectedGift.sideEffect[lang]}`,
+          },
+        ]
+      : []),
+    ...nonRitualEntries.map((entry) => ({
+      name: entry.name[lang],
+      stamina: entry.stamina,
+      range: entry.range,
+      duration: entry.duration,
+      effect: entry.effect,
+    })),
+  ];
+
+  nonRitualRows.forEach((entry, idx) => {
     if (idx <= 9) {
-      trySetText(`Sort N${idx}`, entry.name[lang]);
+      trySetText(`Sort N${idx}`, entry.name);
       trySetText(`Sort C${idx}`, entry.stamina);
       trySetText(`Sort P${idx}`, entry.range);
       trySetText(`Sort D${idx}`, entry.duration);
@@ -654,7 +772,7 @@ export async function fillCharacterPdfBytes(
       trySetText(effectFieldName, entry.effect);
     } else {
       overflowNotes.push(
-        `- ${entry.name[lang]} (${entry.stamina} END): ${entry.effect}`
+        `- ${entry.name} (${entry.stamina} END): ${entry.effect}`
       );
     }
   });

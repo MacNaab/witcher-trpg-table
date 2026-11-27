@@ -38,12 +38,15 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { FORMULAE_DATA } from '@/src/data/items';
-import { ALL_MAGIC_ENTRIES, getMagicEntryById } from '@/src/data/magic';
+import {
+  ALL_MAGIC_ENTRIES,
+  getMagicEntryById,
+  getMagicalGiftById,
+} from '@/src/data/magic';
 import { getTalentsByProfession } from '@/src/data/talents';
 import {
   FAMILY_FATES,
   FAMILY_STANDINGS,
-  MAGE_ACADEMIES,
   MAGE_AGES,
   MAGE_CURRENT_STATUS,
   MAGE_IMPORTANT_EVENTS,
@@ -55,6 +58,21 @@ import {
   WITCHER_IMPORTANT_EVENTS,
   WITCHER_SCHOOLS,
 } from '../data/lifepathData';
+import {
+  MAGE_ACADEMIA_EVENTS,
+  MAGE_BIRTH_LOCATIONS,
+  MAGE_DANGER_TABLES,
+  MAGE_DISCOVERIES,
+  MAGE_ELDERLAND_BIRTH_NOTE,
+  MAGE_FAMILY_PERSONALITIES,
+  MAGE_FAMILY_REACTIONS,
+  MAGE_FAMILY_SIZES,
+  MAGE_FAMILY_STATUSES,
+  MAGE_MENTOR_ENDINGS,
+  MAGE_MENTOR_PERSONALITIES,
+  getChaosSchoolDefinition,
+  resolveChaosSchoolId,
+} from '../data/mageLifepathChaosData';
 import {
   PRIMARY_STAT_KEYS,
   getProfessionDefinition,
@@ -149,6 +167,9 @@ export function CharacterSummarySheet({
     .map((id) => getMagicEntryById(id))
     .filter((e): e is NonNullable<typeof e> => Boolean(e));
   const allMagicEntries = [...basicSigns, ...chosenMagicEntries];
+  const selectedGift = state.magicalGiftId
+    ? getMagicalGiftById(state.magicalGiftId)
+    : undefined;
 
   // Resolve Equipment Entries
   const kit = profession ? PROFESSION_STARTER_KITS[profession.id] : null;
@@ -261,8 +282,29 @@ export function CharacterSummarySheet({
       const m = state.mageLifepath;
       const ageLabel =
         MAGE_AGES.find((a) => a.id === m.ageEntered)?.label[lang] ?? '—';
-      const academyLabel =
-        MAGE_ACADEMIES.find((a) => a.id === m.academy)?.label[lang] ?? '—';
+      const schoolDef = getChaosSchoolDefinition(m.academy);
+      const schoolId = resolveChaosSchoolId(m.academy);
+      const birthLabel =
+        m.birthLocationIndex !== null && m.birthLocationIndex !== undefined
+          ? MAGE_BIRTH_LOCATIONS[m.birthLocationIndex]?.label[lang]
+          : undefined;
+      const reactionRegion = m.reactionRegion || (m.elderlandConclave ? 'elderlands' : 'north');
+      const reactionLabel =
+        m.reactionIndex !== null && m.reactionIndex !== undefined
+          ? MAGE_FAMILY_REACTIONS[reactionRegion]?.[m.reactionIndex]?.[lang]
+          : undefined;
+      const discovery =
+        m.discoveryIndex !== null && m.discoveryIndex !== undefined
+          ? MAGE_DISCOVERIES[m.discoveryIndex]?.title[lang]
+          : undefined;
+      const academia1 =
+        m.academiaDecade1Index !== null && m.academiaDecade1Index !== undefined
+          ? MAGE_ACADEMIA_EVENTS[schoolId][m.academiaDecade1Index]?.[lang]
+          : undefined;
+      const academia2 =
+        m.academiaDecade2Index !== null && m.academiaDecade2Index !== undefined
+          ? MAGE_ACADEMIA_EVENTS[schoolId][m.academiaDecade2Index]?.[lang]
+          : undefined;
       const eventLabel =
         m.importantEventIndex !== null
           ? MAGE_IMPORTANT_EVENTS[m.importantEventIndex]?.[lang]
@@ -275,10 +317,53 @@ export function CharacterSummarySheet({
       return (
         <div className="space-y-2 text-xs leading-relaxed">
           <div>
-            <strong>{copy.lifepath.mage.academy}:</strong> {academyLabel} (
-            {ageLabel})
+            <strong>{copy.lifepath.mage.academy}:</strong> {schoolDef.name[lang]}{' '}
+            {ageLabel !== '—' ? `(${ageLabel})` : ''} —{' '}
+            <span className="text-primary">{schoolDef.perkName[lang]}</span>
           </div>
-          {m.trainingResult && (
+          {birthLabel && (
+            <div>
+              <strong>{copy.lifepath.mage.birthLocationLabel}:</strong>{' '}
+              {birthLabel}
+              {m.elderlandConclave ? ` · ${MAGE_ELDERLAND_BIRTH_NOTE[lang]}` : ''}
+            </div>
+          )}
+          {(m.familySizeIndex !== null && m.familySizeIndex !== undefined) && (
+            <div>
+              <strong>{copy.lifepath.mage.familySectionTitle}:</strong>{' '}
+              {MAGE_FAMILY_SIZES[m.familySizeIndex]?.[lang]}
+              {m.familyPersonalityIndex !== null && m.familyPersonalityIndex !== undefined
+                ? ` · ${MAGE_FAMILY_PERSONALITIES[m.familyPersonalityIndex]?.[lang]}`
+                : ''}
+              {m.familyStatusIndex !== null && m.familyStatusIndex !== undefined
+                ? ` · ${MAGE_FAMILY_STATUSES[m.familyStatusIndex]?.[lang]}`
+                : ''}
+            </div>
+          )}
+          {discovery && (
+            <div>
+              <strong>{copy.lifepath.mage.discoveryLabel}:</strong> {discovery}
+              {reactionLabel ? ` → ${reactionLabel}` : ''}
+            </div>
+          )}
+          {(academia1 || academia2) && (
+            <div>
+              <strong>{copy.lifepath.mage.schoolSectionTitle}:</strong>{' '}
+              {[academia1, academia2].filter(Boolean).join(' | ')}
+            </div>
+          )}
+          {m.wasApprentice && (
+            <div>
+              <strong>{copy.lifepath.mage.apprenticeSectionTitle}:</strong>{' '}
+              {m.mentorPersonalityIndex !== null && m.mentorPersonalityIndex !== undefined
+                ? `${MAGE_MENTOR_PERSONALITIES[m.mentorPersonalityIndex]?.[lang] ?? ''}`
+                : copy.lifepath.mage.wasApprenticeLabel}
+              {m.mentorEndingIndex !== null && m.mentorEndingIndex !== undefined
+                ? ` · ${MAGE_MENTOR_ENDINGS[m.mentorEndingIndex]?.[lang] ?? ''}`
+                : ''}
+            </div>
+          )}
+          {m.trainingResult && !academia1 && (
             <div>
               <strong>{copy.lifepath.mage.trainingEvent}:</strong>{' '}
               {m.trainingResult}
@@ -290,22 +375,47 @@ export function CharacterSummarySheet({
               {m.graduationResult}
             </div>
           )}
-          <div>
-            <strong>{copy.lifepath.mage.importantEvent}:</strong> {eventLabel}
-          </div>
-          <div>
-            <strong>{copy.lifepath.mage.currentStatus}:</strong> {statusLabel}
-          </div>
-          {m.decadeEvents.some(Boolean) && (
+          {eventLabel !== '—' && (
+            <div>
+              <strong>{copy.lifepath.mage.importantEvent}:</strong> {eventLabel}
+            </div>
+          )}
+          {statusLabel !== '—' && (
+            <div>
+              <strong>{copy.lifepath.mage.currentStatus}:</strong> {statusLabel}
+            </div>
+          )}
+          {m.chaosDecades && m.chaosDecades.length > 0 ? (
             <ul className="list-disc space-y-1 pl-4 text-muted-foreground">
-              {m.decadeEvents.map((ev, idx) =>
-                ev ? (
+              {m.chaosDecades.map((dec, idx) => {
+                const dangerTxt =
+                  dec.dangerTriggered &&
+                  dec.dangerIndex !== null &&
+                  dec.dangerIndex !== undefined
+                    ? MAGE_DANGER_TABLES[dec.style][dec.dangerIndex]?.[lang]
+                    : '';
+                return (
                   <li key={idx}>
-                    {copy.lifepath.standard.decadeLabel} {idx + 1}: {ev}
+                    {copy.lifepath.standard.decadeLabel} {idx + 1}:{' '}
+                    {dec.eventDetail || '—'}
+                    {dangerTxt ? ` · ${dangerTxt}` : ''}
+                    {dec.grudgeText ? ` · ${dec.grudgeText}` : ''}
                   </li>
-                ) : null
-              )}
+                );
+              })}
             </ul>
+          ) : (
+            m.decadeEvents.some(Boolean) && (
+              <ul className="list-disc space-y-1 pl-4 text-muted-foreground">
+                {m.decadeEvents.map((ev, idx) =>
+                  ev ? (
+                    <li key={idx}>
+                      {copy.lifepath.standard.decadeLabel} {idx + 1}: {ev}
+                    </li>
+                  ) : null
+                )}
+              </ul>
+            )
           )}
         </div>
       );
@@ -714,12 +824,35 @@ export function CharacterSummarySheet({
               <Sparkles className="size-4 text-primary" />
               <span>{copy.summary.magicSection}</span>
             </h3>
-            {allMagicEntries.length === 0 ? (
+            {allMagicEntries.length === 0 && !selectedGift ? (
               <p className="text-xs text-muted-foreground">
                 {copy.summary.noMagic}
               </p>
             ) : (
               <ul className="space-y-2 text-xs">
+                {selectedGift && (
+                  <li className="rounded border border-primary/35 bg-primary/5 p-2.5">
+                    <div className="flex items-center justify-between font-semibold">
+                      <span>
+                        {selectedGift.name[lang]} (
+                        {lang === 'fr' ? 'Don Magique' : 'Magical Gift'})
+                      </span>
+                      <span className="font-mono text-primary">
+                        {selectedGift.stamina}{' '}
+                        {copy.professionSkills.staminaLabel}
+                      </span>
+                    </div>
+                    <div className="mt-1 text-[11px] text-foreground">
+                      {selectedGift.effect[lang]}
+                    </div>
+                    <div className="mt-1 text-[11px] text-amber-700 dark:text-amber-300">
+                      <strong>
+                        {copy.professionSkills.magicalGiftsSideEffectLabel}:{' '}
+                      </strong>
+                      {selectedGift.sideEffect[lang]}
+                    </div>
+                  </li>
+                )}
                 {allMagicEntries.map((entry) => (
                   <li
                     key={entry.id}

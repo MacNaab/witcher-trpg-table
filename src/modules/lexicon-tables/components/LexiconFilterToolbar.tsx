@@ -72,6 +72,7 @@ export function LexiconFilterToolbar({
       activeTab === 'weapon-diagrams' ||
       activeTab === 'armor-diagrams' ||
       activeTab === 'elderfolk-diagrams' ||
+      activeTab === 'special-diagrams' ||
       activeTab === 'formulae');
   const isElderfolkTab = !isGlobalMode && activeTab === 'elderfolk-diagrams';
 

@@ -278,8 +278,8 @@ function buildShopPool(
         price: randomInt(1, 50),
       }));
 
-      const diagrams: GeneratedShopItem[] = CRAFTING_DIAGRAMS.filter((d) =>
-        craftTiers.has(d.tier)
+      const diagrams: GeneratedShopItem[] = CRAFTING_DIAGRAMS.filter(
+        (d) => d.pool !== 'S' && d.price > 0 && craftTiers.has(d.tier)
       ).map((d) => ({
         id: d.id,
         name: d.name,

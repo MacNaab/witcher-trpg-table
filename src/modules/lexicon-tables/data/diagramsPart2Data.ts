@@ -660,7 +660,7 @@ export const ARMOR_DIAGRAMS_DATA: readonly DiagramLexiconEntry[] = [
     "tabId": "armor-diagrams",
     "rowKind": "diagram",
     "name": {
-      "en": "Hindersfjall Heavy Armor",
+      "en": "Hindarsfjall Heavy Armor",
       "fr": "Armure lourde Hindarsfjall"
     },
     "level": "master",
@@ -681,8 +681,8 @@ export const ARMOR_DIAGRAMS_DATA: readonly DiagramLexiconEntry[] = [
     "tabId": "armor-diagrams",
     "rowKind": "diagram",
     "name": {
-      "en": "Hindersfjall Heavy Chausses",
-      "fr": "Chausse lourde Hindarsfjall"
+      "en": "Hindarsfjall Heavy Chausses",
+      "fr": "Chausses lourdes d’Hindarsfjall"
     },
     "level": "master",
     "dc": "22",

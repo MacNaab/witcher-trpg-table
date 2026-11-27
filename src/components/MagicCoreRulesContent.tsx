@@ -9,6 +9,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { MAGIC_CORE_RULES } from '@/src/data/magic';
+import { MagicChaosRulesSection } from './MagicChaosRulesSection';
 
 interface MagicCoreRulesContentProps {
   lang: 'en' | 'fr';
@@ -267,6 +268,9 @@ export function MagicCoreRulesContent({
           </div>
         </div>
       </div>
+
+      {/* 4. Tome of Chaos: Ley Lines, Necromancy, Goetia */}
+      <MagicChaosRulesSection lang={lang} searchQuery={searchQuery} />
     </div>
   );
 }

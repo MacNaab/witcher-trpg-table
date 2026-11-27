@@ -995,5 +995,117 @@ export const POTIONS_DATA: readonly PotionCatalogEntry[] = [
     "priceDisplay": "18",
     "race": "Humain",
     "source": "Base"
+  },
+  {
+    "id": "pt-elx-anabolic-steroids",
+    "name": {
+      "en": "Anabolic Steroids",
+      "fr": "Stéroïdes anabolisants"
+    },
+    "type": "Elixirs",
+    "availability": "R",
+    "effect": "+10 PV maximum, +2 en Endurance et en Physique pendant 10 minutes ; rend extrêmement agressif pendant 1 heure.",
+    "duration": "10mn / 1h",
+    "toxicity": "50%",
+    "price": 165,
+    "priceDisplay": "165",
+    "race": "Humain",
+    "source": "Tome of Chaos"
+  },
+  {
+    "id": "pt-elx-last-hope",
+    "name": {
+      "en": "Last Hope",
+      "fr": "Dernier Espoir"
+    },
+    "type": "Elixirs",
+    "availability": "R",
+    "effect": "Traite immédiatement 1 blessure critique, mais celle-ci ne guérit définitivement qu’après un jet de Mains thérapeutiques SD 24 pour la rouvrir et la traiter.",
+    "duration": "Instantané",
+    "toxicity": "75%",
+    "price": 200,
+    "priceDisplay": "200",
+    "race": "Humain",
+    "source": "Tome of Chaos"
+  },
+  {
+    "id": "pt-elx-lightning",
+    "name": {
+      "en": "Lightning",
+      "fr": "Éclair"
+    },
+    "type": "Elixirs",
+    "availability": "R",
+    "effect": "Confère +3 aux dégâts lors de votre prochaine attaque physique.",
+    "duration": "1 attaque",
+    "toxicity": "75%",
+    "price": 75,
+    "priceDisplay": "75",
+    "race": "Humain",
+    "source": "Tome of Chaos"
+  },
+  {
+    "id": "pt-elx-mongoose",
+    "name": {
+      "en": "Mongoose",
+      "fr": "Mangouste"
+    },
+    "type": "Elixirs",
+    "availability": "R",
+    "effect": "Rend le buveur immunisé à l’état Empoisonné pendant 30 minutes.",
+    "duration": "30mn",
+    "toxicity": "50%",
+    "price": 50,
+    "priceDisplay": "50",
+    "race": "Humain",
+    "source": "Tome of Chaos"
+  },
+  {
+    "id": "pt-elx-strider",
+    "name": {
+      "en": "Strider",
+      "fr": "Arpenteur"
+    },
+    "type": "Elixirs",
+    "availability": "R",
+    "effect": "Supprime le besoin de dormir pendant une période de 24 heures.",
+    "duration": "24h",
+    "toxicity": "50%",
+    "price": 64,
+    "priceDisplay": "64",
+    "race": "Humain",
+    "source": "Tome of Chaos"
+  },
+  {
+    "id": "pt-elx-tempest",
+    "name": {
+      "en": "Tempest",
+      "fr": "Tempête"
+    },
+    "type": "Elixirs",
+    "availability": "R",
+    "effect": "Augmente de +10 % les chances d’infliger Feu, Gel ou À terre lors d’une attaque ou d’un sort.",
+    "duration": "Scène",
+    "toxicity": "50%",
+    "price": 52,
+    "priceDisplay": "52",
+    "race": "Humain",
+    "source": "Tome of Chaos"
+  },
+  {
+    "id": "pt-elx-cerebral",
+    "name": {
+      "en": "Cerebral Elixir",
+      "fr": "Élixir cérébral"
+    },
+    "type": "Elixirs",
+    "availability": "R",
+    "effect": "Empêche d’être possédé par un Bes pendant 24 heures ; bu en cours de possession, expulse immédiatement le Bes.",
+    "duration": "24h",
+    "toxicity": "0%",
+    "price": 1332,
+    "priceDisplay": "1332",
+    "race": "Humain",
+    "source": "Tome of Chaos"
   }
 ];

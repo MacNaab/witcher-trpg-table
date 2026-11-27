@@ -1,4 +1,16 @@
-import { Copy, FlaskConical, Package, Shield, Swords } from 'lucide-react';
+import {
+  Bomb,
+  Copy,
+  Crown,
+  Dna,
+  FlaskConical,
+  Gem,
+  Package,
+  Shield,
+  Sparkles,
+  Swords,
+  Trophy,
+} from 'lucide-react';
 import { toast } from 'sonner';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -14,8 +26,14 @@ import { Separator } from '@/components/ui/separator';
 import { useI18n } from '@/src/contexts/I18nContext';
 import type {
   ArmorCatalogEntry,
+  ExperimentalTechEntry,
   GearCatalogEntry,
+  MagicItemCatalogEntry,
+  MutagenCatalogEntry,
   PotionCatalogEntry,
+  RelicCatalogEntry,
+  RuneGlyphEntry,
+  TrophyCatalogEntry,
   WeaponCatalogEntry,
 } from '@/src/data/items/types';
 
@@ -23,7 +41,13 @@ export type CompendiumSearchItem =
   | { kind: 'weapon'; entry: WeaponCatalogEntry }
   | { kind: 'armor'; entry: ArmorCatalogEntry }
   | { kind: 'alchemy'; entry: PotionCatalogEntry }
-  | { kind: 'gear'; entry: GearCatalogEntry };
+  | { kind: 'gear'; entry: GearCatalogEntry }
+  | { kind: 'relic'; entry: RelicCatalogEntry }
+  | { kind: 'experimental'; entry: ExperimentalTechEntry }
+  | { kind: 'runeGlyph'; entry: RuneGlyphEntry }
+  | { kind: 'magicItem'; entry: MagicItemCatalogEntry }
+  | { kind: 'trophy'; entry: TrophyCatalogEntry }
+  | { kind: 'mutagen'; entry: MutagenCatalogEntry };
 
 interface CompendiumItemDialogProps {
   item: CompendiumSearchItem | null;
@@ -44,7 +68,8 @@ function StatField({ label, value }: { label: string; value?: string }) {
 }
 
 /**
- * Read-only quick-inspection modal for Weapons, Armor, Shields, Alchemy, and Gear
+ * Read-only quick-inspection modal for Weapons, Armor, Shields, Alchemy, Gear,
+ * Relics, Experimental Tech, Runes/Glyphs, Magic Items, Trophies, and Mutagens
  * launched directly from Ctrl+K global search.
  */
 export function CompendiumItemDialog({
@@ -63,29 +88,77 @@ export function CompendiumItemDialog({
   const title = entry.name[lang];
   const altTitle = entry.name[altLang];
 
-  const kindLabel =
-    item.kind === 'weapon'
-      ? c.weaponKind
-      : item.kind === 'armor'
-        ? item.entry.isShield
-          ? c.shieldKind
-          : c.armorKind
-        : item.kind === 'alchemy'
-          ? c.alchemyKind
-          : c.gearKind;
+  const kindLabel = (() => {
+    switch (item.kind) {
+      case 'weapon':
+        return c.weaponKind;
+      case 'armor':
+        return item.entry.isShield ? c.shieldKind : c.armorKind;
+      case 'alchemy':
+        return c.alchemyKind;
+      case 'gear':
+        return c.gearKind;
+      case 'relic':
+        return c.relicKind;
+      case 'experimental':
+        return c.experimentalKind;
+      case 'runeGlyph':
+        return c.runeGlyphKind;
+      case 'magicItem':
+        return c.magicItemKind;
+      case 'trophy':
+        return c.trophyKind;
+      case 'mutagen':
+        return c.mutagenKind;
+    }
+  })();
 
-  const Icon =
-    item.kind === 'weapon'
-      ? Swords
-      : item.kind === 'armor'
-        ? Shield
-        : item.kind === 'alchemy'
-          ? FlaskConical
-          : Package;
+  const Icon = (() => {
+    switch (item.kind) {
+      case 'weapon':
+        return Swords;
+      case 'armor':
+        return Shield;
+      case 'alchemy':
+        return FlaskConical;
+      case 'gear':
+        return Package;
+      case 'relic':
+        return Crown;
+      case 'experimental':
+        return Bomb;
+      case 'runeGlyph':
+        return Gem;
+      case 'magicItem':
+        return Sparkles;
+      case 'trophy':
+        return Trophy;
+      case 'mutagen':
+        return Dna;
+    }
+  })();
+
+  const availabilityBadge =
+    'availability' in entry ? entry.availability : null;
+  const priceDisplay = 'priceDisplay' in entry ? entry.priceDisplay : undefined;
+  const mutagenColorLabel =
+    item.kind === 'mutagen'
+      ? lang === 'fr'
+        ? item.entry.color === 'red'
+          ? 'Rouge'
+          : item.entry.color === 'green'
+            ? 'Vert'
+            : 'Bleu'
+        : item.entry.color.toUpperCase()
+      : null;
 
   const handleCopy = async () => {
     const lines: string[] = [`${title} (${altTitle}) — ${kindLabel}`];
-    lines.push(`${c.priceLabel}: ${entry.priceDisplay} · ${c.availabilityLabel}: ${entry.availability}`);
+    if (priceDisplay || availabilityBadge) {
+      lines.push(
+        `${c.priceLabel}: ${priceDisplay ?? '—'} · ${c.availabilityLabel}: ${availabilityBadge ?? '—'}`
+      );
+    }
 
     if (item.kind === 'weapon') {
       lines.push(
@@ -99,7 +172,30 @@ export function CompendiumItemDialog({
       lines.push(
         `${c.durationLabel}: ${item.entry.duration} · ${c.toxicityLabel}: ${item.entry.toxicity}`
       );
+    } else if (item.kind === 'relic') {
+      if (item.entry.relicType === 'weapon') {
+        lines.push(
+          `${c.damageLabel}: ${item.entry.damage ?? '—'} · ${c.accuracyLabel}: ${item.entry.accuracy ?? '—'} · ${c.reliabilityLabel}: ${item.entry.reliability ?? '—'}`
+        );
+      } else {
+        lines.push(
+          `${c.spLabel}: ${item.entry.sp ?? '—'} · ${c.evLabel}: ${item.entry.ev ?? '—'}`
+        );
+      }
+    } else if (item.kind === 'experimental') {
+      lines.push(
+        `${c.damageLabel}: ${item.entry.damage} · ${c.rangeLabel}: ${item.entry.range} · ${c.dcLabel}: ${item.entry.craftDc}`
+      );
+    } else if (item.kind === 'runeGlyph') {
+      lines.push(
+        `${c.targetLabel}: ${item.entry.target[lang]} · ${c.slotsLabel}: ${item.entry.slots}`
+      );
+    } else if (item.kind === 'mutagen') {
+      lines.push(
+        `${c.colorLabel}: ${mutagenColorLabel} · ${c.alchemyDcLabel}: ${item.entry.alchemyDc} · ${c.mutationLabel}: ${item.entry.minorMutation}`
+      );
     }
+
     if (entry.effect) {
       lines.push(`${c.effectLabel}: ${entry.effect}`);
     }
@@ -122,9 +218,16 @@ export function CompendiumItemDialog({
             <Badge variant="outline" className="text-[11px]">
               {kindLabel}
             </Badge>
-            <Badge variant="secondary" className="font-mono text-[11px]">
-              {entry.availability}
-            </Badge>
+            {availabilityBadge && (
+              <Badge variant="secondary" className="font-mono text-[11px]">
+                {availabilityBadge}
+              </Badge>
+            )}
+            {mutagenColorLabel && (
+              <Badge variant="secondary" className="font-mono text-[11px]">
+                {mutagenColorLabel}
+              </Badge>
+            )}
           </div>
           {altTitle !== title && (
             <DialogDescription className="font-mono text-xs">
@@ -135,11 +238,41 @@ export function CompendiumItemDialog({
 
         <div className="flex flex-col gap-3.5 sm:max-h-[65dvh] sm:overflow-y-auto sm:pr-1">
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-            <StatField
-              label={c.categoryLabel}
-              value={item.kind === 'alchemy' ? item.entry.type : item.entry.category}
-            />
-            <StatField label={c.priceLabel} value={entry.priceDisplay} />
+            {'category' in entry && (
+              <StatField label={c.categoryLabel} value={entry.category} />
+            )}
+            {item.kind === 'alchemy' && (
+              <StatField label={c.categoryLabel} value={item.entry.type} />
+            )}
+            {item.kind === 'relic' && (
+              <StatField
+                label={c.categoryLabel}
+                value={item.entry.subType[lang]}
+              />
+            )}
+            {item.kind === 'experimental' && (
+              <StatField
+                label={c.categoryLabel}
+                value={item.entry.techType.toUpperCase()}
+              />
+            )}
+            {item.kind === 'runeGlyph' && (
+              <StatField label={c.targetLabel} value={item.entry.target[lang]} />
+            )}
+            {item.kind === 'trophy' && (
+              <StatField
+                label={c.monsterCategoryLabel}
+                value={item.entry.monsterCategory[lang]}
+              />
+            )}
+            {item.kind === 'mutagen' && (
+              <StatField
+                label={c.monsterCategoryLabel}
+                value={item.entry.sourceMonster[lang]}
+              />
+            )}
+
+            <StatField label={c.priceLabel} value={priceDisplay} />
             {'weight' in entry && (
               <StatField label={c.weightLabel} value={entry.weight} />
             )}
@@ -170,7 +303,80 @@ export function CompendiumItemDialog({
                 <StatField label={c.toxicityLabel} value={item.entry.toxicity} />
               </>
             )}
+
+            {item.kind === 'relic' && (
+              <>
+                <StatField label={c.dcLabel} value={`Éduc. ${item.entry.educationDc}`} />
+                {item.entry.relicType === 'weapon' ? (
+                  <>
+                    <StatField label={c.damageLabel} value={item.entry.damage} />
+                    <StatField label={c.accuracyLabel} value={item.entry.accuracy} />
+                    <StatField label={c.reliabilityLabel} value={item.entry.reliability} />
+                    <StatField label={c.handsLabel} value={item.entry.hands} />
+                    <StatField label={c.rangeLabel} value={item.entry.range} />
+                  </>
+                ) : (
+                  <>
+                    <StatField label={c.spLabel} value={item.entry.sp} />
+                    <StatField label={c.evLabel} value={item.entry.ev} />
+                    <StatField
+                      label={c.targetLabel}
+                      value={item.entry.coverage?.[lang]}
+                    />
+                  </>
+                )}
+                <StatField label={c.enhancementsLabel} value={item.entry.enhancements} />
+              </>
+            )}
+
+            {item.kind === 'experimental' && (
+              <>
+                <StatField label={c.damageLabel} value={item.entry.damage} />
+                <StatField label={c.rangeLabel} value={item.entry.range} />
+                <StatField label={c.dcLabel} value={item.entry.craftDc} />
+                <StatField label={c.craftTimeLabel} value={item.entry.craftTime} />
+              </>
+            )}
+
+            {item.kind === 'runeGlyph' && (
+              <>
+                <StatField label={c.slotsLabel} value={item.entry.slots} />
+                <StatField label={c.dcLabel} value={item.entry.diagramDc} />
+              </>
+            )}
+
+            {item.kind === 'magicItem' && (
+              <StatField label={c.dcLabel} value={`Éduc. ${item.entry.educationDc}`} />
+            )}
+
+            {item.kind === 'mutagen' && (
+              <>
+                <StatField label={c.alchemyDcLabel} value={item.entry.alchemyDc} />
+                <StatField label={c.colorLabel} value={mutagenColorLabel ?? undefined} />
+              </>
+            )}
           </div>
+
+          {item.kind === 'experimental' && item.entry.craftComponents && (
+            <div className="rounded-md border border-border/60 bg-muted/20 px-3 py-2 text-xs text-muted-foreground">
+              <span className="font-semibold text-foreground">{c.componentsLabel}: </span>
+              {item.entry.craftComponents}
+            </div>
+          )}
+
+          {item.kind === 'runeGlyph' && item.entry.diagramComponents && (
+            <div className="rounded-md border border-border/60 bg-muted/20 px-3 py-2 text-xs text-muted-foreground">
+              <span className="font-semibold text-foreground">{c.componentsLabel}: </span>
+              {item.entry.diagramComponents}
+            </div>
+          )}
+
+          {item.kind === 'mutagen' && item.entry.minorMutation && (
+            <div className="rounded-md border border-border/60 bg-muted/20 px-3 py-2 text-xs text-muted-foreground">
+              <span className="font-semibold text-foreground">{c.mutationLabel}: </span>
+              {item.entry.minorMutation}
+            </div>
+          )}
 
           {entry.effect && (
             <>
@@ -186,7 +392,7 @@ export function CompendiumItemDialog({
             </>
           )}
 
-          {entry.source && (
+          {'source' in entry && entry.source && (
             <p className="text-xs text-muted-foreground">
               {c.sourceLabel}: {entry.source}
             </p>

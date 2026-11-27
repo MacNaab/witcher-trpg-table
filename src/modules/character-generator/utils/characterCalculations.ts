@@ -1,4 +1,9 @@
-import { ALL_MAGIC_ENTRIES, getMagicEntryById, type MagicEntry } from '@/src/data/magic';
+import {
+  ALL_MAGIC_ENTRIES,
+  getMagicEntryById,
+  getMagicalGiftById,
+  type MagicEntry,
+} from '@/src/data/magic';
 import { FORMULAE_DATA } from '@/src/data/items';
 import {
   FAMILY_FATES,
@@ -23,6 +28,30 @@ import {
   rollStandardDecadeEvent,
   rollWitcherDecadeEvent,
 } from '../data/lifepathData';
+import {
+  MAGE_ACADEMIA_EVENTS,
+  MAGE_BENEFIT_EVENTS,
+  MAGE_BIRTH_LOCATIONS,
+  MAGE_CHAOS_SCHOOLS,
+  MAGE_DANGER_TABLES,
+  MAGE_DECADE_STYLES,
+  MAGE_DISCOVERIES,
+  MAGE_FAMILY_PERSONALITIES,
+  MAGE_FAMILY_REACTIONS,
+  MAGE_FAMILY_SIZES,
+  MAGE_FAMILY_STATUSES,
+  MAGE_KNOWLEDGE_EVENTS,
+  MAGE_MENTOR_CLOTHING,
+  MAGE_MENTOR_ENDINGS,
+  MAGE_MENTOR_HATREDS,
+  MAGE_MENTOR_MOMENTS,
+  MAGE_MENTOR_PERSONALITIES,
+  MAGE_MENTOR_TEACHING_STYLES,
+  MAGE_MENTOR_VALUES,
+  getChaosSchoolDefinition,
+  rollMageAllySummary,
+  rollMageGrudgeSummary,
+} from '../data/mageLifepathChaosData';
 import {
   PRIMARY_STAT_KEYS,
   PROFESSIONS_DATA,
@@ -122,6 +151,25 @@ export function createInitialCharacterState(
       currentStatusIndex: null,
       decadeSafety: ['safe', 'safe', 'safe'],
       decadeEvents: ['', '', ''],
+      birthLocationIndex: null,
+      elderlandConclave: false,
+      familySizeIndex: null,
+      familyPersonalityIndex: null,
+      familyStatusIndex: null,
+      discoveryIndex: null,
+      reactionRegion: '',
+      reactionIndex: null,
+      academiaDecade1Index: null,
+      academiaDecade2Index: null,
+      wasApprentice: null,
+      mentorPersonalityIndex: null,
+      mentorValueIndex: null,
+      mentorClothingIndex: null,
+      mentorHatredIndex: null,
+      mentorTeachingIndex: null,
+      mentorMomentIndex: null,
+      mentorEndingIndex: null,
+      chaosDecades: [],
     },
     customLifepath: {
       origin: '',
@@ -152,11 +200,13 @@ export function createInitialCharacterState(
     selectedCraftSkill: '',
     selectedLanguages: [],
     includeUnofficialMagic: mode === 'advanced',
+    includeDarkArtsMagic: mode === 'advanced',
     selectedSpells: [],
     selectedInvocations: [],
     selectedRituals: [],
     selectedHexes: [],
     selectedVampirePowers: [],
+    magicalGiftId: '',
     generalSkillRanks: {},
     selectedStarterGearIds: [],
     witcherDecoctionFormulaId: '',
@@ -196,6 +246,31 @@ export function isProfessionRestrictedForRace(
 }
 
 /**
+ * Magical Gifts ("The Magical Mundane" — A Tome of Chaos) are restricted to non-casters
+ * (no Mage, Priest, Druid, Witcher, or Vampire). In Simple Mode, only Humans & Elves are eligible.
+ */
+export function canCharacterTakeMagicalGift(
+  raceId: RaceId | '',
+  professionId: CharacterProfessionId | '',
+  mode: GeneratorMode
+): boolean {
+  if (!professionId) return false;
+  if (
+    professionId === 'mage' ||
+    professionId === 'priest' ||
+    professionId === 'druid' ||
+    professionId === 'witcher' ||
+    professionId === 'vampire'
+  ) {
+    return false;
+  }
+  if (mode === 'simple') {
+    return raceId === 'human' || raceId === 'elf';
+  }
+  return true;
+}
+
+/**
  * Calculates derived statistics using fixed Witcher TRPG formulas
  * (including LEAP = Math.floor(RUN / 5)).
  */
@@ -217,9 +292,14 @@ export function calculateDerivedStats(state: CharacterSheetState): DerivedStats 
     state.raceId === 'gnome' ? Math.max(1, cor - 3) : cor;
   const encumbrance =
     effectiveEncBody * 10 + (state.raceId === 'dwarf' ? 25 : 0);
-  const vigor = state.professionId
+  const baseVigor = state.professionId
     ? getProfessionDefinition(state.professionId).vigorThreshold
     : 0;
+  const giftBonusVigor =
+    baseVigor === 0 && Boolean(state.magicalGiftId && getMagicalGiftById(state.magicalGiftId))
+      ? 2
+      : 0;
+  const vigor = baseVigor + giftBonusVigor;
 
   return {
     statBase,
@@ -293,12 +373,16 @@ export function getActiveProfessionSkills(
 }
 
 /**
- * Returns skill points consumed by a given rank (x2 for difficult skills).
+ * Returns skill points consumed by a given rank (x2 for difficult skills, unless waived by Higher Vampire perk).
  */
-export function getSkillPointCost(skillId: SkillId, rank: number): number {
+export function getSkillPointCost(
+  skillId: SkillId,
+  rank: number,
+  waiveDoubleCost = false
+): number {
   if (rank <= 0) return 0;
   const def = getSkillDefinition(skillId);
-  return def.doubleCost ? rank * 2 : rank;
+  return def.doubleCost && !waiveDoubleCost ? rank * 2 : rank;
 }
 
 export function getProfessionSkillPointsSpent(
@@ -306,10 +390,11 @@ export function getProfessionSkillPointsSpent(
 ): number {
   if (!state.professionId) return 0;
   const activeSkills = getActiveProfessionSkills(state);
+  const waiveDoubleCost = state.raceId === 'vampire';
   let total = state.definingSkillRank;
   for (const skillId of activeSkills) {
     const rank = state.professionSkillRanks[skillId] ?? 0;
-    total += getSkillPointCost(skillId, rank);
+    total += getSkillPointCost(skillId, rank, waiveDoubleCost);
   }
   return total;
 }
@@ -330,10 +415,11 @@ export function getAvailableGeneralSkills(
 
 export function getGeneralSkillPointsSpent(state: CharacterSheetState): number {
   const available = new Set(getAvailableGeneralSkills(state));
+  const waiveDoubleCost = state.raceId === 'vampire';
   let total = 0;
   for (const [id, rank] of Object.entries(state.generalSkillRanks)) {
     if (!available.has(id as SkillId)) continue;
-    total += getSkillPointCost(id as SkillId, rank ?? 0);
+    total += getSkillPointCost(id as SkillId, rank ?? 0, waiveDoubleCost);
   }
   return total;
 }
@@ -364,9 +450,11 @@ export function getMagicPoolsForState(state: CharacterSheetState): {
   hexes: MagicEntry[];
   vampirePowers: MagicEntry[];
   basicSigns: MagicEntry[];
+  advancedSigns: MagicEntry[];
 } {
   const isAdvanced = state.mode === 'advanced';
   const allowUnofficial = state.includeUnofficialMagic;
+  const allowDarkArts = state.includeDarkArtsMagic;
 
   const sourceOk = (entry: MagicEntry) =>
     entry.source === 'official' ||
@@ -375,22 +463,35 @@ export function getMagicPoolsForState(state: CharacterSheetState): {
   const spells = ALL_MAGIC_ENTRIES.filter(
     (e) =>
       sourceOk(e) &&
-      ['mixed', 'earth', 'air', 'fire', 'water'].includes(e.schoolId) &&
+      (['mixed', 'earth', 'air', 'fire', 'water'].includes(e.schoolId) ||
+        (allowDarkArts && e.schoolId === 'necromancy')) &&
       (isAdvanced || e.tier === 'novice')
   );
+
+  const allowedInvocationSchools =
+    state.professionId === 'druid'
+      ? ['druid', ...(isAdvanced ? ['druid-hierophant'] : [])]
+      : state.professionId === 'priest'
+        ? ['priest', ...(isAdvanced ? ['archpriest'] : [])]
+        : [
+            'druid',
+            'priest',
+            ...(isAdvanced ? ['archpriest', 'druid-hierophant'] : []),
+          ];
 
   const invocations = ALL_MAGIC_ENTRIES.filter(
     (e) =>
       sourceOk(e) &&
-      (['druid', 'priest'].includes(e.schoolId) ||
-        (isAdvanced && e.schoolId === 'archpriest')) &&
+      allowedInvocationSchools.includes(e.schoolId) &&
       (isAdvanced || e.tier === 'novice')
   );
 
   const rituals = ALL_MAGIC_ENTRIES.filter(
     (e) =>
       sourceOk(e) &&
-      e.schoolId === 'ritual' &&
+      (e.schoolId === 'ritual' ||
+        (allowDarkArts &&
+          (e.schoolId === 'necromancy' || e.schoolId === 'goetia'))) &&
       (isAdvanced || e.tier === 'novice')
   );
 
@@ -404,12 +505,19 @@ export function getMagicPoolsForState(state: CharacterSheetState): {
   );
 
   const vampirePowers = ALL_MAGIC_ENTRIES.filter(
-    (e) => e.source === 'vampire' || e.schoolId === 'vampire-spell'
+    (e) =>
+      (e.source === 'vampire' || e.schoolId === 'vampire-spell') &&
+      (isAdvanced || e.tier === 'novice')
   );
 
   const basicSigns = ALL_MAGIC_ENTRIES.filter(
     (e) => e.schoolId === 'sign-basic'
   );
+
+  const advancedSigns =
+    isAdvanced || allowDarkArts
+      ? ALL_MAGIC_ENTRIES.filter((e) => e.schoolId === 'sign-advanced')
+      : [];
 
   return {
     spells,
@@ -418,6 +526,7 @@ export function getMagicPoolsForState(state: CharacterSheetState): {
     hexes,
     vampirePowers,
     basicSigns,
+    advancedSigns,
   };
 }
 
@@ -481,9 +590,18 @@ export function applyRaceChange(
     nextOriginIndex = null;
   }
 
+  const nextMagicalGiftId = canCharacterTakeMagicalGift(
+    raceId,
+    nextProfession,
+    prev.mode
+  )
+    ? prev.magicalGiftId
+    : '';
+
   const nextState: CharacterSheetState = {
     ...prev,
     raceId,
+    magicalGiftId: nextMagicalGiftId,
     standardLifepath: {
       ...prev.standardLifepath,
       region: nextRegion,
@@ -525,6 +643,7 @@ export function applyProfessionChange(
       selectedRituals: [],
       selectedHexes: [],
       selectedVampirePowers: [],
+      magicalGiftId: '',
       selectedStarterGearIds: [],
       witcherDecoctionFormulaId: '',
       witcherOilFormulaIds: ['', ''],
@@ -550,6 +669,14 @@ export function applyProfessionChange(
     nextRaceId = '';
   }
 
+  const nextMagicalGiftId = canCharacterTakeMagicalGift(
+    nextRaceId,
+    professionId,
+    prev.mode
+  )
+    ? prev.magicalGiftId
+    : '';
+
   return {
     ...prev,
     raceId: nextRaceId,
@@ -564,6 +691,7 @@ export function applyProfessionChange(
     selectedRituals: [],
     selectedHexes: [],
     selectedVampirePowers: [],
+    magicalGiftId: nextMagicalGiftId,
     selectedStarterGearIds: [],
     witcherDecoctionFormulaId: '',
     witcherOilFormulaIds: ['', ''],
@@ -638,14 +766,29 @@ export function validateWizardStep(
       }
     } else if (track === 'mage' && isSimple) {
       const m = state.mageLifepath;
-      if (
-        !m.ageEntered ||
-        !m.academy ||
-        !m.trainingResult ||
-        !m.graduationResult ||
-        m.importantEventIndex === null ||
-        m.currentStatusIndex === null
-      ) {
+      const hasLegacyCore = Boolean(
+        m.ageEntered &&
+          m.academy &&
+          m.trainingResult &&
+          m.graduationResult &&
+          m.importantEventIndex !== null &&
+          m.currentStatusIndex !== null
+      );
+      const hasChaosPath = Boolean(
+        (m.birthLocationIndex !== null && m.birthLocationIndex !== undefined || m.elderlandConclave) &&
+          m.familySizeIndex !== null &&
+          m.familySizeIndex !== undefined &&
+          m.discoveryIndex !== null &&
+          m.discoveryIndex !== undefined &&
+          m.reactionIndex !== null &&
+          m.reactionIndex !== undefined &&
+          m.academy &&
+          m.academiaDecade1Index !== null &&
+          m.academiaDecade1Index !== undefined &&
+          m.academiaDecade2Index !== null &&
+          m.academiaDecade2Index !== undefined
+      );
+      if (!hasLegacyCore && !hasChaosPath) {
         errors.push(copy.errors.incompleteMageLifepath);
       }
     }
@@ -700,9 +843,13 @@ export function validateWizardStep(
 
       if (isSimple && prof.magicConfig) {
         const cfg = prof.magicConfig;
+        const isHalflingDruid =
+          state.raceId === 'halfling' && state.professionId === 'druid';
         if (
           (cfg.spells && state.selectedSpells.length < cfg.spells) ||
-          (cfg.invocations && state.selectedInvocations.length < cfg.invocations) ||
+          (!isHalflingDruid &&
+            cfg.invocations &&
+            state.selectedInvocations.length < cfg.invocations) ||
           (cfg.rituals && state.selectedRituals.length < cfg.rituals) ||
           (cfg.hexes && state.selectedHexes.length < cfg.hexes) ||
           (cfg.vampirePowers &&
@@ -904,44 +1051,169 @@ export function rollMageTrainingAndGraduation(
   };
 }
 
+export function rollChaosMageDecade(
+  style: NonNullable<CharacterSheetState['mageLifepath']['chaosDecades']>[number]['style'],
+  lang: ModuleLanguage
+): NonNullable<CharacterSheetState['mageLifepath']['chaosDecades']>[number] {
+  const styleDef =
+    MAGE_DECADE_STYLES.find((s) => s.id === style) ?? MAGE_DECADE_STYLES[0];
+  const dangerRoll = Math.floor(Math.random() * 100) + 1;
+  const dangerTriggered = dangerRoll <= styleDef.dangerPct;
+  const dangerIndex = dangerTriggered ? randIndex(10) : null;
+  let grudgeText = '';
+  if (
+    dangerTriggered &&
+    ((style === 'cautious' && dangerIndex === 0) ||
+      (style === 'politicking' && (dangerIndex === 4 || dangerIndex === 8)))
+  ) {
+    grudgeText = rollMageGrudgeSummary(lang);
+  }
+
+  const eventD10 = Math.floor(Math.random() * 10) + 1;
+  const eventOutcome = styleDef.rollEventOutcome(eventD10);
+  let eventIndex: number | null = null;
+  let eventDetail = '';
+  if (eventOutcome === 'benefit') {
+    eventIndex = randIndex(MAGE_BENEFIT_EVENTS.length);
+    eventDetail = MAGE_BENEFIT_EVENTS[eventIndex][lang];
+  } else if (eventOutcome === 'ally') {
+    eventDetail = rollMageAllySummary(lang);
+  } else if (eventOutcome === 'knowledge') {
+    eventIndex = randIndex(MAGE_KNOWLEDGE_EVENTS.length);
+    eventDetail = MAGE_KNOWLEDGE_EVENTS[eventIndex][lang];
+  } else {
+    eventDetail = lang === 'fr' ? 'Rien de notable cette décennie.' : 'Nothing notable this decade.';
+  }
+
+  return {
+    style,
+    dangerTriggered,
+    dangerRoll,
+    dangerIndex,
+    grudgeText,
+    eventOutcome,
+    eventIndex,
+    eventDetail,
+  };
+}
+
 export function randomizeMageLifepath(
   state: CharacterSheetState,
   lang: ModuleLanguage
 ): CharacterSheetState {
+  const birthLocationIndex = randIndex(MAGE_BIRTH_LOCATIONS.length);
+  const birthEntry = MAGE_BIRTH_LOCATIONS[birthLocationIndex];
+  const isElderRace =
+    state.raceId === 'elf' ||
+    state.raceId === 'gnome' ||
+    state.raceId === 'vran' ||
+    state.raceId === 'werebbub';
+  const elderlandConclave = isElderRace && Math.random() < 0.65;
+
+  const reactionRegion: RegionId = elderlandConclave
+    ? 'elderlands'
+    : birthEntry.regionId;
+
+  const familySizeIndex = randIndex(MAGE_FAMILY_SIZES.length);
+  const familyPersonalityIndex = randIndex(MAGE_FAMILY_PERSONALITIES.length);
+  const familyStatusIndex = randIndex(MAGE_FAMILY_STATUSES.length);
+  const discoveryIndex = randIndex(MAGE_DISCOVERIES.length);
+  const discoveryMod = MAGE_DISCOVERIES[discoveryIndex].nextRollMod;
+  const rawReaction = Math.floor(Math.random() * 6) + 1 + discoveryMod;
+  const reactionIndex = Math.max(0, Math.min(5, rawReaction - 1));
+
+  // School selection aligned with region/gender guidelines
+  let schoolId = getChaosSchoolDefinition('aretuza').id;
+  if (reactionRegion === 'elderlands') {
+    schoolId = 'minor-academia';
+  } else if (reactionRegion === 'nilfgaard') {
+    schoolId = 'gweison-haul';
+  } else {
+    schoolId = state.gender === 'male' ? 'ban-ard' : 'aretuza';
+  }
+  const schoolDef = MAGE_CHAOS_SCHOOLS.find((s) => s.id === schoolId) ?? MAGE_CHAOS_SCHOOLS[0];
+
+  const academiaDecade1Index = randIndex(MAGE_ACADEMIA_EVENTS[schoolId].length);
+  const academiaDecade2Index = randIndex(MAGE_ACADEMIA_EVENTS[schoolId].length);
+
+  const forcedApprentice =
+    (schoolId === 'ban-ard' && (academiaDecade1Index === 1 || academiaDecade2Index === 1)) ||
+    (schoolId === 'gweison-haul' && (academiaDecade1Index === 1 || academiaDecade2Index === 1)) ||
+    (schoolId === 'aretuza' && (academiaDecade1Index === 8 || academiaDecade2Index === 8));
+  const apprenticeRoll = Math.floor(Math.random() * 6) + 1;
+  const wasApprentice =
+    forcedApprentice || apprenticeRoll >= schoolDef.apprenticeMinRoll1d6;
+
+  const chaosDecades = [0, 1].map(() =>
+    rollChaosMageDecade(pickRandom(MAGE_DECADE_STYLES).id, lang)
+  );
+
+  // Also keep legacy core summary fields populated for backwards compatibility & PDF export
   const ageEntered = pickRandom(MAGE_AGES).id;
-  const academy = pickRandom(MAGE_ACADEMIES).id;
   const { trainingResult, graduationResult } = rollMageTrainingAndGraduation(
     ageEntered,
     lang
   );
-  const risks: readonly DecadeRiskLevel[] = [
-    'safe',
-    'ordinary',
-    'reckless',
-    'risky',
-  ];
-  const decadeSafety: [DecadeRiskLevel, DecadeRiskLevel, DecadeRiskLevel] = [
-    pickRandom(risks),
-    pickRandom(risks),
-    pickRandom(risks),
-  ];
-  const decadeEvents: [string, string, string] = [
-    rollMageDecadeEvent(decadeSafety[0], lang),
-    rollMageDecadeEvent(decadeSafety[1], lang),
-    rollMageDecadeEvent(decadeSafety[2], lang),
-  ];
 
   return {
     ...state,
     mageLifepath: {
+      ...state.mageLifepath,
       ageEntered,
-      academy,
-      trainingResult,
+      academy: schoolId,
+      trainingResult:
+        `${MAGE_ACADEMIA_EVENTS[schoolId][academiaDecade1Index][lang]} | ${MAGE_ACADEMIA_EVENTS[schoolId][academiaDecade2Index][lang]}` ||
+        trainingResult,
       graduationResult,
       importantEventIndex: randIndex(MAGE_IMPORTANT_EVENTS.length),
       currentStatusIndex: randIndex(MAGE_CURRENT_STATUS.length),
-      decadeSafety,
-      decadeEvents,
+      decadeSafety: [
+        chaosDecades[0]?.style === 'experimentation' ? 'risky' : 'ordinary',
+        chaosDecades[1]?.style === 'experimentation' ? 'risky' : 'ordinary',
+        'safe',
+      ],
+      decadeEvents: [
+        chaosDecades[0]
+          ? `${chaosDecades[0].eventDetail}${chaosDecades[0].dangerTriggered && chaosDecades[0].dangerIndex !== null && chaosDecades[0].dangerIndex !== undefined ? ` (${MAGE_DANGER_TABLES[chaosDecades[0].style][chaosDecades[0].dangerIndex][lang]})` : ''}`
+          : '',
+        chaosDecades[1]
+          ? `${chaosDecades[1].eventDetail}${chaosDecades[1].dangerTriggered && chaosDecades[1].dangerIndex !== null && chaosDecades[1].dangerIndex !== undefined ? ` (${MAGE_DANGER_TABLES[chaosDecades[1].style][chaosDecades[1].dangerIndex][lang]})` : ''}`
+          : '',
+        '',
+      ],
+      birthLocationIndex,
+      elderlandConclave,
+      familySizeIndex,
+      familyPersonalityIndex,
+      familyStatusIndex,
+      discoveryIndex,
+      reactionRegion,
+      reactionIndex,
+      academiaDecade1Index,
+      academiaDecade2Index,
+      wasApprentice,
+      mentorPersonalityIndex: wasApprentice
+        ? randIndex(MAGE_MENTOR_PERSONALITIES.length)
+        : null,
+      mentorValueIndex: wasApprentice
+        ? randIndex(MAGE_MENTOR_VALUES.length)
+        : null,
+      mentorClothingIndex: wasApprentice
+        ? randIndex(MAGE_MENTOR_CLOTHING.length)
+        : null,
+      mentorHatredIndex: wasApprentice
+        ? randIndex(MAGE_MENTOR_HATREDS.length)
+        : null,
+      mentorTeachingIndex: wasApprentice
+        ? randIndex(MAGE_MENTOR_TEACHING_STYLES.length)
+        : null,
+      mentorMomentIndex: wasApprentice
+        ? randIndex(MAGE_MENTOR_MOMENTS.length)
+        : null,
+      mentorEndingIndex: wasApprentice
+        ? randIndex(MAGE_MENTOR_ENDINGS.length)
+        : null,
+      chaosDecades,
     },
   };
 }
@@ -1057,6 +1329,7 @@ export function generateFullRandomCharacter(
   state.definingSkillRank = 3;
   state.professionSkillRanks = profRanks;
 
+  const waiveDoubleCost = chosenRace.id === 'vampire';
   let safetyLoops = 0;
   while (
     getProfessionSkillPointsSpent(state) < state.professionBudget &&
@@ -1067,7 +1340,7 @@ export function generateFullRandomCharacter(
     if (rem >= 2 && Math.random() < 0.75) {
       const candidate = pickRandom(activeSkills);
       const def = getSkillDefinition(candidate);
-      const cost = def.doubleCost ? 2 : 1;
+      const cost = def.doubleCost && !waiveDoubleCost ? 2 : 1;
       const cur = state.professionSkillRanks[candidate] ?? 1;
       if (cur < 6 && rem >= cost) {
         state.professionSkillRanks[candidate] = cur + 1;
@@ -1076,7 +1349,9 @@ export function generateFullRandomCharacter(
       state.definingSkillRank += 1;
     } else {
       const single = activeSkills.filter(
-        (id) => !getSkillDefinition(id).doubleCost && (state.professionSkillRanks[id] ?? 1) < 6
+        (id) =>
+          (!getSkillDefinition(id).doubleCost || waiveDoubleCost) &&
+          (state.professionSkillRanks[id] ?? 1) < 6
       );
       if (single.length > 0) {
         const picked = pickRandom(single);
@@ -1095,7 +1370,8 @@ export function generateFullRandomCharacter(
   const genBudget = getGeneralSkillBudget(state);
   const spentGeneral = () =>
     Object.entries(generalRanks).reduce(
-      (sum, [id, r]) => sum + getSkillPointCost(id as SkillId, r ?? 0),
+      (sum, [id, r]) =>
+        sum + getSkillPointCost(id as SkillId, r ?? 0, waiveDoubleCost),
       0
     );
   while (spentGeneral() < genBudget && genLoops < 200) {
@@ -1103,7 +1379,7 @@ export function generateFullRandomCharacter(
     const rem = genBudget - spentGeneral();
     const candidate = pickRandom(generalPool);
     const def = getSkillDefinition(candidate);
-    const cost = def.doubleCost ? 2 : 1;
+    const cost = def.doubleCost && !waiveDoubleCost ? 2 : 1;
     const cur = generalRanks[candidate] ?? 0;
     if (cur < 5 && rem >= cost) {
       generalRanks[candidate] = cur + 1;
@@ -1127,10 +1403,14 @@ export function generateFullRandomCharacter(
       );
     }
     if (chosenProf.magicConfig.invocations) {
-      state.selectedInvocations = takeUniqueIds(
-        pools.invocations,
-        chosenProf.magicConfig.invocations
-      );
+      const isHalflingDruid =
+        chosenRace.id === 'halfling' && chosenProf.id === 'druid';
+      state.selectedInvocations = isHalflingDruid
+        ? []
+        : takeUniqueIds(
+            pools.invocations,
+            chosenProf.magicConfig.invocations
+          );
     }
     if (chosenProf.magicConfig.rituals) {
       state.selectedRituals = takeUniqueIds(
@@ -1229,6 +1509,9 @@ export function formatCharacterDossierText(
   }
   lines.push('');
 
+  const gift = state.magicalGiftId
+    ? getMagicalGiftById(state.magicalGiftId)
+    : undefined;
   const magicIds = [
     ...state.selectedSpells,
     ...state.selectedInvocations,
@@ -1236,8 +1519,13 @@ export function formatCharacterDossierText(
     ...state.selectedHexes,
     ...state.selectedVampirePowers,
   ];
-  if (prof?.magicConfig?.autoBasicSigns || magicIds.length > 0) {
+  if (prof?.magicConfig?.autoBasicSigns || magicIds.length > 0 || gift) {
     lines.push(`-- ${lang === 'fr' ? 'Magie & Pouvoirs' : 'Magic & Powers'} --`);
+    if (gift) {
+      lines.push(
+        `- ${lang === 'fr' ? 'Don Magique' : 'Magical Gift'}: ${gift.name[lang]} (${gift.stamina} END) — ${gift.effect[lang]} | ${lang === 'fr' ? 'Effet secondaire' : 'Side Effect'}: ${gift.sideEffect[lang]}`
+      );
+    }
     if (prof?.magicConfig?.autoBasicSigns) {
       lines.push('- Signes de base : Aard, Axii, Igni, Quen, Yrden');
     }

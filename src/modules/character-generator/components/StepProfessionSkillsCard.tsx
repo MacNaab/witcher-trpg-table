@@ -1,5 +1,15 @@
 import { useState } from 'react';
-import { BookOpenCheck, Minus, Plus, Sparkles, Swords, Trash2, Wand2 } from 'lucide-react';
+import {
+  AlertTriangle,
+  BookOpenCheck,
+  Minus,
+  Plus,
+  Sparkles,
+  Swords,
+  Trash2,
+  Wand2,
+} from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -34,7 +44,12 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { getMagicEntryById, type MagicEntry } from '@/src/data/magic';
+import {
+  MAGICAL_GIFTS_DATA,
+  getMagicEntryById,
+  getMagicalGiftById,
+  type MagicEntry,
+} from '@/src/data/magic';
 import { getProfessionDefinition } from '../data/racesAndProfessions';
 import { LANGUAGE_SKILLS, getSkillDefinition } from '../data/skillsCatalog';
 import { getCharacterGeneratorCopy } from '../i18n';
@@ -44,6 +59,7 @@ import type {
   SkillId,
 } from '../types';
 import {
+  canCharacterTakeMagicalGift,
   getActiveProfessionSkills,
   getMagicPoolsForState,
   getNativeLanguageSkillId,
@@ -95,6 +111,7 @@ export function StepProfessionSkillsCard({
   const maxRank =
     state.mode === 'advanced' && state.allowSkillCap13 ? 13 : 6;
   const minSkillRank = state.ignoreSkillBudgets ? 0 : 1;
+  const waiveDoubleCost = state.raceId === 'vampire';
   const nativeLangId = getNativeLanguageSkillId(state);
   const nativeLangDef = nativeLangId ? getSkillDefinition(nativeLangId) : null;
 
@@ -106,8 +123,10 @@ export function StepProfessionSkillsCard({
       const next = Math.max(minRank, Math.min(cap, current + delta));
       if (next === current) return prev;
 
+      const prevWaiveDouble = prev.raceId === 'vampire';
       const deltaCost =
-        getSkillPointCost(skillId, next) - getSkillPointCost(skillId, current);
+        getSkillPointCost(skillId, next, prevWaiveDouble) -
+        getSkillPointCost(skillId, current, prevWaiveDouble);
       if (
         delta > 0 &&
         !prev.ignoreSkillBudgets &&
@@ -146,6 +165,16 @@ export function StepProfessionSkillsCard({
   };
 
   const magicPools = getMagicPoolsForState(state);
+  const isHalflingDruid =
+    state.raceId === 'halfling' && state.professionId === 'druid';
+  const canTakeMagicalGift = canCharacterTakeMagicalGift(
+    state.raceId,
+    state.professionId,
+    state.mode
+  );
+  const selectedGift = state.magicalGiftId
+    ? getMagicalGiftById(state.magicalGiftId)
+    : undefined;
 
   const renderMagicSelectorBlock = (
     title: string,
@@ -514,7 +543,11 @@ export function StepProfessionSkillsCard({
                               return (
                                 <SelectItem key={opt} value={opt}>
                                   {def.name[lang]}
-                                  {def.doubleCost ? ' (×2)' : ''}
+                                  {def.doubleCost
+                                    ? waiveDoubleCost
+                                      ? ' (×1)'
+                                      : ' (×2)'
+                                    : ''}
                                 </SelectItem>
                               );
                             })}
@@ -569,7 +602,11 @@ export function StepProfessionSkillsCard({
                         return (
                           <SelectItem key={opt} value={opt}>
                             {def.name[lang]}
-                            {def.doubleCost ? ' (×2)' : ''}
+                            {def.doubleCost
+                              ? waiveDoubleCost
+                                ? ' (×1)'
+                                : ' (×2)'
+                              : ''}
                           </SelectItem>
                         );
                       })}
@@ -635,7 +672,8 @@ export function StepProfessionSkillsCard({
                           <SelectContent align="start">
                             {options.map((opt) => (
                               <SelectItem key={opt} value={opt}>
-                                {getSkillDefinition(opt).name[lang]} (×2)
+                                {getSkillDefinition(opt).name[lang]}{' '}
+                                {waiveDoubleCost ? '(×1)' : '(×2)'}
                               </SelectItem>
                             ))}
                           </SelectContent>
@@ -645,6 +683,13 @@ export function StepProfessionSkillsCard({
                   }
                 )}
             </div>
+          </div>
+        )}
+
+        {waiveDoubleCost && (
+          <div className="flex items-start gap-2 rounded-lg border border-emerald-500/35 bg-emerald-500/10 p-3 text-xs text-emerald-800 dark:text-emerald-300">
+            <Sparkles className="mt-0.5 size-4 shrink-0" />
+            <span>{copy.professionSkills.vampireNoDoubleCostNote}</span>
           </div>
         )}
 
@@ -672,8 +717,12 @@ export function StepProfessionSkillsCard({
               {activeSkills.map((skillId) => {
                 const def = getSkillDefinition(skillId);
                 const rank = state.professionSkillRanks[skillId] ?? minSkillRank;
-                const stepCost = def.doubleCost ? 2 : 1;
-                const totalCost = getSkillPointCost(skillId, rank);
+                const stepCost = def.doubleCost && !waiveDoubleCost ? 2 : 1;
+                const totalCost = getSkillPointCost(
+                  skillId,
+                  rank,
+                  waiveDoubleCost
+                );
                 const statVal = state.stats[def.attribute] ?? 0;
                 const canInc =
                   rank < maxRank &&
@@ -689,10 +738,19 @@ export function StepProfessionSkillsCard({
                           kind="skill"
                           skillId={skillId}
                           lang={lang}
+                          waiveDoubleCost={waiveDoubleCost}
                         />
                         {def.doubleCost && (
-                          <span className="rounded bg-amber-500/15 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-amber-600 dark:text-amber-400">
-                            {copy.professionSkills.doubleCostTag}
+                          <span
+                            className={`rounded px-1.5 py-0.5 font-mono text-[10px] font-semibold ${
+                              waiveDoubleCost
+                                ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400'
+                                : 'bg-amber-500/15 text-amber-600 dark:text-amber-400'
+                            }`}
+                          >
+                            {waiveDoubleCost
+                              ? copy.professionSkills.vampireDoubleCostWaivedTag
+                              : copy.professionSkills.doubleCostTag}
                           </span>
                         )}
                       </div>
@@ -739,11 +797,11 @@ export function StepProfessionSkillsCard({
         </div>
 
         {/* Starting Magic Section */}
-        {profession.magicConfig && (
+        {profession.magicConfig ? (
           <>
             <Separator />
             <div className="flex flex-col gap-4">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex flex-wrap items-center gap-2">
                   <Wand2 className="size-5 text-primary" />
                   <h3 className="text-base font-semibold">
@@ -761,28 +819,57 @@ export function StepProfessionSkillsCard({
                   </Button>
                 </div>
 
-                {!profession.magicConfig.autoBasicSigns &&
-                  !profession.magicConfig.vampirePowers && (
-                    <div className="flex items-center gap-2.5">
+                {!profession.magicConfig.vampirePowers && (
+                  <div className="flex flex-wrap items-center gap-4">
+                    {!profession.magicConfig.autoBasicSigns && (
+                      <div className="flex items-center gap-2">
+                        <Switch
+                          id="cg-unofficial-magic"
+                          checked={state.includeUnofficialMagic}
+                          onCheckedChange={(checked) =>
+                            onUpdateState((prev) => ({
+                              ...prev,
+                              includeUnofficialMagic: checked,
+                            }))
+                          }
+                        />
+                        <Label
+                          htmlFor="cg-unofficial-magic"
+                          className="cursor-pointer text-xs"
+                        >
+                          {copy.professionSkills.magicUnofficialToggle}
+                        </Label>
+                      </div>
+                    )}
+
+                    <div className="flex items-center gap-2">
                       <Switch
-                        id="cg-unofficial-magic"
-                        checked={state.includeUnofficialMagic}
+                        id="cg-dark-arts-magic"
+                        checked={state.includeDarkArtsMagic}
                         onCheckedChange={(checked) =>
                           onUpdateState((prev) => ({
                             ...prev,
-                            includeUnofficialMagic: checked,
+                            includeDarkArtsMagic: checked,
                           }))
                         }
                       />
                       <Label
-                        htmlFor="cg-unofficial-magic"
+                        htmlFor="cg-dark-arts-magic"
                         className="cursor-pointer text-xs"
                       >
-                        {copy.professionSkills.magicUnofficialToggle}
+                        {copy.professionSkills.magicDarkArtsToggle}
                       </Label>
                     </div>
-                  )}
+                  </div>
+                )}
               </div>
+
+              {isHalflingDruid && (
+                <div className="flex items-start gap-2 rounded-lg border border-amber-500/40 bg-amber-500/10 p-3 text-xs text-amber-800 dark:text-amber-300">
+                  <AlertTriangle className="mt-0.5 size-4 shrink-0" />
+                  <span>{copy.professionSkills.halflingDruidNote}</span>
+                </div>
+              )}
 
               {profession.magicConfig.autoBasicSigns && (
                 <div className="flex flex-col gap-3">
@@ -809,6 +896,33 @@ export function StepProfessionSkillsCard({
                       </div>
                     ))}
                   </div>
+
+                  {magicPools.advancedSigns.length > 0 && (
+                    <div className="flex flex-col gap-2 pt-2">
+                      <h4 className="text-xs font-semibold text-primary">
+                        {copy.professionSkills.advancedSignsTitle}
+                      </h4>
+                      <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                        {magicPools.advancedSigns.map((sign) => (
+                          <div
+                            key={sign.id}
+                            className="rounded-lg border border-primary/30 bg-primary/5 p-3 text-xs"
+                          >
+                            <div className="font-semibold text-foreground">
+                              {sign.name[lang]}
+                            </div>
+                            <div className="mt-1 text-[11px] text-primary">
+                              {sign.stamina} {copy.professionSkills.staminaLabel} ·{' '}
+                              {sign.range}
+                            </div>
+                            <p className="mt-1.5 line-clamp-3 text-muted-foreground">
+                              {sign.effect}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -824,7 +938,7 @@ export function StepProfessionSkillsCard({
 
               {renderMagicSelectorBlock(
                 copy.professionSkills.slotsInvocation,
-                profession.magicConfig.invocations,
+                isHalflingDruid ? 0 : profession.magicConfig.invocations,
                 magicPools.invocations,
                 state.selectedInvocations,
                 'selectedInvocations',
@@ -860,6 +974,115 @@ export function StepProfessionSkillsCard({
                 'selectedVampirePowers',
                 pendingVampireId,
                 setPendingVampireId
+              )}
+            </div>
+          </>
+        ) : (
+          <>
+            <Separator />
+            <div className="flex flex-col gap-3 rounded-lg border border-border bg-muted/15 p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <h3 className="flex items-center gap-2 text-sm font-semibold">
+                    <Sparkles className="size-4 text-primary" />
+                    <span>{copy.professionSkills.magicalGiftsTitle}</span>
+                  </h3>
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    {copy.professionSkills.magicalGiftsSubtitle}
+                  </p>
+                </div>
+                {selectedGift && (
+                  <Badge variant="secondary">
+                    {copy.professionSkills.magicalGiftsVigorGranted}
+                  </Badge>
+                )}
+              </div>
+
+              {!canTakeMagicalGift ? (
+                <p className="text-xs text-muted-foreground">
+                  {copy.professionSkills.magicalGiftsSimpleBlocked}
+                </p>
+              ) : (
+                <>
+                  <div className="flex flex-col gap-1.5">
+                    <Label className="text-xs">
+                      {copy.professionSkills.magicalGiftsSelectLabel}
+                    </Label>
+                    <Select
+                      value={state.magicalGiftId || 'none'}
+                      onValueChange={(val) => {
+                        if (val === null) return;
+                        onUpdateState((prev) => ({
+                          ...prev,
+                          magicalGiftId: val === 'none' ? '' : val,
+                        }));
+                      }}
+                    >
+                      <SelectTrigger className="w-full">
+                        <SelectValue>
+                          {selectedGift
+                            ? `${selectedGift.name[lang]} (${
+                                selectedGift.tier === 'major'
+                                  ? lang === 'fr'
+                                    ? 'Majeur · ×2 PP'
+                                    : 'Major · 2x IP'
+                                  : lang === 'fr'
+                                    ? 'Mineur · ×1 PP'
+                                    : 'Minor · 1x IP'
+                              })`
+                            : copy.professionSkills.magicalGiftsNone}
+                        </SelectValue>
+                      </SelectTrigger>
+                      <SelectContent align="start">
+                        <SelectItem value="none">
+                          {copy.professionSkills.magicalGiftsNone}
+                        </SelectItem>
+                        {MAGICAL_GIFTS_DATA.map((gift) => (
+                          <SelectItem key={gift.id} value={gift.id}>
+                            {gift.name[lang]} —{' '}
+                            {gift.tier === 'major'
+                              ? lang === 'fr'
+                                ? 'Majeur (2 END)'
+                                : 'Major (2 STA)'
+                              : lang === 'fr'
+                                ? 'Mineur (1 END)'
+                                : 'Minor (1 STA)'}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {selectedGift && (
+                    <div className="flex flex-col gap-2 rounded-md border border-primary/30 bg-card p-3 text-xs">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <span className="text-sm font-semibold text-foreground">
+                          {selectedGift.name[lang]}
+                        </span>
+                        <div className="flex items-center gap-1.5">
+                          <Badge variant="outline">
+                            {selectedGift.stamina}{' '}
+                            {copy.professionSkills.staminaLabel} ·{' '}
+                            {selectedGift.castTime[lang]}
+                          </Badge>
+                          <Badge variant="outline">
+                            {copy.professionSkills.magicalGiftsIpCostLabel}:{' '}
+                            {selectedGift.tier === 'major' ? '×2' : '×1'}
+                          </Badge>
+                        </div>
+                      </div>
+                      <p className="leading-relaxed text-foreground">
+                        {selectedGift.effect[lang]}
+                      </p>
+                      <div className="rounded border border-amber-500/35 bg-amber-500/10 px-2.5 py-1.5 text-amber-800 dark:text-amber-300">
+                        <strong>
+                          {copy.professionSkills.magicalGiftsSideEffectLabel}:{' '}
+                        </strong>
+                        {selectedGift.sideEffect[lang]}
+                      </div>
+                    </div>
+                  )}
+                </>
               )}
             </div>
           </>

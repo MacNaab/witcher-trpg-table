@@ -14,6 +14,9 @@ export interface CampaignBackupSummary {
   rollerHistories: number;
   chronicleCampaigns: number;
   chronicleEvents: number;
+  investigationsCount: number;
+  estatesCount: number;
+  demonsCount: number;
 }
 
 export interface CampaignBackupPayload {
@@ -60,6 +63,15 @@ export function summarizeCampaignKeys(
     campaigns?: unknown[];
     events?: unknown[];
   }>(keys['witcher-gm-chronicle-v1']);
+  const investigations = safeParseJson<{ mysteries?: unknown[] }>(
+    keys['witcher-gm-investigations-v1']
+  );
+  const estates = safeParseJson<{ estates?: unknown[] }>(
+    keys['witcher-gm-estates-v1']
+  );
+  const goetia = safeParseJson<{ demons?: unknown[] }>(
+    keys['witcher-gm-goetia-v1']
+  );
 
   let travelRoutes = 0;
   let rollerHistories = 0;
@@ -109,6 +121,11 @@ export function summarizeCampaignKeys(
     chronicleEvents: Array.isArray(chronicle?.events)
       ? chronicle.events.length
       : 0,
+    investigationsCount: Array.isArray(investigations?.mysteries)
+      ? investigations.mysteries.length
+      : 0,
+    estatesCount: Array.isArray(estates?.estates) ? estates.estates.length : 0,
+    demonsCount: Array.isArray(goetia?.demons) ? goetia.demons.length : 0,
   };
 }
 

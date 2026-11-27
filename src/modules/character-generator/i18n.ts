@@ -134,6 +134,43 @@ export interface CharacterGeneratorCopy {
       currentStatus: string;
       decadeRiskLabel: string;
       decadePlaceholder: string;
+      chaosBannerTitle: string;
+      chaosBannerSubtitle: string;
+      rollFullChaosBtn: string;
+      birthLocationLabel: string;
+      elderlandConclaveToggle: string;
+      familySectionTitle: string;
+      familySizeLabel: string;
+      familyPersonalityLabel: string;
+      familyStatusLabel: string;
+      discoveryLabel: string;
+      reactionRegionLabel: string;
+      reactionLabel: string;
+      schoolSectionTitle: string;
+      schoolPerkLabel: string;
+      academiaDecade1Label: string;
+      academiaDecade2Label: string;
+      apprenticeSectionTitle: string;
+      wasApprenticeLabel: string;
+      apprenticeRollBtn: string;
+      leashingRuleTitle: string;
+      leashingRuleText: string;
+      mentorPersonalityLabel: string;
+      mentorValueLabel: string;
+      mentorClothingLabel: string;
+      mentorHatredLabel: string;
+      mentorTeachingLabel: string;
+      mentorMomentLabel: string;
+      mentorEndingLabel: string;
+      decadesSectionTitle: string;
+      addDecadeBtn: string;
+      removeDecadeBtn: string;
+      decadeStyleLabel: string;
+      rollDecadeBtn: string;
+      dangerLabel: string;
+      grudgeLabel: string;
+      eventLabel: string;
+      rollGrudgeBtn: string;
     };
     riskLevels: {
       safe: string;
@@ -210,13 +247,19 @@ export interface CharacterGeneratorCopy {
       total: string;
     };
     doubleCostTag: string;
+    vampireDoubleCostWaivedTag: string;
+    vampireNoDoubleCostNote: string;
     magicSectionTitle: string;
     magicRulesBtn: string;
     magicRulesTitle: string;
     magicRulesSubtitle: string;
     magicUnofficialToggle: string;
     magicUnofficialHint: string;
+    magicDarkArtsToggle: string;
+    magicDarkArtsHint: string;
+    halflingDruidNote: string;
     witcherSignsNote: string;
+    advancedSignsTitle: string;
     slotsSpell: string;
     slotsInvocation: string;
     slotsRitual: string;
@@ -230,6 +273,14 @@ export interface CharacterGeneratorCopy {
     rangeLabel: string;
     durationLabel: string;
     defenseLabel: string;
+    magicalGiftsTitle: string;
+    magicalGiftsSubtitle: string;
+    magicalGiftsSelectLabel: string;
+    magicalGiftsNone: string;
+    magicalGiftsSimpleBlocked: string;
+    magicalGiftsSideEffectLabel: string;
+    magicalGiftsIpCostLabel: string;
+    magicalGiftsVigorGranted: string;
   };
   generalSkills: {
     title: string;
@@ -409,7 +460,7 @@ const FR_COPY: CharacterGeneratorCopy = {
     extendedNote: '* Races et professions issues des suppléments officiels ou communautaires.',
     racialPerksTitle: 'Atouts raciaux',
     definingSkillLabel: 'Compétence signature',
-    definingSkillRuleLabel: 'Compétence exclusive (Livre de base)',
+    definingSkillRuleLabel: 'Compétence exclusive (Signature)',
     vigorLabel: 'Seuil de Vigueur',
     magicAssetsLabel: 'Atouts magiques de départ',
     talentTreeBtn: 'Voir l’arbre de talents',
@@ -418,9 +469,9 @@ const FR_COPY: CharacterGeneratorCopy = {
     talentAllBranches: 'Toutes les branches',
     talentTierLabel: 'Palier',
     halflingWarning:
-      'Remarque (Mode Avancé) : selon le livre de base, seuls les Humains et les Elfes peuvent devenir Mage ou Prêtre / Druide. Option débloquée en mode Avancé.',
+      'Remarque (Mode Avancé) : selon le livre de base, seuls les Humains et les Elfes peuvent devenir Mage ou Prêtre. Les Halfelins peuvent devenir Druides (sans invocations ni sigils). Option débloquée en mode Avancé.',
     halflingBlocked:
-      'En mode Simple, seuls les Humains et les Elfes peuvent exercer la profession Mage ou Prêtre / Druide.',
+      'En mode Simple, seuls les Humains et les Elfes peuvent exercer la profession Mage ou Prêtre. Note : les Halfelins peuvent devenir Druide (Cercle de Bleobheris), sans pouvoir lancer d’invocations.',
     noRaceOrProfSelected: 'Sélectionnez une race et une profession pour consulter leurs bonus.',
     racesGuideBtn: 'Guide des races & Statut social',
     racesGuideTitle: 'Guide des Races & Statut Social',
@@ -485,7 +536,7 @@ const FR_COPY: CharacterGeneratorCopy = {
     },
     mage: {
       ageEntered: 'Âge de détection du don',
-      academy: 'Académie ou Cercle',
+      academy: 'École ou Académie',
       rollTrainingBtn: 'Tirer Formation & Remise des diplômes',
       trainingEvent: 'Événement durant la formation',
       graduationOutcome: 'Issue des études / Diplôme',
@@ -493,6 +544,43 @@ const FR_COPY: CharacterGeneratorCopy = {
       currentStatus: 'Situation actuelle',
       decadeRiskLabel: 'Risque décennie',
       decadePlaceholder: 'Tirer ou saisir un événement de décennie…',
+      chaosBannerTitle: 'Parcours complet de Mage (A Tome of Chaos)',
+      chaosBannerSubtitle: 'Origines, famille, découverte du don, vie en académie, apprentissage & décennies.',
+      rollFullChaosBtn: 'Tout tirer (A Tome of Chaos)',
+      birthLocationLabel: 'Lieu de naissance (1d10)',
+      elderlandConclaveToggle: 'Origine Terres Anciennes / Enclave (Elfe, Gnome, Vran, Werebbub)',
+      familySectionTitle: 'Origine familiale',
+      familySizeLabel: 'Taille de la famille',
+      familyPersonalityLabel: 'Tempérament familial',
+      familyStatusLabel: 'Statut familial',
+      discoveryLabel: 'Découverte de la magie',
+      reactionRegionLabel: 'Région de réaction',
+      reactionLabel: 'Réaction des proches (1d6 + mod.)',
+      schoolSectionTitle: 'École & Vie en Académie (20 ans)',
+      schoolPerkLabel: 'Don d’école (School Perk)',
+      academiaDecade1Label: '1re décennie d’académie',
+      academiaDecade2Label: '2e décennie d’académie',
+      apprenticeSectionTitle: 'Apprentissage & Lien (Leashing)',
+      wasApprenticeLabel: 'Avez-vous été apprenti lié ?',
+      apprenticeRollBtn: 'Tirer apprentissage (1d6) & Mentor',
+      leashingRuleTitle: 'Règle de Lien (Leashing)',
+      leashingRuleText: 'À moins de 10 m, mentor et apprenti partagent leurs sorts, rituels et envoûtements ; le mentor peut plafonner l’END dépensée par l’apprenti et absorber la moitié des dégâts d’échec critique.',
+      mentorPersonalityLabel: 'Personnalité du mentor',
+      mentorValueLabel: 'Valeur principale',
+      mentorClothingLabel: 'Tenue vestimentaire',
+      mentorHatredLabel: 'Ce qu’il déteste',
+      mentorTeachingLabel: 'Méthode d’enseignement',
+      mentorMomentLabel: 'Souvenir marquant',
+      mentorEndingLabel: 'Fin de l’apprentissage',
+      decadesSectionTitle: 'Vie de Mage — Décennies après les 20 ans',
+      addDecadeBtn: 'Ajouter une décennie',
+      removeDecadeBtn: 'Retirer',
+      decadeStyleLabel: 'Orientation de la décennie',
+      rollDecadeBtn: 'Tirer Danger & Événement',
+      dangerLabel: 'Danger subi',
+      grudgeLabel: 'Rancune / Ennemi',
+      eventLabel: 'Issue (Avantage / Allié / Savoir)',
+      rollGrudgeBtn: 'Tirer Rancune',
     },
     riskLevels: {
       safe: 'Sûre (10%)',
@@ -579,13 +667,20 @@ const FR_COPY: CharacterGeneratorCopy = {
       total: 'Base totale',
     },
     doubleCostTag: '×2',
+    vampireDoubleCostWaivedTag: '×1 (Vampire)',
+    vampireNoDoubleCostNote:
+      'Atout « Des années d’expériences » (Vampire supérieur) : toutes les compétences normalement à coût double (×2) ne coûtent qu’un seul point par rang (×1).',
     magicSectionTitle: 'Magie, Signes & Pouvoirs de départ',
     magicRulesBtn: 'Règles de la Magie',
     magicRulesTitle: 'Référentiel Magie (Livre de base)',
     magicRulesSubtitle: 'Défenses, dépassement de Vigueur, Signes (max 7 END), Sites d’Énergie et apprentissage.',
     magicUnofficialToggle: 'Inclure les sorts non-officiels (Suppléments)',
     magicUnofficialHint: 'Ajoute les créations communautaires du compendium magique.',
+    magicDarkArtsToggle: 'Arts Sombres & Signes Avancés (A Tome of Chaos)',
+    magicDarkArtsHint: 'Débloque Nécromancie, Goétie (démonologie) et les Signes Avancés de Sorceleur.',
+    halflingDruidNote: 'Halfelin Druide (Cercle de Bleobheris) : réfractaires à la magie, les Halfelins druides ne peuvent lancer aucune Invocation ni tracer de Sigils (emplacement d’invocation ignoré).',
     witcherSignsNote: 'Tout Sorceleur maîtrise automatiquement les 5 Signes de base (Aard, Axii, Igni, Quen, Yrden).',
+    advancedSignsTitle: 'Signes Avancés (A Tome of Chaos)',
     slotsSpell: 'Sorts',
     slotsInvocation: 'Invocations',
     slotsRitual: 'Rituels',
@@ -599,6 +694,14 @@ const FR_COPY: CharacterGeneratorCopy = {
     rangeLabel: 'Portée',
     durationLabel: 'Durée',
     defenseLabel: 'Défense',
+    magicalGiftsTitle: 'Don Magique (The Magical Mundane — A Tome of Chaos)',
+    magicalGiftsSubtitle: 'Réservé aux non-lanceurs de sorts (Humains et Elfes en mode Simple) : octroie un Seuil de Vigueur de 2, un talent inné majeur et un Effet Secondaire permanent.',
+    magicalGiftsSelectLabel: 'Choisir un Don Magique (optionnel)',
+    magicalGiftsNone: 'Aucun Don Magique (personnage ordinaire)',
+    magicalGiftsSimpleBlocked: 'Non éligible en Mode Simple (réservé aux Humains/Elfes sans profession de lanceur de sorts, Sorceleur ou Vampire).',
+    magicalGiftsSideEffectLabel: 'Effet secondaire permanent',
+    magicalGiftsIpCostLabel: 'Coût d’amélioration',
+    magicalGiftsVigorGranted: 'Seuil de Vigueur octroyé : 2',
   },
   generalSkills: {
     title: 'Compétences générales',
@@ -679,10 +782,10 @@ const FR_COPY: CharacterGeneratorCopy = {
     missingGender: 'Veuillez choisir le genre du personnage.',
     missingRace: 'Veuillez sélectionner une race.',
     missingProfession: 'Veuillez sélectionner une profession.',
-    halflingRestricted: 'Selon les règles du livre de base, seuls les Humains et les Elfes peuvent devenir Mage ou Prêtre / Druide en mode Simple.',
+    halflingRestricted: 'Selon les règles officielles, seuls les Humains et les Elfes peuvent devenir Mage ou Prêtre en mode Simple.',
     incompleteStandardLifepath: 'Veuillez compléter la région, l’origine, la famille, le statut, le mentor, la fratrie et l’âge.',
     incompleteWitcherLifepath: 'Veuillez compléter l’âge d’arrivée, l’école, l’entraînement, l’épreuve, l’événement marquant et la situation.',
-    incompleteMageLifepath: 'Veuillez compléter l’âge de détection, l’académie, la formation, le diplôme, l’événement marquant et la situation.',
+    incompleteMageLifepath: 'Veuillez compléter les origines, l’école de magie et le parcours de Mage.',
     incompleteCustomLifepath: 'Veuillez renseigner une origine et un âge dans l’historique libre.',
     statsRemaining: 'Il reste des points de caractéristiques à dépenser (ou passez en mode Avancé).',
     definingSkillMin: 'La compétence signature doit avoir au moins le rang 1.',
@@ -778,7 +881,7 @@ const EN_COPY: CharacterGeneratorCopy = {
     extendedNote: '* Races and professions marked with an asterisk come from official/community supplements.',
     racialPerksTitle: 'Racial Perks',
     definingSkillLabel: 'Defining Skill',
-    definingSkillRuleLabel: 'Exclusive Defining Skill (Core Rulebook)',
+    definingSkillRuleLabel: 'Exclusive Defining Skill',
     vigorLabel: 'Vigor Threshold',
     magicAssetsLabel: 'Starting Magic Perks',
     talentTreeBtn: 'View Profession Talent Tree',
@@ -787,9 +890,9 @@ const EN_COPY: CharacterGeneratorCopy = {
     talentAllBranches: 'All Branches',
     talentTierLabel: 'Tier',
     halflingWarning:
-      'Advanced Mode Note: Core rules restrict Mages and Priests / Druids to Humans and Elves. Unlocked in Advanced Mode.',
+      'Advanced Mode Note: Core rules restrict Mages and Priests to Humans and Elves (Halfling Druids may serve without Invocations). Unlocked in Advanced Mode.',
     halflingBlocked:
-      'In Simple Mode, only Humans and Elves can choose Mage or Priest / Druid.',
+      'In Simple Mode, only Humans and Elves can choose Mage or Priest. Halfling Druids are permitted (Circle of Bleobheris) without Invocations.',
     noRaceOrProfSelected: 'Select a race and profession to inspect perks and defining skill.',
     racesGuideBtn: 'Races & Social Status Guide',
     racesGuideTitle: 'Races & Social Status Reference',
@@ -854,7 +957,7 @@ const EN_COPY: CharacterGeneratorCopy = {
     },
     mage: {
       ageEntered: 'Age Magic Manifested',
-      academy: 'Academy or Druid Circle',
+      academy: 'School or Academy',
       rollTrainingBtn: 'Roll Training & Graduation',
       trainingEvent: 'Training Event',
       graduationOutcome: 'Graduation Outcome',
@@ -862,6 +965,43 @@ const EN_COPY: CharacterGeneratorCopy = {
       currentStatus: 'Current Status',
       decadeRiskLabel: 'Decade risk',
       decadePlaceholder: 'Roll or enter a decade event…',
+      chaosBannerTitle: 'Complete Mage Lifepath (A Tome of Chaos)',
+      chaosBannerSubtitle: 'Birthplace, family, discovery, school life, apprenticeship/leashing & decades.',
+      rollFullChaosBtn: 'Roll Complete Lifepath',
+      birthLocationLabel: 'Birth Location (1d10)',
+      elderlandConclaveToggle: 'Elderlands / Mountain Conclave Origin (Elf, Gnome, Vran, Werebbub)',
+      familySectionTitle: 'Family Background',
+      familySizeLabel: 'Family Size',
+      familyPersonalityLabel: 'Family Personality',
+      familyStatusLabel: 'Family Status',
+      discoveryLabel: 'Magic Discovery',
+      reactionRegionLabel: 'Reaction Region',
+      reactionLabel: 'Family Reaction (1d6 + mod)',
+      schoolSectionTitle: 'School & Life in Academia (20 Years)',
+      schoolPerkLabel: 'School Perk',
+      academiaDecade1Label: 'Academia Decade 1',
+      academiaDecade2Label: 'Academia Decade 2',
+      apprenticeSectionTitle: 'Apprenticeship & Leashing',
+      wasApprenticeLabel: 'Were you leashed as an apprentice?',
+      apprenticeRollBtn: 'Roll Apprenticeship (1d6) & Mentor',
+      leashingRuleTitle: 'Leashing Rule',
+      leashingRuleText: 'Within 10m, master & apprentice share known spells/rituals/hexes; master can cap STA spent per turn and absorb half fumble damage.',
+      mentorPersonalityLabel: 'Mentor Personality',
+      mentorValueLabel: 'Core Value',
+      mentorClothingLabel: 'Clothing Style',
+      mentorHatredLabel: 'Greatest Hatred',
+      mentorTeachingLabel: 'Teaching Style',
+      mentorMomentLabel: 'Most Memorable Moment',
+      mentorEndingLabel: 'How Things Ended',
+      decadesSectionTitle: 'Life of a Mage — Decades After Age 20',
+      addDecadeBtn: 'Add Decade',
+      removeDecadeBtn: 'Remove',
+      decadeStyleLabel: 'Decade Focus',
+      rollDecadeBtn: 'Roll Danger & Event',
+      dangerLabel: 'Danger',
+      grudgeLabel: 'Grudge / Rival',
+      eventLabel: 'Outcome (Benefit / Ally / Knowledge)',
+      rollGrudgeBtn: 'Roll Grudge',
     },
     riskLevels: {
       safe: 'Safe (10%)',
@@ -948,13 +1088,20 @@ const EN_COPY: CharacterGeneratorCopy = {
       total: 'Total Base',
     },
     doubleCostTag: '×2',
+    vampireDoubleCostWaivedTag: '×1 (Vampire)',
+    vampireNoDoubleCostNote:
+      '“Years of Experience” perk (Higher Vampire): all skills that normally cost double (×2) only cost 1 point per rank (×1).',
     magicSectionTitle: 'Starting Magic, Signs & Powers',
     magicRulesBtn: 'Magic Rules',
     magicRulesTitle: 'Core Magic Reference',
     magicRulesSubtitle: 'Magical defenses, Vigor overcasting, Signs (max 7 STA), Places of Power & learning.',
     magicUnofficialToggle: 'Include Unofficial / Fan-Made Magic',
     magicUnofficialHint: 'Adds community supplement spells from the Magic Compendium.',
+    magicDarkArtsToggle: 'Dark Arts & Advanced Signs (A Tome of Chaos)',
+    magicDarkArtsHint: 'Unlocks Necromancy, Goetia (demonology), and Advanced Witcher Signs.',
+    halflingDruidNote: 'Halfling Druid (Circle of Bleobheris): Halflings are magic-deterrent and cannot cast Invocations or draw Sigils (Invocation slot requirement waived).',
     witcherSignsNote: 'Every Witcher automatically knows all 5 Basic Signs (Aard, Axii, Igni, Quen, Yrden).',
+    advancedSignsTitle: 'Advanced Signs (A Tome of Chaos)',
     slotsSpell: 'Spells',
     slotsInvocation: 'Invocations',
     slotsRitual: 'Rituals',
@@ -968,6 +1115,14 @@ const EN_COPY: CharacterGeneratorCopy = {
     rangeLabel: 'Range',
     durationLabel: 'Duration',
     defenseLabel: 'Defense',
+    magicalGiftsTitle: 'Magical Gift (The Magical Mundane — A Tome of Chaos)',
+    magicalGiftsSubtitle: 'Available to non-casters (Humans & Elves in Simple Mode): grants Vigor 2, an innate magical talent, and a permanent Side Effect.',
+    magicalGiftsSelectLabel: 'Choose a Magical Gift (optional)',
+    magicalGiftsNone: 'None (Mundane character)',
+    magicalGiftsSimpleBlocked: 'Not eligible in Simple Mode (Human/Elf non-casters only; forbidden for Mages, Priests, Druids, Witchers, Vampires).',
+    magicalGiftsSideEffectLabel: 'Permanent Side Effect',
+    magicalGiftsIpCostLabel: 'Improvement Cost',
+    magicalGiftsVigorGranted: 'Vigor Threshold granted: 2',
   },
   generalSkills: {
     title: 'General / Pickup Skills',
@@ -1048,10 +1203,10 @@ const EN_COPY: CharacterGeneratorCopy = {
     missingGender: 'Please select a gender.',
     missingRace: 'Please select a race.',
     missingProfession: 'Please select a profession.',
-    halflingRestricted: 'Per the Core Rulebook, only Humans and Elves can select Mage or Priest / Druid in Simple Mode.',
+    halflingRestricted: 'Per the Core Rulebook, only Humans and Elves can select Mage or Priest in Simple Mode.',
     incompleteStandardLifepath: 'Please complete region, origin, family, standing, mentor, siblings, and age.',
     incompleteWitcherLifepath: 'Please complete age taken, school, early training, trial outcome, event, and status.',
-    incompleteMageLifepath: 'Please complete age entered, academy, training, graduation, event, and status.',
+    incompleteMageLifepath: 'Please complete Mage birth, family, school, and lifepath details.',
     incompleteCustomLifepath: 'Please enter an origin and age in the custom lifepath.',
     statsRemaining: 'You must spend all stat points first (or switch to Advanced Mode).',
     definingSkillMin: 'Defining Skill must be at least rank 1.',

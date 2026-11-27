@@ -7,6 +7,7 @@ import {
   ARMOR_DIAGRAMS_DATA,
   ELDERFOLK_DIAGRAMS_DATA,
 } from './diagramsPart2Data';
+import { SPECIAL_DIAGRAMS_DATA } from './diagramsSupplementData';
 import {
   ALCHEMICAL_TREATMENTS_DATA,
   ANIMAL_PARTS_DATA,
@@ -32,6 +33,7 @@ export {
   ARMOR_DIAGRAMS_DATA,
   ELDERFOLK_DIAGRAMS_DATA,
 } from './diagramsPart2Data';
+export { SPECIAL_DIAGRAMS_DATA } from './diagramsSupplementData';
 export {
   ALCHEMICAL_TREATMENTS_DATA,
   ANIMAL_PARTS_DATA,
@@ -40,7 +42,7 @@ export {
 } from './materialsData';
 
 /**
- * Ordered metadata for all 10 EN–FR comparative tables.
+ * Ordered metadata for all 11 EN–FR comparative tables.
  */
 export const LEXICON_TABS: readonly LexiconTabMeta[] = [
   {
@@ -92,6 +94,12 @@ export const LEXICON_TABS: readonly LexiconTabMeta[] = [
     count: ELDERFOLK_DIAGRAMS_DATA.length,
   },
   {
+    id: 'special-diagrams',
+    group: 'diagrams',
+    rowKind: 'diagram',
+    count: SPECIAL_DIAGRAMS_DATA.length,
+  },
+  {
     id: 'substances',
     group: 'alchemy',
     rowKind: 'material',
@@ -117,12 +125,13 @@ export const LEXICON_TAB_DATA: Record<LexiconTabId, readonly LexiconEntry[]> = {
   'weapon-diagrams': WEAPON_DIAGRAMS_DATA,
   'armor-diagrams': ARMOR_DIAGRAMS_DATA,
   'elderfolk-diagrams': ELDERFOLK_DIAGRAMS_DATA,
+  'special-diagrams': SPECIAL_DIAGRAMS_DATA,
   substances: SUBSTANCES_DATA,
   formulae: FORMULAE_DATA,
 };
 
 /**
- * Combined catalog of all 348 entries across all 10 tables for global cross-table search.
+ * Combined catalog of all entries across all 11 tables for global cross-table search.
  */
 export const ALL_LEXICON_ENTRIES: readonly LexiconEntry[] = [
   ...CRAFTING_MATERIALS_DATA,
@@ -133,6 +142,7 @@ export const ALL_LEXICON_ENTRIES: readonly LexiconEntry[] = [
   ...WEAPON_DIAGRAMS_DATA,
   ...ARMOR_DIAGRAMS_DATA,
   ...ELDERFOLK_DIAGRAMS_DATA,
+  ...SPECIAL_DIAGRAMS_DATA,
   ...SUBSTANCES_DATA,
   ...FORMULAE_DATA,
 ];

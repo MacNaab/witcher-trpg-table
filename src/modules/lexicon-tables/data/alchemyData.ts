@@ -164,13 +164,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Godling Eyes",
-      "fr": "Oeil Godling"
+      "fr": "Œil de célicole"
     },
     "substance": "aether",
     "rarity": "none",
     "location": {
       "en": "Godlings",
-      "fr": "Godlings (Nains-de-jardin)"
+      "fr": "Célicoles"
     },
     "quantity": {
       "en": "N/A",
@@ -252,13 +252,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Plumard Stomach",
-      "fr": "Estomac de plumard"
+      "fr": "Estomac de plumeur"
     },
     "substance": "aether",
     "rarity": "none",
     "location": {
       "en": "Plumards",
-      "fr": "Plumards"
+      "fr": "Plumeurs"
     },
     "quantity": {
       "en": "N/A",
@@ -296,7 +296,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Scleroderm",
-      "fr": "Sclérodermie"
+      "fr": "Scléroderme"
     },
     "substance": "aether",
     "rarity": "E",
@@ -384,13 +384,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Botchling Brains",
-      "fr": "Cerveaux de Couvin (Botchling)"
+      "fr": "Cerveau de couvin"
     },
     "substance": "caelum",
     "rarity": "none",
     "location": {
       "en": "Botchlings",
-      "fr": "Couvins (Botchlings)"
+      "fr": "Couvins"
     },
     "quantity": {
       "en": "N/A",
@@ -472,13 +472,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Giant Centipede Discharge",
-      "fr": "Décharge de mille-pattes géante"
+      "fr": "Sécrétions de scolopendromorphe"
     },
     "substance": "caelum",
     "rarity": "none",
     "location": {
       "en": "Giant centipedes",
-      "fr": "Mille-pattes géants"
+      "fr": "Scolopendromorphes"
     },
     "quantity": {
       "en": "N/A",
@@ -560,13 +560,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Rotfiend Liver",
-      "fr": "Foie Rotfiend"
+      "fr": "Foie de putréfacteur"
     },
     "substance": "caelum",
     "rarity": "none",
     "location": {
       "en": "Rotfiends",
-      "fr": "Putréfacteurs (Rotfiends)"
+      "fr": "Putréfacteurs"
     },
     "quantity": {
       "en": "N/A",
@@ -714,13 +714,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Botchling Ear",
-      "fr": "Oreille botchling"
+      "fr": "Oreille de couvin"
     },
     "substance": "fulgur",
     "rarity": "none",
     "location": {
       "en": "Botchlings",
-      "fr": "Couvins (Botchlings)"
+      "fr": "Couvins"
     },
     "quantity": {
       "en": "N/A",
@@ -736,7 +736,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Bullvore Brain",
-      "fr": "Cerveau Bullvore"
+      "fr": "Cerveau de bullvore"
     },
     "substance": "fulgur",
     "rarity": "none",
@@ -868,13 +868,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Frightener Claws",
-      "fr": "Griffes d'Épouvantail (Frightener)"
+      "fr": "Griffe d’épouvanteur"
     },
     "substance": "fulgur",
     "rarity": "none",
     "location": {
       "en": "Frighteners",
-      "fr": "Épouvantails (Frighteners)"
+      "fr": "Épouvanteurs"
     },
     "quantity": {
       "en": "N/A",
@@ -1022,7 +1022,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Vendigo Fur",
-      "fr": "Fourrure Vendigo"
+      "fr": "Peau de vendigo"
     },
     "substance": "fulgur",
     "rarity": "none",
@@ -1066,7 +1066,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Barbegazi Fur",
-      "fr": "Fourrure Barbegazi"
+      "fr": "Fourrure de barbegazi"
     },
     "substance": "hydragenum",
     "rarity": "none",
@@ -1088,13 +1088,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Botchling Bones",
-      "fr": "Os de Couvin (Botchling)"
+      "fr": "Os de couvin"
     },
     "substance": "hydragenum",
     "rarity": "none",
     "location": {
       "en": "Botchlings",
-      "fr": "Couvins (Botchlings)"
+      "fr": "Couvins"
     },
     "quantity": {
       "en": "N/A",
@@ -1110,7 +1110,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Cockatrice Carapace",
-      "fr": "Cockatrice Carapace"
+      "fr": "Carapace de cockatrix"
     },
     "substance": "hydragenum",
     "rarity": "none",
@@ -1160,7 +1160,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rarity": "none",
     "location": {
       "en": "Hyms, Pestae, Vendigos, Leshens, Cyclopes",
-      "fr": "Hyms, Pestae, Vendigos, Leshens, Cyclopes"
+      "fr": "Blêmes, pestas, vendigos, leshens, cyclopes, harpies célénos"
     },
     "quantity": {
       "en": "N/A",
@@ -1242,7 +1242,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Leshes Bone",
-      "fr": "Leshes os"
+      "fr": "Os de leshen"
     },
     "substance": "hydragenum",
     "rarity": "none",
@@ -1374,7 +1374,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Abomination Lymph",
-      "fr": "Lymphe d'abomination"
+      "fr": "Lymphe abominable"
     },
     "substance": "quebrith",
     "rarity": "none",
@@ -1396,13 +1396,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Archespore Tendrils",
-      "fr": "Vrilles d'Archespore"
+      "fr": "Vrille d’ékinoppyre"
     },
     "substance": "quebrith",
     "rarity": "none",
     "location": {
       "en": "Archespores",
-      "fr": "Archispores"
+      "fr": "Ékinoppyres"
     },
     "quantity": {
       "en": "N/A",
@@ -1506,7 +1506,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Garkain Saliva",
-      "fr": "Garkain Salive"
+      "fr": "Salive de garkain"
     },
     "substance": "quebrith",
     "rarity": "none",
@@ -1594,13 +1594,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Knocker Hair",
-      "fr": "Cheveux de Knocker (Heurtoir)"
+      "fr": "Poil de frappeur"
     },
     "substance": "quebrith",
     "rarity": "none",
     "location": {
       "en": "Knockers",
-      "fr": "Knockers (Heurtoirs)"
+      "fr": "Frappeurs"
     },
     "quantity": {
       "en": "N/A",
@@ -1814,7 +1814,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Foglet Teeth",
-      "fr": "Dents de Brumelin"
+      "fr": "Dent de brumelin"
     },
     "substance": "rebis",
     "rarity": "none",
@@ -1880,13 +1880,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Knocker Toes",
-      "fr": "Orteils de Knocker"
+      "fr": "Orteil de frappeur"
     },
     "substance": "rebis",
     "rarity": "none",
     "location": {
       "en": "Knockers",
-      "fr": "Knockers (Heurtoirs)"
+      "fr": "Frappeurs"
     },
     "quantity": {
       "en": "N/A",
@@ -1946,13 +1946,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Rotfiend Blood",
-      "fr": "Sang de Rotfiend"
+      "fr": "Sang de putréfacteur"
     },
     "substance": "rebis",
     "rarity": "none",
     "location": {
       "en": "Rotfiends",
-      "fr": "Putréfacteurs (Rotfiends)"
+      "fr": "Putréfacteurs"
     },
     "quantity": {
       "en": "N/A",
@@ -2018,7 +2018,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rarity": "none",
     "location": {
       "en": "Garkains, Plumards",
-      "fr": "Garkains, Plumards"
+      "fr": "Garkains, plumeurs"
     },
     "quantity": {
       "en": "N/A",
@@ -2100,13 +2100,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Frightener Eyes",
-      "fr": "Yeux d'Épouvantail (Frightener)"
+      "fr": "Œil d’épouvanteur"
     },
     "substance": "sol",
     "rarity": "none",
     "location": {
       "en": "Frighteners",
-      "fr": "Épouvantails (Frighteners)"
+      "fr": "Épouvanteurs"
     },
     "quantity": {
       "en": "N/A",
@@ -2166,7 +2166,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Phoenix Ash",
-      "fr": "Cendre de phoenix"
+      "fr": "Cendres de phénix"
     },
     "substance": "sol",
     "rarity": "none",
@@ -2276,7 +2276,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Wyvern Eyes",
-      "fr": "Oeil de Wyvern"
+      "fr": "Œil de wyvern"
     },
     "substance": "sol",
     "rarity": "R",
@@ -2341,20 +2341,20 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "tabId": "substances",
     "rowKind": "material",
     "name": {
-      "en": "Burdok Root",
-      "fr": "Racine Burdok"
+      "en": "Burdock Root",
+      "fr": "Racine de bardane"
     },
     "substance": "vermilion",
-    "rarity": "none",
+    "rarity": "P",
     "location": {
       "en": "Fields and forests",
       "fr": "Champs et forêts"
     },
     "quantity": {
-      "en": "N/A",
-      "fr": "N/A"
+      "en": "1d6",
+      "fr": "1d6"
     },
-    "forageDc": "N/A",
+    "forageDc": "16",
     "weight": "0.1",
     "cost": "32"
   },
@@ -2518,13 +2518,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Knocker Teeth",
-      "fr": "Dents de Knocker"
+      "fr": "Dent de frappeur"
     },
     "substance": "vermilion",
     "rarity": "none",
     "location": {
       "en": "Knockers",
-      "fr": "Knockers (Heurtoirs)"
+      "fr": "Frappeurs"
     },
     "quantity": {
       "en": "N/A",
@@ -2540,7 +2540,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Leshen Fiber",
-      "fr": "Leshen Fibre"
+      "fr": "Fibre de leshen"
     },
     "substance": "vermilion",
     "rarity": "none",
@@ -2650,13 +2650,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Archespore Juice",
-      "fr": "Jus d'Archespore"
+      "fr": "Jus d’ékinoppyre"
     },
     "substance": "vitriol",
     "rarity": "none",
     "location": {
       "en": "Archespores",
-      "fr": "Archispores"
+      "fr": "Ékinoppyres"
     },
     "quantity": {
       "en": "N/A",
@@ -2738,13 +2738,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Botchling Blood",
-      "fr": "Sang botchling"
+      "fr": "Sang de couvin"
     },
     "substance": "vitriol",
     "rarity": "none",
     "location": {
       "en": "Botchlings",
-      "fr": "Couvins (Botchlings)"
+      "fr": "Couvins"
     },
     "quantity": {
       "en": "N/A",
@@ -2782,7 +2782,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Bullvore Eyes",
-      "fr": "Oeil de Bullvore"
+      "fr": "Œil de bullvore"
     },
     "substance": "vitriol",
     "rarity": "none",
@@ -2870,13 +2870,13 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Giant Centipede Mandibles",
-      "fr": "Mandibules géantes de mille-pattes"
+      "fr": "Mandibule de scolopendromorphe"
     },
     "substance": "vitriol",
     "rarity": "none",
     "location": {
       "en": "Giant centipedes",
-      "fr": "Mille-pattes géants"
+      "fr": "Scolopendromorphes"
     },
     "quantity": {
       "en": "N/A",
@@ -2892,7 +2892,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Leshen Resin",
-      "fr": "Résine Leshen"
+      "fr": "Résine de leshen"
     },
     "substance": "vitriol",
     "rarity": "none",
@@ -2980,7 +2980,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
     "rowKind": "material",
     "name": {
       "en": "Slyzard Vocal Cords",
-      "fr": "Accords vocaux Slyzard"
+      "fr": "Corde vocale de slyzard"
     },
     "substance": "vitriol",
     "rarity": "none",
@@ -3043,7 +3043,7 @@ export const SUBSTANCES_DATA: readonly MaterialLexiconEntry[] = [
 ];
 
 /**
- * Alchemical Formulae reference table (22 entries).
+ * Alchemical Formulae reference table (77 entries: 22 General Alchemy, 41 Witcher/S&F, 8 Core Bombs, 6 ToC Elixirs).
  */
 export const FORMULAE_DATA: readonly FormulaLexiconEntry[] = [
   {
@@ -3419,5 +3419,940 @@ export const FORMULAE_DATA: readonly FormulaLexiconEntry[] = [
     },
     "components": "Sol x2, Rebis x3, Fulgur, Vitriol",
     "cost": "97"
+  },
+  {
+    "id": "formulae-23-swallow",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Swallow",
+      "fr": "Hirondelle"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Vitriol, Aether, Caelum",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-24-blizzard",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Blizzard",
+      "fr": "Blizzard"
+    },
+    "level": "journeyman",
+    "dc": "18",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Vitriol x2, Rebis x2",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-25-cat",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Cat",
+      "fr": "Chat"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Aether, Vermilion, Hydragenum",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-26-tawny-owl",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Tawny Owl",
+      "fr": "Chat-huant"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Vitriol, Vermilion, Quebrith",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-27-maribor-forest",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Maribor Forest",
+      "fr": "Forêt de Maribor"
+    },
+    "level": "journeyman",
+    "dc": "18",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Rebis, Vermilion, Caelum, Sol",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-28-golden-oriole",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Golden Oriole",
+      "fr": "Loriot doré"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Rebis, Vermilion, Caelum",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-29-white-honey",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "White Honey",
+      "fr": "Miel blanc"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Vitriol, Rebis, Aether",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-30-killer-whale",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Killer Whale",
+      "fr": "Orque"
+    },
+    "level": "journeyman",
+    "dc": "18",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Vitriol x2, Quebrith, Fulgur",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-31-petris-philter",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Petri’s Philter",
+      "fr": "Philtre de Petri"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Rebis, Aether, Quebrith",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-32-full-moon",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Full Moon",
+      "fr": "Pleine lune"
+    },
+    "level": "master",
+    "dc": "20",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Quebrith, Hydragenum x2, Vermilion x2",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-33-black-blood",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Black Blood",
+      "fr": "Sang noir"
+    },
+    "level": "master",
+    "dc": "20",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Vitriol x3, Rebis, Aether",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-34-thunderbolt",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Thunderbolt",
+      "fr": "Tonnerre"
+    },
+    "level": "journeyman",
+    "dc": "18",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Quebrith x2, Hydragenum x2",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-35-berserker-brew",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Berserker’s Brew",
+      "fr": "Breuvage de berserker"
+    },
+    "level": "master",
+    "dc": "22",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Rebis x3, Sol, Caelum x2, Fulgur, Quebrith",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-36-celestine",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Celestine",
+      "fr": "Célestine"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Hydragenum x2, Aether x2, Vermilion",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-37-summer-salve",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Summer Salve",
+      "fr": "Onguent estival"
+    },
+    "level": "novice",
+    "dc": "12",
+    "time": {
+      "en": "5 Minutes",
+      "fr": "5 minutes"
+    },
+    "components": "Quebrith, Aether",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-38-cadaverine-solution",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Cadaverine Solution",
+      "fr": "Solution de cadavérine"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Vermilion x3, Fulgur, Rebis",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-39-vitality-potion",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Vitality Potion",
+      "fr": "Potion de Vitalité"
+    },
+    "level": "journeyman",
+    "dc": "18",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Vitriol, Fulgur x2, Hydragenum, Rebis x2",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-40-stamina-potion",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Stamina Potion",
+      "fr": "Potion d’Endurance"
+    },
+    "level": "journeyman",
+    "dc": "17",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Aether x2, Caelum, Vermilion",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-41-white-raffards-decoction",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "White Raffard’s Decoction",
+      "fr": "Décoction de Raffard le Blanc"
+    },
+    "level": "master",
+    "dc": "19",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Aether, Caelum, Quebrith, Rebis x2, Vitriol",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-42-arachas-decoction",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Arachas Decoction",
+      "fr": "Décoction d’Arachas"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Vermilion, Aether, Rebis, Vitriol",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-43-fiend-decoction",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Fiend Decoction",
+      "fr": "Décoction de Fiellon"
+    },
+    "level": "journeyman",
+    "dc": "18",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Aether x2, Vitriol, Vermilion, Fulgur",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-44-griffin-decoction",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Griffin Decoction",
+      "fr": "Décoction de Griffon"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Quebrith, Vermilion, Fulgur, Aether",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-45-grave-hag-decoction",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Grave Hag Decoction",
+      "fr": "Décoction de Guenaude sépulcrale"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Aether, Quebrith, Vitriol, Caelum",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-46-katakan-decoction",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Katakan Decoction",
+      "fr": "Décoction de Katakan"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Vermilion, Quebrith, Fulgur, Caelum",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-47-werewolf-decoction",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Werewolf Decoction",
+      "fr": "Décoction de Loup-garou"
+    },
+    "level": "journeyman",
+    "dc": "18",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Rebis, Quebrith, Hydragenum x2, Fulgur",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-48-nekker-decoction",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Nekker Decoction",
+      "fr": "Décoction de Nekker"
+    },
+    "level": "novice",
+    "dc": "14",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Rebis, Quebrith, Hydragenum",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-49-noonwraith-decoction",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Noonwraith Decoction",
+      "fr": "Décoction de Spectre de midi"
+    },
+    "level": "journeyman",
+    "dc": "18",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Quebrith x3, Vitriol, Aether",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-50-troll-decoction",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Troll Decoction",
+      "fr": "Décoction de Troll"
+    },
+    "level": "journeyman",
+    "dc": "18",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Caelum, Quebrith x2, Vitriol, Vermilion",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-51-wyvern-decoction",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Wyvern Decoction",
+      "fr": "Décoction de Wyvern"
+    },
+    "level": "journeyman",
+    "dc": "18",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "30 minutes"
+    },
+    "components": "Rebis x2, Vitriol, Aether, Fulgur",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-52-draconid-oil",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Draconid Oil",
+      "fr": "Huile contre les draconides"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Quebrith x2, Hydragenum x2",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-53-beast-oil",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Beast Oil",
+      "fr": "Huile contre les bêtes"
+    },
+    "level": "novice",
+    "dc": "14",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Vitriol, Aether",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-54-cursed-oil",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Cursed Oil",
+      "fr": "Huile contre les créatures maudites"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Vermilion, Aether, Hydragenum, Vitriol",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-55-elementa-oil",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Elementa Oil",
+      "fr": "Huile contre les élémentaires"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Rebis, Hydragenum, Quebrith, Vermilion",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-56-hybrid-oil",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Hybrid Oil",
+      "fr": "Huile contre les hybrides"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Rebis, Quebrith, Sol, Fulgur",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-57-insectoid-oil",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Insectoid Oil",
+      "fr": "Huile contre les insectoïdes"
+    },
+    "level": "novice",
+    "dc": "14",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Hydragenum, Rebis",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-58-necrophage-oil",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Necrophage Oil",
+      "fr": "Huile contre les nécrophages"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Hydragenum, Sol, Vitriol, Quebrith",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-59-ogroid-oil",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Ogroid Oil",
+      "fr": "Huile contre les ogroïdes"
+    },
+    "level": "journeyman",
+    "dc": "15",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Rebis, Quebrith, Caelum",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-60-specter-oil",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Specter Oil",
+      "fr": "Huile contre les spectres"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Rebis, Hydragenum, Aether, Fulgur",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-61-vampire-oil",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Vampire Oil",
+      "fr": "Huile contre les vampires"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Aether, Sol x2, Fulgur",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-62-relict-oil",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Relict Oil",
+      "fr": "Huile contre les vestiges"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Quebrith, Vermilion, Fulgur, Aether",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-63-hanged-mans-venom",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Hanged Man’s Venom",
+      "fr": "Venin du pendu"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Caelum, Sol, Vitriol, Quebrith",
+    "cost": "—"
+  },
+  {
+    "id": "formulae-64-bomb-dimeritium",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Dimeritium Bomb",
+      "fr": "Bombe au dimeritium"
+    },
+    "level": "master",
+    "dc": "20",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "½ heure"
+    },
+    "components": "Cire (x1), optima mater (x1), poudre zerrikanienne (x1), argile alluviale (x2), pétales de ginatia (x2)",
+    "cost": "264"
+  },
+  {
+    "id": "formulae-65-bomb-dancing-star",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Dancing Star",
+      "fr": "Étoile dansante"
+    },
+    "level": "master",
+    "dc": "20",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "½ heure"
+    },
+    "components": "Cire (x1), poudre zerrikanienne (x1), argile alluviale (x2), pétales d’ellébore (x2), soufre (x2)",
+    "cost": "162"
+  },
+  {
+    "id": "formulae-66-bomb-moon-dust",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Moon Dust",
+      "fr": "Poussière de lune"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "½ heure"
+    },
+    "components": "Cire (x1), poudre zerrikanienne (x1), solution de mercure (x1), soufre (x1), argile alluviale (x2)",
+    "cost": "199"
+  },
+  {
+    "id": "formulae-67-bomb-dragons-dream",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Dragon’s Dream",
+      "fr": "Rêve de dragon"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "½ heure"
+    },
+    "components": "Cire (x1), poudre zerrikanienne (x1), argile alluviale (x2), phosphore (x2), racine de pimenta dioica (x2)",
+    "cost": "177"
+  },
+  {
+    "id": "formulae-68-bomb-grapeshot",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Grapeshot",
+      "fr": "Ruche"
+    },
+    "level": "master",
+    "dc": "20",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "½ heure"
+    },
+    "components": "Cire (x1), fer (x1), poudre zerrikanienne (x1), argile alluviale (x2), œil de corbeau (x2)",
+    "cost": "159"
+  },
+  {
+    "id": "formulae-69-bomb-samum",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Samum",
+      "fr": "Samum"
+    },
+    "level": "journeyman",
+    "dc": "18",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "½ heure"
+    },
+    "components": "Cire (x1), poudre zerrikanienne (x1), argile alluviale (x2), célandine (x2), phosphore (x2)",
+    "cost": "147"
+  },
+  {
+    "id": "formulae-70-bomb-northern-wind",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Northern Wind",
+      "fr": "Vent du nord"
+    },
+    "level": "master",
+    "dc": "20",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "½ heure"
+    },
+    "components": "Cire (x1), poudre zerrikanienne (x1), argile alluviale (x2), eau ducale (x2), verveine (x2)",
+    "cost": "177"
+  },
+  {
+    "id": "formulae-71-bomb-devils-puffball",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Devil’s Puffball",
+      "fr": "Vesse de loup du diable"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "½ heure"
+    },
+    "components": "Cire (x1), poudre zerrikanienne (x1), argile alluviale (x2), moisissure verte (x2), pétales de ginatia (x2)",
+    "cost": "138"
+  },
+  {
+    "id": "formulae-72-elixir-anabolic-steroids",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Anabolic Steroids",
+      "fr": "Stéroïdes anabolisants"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "30 Minutes",
+      "fr": "½ heure"
+    },
+    "components": "Alcohest (x1) (+ substances selon MJ)",
+    "cost": "330"
+  },
+  {
+    "id": "formulae-73-elixir-lightning",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Lightning",
+      "fr": "Éclair"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Alcohest (x1) (+ substances selon MJ)",
+    "cost": "150"
+  },
+  {
+    "id": "formulae-74-elixir-mongoose",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Mongoose",
+      "fr": "Mangouste"
+    },
+    "level": "journeyman",
+    "dc": "15",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Alcohest (x1) (+ substances selon MJ)",
+    "cost": "100"
+  },
+  {
+    "id": "formulae-75-elixir-strider",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Strider",
+      "fr": "Arpenteur"
+    },
+    "level": "journeyman",
+    "dc": "16",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Alcohest (x1) (+ substances selon MJ)",
+    "cost": "128"
+  },
+  {
+    "id": "formulae-76-elixir-tempest",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Tempest",
+      "fr": "Tempête"
+    },
+    "level": "journeyman",
+    "dc": "15",
+    "time": {
+      "en": "15 Minutes",
+      "fr": "15 minutes"
+    },
+    "components": "Alcohest (x1) (+ substances selon MJ)",
+    "cost": "104"
+  },
+  {
+    "id": "formulae-77-elixir-last-hope",
+    "tabId": "formulae",
+    "rowKind": "formula",
+    "name": {
+      "en": "Last Hope",
+      "fr": "Dernier espoir"
+    },
+    "level": "master",
+    "dc": "22",
+    "time": {
+      "en": "1 Hour",
+      "fr": "1 heure"
+    },
+    "components": "Alcohest (x1) (+ substances selon MJ)",
+    "cost": "400"
   }
 ];

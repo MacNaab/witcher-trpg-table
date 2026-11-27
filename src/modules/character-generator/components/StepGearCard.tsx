@@ -82,6 +82,7 @@ export function StepGearCard({
 }: StepGearCardProps) {
   const copy = getCharacterGeneratorCopy(lang);
   const [pickerOpen, setPickerOpen] = useState(false);
+  const [compendiumSearch, setCompendiumSearch] = useState('');
   const [categoryFilter, setCategoryFilter] = useState<
     StarterEquipmentCategory | 'all'
   >('all');
@@ -158,10 +159,23 @@ export function StepGearCard({
     });
   };
 
-  const filteredCompendiumItems =
-    categoryFilter === 'all'
-      ? COMPENDIUM_PICKER_ITEMS
-      : COMPENDIUM_PICKER_ITEMS.filter((i) => i.category === categoryFilter);
+  const normalizedCompendiumQuery = compendiumSearch
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+
+  const filteredCompendiumItems = COMPENDIUM_PICKER_ITEMS.filter((item) => {
+    if (categoryFilter !== 'all' && item.category !== categoryFilter) {
+      return false;
+    }
+    if (!normalizedCompendiumQuery) return true;
+    const haystack = `${item.name.fr} ${item.name.en} ${item.groupLabel.fr} ${item.groupLabel.en} ${item.summary}`
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+    return haystack.includes(normalizedCompendiumQuery);
+  });
 
   return (
     <Card>
@@ -587,7 +601,13 @@ export function StepGearCard({
       </CardContent>
 
       {/* Compendium Search Dialog */}
-      <Dialog open={pickerOpen} onOpenChange={setPickerOpen}>
+      <Dialog
+        open={pickerOpen}
+        onOpenChange={(nextOpen) => {
+          setPickerOpen(nextOpen);
+          if (!nextOpen) setCompendiumSearch('');
+        }}
+      >
         <DialogContent className="p-0 sm:max-w-xl">
           <DialogHeader className="pt-4 pr-10 pl-4">
             <DialogTitle>{copy.gear.compendiumDialogTitle}</DialogTitle>
@@ -621,8 +641,12 @@ export function StepGearCard({
             ))}
           </div>
 
-          <Command className="rounded-t-none border-t border-border">
-            <CommandInput placeholder={copy.gear.compendiumSearchPlaceholder} />
+          <Command shouldFilter={false} className="rounded-t-none border-t border-border">
+            <CommandInput
+              value={compendiumSearch}
+              onValueChange={setCompendiumSearch}
+              placeholder={copy.gear.compendiumSearchPlaceholder}
+            />
             <CommandList className="max-h-80">
               <CommandEmpty>{copy.gear.compendiumNoResults}</CommandEmpty>
               <CommandGroup>

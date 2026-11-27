@@ -26,7 +26,12 @@ const MODULE_COMPONENTS: Record<
   'verbal-combat': lazy(() => import('@/src/modules/verbal-combat')),
   'campaign-calendar': lazy(() => import('@/src/modules/campaign-calendar')),
   'campaign-chronicle': lazy(() => import('@/src/modules/campaign-chronicle')),
+  'investigation-contracts': lazy(
+    () => import('@/src/modules/investigation-contracts')
+  ),
+  'estate-manager': lazy(() => import('@/src/modules/estate-manager')),
   'homebrew-studio': lazy(() => import('@/src/modules/homebrew-studio')),
+  'chaos-ley-goetia': lazy(() => import('@/src/modules/chaos-ley-goetia')),
 };
 
 interface ModuleViewportProps {

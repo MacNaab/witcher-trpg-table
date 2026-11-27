@@ -24,10 +24,6 @@ import {
   ALL_ORIGINS_SUGGESTIONS,
   FAMILY_FATES,
   FAMILY_STANDINGS,
-  MAGE_ACADEMIES,
-  MAGE_AGES,
-  MAGE_CURRENT_STATUS,
-  MAGE_IMPORTANT_EVENTS,
   MENTORS_DATA,
   PARENTAL_FATES,
   REGIONS_DATA,
@@ -35,7 +31,6 @@ import {
   WITCHER_CURRENT_STATUS,
   WITCHER_IMPORTANT_EVENTS,
   WITCHER_SCHOOLS,
-  rollMageDecadeEvent,
   rollSiblingDescription,
   rollStandardDecadeEvent,
   rollWitcherDecadeEvent,
@@ -55,10 +50,10 @@ import {
   randomizeStandardLifepath,
   randomizeWitcherLifepath,
   resolveLifepathTrack,
-  rollMageTrainingAndGraduation,
   rollWitcherTrainingAndTrial,
 } from '../utils/characterCalculations';
 import { FatesReferenceDialog } from './FatesReferenceDialog';
+import { MageLifepathSection } from './MageLifepathSection';
 
 interface StepLifepathCardProps {
   lang: ModuleLanguage;
@@ -1127,330 +1122,13 @@ export function StepLifepathCard({
           </div>
         )}
 
-        {/* MAGE GUIDED LIFEPATH */}
+        {/* MAGE GUIDED LIFEPATH (A Tome of Chaos) */}
         {track === 'mage' && (
-          <div className="flex flex-col gap-5">
-            <div className="grid gap-4 md:grid-cols-2">
-              <div className="flex flex-col gap-1.5">
-                <Label>{copy.lifepath.mage.ageEntered}</Label>
-                <Select
-                  value={state.mageLifepath.ageEntered}
-                  onValueChange={(value) => {
-                    if (
-                      value !== '2-6' &&
-                      value !== '7-12' &&
-                      value !== '12+'
-                    ) {
-                      return;
-                    }
-                    onUpdateState((prev) => ({
-                      ...prev,
-                      mageLifepath: {
-                        ...prev.mageLifepath,
-                        ageEntered: value,
-                      },
-                    }));
-                  }}
-                >
-                  <SelectTrigger className="w-full">
-                    <SelectValue>
-                      {MAGE_AGES.find(
-                        (a) => a.id === state.mageLifepath.ageEntered
-                      )?.label[lang] ?? copy.lifepath.selectPlaceholder}
-                    </SelectValue>
-                  </SelectTrigger>
-                  <SelectContent align="start">
-                    {MAGE_AGES.map((a) => (
-                      <SelectItem key={a.id} value={a.id}>
-                        {a.label[lang]}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="flex flex-col gap-1.5">
-                <Label>{copy.lifepath.mage.academy}</Label>
-                <Select
-                  value={state.mageLifepath.academy}
-                  onValueChange={(value) => {
-                    if (!value) return;
-                    onUpdateState((prev) => ({
-                      ...prev,
-                      mageLifepath: {
-                        ...prev.mageLifepath,
-                        academy: value as CharacterSheetState['mageLifepath']['academy'],
-                      },
-                    }));
-                  }}
-                >
-                  <SelectTrigger className="w-full">
-                    <SelectValue>
-                      {MAGE_ACADEMIES.find(
-                        (a) => a.id === state.mageLifepath.academy
-                      )?.label[lang] ?? copy.lifepath.selectPlaceholder}
-                    </SelectValue>
-                  </SelectTrigger>
-                  <SelectContent align="start">
-                    {MAGE_ACADEMIES.map((a) => (
-                      <SelectItem key={a.id} value={a.id}>
-                        {a.label[lang]}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-3 rounded-lg border border-border bg-muted/20 p-4">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="text-sm font-semibold">
-                  {copy.lifepath.mage.trainingEvent} &{' '}
-                  {copy.lifepath.mage.graduationOutcome}
-                </span>
-                <Button
-                  type="button"
-                  size="sm"
-                  variant="secondary"
-                  disabled={!state.mageLifepath.ageEntered}
-                  onClick={() => {
-                    const age = state.mageLifepath.ageEntered;
-                    if (!age) return;
-                    const res = rollMageTrainingAndGraduation(age, lang);
-                    onUpdateState((prev) => ({
-                      ...prev,
-                      mageLifepath: {
-                        ...prev.mageLifepath,
-                        ...res,
-                      },
-                    }));
-                  }}
-                >
-                  <Dices data-icon="inline-start" />
-                  <span>{copy.lifepath.mage.rollTrainingBtn}</span>
-                </Button>
-              </div>
-
-              <div className="grid gap-3 md:grid-cols-2">
-                <div className="flex flex-col gap-1">
-                  <Label className="text-xs text-muted-foreground">
-                    {copy.lifepath.mage.trainingEvent}
-                  </Label>
-                  <Textarea
-                    rows={2}
-                    value={state.mageLifepath.trainingResult}
-                    onChange={(e) =>
-                      onUpdateState((prev) => ({
-                        ...prev,
-                        mageLifepath: {
-                          ...prev.mageLifepath,
-                          trainingResult: e.target.value,
-                        },
-                      }))
-                    }
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <Label className="text-xs text-muted-foreground">
-                    {copy.lifepath.mage.graduationOutcome}
-                  </Label>
-                  <Textarea
-                    rows={2}
-                    value={state.mageLifepath.graduationResult}
-                    onChange={(e) =>
-                      onUpdateState((prev) => ({
-                        ...prev,
-                        mageLifepath: {
-                          ...prev.mageLifepath,
-                          graduationResult: e.target.value,
-                        },
-                      }))
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-2">
-              <div className="flex flex-col gap-1.5">
-                <Label>{copy.lifepath.mage.importantEvent}</Label>
-                <Select
-                  value={
-                    state.mageLifepath.importantEventIndex !== null
-                      ? String(state.mageLifepath.importantEventIndex)
-                      : ''
-                  }
-                  onValueChange={(value) => {
-                    if (value === null || value === '') return;
-                    const idx = Number(value);
-                    onUpdateState((prev) => ({
-                      ...prev,
-                      mageLifepath: {
-                        ...prev.mageLifepath,
-                        importantEventIndex: idx,
-                      },
-                    }));
-                  }}
-                >
-                  <SelectTrigger className="w-full">
-                    <SelectValue>
-                      {state.mageLifepath.importantEventIndex !== null
-                        ? MAGE_IMPORTANT_EVENTS[
-                            state.mageLifepath.importantEventIndex
-                          ]?.[lang] ?? copy.lifepath.selectPlaceholder
-                        : copy.lifepath.selectPlaceholder}
-                    </SelectValue>
-                  </SelectTrigger>
-                  <SelectContent align="start">
-                    {MAGE_IMPORTANT_EVENTS.map((ev, idx) => (
-                      <SelectItem key={idx} value={String(idx)}>
-                        {ev[lang]}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="flex flex-col gap-1.5">
-                <Label>{copy.lifepath.mage.currentStatus}</Label>
-                <Select
-                  value={
-                    state.mageLifepath.currentStatusIndex !== null
-                      ? String(state.mageLifepath.currentStatusIndex)
-                      : ''
-                  }
-                  onValueChange={(value) => {
-                    if (value === null || value === '') return;
-                    const idx = Number(value);
-                    onUpdateState((prev) => ({
-                      ...prev,
-                      mageLifepath: {
-                        ...prev.mageLifepath,
-                        currentStatusIndex: idx,
-                      },
-                    }));
-                  }}
-                >
-                  <SelectTrigger className="w-full">
-                    <SelectValue>
-                      {state.mageLifepath.currentStatusIndex !== null
-                        ? MAGE_CURRENT_STATUS[
-                            state.mageLifepath.currentStatusIndex
-                          ]?.[lang] ?? copy.lifepath.selectPlaceholder
-                        : copy.lifepath.selectPlaceholder}
-                    </SelectValue>
-                  </SelectTrigger>
-                  <SelectContent align="start">
-                    {MAGE_CURRENT_STATUS.map((st, idx) => (
-                      <SelectItem key={idx} value={String(idx)}>
-                        {st[lang]}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-3">
-              {[0, 1, 2].map((idx) => {
-                const risk = state.mageLifepath.decadeSafety[idx] || 'safe';
-                return (
-                  <div
-                    key={idx}
-                    className="grid items-center gap-2 sm:grid-cols-12"
-                  >
-                    <Label className="text-xs sm:col-span-2">
-                      {copy.lifepath.standard.decadeLabel} {idx + 1}
-                    </Label>
-                    <div className="sm:col-span-3">
-                      <Select
-                        value={risk}
-                        onValueChange={(val) => {
-                          if (!val) return;
-                          onUpdateState((prev) => {
-                            const nextSafety = [
-                              ...prev.mageLifepath.decadeSafety,
-                            ] as CharacterSheetState['mageLifepath']['decadeSafety'];
-                            nextSafety[idx] = val as DecadeRiskLevel;
-                            return {
-                              ...prev,
-                              mageLifepath: {
-                                ...prev.mageLifepath,
-                                decadeSafety: nextSafety,
-                              },
-                            };
-                          });
-                        }}
-                      >
-                        <SelectTrigger className="h-8 w-full text-xs">
-                          <SelectValue>
-                            {riskOptions.find((o) => o.value === risk)?.label}
-                          </SelectValue>
-                        </SelectTrigger>
-                        <SelectContent align="start">
-                          {riskOptions.map((opt) => (
-                            <SelectItem key={opt.value} value={opt.value}>
-                              {opt.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="flex items-center gap-2 sm:col-span-7">
-                      <Input
-                        value={state.mageLifepath.decadeEvents[idx]}
-                        onChange={(e) => {
-                          const txt = e.target.value;
-                          onUpdateState((prev) => {
-                            const nextEv = [
-                              ...prev.mageLifepath.decadeEvents,
-                            ] as [string, string, string];
-                            nextEv[idx] = txt;
-                            return {
-                              ...prev,
-                              mageLifepath: {
-                                ...prev.mageLifepath,
-                                decadeEvents: nextEv,
-                              },
-                            };
-                          });
-                        }}
-                        placeholder={copy.lifepath.mage.decadePlaceholder}
-                        className="h-8 text-xs"
-                      />
-                      <Button
-                        type="button"
-                        variant="outline"
-                        size="sm"
-                        className="h-8 shrink-0 px-2"
-                        onClick={() => {
-                          const rolled = rollMageDecadeEvent(
-                            risk as DecadeRiskLevel,
-                            lang
-                          );
-                          onUpdateState((prev) => {
-                            const nextEv = [
-                              ...prev.mageLifepath.decadeEvents,
-                            ] as [string, string, string];
-                            nextEv[idx] = rolled;
-                            return {
-                              ...prev,
-                              mageLifepath: {
-                                ...prev.mageLifepath,
-                                decadeEvents: nextEv,
-                              },
-                            };
-                          });
-                        }}
-                      >
-                        <Dices className="size-3.5" />
-                      </Button>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          <MageLifepathSection
+            lang={lang}
+            state={state}
+            onUpdateState={onUpdateState}
+          />
         )}
       </CardContent>
 

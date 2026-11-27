@@ -1,15 +1,22 @@
 import { useEffect, useMemo, useState } from 'react';
 import {
   Archive,
+  Bomb,
   BookOpen,
   CalendarDays,
   Castle,
   Compass,
+  Crown,
   Dices,
+  Dna,
+  FileSearch,
+  Flame,
   FlaskConical,
+  Gem,
   Hammer,
   HeartPulse,
   History,
+  Landmark,
   Languages,
   LayoutGrid,
   Milestone,
@@ -20,9 +27,11 @@ import {
   Scale,
   Shield,
   Skull,
+  Sparkles,
   Store,
   Sun,
   Swords,
+  Trophy,
   Users,
 } from 'lucide-react';
 import {
@@ -42,8 +51,14 @@ import { useI18n } from '@/src/contexts/I18nContext';
 import { useTheme } from '@/src/contexts/ThemeContext';
 import {
   ARMOR_DATA,
+  EXPERIMENTAL_TECH_DATA,
   GEAR_ITEMS,
+  MAGIC_ITEMS_DATA,
+  MUTAGENS_DATA,
   POTIONS_DATA,
+  RELICS_DATA,
+  RUNES_GLYPHS_DATA,
+  TROPHIES_DATA,
   WEAPONS_DATA,
 } from '@/src/data/items';
 import { AVAILABLE_LOCALES } from '@/src/i18n';
@@ -165,8 +180,8 @@ const SUB_TOOL_SHORTCUTS: readonly SubToolShortcut[] = [
     tab: 'bestiary',
     icon: BookOpen,
     label: {
-      fr: 'Bestiaire & Tableau complet (174 fiches)',
-      en: 'Complete Bestiary & Faction Table (174 entries)',
+      fr: `Bestiaire & Tableau complet (${ALL_BESTIARY_ENTRIES.length} fiches)`,
+      en: `Complete Bestiary & Faction Table (${ALL_BESTIARY_ENTRIES.length} entries)`,
     },
     keywords: 'bestiary bestiaire stats tableau complet fiche creature',
   },
@@ -273,6 +288,42 @@ const SUB_TOOL_SHORTCUTS: readonly SubToolShortcut[] = [
     },
     keywords:
       'pdf markdown homebrew homebrewery supplement creation editeur colonnes livre mise en page',
+  },
+  {
+    id: 'shortcut-contracts-board',
+    moduleId: 'investigation-contracts',
+    tab: 'contracts',
+    icon: FileSearch,
+    label: {
+      fr: 'Tableau des 11 Contrats de Sorceleur',
+      en: 'Official 11 Witcher Contracts Board',
+    },
+    keywords:
+      'contrat contract witcher panneau annonce mystere enquete investigation journal',
+  },
+  {
+    id: 'shortcut-estate-upgrades',
+    moduleId: 'estate-manager',
+    tab: 'upgrades',
+    icon: Landmark,
+    label: {
+      fr: 'Domaine du Noble : Améliorations & Serre',
+      en: 'Noble Estate: Upgrades & Greenhouse',
+    },
+    keywords:
+      'domaine estate fief noble serre terrain chasse baraquements atelier seigneur',
+  },
+  {
+    id: 'shortcut-demon-truename',
+    moduleId: 'chaos-ley-goetia',
+    tab: 'truename',
+    icon: Flame,
+    label: {
+      fr: 'Générateur de Vrai Nom de Démon (Goétie)',
+      en: 'Demon True Name Generator (Goetia)',
+    },
+    keywords:
+      'demon goetia goetie vrai nom true name lucifuge bes casglydd mari lwyd ligne tellurique ley line',
   },
 ];
 
@@ -529,65 +580,145 @@ export function CommandSearchDialog({
       searchValue: string;
     }> = [];
 
-    const pushIfMatched = (
-      id: string,
-      nameFr: string,
-      nameEn: string,
-      meta: string,
-      item: CompendiumSearchItem
+    const MAX_TOTAL = 16;
+    const MAX_PER_KIND = 3;
+
+    const collectKind = (
+      collectFn: (push: (
+        id: string,
+        nameFr: string,
+        nameEn: string,
+        meta: string,
+        item: CompendiumSearchItem
+      ) => void) => void
     ) => {
-      const rawHaystack = `${nameFr} ${nameEn} ${meta}`;
-      if (normalizeSearchToken(rawHaystack).includes(normalizedQuery)) {
-        results.push({
-          id,
-          name: lang === 'fr' ? nameFr : nameEn,
-          meta,
-          item,
-          searchValue: `${search} ${rawHaystack} ${normalizeSearchToken(rawHaystack)}`,
-        });
-      }
+      let kindCount = 0;
+      collectFn((id, nameFr, nameEn, meta, item) => {
+        if (results.length >= MAX_TOTAL || kindCount >= MAX_PER_KIND) return;
+        const rawHaystack = `${nameFr} ${nameEn} ${meta}`;
+        if (normalizeSearchToken(rawHaystack).includes(normalizedQuery)) {
+          results.push({
+            id,
+            name: lang === 'fr' ? nameFr : nameEn,
+            meta,
+            item,
+            searchValue: `${search} ${rawHaystack} ${normalizeSearchToken(rawHaystack)}`,
+          });
+          kindCount++;
+        }
+      });
     };
 
-    for (const entry of WEAPONS_DATA) {
-      if (results.length >= 8) break;
-      pushIfMatched(
-        `w-${entry.id}`,
-        entry.name.fr,
-        entry.name.en,
-        `${entry.damage} · ${entry.priceDisplay}`,
-        { kind: 'weapon', entry }
-      );
-    }
-    for (const entry of ARMOR_DATA) {
-      if (results.length >= 8) break;
-      pushIfMatched(
-        `a-${entry.id}`,
-        entry.name.fr,
-        entry.name.en,
-        `PA ${entry.sp} · ${entry.priceDisplay}`,
-        { kind: 'armor', entry }
-      );
-    }
-    for (const entry of POTIONS_DATA) {
-      if (results.length >= 8) break;
-      pushIfMatched(
-        `p-${entry.id}`,
-        entry.name.fr,
-        entry.name.en,
-        `${entry.type} · ${entry.priceDisplay}`,
-        { kind: 'alchemy', entry }
-      );
-    }
-    for (const entry of GEAR_ITEMS) {
-      if (results.length >= 8) break;
-      pushIfMatched(
-        `g-${entry.id}`,
-        entry.name.fr,
-        entry.name.en,
-        `${entry.category} · ${entry.priceDisplay}`,
-        { kind: 'gear', entry }
-      );
-    }
+    collectKind((push) => {
+      for (const entry of RELICS_DATA) {
+        push(
+          `rel-${entry.id}`,
+          entry.name.fr,
+          entry.name.en,
+          `${entry.subType[lang]} · ${entry.priceDisplay}`,
+          { kind: 'relic', entry }
+        );
+      }
+    });
+    collectKind((push) => {
+      for (const entry of WEAPONS_DATA) {
+        push(
+          `w-${entry.id}`,
+          entry.name.fr,
+          entry.name.en,
+          `${entry.damage} · ${entry.priceDisplay}`,
+          { kind: 'weapon', entry }
+        );
+      }
+    });
+    collectKind((push) => {
+      for (const entry of ARMOR_DATA) {
+        push(
+          `a-${entry.id}`,
+          entry.name.fr,
+          entry.name.en,
+          `PA ${entry.sp} · ${entry.priceDisplay}`,
+          { kind: 'armor', entry }
+        );
+      }
+    });
+    collectKind((push) => {
+      for (const entry of EXPERIMENTAL_TECH_DATA) {
+        push(
+          `exp-${entry.id}`,
+          entry.name.fr,
+          entry.name.en,
+          `${entry.techType} · ${entry.priceDisplay} cr.`,
+          { kind: 'experimental', entry }
+        );
+      }
+    });
+    collectKind((push) => {
+      for (const entry of RUNES_GLYPHS_DATA) {
+        push(
+          `rn-${entry.id}`,
+          entry.name.fr,
+          entry.name.en,
+          `${entry.target[lang]} · ${entry.priceDisplay}`,
+          { kind: 'runeGlyph', entry }
+        );
+      }
+    });
+    collectKind((push) => {
+      for (const entry of MAGIC_ITEMS_DATA) {
+        push(
+          `mag-${entry.id}`,
+          entry.name.fr,
+          entry.name.en,
+          `${entry.category} · ${entry.priceDisplay}`,
+          { kind: 'magicItem', entry }
+        );
+      }
+    });
+    collectKind((push) => {
+      for (const entry of POTIONS_DATA) {
+        push(
+          `p-${entry.id}`,
+          entry.name.fr,
+          entry.name.en,
+          `${entry.type} · ${entry.priceDisplay}`,
+          { kind: 'alchemy', entry }
+        );
+      }
+    });
+    collectKind((push) => {
+      for (const entry of MUTAGENS_DATA) {
+        push(
+          `mut-${entry.id}`,
+          entry.name.fr,
+          entry.name.en,
+          `${entry.sourceMonster[lang]} · SD ${entry.alchemyDc}`,
+          { kind: 'mutagen', entry }
+        );
+      }
+    });
+    collectKind((push) => {
+      for (const entry of TROPHIES_DATA) {
+        push(
+          `trp-${entry.id}`,
+          entry.name.fr,
+          entry.name.en,
+          `${entry.monsterCategory[lang]} · ToC`,
+          { kind: 'trophy', entry }
+        );
+      }
+    });
+    collectKind((push) => {
+      for (const entry of GEAR_ITEMS) {
+        push(
+          `g-${entry.id}`,
+          entry.name.fr,
+          entry.name.en,
+          `${entry.category} · ${entry.priceDisplay}`,
+          { kind: 'gear', entry }
+        );
+      }
+    });
 
     return results;
   }, [lang, normalizedQuery, onOpenCompendiumItem, search]);
@@ -678,14 +809,30 @@ export function CommandSearchDialog({
             <>
               <CommandGroup heading={t.nav.compendiumGroup}>
                 {compendiumMatches.map((match) => {
-                  const Icon =
-                    match.item.kind === 'weapon'
-                      ? Swords
-                      : match.item.kind === 'armor'
-                        ? Shield
-                        : match.item.kind === 'alchemy'
-                          ? FlaskConical
-                          : Package;
+                  const Icon = (() => {
+                    switch (match.item.kind) {
+                      case 'weapon':
+                        return Swords;
+                      case 'armor':
+                        return Shield;
+                      case 'alchemy':
+                        return FlaskConical;
+                      case 'relic':
+                        return Crown;
+                      case 'experimental':
+                        return Bomb;
+                      case 'runeGlyph':
+                        return Gem;
+                      case 'magicItem':
+                        return Sparkles;
+                      case 'trophy':
+                        return Trophy;
+                      case 'mutagen':
+                        return Dna;
+                      default:
+                        return Package;
+                    }
+                  })();
                   return (
                     <CommandItem
                       key={match.id}
