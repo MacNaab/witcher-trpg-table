@@ -165,6 +165,51 @@ export interface CharacterSheetPageData {
   lang?: ModuleLanguage;
 }
 
+export interface ProfessionOverviewPageData {
+  title: string;
+  image: string;
+  definingSkillTitle: string;
+  definingSkillShort: string;
+  definingSkillText: string;
+  quote: string;
+  quoteAttribution?: string;
+  lore: string;
+  loreAttribution?: string;
+  vigor: string;
+  magicTitle?: string;
+  magicPerks: string[];
+  skills: string[];
+  gearTitle?: string;
+  gear: string[];
+  treasure?: string;
+  lang?: ModuleLanguage;
+}
+
+export interface ProfessionTreeSideSubTable {
+  title: string;
+  headers: [string, string];
+  sections: Array<{
+    heading?: string;
+    rows: Array<[string, string]>;
+  }>;
+}
+
+export interface ProfessionTreeTalentNode {
+  name: string;
+  description: string;
+}
+
+export interface ProfessionTreePageData {
+  title: string;
+  definingSkillTitle: string;
+  definingSkillDescription: string;
+  branches: [string, string, string];
+  /** Ordered row-major: [b1_t1, b2_t1, b3_t1, b1_t2, b2_t2, b3_t2, b1_t3, b2_t3, b3_t3] */
+  talents: ProfessionTreeTalentNode[];
+  sideTables: ProfessionTreeSideSubTable[];
+  lang?: ModuleLanguage;
+}
+
 export interface ParsedHomebrewPage {
   pageIndex: number;
   pageNumber: number;
@@ -179,6 +224,8 @@ export interface ParsedHomebrewPage {
   bestiaryLeftData?: BestiaryLeftPageData;
   bestiaryRightData?: BestiaryRightPageData;
   characterSheetData?: CharacterSheetPageData;
+  professionOverviewData?: ProfessionOverviewPageData;
+  professionTreeData?: ProfessionTreePageData;
   tocConfig?: TocConfig;
   tocEntries: TocEntry[];
   bannerNodes: MarkdownBlockNode[];

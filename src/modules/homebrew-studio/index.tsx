@@ -46,6 +46,7 @@ import {
   type ImportEntityMode,
 } from './components/BestiaryImportDialog';
 import { CreatureTypeAutocompleteMenu } from './components/CreatureTypeAutocompleteMenu';
+import { ProfessionBuilderDialog } from './components/ProfessionBuilderDialog';
 import { WitcherBookPage, PAGE_DIMENSIONS } from './components/WitcherBookPage';
 import {
   WorkspaceControlsBar,
@@ -123,6 +124,7 @@ export default function HomebrewStudioModule({
   const [templateDialogOpen, setTemplateDialogOpen] = useState(false);
   const [importDialogMode, setImportDialogMode] =
     useState<ImportEntityMode | null>(null);
+  const [professionDialogOpen, setProfessionDialogOpen] = useState(false);
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
   const [isExportingPdf, setIsExportingPdf] = useState(false);
   const [typeAutocomplete, setTypeAutocomplete] = useState<{
@@ -178,6 +180,7 @@ export default function HomebrewStudioModule({
         e.key === 'Escape' &&
         !typeAutocomplete &&
         importDialogMode === null &&
+        !professionDialogOpen &&
         !templateDialogOpen
       ) {
         setFullscreenPreview(false);
@@ -189,7 +192,13 @@ export default function HomebrewStudioModule({
       document.body.style.overflow = prevOverflow;
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [fullscreenPreview, importDialogMode, templateDialogOpen, typeAutocomplete]);
+  }, [
+    fullscreenPreview,
+    importDialogMode,
+    professionDialogOpen,
+    templateDialogOpen,
+    typeAutocomplete,
+  ]);
 
   // Invalidate textarea page-top measurements when container width changes
   useEffect(() => {
@@ -725,26 +734,40 @@ export default function HomebrewStudioModule({
                                   page.isEven,
                                   page.characterSheetData.name
                                 )
-                              : page.isArtPage
-                                ? copy.preview.artPageMeta(
+                              : page.professionOverviewData
+                                ? copy.preview.professionOverviewMeta(
                                     page.pageNumber,
-                                    page.isEven
+                                    page.isEven,
+                                    page.professionOverviewData.title
                                   )
-                                : page.tocConfig
-                                  ? copy.preview.tocMeta(
+                                : page.professionTreeData
+                                  ? copy.preview.professionTreeMeta(
                                       page.pageNumber,
-                                      page.isEven
+                                      page.isEven,
+                                      page.professionTreeData.title
                                     )
-                                  : copy.preview.pageMeta(
-                                      page.pageNumber,
-                                      page.isEven
-                                    )}
+                                  : page.isArtPage
+                                    ? copy.preview.artPageMeta(
+                                        page.pageNumber,
+                                        page.isEven
+                                      )
+                                    : page.tocConfig
+                                      ? copy.preview.tocMeta(
+                                          page.pageNumber,
+                                          page.isEven
+                                        )
+                                      : copy.preview.pageMeta(
+                                          page.pageNumber,
+                                          page.isEven
+                                        )}
                   </span>
                   {!page.isCover &&
                     !page.isBackCover &&
                     !page.bestiaryLeftData &&
                     !page.bestiaryRightData &&
                     !page.characterSheetData &&
+                    !page.professionOverviewData &&
+                    !page.professionTreeData &&
                     !page.isArtPage &&
                     !page.tocConfig &&
                     page.asideNodes.length === 0 && (
@@ -1122,6 +1145,7 @@ export default function HomebrewStudioModule({
             onUploadImageClick={() => imageInputRef.current?.click()}
             onOpenImportCharacter={() => setImportDialogMode('character')}
             onOpenImportMonster={() => setImportDialogMode('monster')}
+            onOpenCreateProfession={() => setProfessionDialogOpen(true)}
           />
         )}
 
@@ -1345,6 +1369,19 @@ export default function HomebrewStudioModule({
         onInsertStatblock={(name, md) => {
           insertAtCursor(`\n${md}\n`);
           toast.success(copy.bestiaryDialog.insertedToast(name));
+        }}
+      />
+
+      {/* Guided 2-Page Profession Builder Dialog */}
+      <ProfessionBuilderDialog
+        open={professionDialogOpen}
+        onOpenChange={setProfessionDialogOpen}
+        lang={lang}
+        copy={copy}
+        docImages={activeDoc.images}
+        onInsertProfession={(name, md) => {
+          insertAtCursor(`\n\n${md}\n\n`);
+          toast.success(copy.professionDialog.insertedToast(name));
         }}
       />
     </div>

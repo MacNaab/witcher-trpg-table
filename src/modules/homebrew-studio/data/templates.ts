@@ -12,6 +12,10 @@ import type {
   HomebrewThemeId,
   ModuleLanguage,
 } from '../types';
+import {
+  createBlankProfessionSpreadData,
+  serializeProfessionSpreadToMarkdown,
+} from '../utils/professionFormatters';
 
 export const HOMEBREW_STORAGE_KEY = 'witcher-gm-homebrew-v1';
 
@@ -106,6 +110,9 @@ export interface HomebrewTemplatePreset {
   chapterFooter: { fr: string; en: string };
   markdown: { fr: string; en: string };
 }
+
+const blankProfessionFr = createBlankProfessionSpreadData('fr');
+const blankProfessionEn = createBlankProfessionSpreadData('en');
 
 export const HOMEBREW_TEMPLATES: readonly HomebrewTemplatePreset[] = [
   {
@@ -536,6 +543,30 @@ Raised on blackened oak pilings, the tavern shelters fur traders, deserters, and
 ::: bottom-art
 ![Misty Pontar Bank](preset:grimoire)
 :::`,
+    },
+  },
+  {
+    id: 'profession-spread',
+    title: {
+      fr: 'Nouvelle Profession (Double page Description + Arbre de talents 3×3)',
+      en: 'New Profession (2-Page Overview + 3×3 Skill Tree Spread)',
+    },
+    description: {
+      fr: 'Modèle officiel sur 2 pages : Page 1 (portrait, épigraphe, récit, compétence exclusive, vigueur, compétences et équipements) et Page 2 (arbre 3×3 à 3 branches et tables annexes).',
+      en: 'Official 2-page Profession layout: Page 1 (portrait, epigraph, lore chronicle, defining skill, vigor, 10 skills & starting gear) and Page 2 (3-branch 3×3 skill tree & sidebar tables).',
+    },
+    theme: 'teal',
+    startPageNumber: 44,
+    chapterFooter: { fr: 'Les Professions', en: 'Professions' },
+    markdown: {
+      fr: serializeProfessionSpreadToMarkdown(
+        blankProfessionFr.overview,
+        blankProfessionFr.tree
+      ),
+      en: serializeProfessionSpreadToMarkdown(
+        blankProfessionEn.overview,
+        blankProfessionEn.tree
+      ),
     },
   },
 ];

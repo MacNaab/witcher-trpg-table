@@ -723,6 +723,248 @@ export function downloadPrintableBrewHtml(
         `;
       }
 
+      if (p.professionOverviewData) {
+        const d = p.professionOverviewData;
+        const isFr = (d.lang ?? lang) === 'fr';
+        const artSrc = resolveImg(d.image || 'preset:grimoire', doc.images);
+        const L = isFr
+          ? {
+              definingSkill: 'Compétence exclusive',
+              vigor: 'Vigueur',
+              magicPerks: d.magicTitle || 'Atouts magiques',
+              skills: 'Compétences',
+              gear: d.gearTitle || '5 équipements parmi',
+              treasure: 'Bourse de départ',
+            }
+          : {
+              definingSkill: 'Defining Skill',
+              vigor: 'Vigor',
+              magicPerks: d.magicTitle || 'Magical Perks',
+              skills: 'Skills',
+              gear: d.gearTitle || 'Starting Gear',
+              treasure: 'Starting Coin',
+            };
+        const titleSize =
+          d.title.length > 22 ? '30px' : d.title.length > 14 ? '36px' : '42px';
+        const portraitH = Math.round(pageHeightNum * 0.43);
+
+        const magicBox =
+          d.magicPerks.length > 0
+            ? `<div class="bl-box"><div class="bl-inner"><div class="po-box-hdr">${escapeHtml(L.magicPerks)}</div><div class="po-magic-list">${d.magicPerks
+                .map((perk) => `<span>${escapeHtml(perk)}</span>`)
+                .join('')}</div></div></div>`
+            : '';
+
+        const skillsBox =
+          d.skills.length > 0
+            ? `<div class="bl-box"><div class="bl-inner"><div class="po-box-hdr">${escapeHtml(L.skills)}</div>${d.skills
+                .slice(0, 12)
+                .map(
+                  (sk, idx, arr) =>
+                    `<div class="po-row ${idx % 2 === 1 ? 'stripe' : ''} ${idx < arr.length - 1 ? 'solid-b' : ''}">${escapeHtml(sk)}</div>`
+                )
+                .join('')}</div></div>`
+            : '';
+
+        const gearBox =
+          d.gear.length > 0
+            ? `<div class="bl-box"><div class="bl-inner"><div class="po-box-hdr">${escapeHtml(L.gear)}</div>${d.gear
+                .slice(0, 12)
+                .map(
+                  (item, idx, arr) =>
+                    `<div class="po-row ${idx % 2 === 1 ? 'stripe' : ''} ${idx < arr.length - 1 ? 'solid-b' : ''}">${escapeHtml(item)}</div>`
+                )
+                .join('')}</div></div>`
+            : '';
+
+        const treasureBox = d.treasure
+          ? `<div class="bl-box"><div class="bl-inner"><div class="po-box-hdr">${escapeHtml(L.treasure)}</div><div class="po-box-val">${escapeHtml(d.treasure)}</div></div></div>`
+          : '';
+
+        const sidebarHtml = `
+          <aside class="po-aside">
+            <div class="bl-box"><div class="bl-inner"><div class="po-box-hdr">${escapeHtml(L.definingSkill)}</div><div class="po-box-val">${escapeHtml(d.definingSkillShort || d.definingSkillTitle)}</div></div></div>
+            <div class="bl-box"><div class="bl-inner"><div class="po-box-hdr">${escapeHtml(L.vigor)}</div><div class="po-box-val" style="font-weight:600;font-variant-numeric:tabular-nums;">${escapeHtml(d.vigor || '0')}</div></div></div>
+            ${magicBox}
+            ${skillsBox}
+            ${gearBox}
+            ${treasureBox}
+          </aside>
+        `;
+
+        const loreHtml = d.lore
+          .split('\n\n')
+          .filter(Boolean)
+          .map(
+            (para, idx) =>
+              `<p class="po-lore-p" style="margin:${idx === 0 ? 0 : '5px 0 0'};">${renderInlineHtml(para)}</p>`
+          )
+          .join('');
+
+        const mainHtml = `
+          <div class="po-main">
+            <h1 class="po-title" style="font-size:${titleSize}">${escapeHtml(d.title)}</h1>
+            <div class="po-subgrid">
+              <div class="po-subleft">
+                <div class="po-portrait" style="height:${portraitH}px">${artSrc ? `<img src="${escapeHtml(artSrc)}" alt="${escapeHtml(d.title)}" />` : ''}</div>
+                ${
+                  d.definingSkillText
+                    ? `<div class="bl-box"><div class="bl-inner"><div class="po-def-hdr">${escapeHtml(d.definingSkillTitle)}</div><div class="po-def-body">${renderInlineHtml(d.definingSkillText)}</div></div></div>`
+                    : ''
+                }
+              </div>
+              <div class="po-subright">
+                ${
+                  d.quote
+                    ? `<div class="po-quote"><p style="margin:0;">${renderInlineHtml(d.quote)}</p>${d.quoteAttribution ? `<p class="po-quote-attr">— ${escapeHtml(d.quoteAttribution)}</p>` : ''}</div>`
+                    : ''
+                }
+                ${
+                  d.lore
+                    ? `<div class="po-lore">${loreHtml}${d.loreAttribution ? `<p class="po-lore-attr">— ${escapeHtml(d.loreAttribution)}</p>` : ''}</div>`
+                    : ''
+                }
+              </div>
+            </div>
+          </div>
+        `;
+
+        return `
+          <article class="book-page ${p.isEven ? 'even' : 'odd'}">
+            <div class="top-band">
+              <div class="ribbon">
+                <div class="ribbon-shadow"></div>
+                <div class="ribbon-face">${p.pageNumber}</div>
+              </div>
+            </div>
+            <div class="po-grid">${p.isEven ? `${sidebarHtml}${mainHtml}` : `${mainHtml}${sidebarHtml}`}</div>
+            ${doc.chapterFooter.trim() ? `<footer class="page-footer">${escapeHtml(doc.chapterFooter)}</footer>` : ''}
+          </article>
+        `;
+      }
+
+      if (p.professionTreeData) {
+        const d = p.professionTreeData;
+        const hasSidebar = d.sideTables.length > 0;
+        const titleSize =
+          d.title.length > 34 ? '25px' : d.title.length > 24 ? '30px' : '34px';
+
+        const sideTablesHtml = d.sideTables
+          .map(
+            (table) => `
+              <div class="pt-side-tbl">
+                <div class="pt-side-title">${escapeHtml(table.title)}</div>
+                <div class="bl-box"><div class="bl-inner">
+                  <div class="pt-side-hdr">
+                    <span>${escapeHtml(table.headers[0])}</span>
+                    <span>${escapeHtml(table.headers[1])}</span>
+                  </div>
+                  ${table.sections
+                    .map(
+                      (section, sIdx) => `
+                        <div>
+                          ${section.heading ? `<div class="pt-side-sec ${sIdx > 0 ? 'top-b' : ''}">${escapeHtml(section.heading)}</div>` : ''}
+                          ${section.rows
+                            .map(
+                              ([label, val], rIdx) => `
+                                <div class="pt-side-row ${rIdx < section.rows.length - 1 || sIdx < table.sections.length - 1 ? 'soft-row-b' : ''}">
+                                  <span>${escapeHtml(label)}</span>
+                                  <span>${escapeHtml(val)}</span>
+                                </div>
+                              `
+                            )
+                            .join('')}
+                        </div>
+                      `
+                    )
+                    .join('')}
+                </div></div>
+              </div>
+            `
+          )
+          .join('');
+
+        const sidebarHtml = hasSidebar
+          ? `<aside class="pt-aside">${sideTablesHtml}</aside>`
+          : '';
+
+        const defParasHtml = d.definingSkillDescription
+          ? `<div class="pt-def-cols">${d.definingSkillDescription
+              .split('\n\n')
+              .filter(Boolean)
+              .map(
+                (para, idx) =>
+                  `<p style="margin:${idx === 0 ? 0 : '4px 0 0'};">${renderInlineHtml(para)}</p>`
+              )
+              .join('')}</div>`
+          : '';
+
+        const treeTints = [
+          { headerBg: 'rgba(181, 148, 128, 0.22)', bodyBg: 'rgba(214, 194, 180, 0.16)' },
+          { headerBg: 'rgba(136, 166, 152, 0.22)', bodyBg: 'rgba(184, 204, 194, 0.16)' },
+          { headerBg: 'rgba(164, 134, 164, 0.22)', bodyBg: 'rgba(202, 182, 202, 0.16)' },
+        ];
+
+        const branchHeadersHtml = d.branches
+          .map(
+            (b, colIdx) =>
+              `<div class="pt-branch-hdr ${colIdx > 0 ? 'left-b' : ''}" style="background:${treeTints[colIdx].headerBg}">${escapeHtml(b)}</div>`
+          )
+          .join('');
+
+        const rowsHtml = [0, 1, 2]
+          .map((rowIdx) => {
+            const cellsHtml = [0, 1, 2]
+              .map((colIdx) => {
+                const talent = d.talents[rowIdx * 3 + colIdx] ?? {
+                  name: '',
+                  description: '',
+                };
+                const tint = treeTints[colIdx];
+                return `
+                  <div class="pt-cell ${colIdx > 0 ? 'left-b' : ''}" style="background:${tint.bodyBg}">
+                    <div class="pt-cell-hdr" style="background:${tint.headerBg}">${escapeHtml(talent.name || '—')}</div>
+                    <div class="pt-cell-body ${hasSidebar ? 'narrow' : 'wide'}">${renderInlineHtml(talent.description)}</div>
+                  </div>
+                `;
+              })
+              .join('');
+            return `<div class="pt-row ${rowIdx > 0 ? 'top-b' : ''}">${cellsHtml}</div>`;
+          })
+          .join('');
+
+        const mainHtml = `
+          <div class="pt-main">
+            <h1 class="pt-title" style="font-size:${titleSize}">${escapeHtml(d.title)}</h1>
+            <div style="flex-shrink:0;">
+              <div class="pt-def-h">${escapeHtml(d.definingSkillTitle)}</div>
+              ${defParasHtml}
+            </div>
+            <div class="bl-box pt-tree-box">
+              <div class="bl-inner pt-tree-inner">
+                <div class="pt-branch-row">${branchHeadersHtml}</div>
+                <div class="pt-rows">${rowsHtml}</div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        return `
+          <article class="book-page ${p.isEven ? 'even' : 'odd'}">
+            <div class="top-band">
+              <div class="ribbon">
+                <div class="ribbon-shadow"></div>
+                <div class="ribbon-face">${p.pageNumber}</div>
+              </div>
+            </div>
+            <div class="pt-grid ${hasSidebar ? 'has-aside' : 'no-aside'}">
+              ${hasSidebar ? (p.isEven ? `${sidebarHtml}${mainHtml}` : `${mainHtml}${sidebarHtml}`) : mainHtml}
+            </div>
+            ${doc.chapterFooter.trim() ? `<footer class="page-footer">${escapeHtml(doc.chapterFooter)}</footer>` : ''}
+          </article>
+        `;
+      }
+
       if (p.isArtPage && p.artPageData) {
         const artSrc = resolveImg(p.artPageData.image, doc.images);
         return `
@@ -1054,6 +1296,65 @@ export function downloadPrintableBrewHtml(
     .cs-gear-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #faf8f3; text-align: center; }
     .cs-gear-row span { padding: 3px 4px; font-size: 8.3px; line-height: 1.24; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .cs-gear-row span + span { border-left: 1px solid ${theme.headingColor}; }
+    /* Official 2-Page Profession Spread CSS */
+    .po-grid { flex: 1; min-height: 0; padding: 44px 36px 38px 34px; display: grid; gap: 22px; align-items: stretch; }
+    .book-page.even .po-grid { grid-template-columns: 23.5% minmax(0, 1fr); }
+    .book-page.odd .po-grid { grid-template-columns: minmax(0, 1fr) 23.5%; }
+    .po-aside { display: flex; flex-direction: column; gap: 10px; font-size: 8.7px; line-height: 1.25; overflow: hidden; }
+    .po-box-hdr { background: ${theme.tableStripe}; text-align: center; font-weight: 700; padding: 3px 5px; border-bottom: 1px solid ${theme.headingColor}; font-size: 9.3px; }
+    .po-box-val { text-align: center; padding: 3.5px 6px; }
+    .po-magic-list { text-align: center; padding: 4px 6px; display: flex; flex-direction: column; gap: 2px; }
+    .po-row { text-align: center; padding: 2.5px 5px; background: #faf8f3; }
+    .po-row.stripe { background: ${theme.tableStripe}; }
+    .po-main { display: flex; flex-direction: column; min-width: 0; min-height: 0; gap: 14px; }
+    .po-title { font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif; font-weight: 700; line-height: 0.98; letter-spacing: -0.02em; color: ${theme.headingColor}; margin: 0; padding: 0 0 5px; border-bottom: 1.5px solid ${theme.ruleColor}; flex-shrink: 0; column-span: none; }
+    .po-subgrid { flex: 1; min-height: 0; display: grid; grid-template-columns: 44% minmax(0, 1fr); gap: 18px; align-items: start; overflow: hidden; }
+    .po-subleft { display: flex; flex-direction: column; gap: 14px; min-height: 0; }
+    .po-portrait { width: 100%; background: #1a1b1f; border: 1px solid rgba(0,0,0,0.3); overflow: hidden; flex-shrink: 0; }
+    .po-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+    .po-def-hdr { background: ${theme.tableStripe}; text-align: center; font-weight: 700; font-size: 10px; padding: 4px 6px; border-bottom: 1px solid ${theme.headingColor}; }
+    .po-def-body { padding: 7px 9px; font-size: 9.2px; line-height: 1.38; text-align: justify; color: #1e1915; }
+    .po-subright { display: flex; flex-direction: column; gap: 10px; min-height: 0; overflow: hidden; }
+    .po-quote { font-size: 10.4px; line-height: 1.4; font-style: italic; font-weight: 700; color: #1b1612; }
+    .po-quote p { text-align: left; text-indent: 0; }
+    .po-quote-attr { margin: 4px 0 0 !important; text-align: right !important; font-style: normal; font-weight: 600; font-size: 10px; }
+    .po-lore { font-size: 10.1px; line-height: 1.42; font-style: italic; text-align: justify; color: #1e1915; }
+    .po-lore-p { text-indent: 1.1em; text-align: justify; }
+    .po-lore-attr { margin: 6px 0 0; text-align: right !important; font-style: normal; font-weight: 600; font-size: 10px; text-indent: 0; }
+    .po-def-body strong, .po-lore strong, .pt-def-cols strong, .pt-cell-body strong { color: ${theme.headingColor}; }
+    .pt-grid { flex: 1; min-height: 0; padding: 44px 34px 38px; display: grid; align-items: stretch; }
+    .book-page.even .pt-grid.has-aside { grid-template-columns: 23% minmax(0, 1fr); gap: 20px; }
+    .book-page.odd .pt-grid.has-aside { grid-template-columns: minmax(0, 1fr) 23%; gap: 20px; }
+    .pt-grid.no-aside { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .pt-aside { display: flex; flex-direction: column; gap: 12px; font-size: 8.4px; line-height: 1.24; overflow: hidden; }
+    .pt-side-tbl { display: flex; flex-direction: column; gap: 4px; }
+    .pt-side-title { text-align: center; font-size: 9.8px; font-weight: 700; color: ${theme.headingColor}; border-bottom: 1.5px solid ${theme.ruleColor}; padding-bottom: 2px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .pt-side-hdr { display: grid; grid-template-columns: 1fr 44px; background: ${theme.tableStripe}; font-weight: 700; border-bottom: 1px solid ${theme.headingColor}; }
+    .pt-side-hdr span:first-child { padding: 2.5px 5px; text-align: center; }
+    .pt-side-hdr span:last-child { padding: 2.5px 4px; text-align: center; border-left: 1px solid ${theme.headingColor}; }
+    .pt-side-sec { background: ${theme.tableStripe}; font-weight: 700; text-align: center; padding: 2.5px 5px; border-bottom: 1px solid ${theme.headingColor}; }
+    .pt-side-row { display: grid; grid-template-columns: 1fr 44px; }
+    .pt-side-row.soft-row-b { border-bottom: 1px solid rgba(0,0,0,0.22); }
+    .pt-side-row span:first-child { padding: 2.5px 5px; text-align: center; display: flex; align-items: center; justify-content: center; }
+    .pt-side-row span:last-child { padding: 2.5px 4px; text-align: center; border-left: 1px solid ${theme.headingColor}; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; }
+    .pt-main { display: flex; flex-direction: column; min-width: 0; min-height: 0; gap: 10px; }
+    .pt-title { font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif; font-weight: 700; line-height: 1.02; letter-spacing: -0.015em; color: ${theme.headingColor}; margin: 0; padding: 0 0 4px; border-bottom: 1.5px solid ${theme.ruleColor}; text-transform: uppercase; flex-shrink: 0; column-span: none; }
+    .pt-def-h { font-family: Georgia, "Palatino Linotype", serif; font-size: 11.5px; font-weight: 700; color: ${theme.headingColor}; text-transform: uppercase; margin-bottom: 4px; }
+    .pt-def-cols { column-count: 2; column-gap: 18px; font-size: 9.4px; line-height: 1.36; text-align: justify; color: #1e1915; }
+    .pt-def-cols p { text-indent: 0; text-align: justify; }
+    .pt-tree-box { flex: 0 0 auto; display: flex; flex-direction: column; }
+    .pt-tree-inner { display: flex; flex-direction: column; }
+    .pt-branch-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid ${theme.headingColor}; flex-shrink: 0; }
+    .pt-branch-hdr { text-align: center; font-weight: 700; font-size: 9.6px; padding: 3.5px 6px; color: #1b1612; }
+    .pt-rows { display: grid; grid-template-rows: repeat(3, auto); }
+    .pt-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .pt-cell { display: flex; flex-direction: column; min-width: 0; }
+    .pt-cell-hdr { border-bottom: 1px solid ${theme.headingColor}; text-align: center; font-weight: 700; font-size: 8.7px; padding: 2.5px 5px; color: #1b1612; flex-shrink: 0; }
+    .pt-cell-body { padding: 6px 7px 8px; line-height: 1.34; text-align: left; color: #1e1915; }
+    .pt-cell-body.narrow { font-size: 8.35px; }
+    .pt-cell-body.wide { font-size: 8.9px; }
+    .left-b { border-left: 1px solid ${theme.headingColor}; }
+    .top-b { border-top: 1px solid ${theme.headingColor}; }
     @media print {
       body { padding: 0; background: none; }
       .toolbar { display: none; }

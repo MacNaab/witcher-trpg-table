@@ -15,6 +15,10 @@ import {
   WitcherBestiaryRightPage,
 } from './WitcherBestiaryPages';
 import { WitcherCharacterSheetPage } from './WitcherCharacterSheetPage';
+import {
+  WitcherProfessionOverviewPage,
+  WitcherProfessionTreePage,
+} from './WitcherProfessionPages';
 
 interface WitcherBookPageProps {
   page: ParsedHomebrewPage;
@@ -704,6 +708,35 @@ export function WitcherBookPage({
         chapterFooter={chapterFooter}
         dims={dims}
         images={images}
+        pageRef={pageRef}
+      />
+    );
+  }
+
+  if (page.professionOverviewData) {
+    return (
+      <WitcherProfessionOverviewPage
+        page={page}
+        data={page.professionOverviewData}
+        themeId={themeId}
+        pageFormat={pageFormat}
+        chapterFooter={chapterFooter}
+        dims={dims}
+        images={images}
+        pageRef={pageRef}
+      />
+    );
+  }
+
+  if (page.professionTreeData) {
+    return (
+      <WitcherProfessionTreePage
+        page={page}
+        data={page.professionTreeData}
+        themeId={themeId}
+        pageFormat={pageFormat}
+        chapterFooter={chapterFooter}
+        dims={dims}
         pageRef={pageRef}
       />
     );

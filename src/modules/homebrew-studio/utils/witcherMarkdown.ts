@@ -6,6 +6,8 @@ import type {
   CoverPageData,
   MarkdownBlockNode,
   ParsedHomebrewPage,
+  ProfessionOverviewPageData,
+  ProfessionTreePageData,
   StatblockEntry,
   TocConfig,
   TocEntry,
@@ -15,6 +17,10 @@ import {
   parseBestiaryRightBlock,
 } from './bestiaryFormatters';
 import { parseCharacterSheetBlock } from './characterSheetFormatters';
+import {
+  parseProfessionOverviewBlock,
+  parseProfessionTreeBlock,
+} from './professionFormatters';
 
 function parseStatblockLines(lines: string[]): StatblockEntry {
   const entry: StatblockEntry = {
@@ -554,6 +560,8 @@ export function parseHomebrewDocument(
     let bestiaryLeftData: BestiaryLeftPageData | undefined;
     let bestiaryRightData: BestiaryRightPageData | undefined;
     let characterSheetData: CharacterSheetPageData | undefined;
+    let professionOverviewData: ProfessionOverviewPageData | undefined;
+    let professionTreeData: ProfessionTreePageData | undefined;
     let tocConfig: TocConfig | undefined;
     let explicitChapterOpener = false;
 
@@ -609,6 +617,22 @@ export function parseHomebrewDocument(
 
       if (/^:::\s*(?:character-sheet|fiche-pj|pc-sheet)\b/i.test(trimmed)) {
         characterSheetData = parseCharacterSheetBlock(collectDirectiveBlock());
+        continue;
+      }
+
+      if (
+        /^:::\s*(?:profession-tree|arbre-profession|talent-tree)\b/i.test(
+          trimmed
+        )
+      ) {
+        professionTreeData = parseProfessionTreeBlock(collectDirectiveBlock());
+        continue;
+      }
+
+      if (/^:::\s*(?:profession|classe)(?:\s|$)/i.test(trimmed)) {
+        professionOverviewData = parseProfessionOverviewBlock(
+          collectDirectiveBlock()
+        );
         continue;
       }
 
@@ -670,6 +694,8 @@ export function parseHomebrewDocument(
       !bestiaryLeftData &&
       !bestiaryRightData &&
       !characterSheetData &&
+      !professionOverviewData &&
+      !professionTreeData &&
       Boolean(artPageData);
     if (
       !isCover &&
@@ -678,6 +704,8 @@ export function parseHomebrewDocument(
       !bestiaryLeftData &&
       !bestiaryRightData &&
       !characterSheetData &&
+      !professionOverviewData &&
+      !professionTreeData &&
       !isArtPage &&
       asideNodes.length === 0 &&
       bannerNodes.length === 0 &&
@@ -702,6 +730,8 @@ export function parseHomebrewDocument(
       !bestiaryLeftData &&
       !bestiaryRightData &&
       !characterSheetData &&
+      !professionOverviewData &&
+      !professionTreeData &&
       (startsWithH1 || explicitChapterOpener);
 
     const unnumbered = isCover || isBackCover;
@@ -725,6 +755,8 @@ export function parseHomebrewDocument(
       bestiaryLeftData,
       bestiaryRightData,
       characterSheetData,
+      professionOverviewData,
+      professionTreeData,
       tocConfig,
       tocEntries: [],
       bannerNodes,
@@ -734,7 +766,7 @@ export function parseHomebrewDocument(
     };
   });
 
-  // Pass 2: collect all H1 (#), H2 (##), Bestiary monster names, and PC/NPC character sheet names for Smart TOC
+  // Pass 2: collect all H1 (#), H2 (##), Bestiary monster names, PC/NPC sheet names, and Profession spreads for Smart TOC
   const collectHeadings = (includeAside: boolean): TocEntry[] => {
     const entries: TocEntry[] = [];
     for (const p of pages) {
@@ -750,6 +782,20 @@ export function parseHomebrewDocument(
         entries.push({
           level: 1,
           text: p.characterSheetData.name,
+          pageNumber: p.pageNumber,
+        });
+      }
+      if (p.professionOverviewData?.title) {
+        entries.push({
+          level: 1,
+          text: p.professionOverviewData.title,
+          pageNumber: p.pageNumber,
+        });
+      }
+      if (p.professionTreeData?.title) {
+        entries.push({
+          level: 2,
+          text: p.professionTreeData.title,
           pageNumber: p.pageNumber,
         });
       }

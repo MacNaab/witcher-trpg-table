@@ -49,6 +49,7 @@ export interface HomebrewStudioCopy {
     uploadImage: string;
     importCharacter: string;
     importMonster: string;
+    createProfession: string;
     imageUploadedToast: string;
     imageErrorToast: string;
   };
@@ -89,6 +90,8 @@ export interface HomebrewStudioCopy {
     bestiaryLeftMeta: (pageNum: number, isEven: boolean, name: string) => string;
     bestiaryRightMeta: (pageNum: number, isEven: boolean) => string;
     characterSheetMeta: (pageNum: number, isEven: boolean, name: string) => string;
+    professionOverviewMeta: (pageNum: number, isEven: boolean, title: string) => string;
+    professionTreeMeta: (pageNum: number, isEven: boolean, title: string) => string;
     parityEven: string;
     parityOdd: string;
     noAsideHint: string;
@@ -125,6 +128,53 @@ export interface HomebrewStudioCopy {
     insertBtn: string;
     emptyCharacters: string;
     emptyHubMonsters: string;
+    insertedToast: (name: string) => string;
+  };
+  professionDialog: {
+    title: string;
+    desc: string;
+    presetLabel: string;
+    loadPresetBtn: string;
+    resetBlankBtn: string;
+    tabOverview: string;
+    tabTree: string;
+    tabTables: string;
+    fieldTitle: string;
+    fieldVigor: string;
+    fieldTreasure: string;
+    fieldImage: string;
+    fieldImageCustom: string;
+    defaultImageLabel: string;
+    fieldDefiningShort: string;
+    fieldDefiningFull: string;
+    fieldDefiningBoxText: string;
+    fieldQuote: string;
+    fieldQuoteAuthor: string;
+    fieldLore: string;
+    fieldLoreAuthor: string;
+    fieldMagicPerks: string;
+    fieldSkills: string;
+    fieldGear: string;
+    fieldGearTitle: string;
+    onePerLineHint: string;
+    fieldTreeTitle: string;
+    fieldTreeDefTitle: string;
+    fieldTreeDefDesc: string;
+    branchLabel: (index: number) => string;
+    tierLabel: (tier: number) => string;
+    talentNamePlaceholder: string;
+    talentDescPlaceholder: string;
+    sideTablesHint: string;
+    addSideTableBtn: string;
+    noSideTables: string;
+    sideTableTitle: string;
+    sideTableCol1: string;
+    sideTableCol2: string;
+    removeTableBtn: string;
+    sideSectionPlaceholder: string;
+    addRowBtn: string;
+    addSectionBtn: string;
+    insertSpreadBtn: string;
     insertedToast: (name: string) => string;
   };
   guide: {
@@ -185,6 +235,7 @@ const FR_COPY: HomebrewStudioCopy = {
     uploadImage: 'Image locale',
     importCharacter: 'Importer PJ / PNJ',
     importMonster: 'Importer Monstre',
+    createProfession: 'Nouvelle Profession',
     imageUploadedToast: 'Image intégrée au document.',
     imageErrorToast: 'Impossible de charger cette image.',
   },
@@ -234,6 +285,10 @@ const FR_COPY: HomebrewStudioCopy = {
       `Page ${pageNum} · Bestiaire officiel (2/2 : Attaques & Capacités) · ${isEven ? 'Paire' : 'Impaire'}`,
     characterSheetMeta: (pageNum, isEven, name) =>
       `Page ${pageNum} · Fiche officielle PJ / PNJ (${name}) · ${isEven ? 'Paire' : 'Impaire'}`,
+    professionOverviewMeta: (pageNum, isEven, title) =>
+      `Page ${pageNum} · Profession officielle (1/2 : ${title}) · ${isEven ? 'Paire' : 'Impaire'}`,
+    professionTreeMeta: (pageNum, isEven, title) =>
+      `Page ${pageNum} · Arbre de compétence 3×3 (2/2 : ${title}) · ${isEven ? 'Paire' : 'Impaire'}`,
     parityEven: 'Paire · Gauche',
     parityOdd: 'Impaire · Droite',
     noAsideHint: 'Sans bloc mineur sur cette page (2 colonnes pleine largeur)',
@@ -282,6 +337,56 @@ const FR_COPY: HomebrewStudioCopy = {
       'Aucun monstre personnalisé enregistré dans le Hub MJ. Vous pouvez utiliser le Bestiaire ou la fiche vierge.',
     insertedToast: (name) => `Fiche « ${name} » insérée dans le Markdown.`,
   },
+  professionDialog: {
+    title: 'Créer une Profession (Double page officielle)',
+    desc: 'Composez une nouvelle profession sur 2 pages (Description & Profil + Arbre de talents 3×3) ou clonez une profession existante.',
+    presetLabel: 'Cloner / préremplir depuis le compendium',
+    loadPresetBtn: 'Préremplir',
+    resetBlankBtn: 'Modèle vierge',
+    tabOverview: 'Page 1 · Description & Profil',
+    tabTree: 'Page 2 · Arbre de talents 3×3',
+    tabTables: 'Tables annexes',
+    fieldTitle: 'Nom de la profession',
+    fieldVigor: 'Seuil de Vigueur',
+    fieldTreasure: 'Bourse de départ (optionnel)',
+    fieldImage: 'Illustration (document / défaut)',
+    fieldImageCustom: 'Clé ou URL personnalisée',
+    defaultImageLabel: 'Illustration par défaut (Grimoire)',
+    fieldDefiningShort: 'Compétence exclusive (nom court)',
+    fieldDefiningFull: 'Compétence exclusive (avec Carac.)',
+    fieldDefiningBoxText: 'Encadré de Compétence exclusive (sous le portrait)',
+    fieldQuote: 'Citation d’ouverture (épigraphe)',
+    fieldQuoteAuthor: 'Auteur de la citation',
+    fieldLore: 'Récit & description (séparer les paragraphes par ligne vide)',
+    fieldLoreAuthor: 'Chroniqueur (signature bas de texte)',
+    fieldMagicPerks: 'Atouts magiques (1 par ligne, optionnel)',
+    fieldSkills: '10 Compétences de profession (1 par ligne)',
+    fieldGear: 'Équipement de départ (1 par ligne)',
+    fieldGearTitle: 'Titre du tableau d’équipement',
+    onePerLineHint: '1 élément par ligne…',
+    fieldTreeTitle: 'Titre de la page Arbre de compétence',
+    fieldTreeDefTitle: 'Sous-titre Compétence exclusive',
+    fieldTreeDefDesc: 'Règles détaillées sur 2 colonnes (ligne vide = nouveau §)',
+    branchLabel: (index) => `Branche ${index}`,
+    tierLabel: (tier) => `Rang ${tier}`,
+    talentNamePlaceholder: 'Nom du talent (CARAC)',
+    talentDescPlaceholder: 'Effet du talent (**mot-clé** en couleur)…',
+    sideTablesHint:
+      'Tables de référence optionnelles en colonne latérale (ex. Guerrier, Localités, Modificateurs…).',
+    addSideTableBtn: 'Ajouter une table',
+    noSideTables:
+      'Aucune table annexe : l’Arbre de talents occupera toute la largeur de la page.',
+    sideTableTitle: 'Titre de la table',
+    sideTableCol1: 'En-tête Colonne 1',
+    sideTableCol2: 'En-tête Colonne 2',
+    removeTableBtn: 'Supprimer cette table',
+    sideSectionPlaceholder: 'Titre de section interne (optionnel)',
+    addRowBtn: 'Ligne',
+    addSectionBtn: 'Ajouter une section',
+    insertSpreadBtn: 'Insérer la Profession (2 pages)',
+    insertedToast: (name) =>
+      `Profession « ${name} » (2 pages) insérée dans le Markdown.`,
+  },
   guide: {
     toggleBtn: 'Aide syntaxe',
     title: 'Raccourcis Markdown Witcher TRPG',
@@ -290,6 +395,8 @@ const FR_COPY: HomebrewStudioCopy = {
       { syntax: '::: toc ... :::', desc: 'Sommaire intelligent (1 à 3 colonnes selon l’espace, rempli à gauche d’abord) synchronisé sur # et ##.' },
       { syntax: '::: art-page ... :::', desc: 'Page complète réservée à une grande illustration (idéale en page paire face à un début de chapitre).' },
       { syntax: '::: signs', desc: 'Frise ornementale des 7 Signes de Sorceleur ; active la mise en page Ouverture de Chapitre sous un titre #.' },
+      { syntax: '::: profession ... :::', desc: 'Page gauche officielle de Profession : portrait, citation, récit, compétence exclusive et tableaux latéraux.' },
+      { syntax: '::: profession-tree ... :::', desc: 'Page droite officielle d’Arbre de talents 3×3 avec 3 branches, règles sur 2 colonnes et tables annexes.' },
       { syntax: '::: bestiary-left ... :::', desc: 'Page gauche officielle de Bestiaire : compétences latérales, bannière stats, tableau physique et superstition.' },
       { syntax: '::: bestiary-right ... :::', desc: 'Page droite officielle de Bestiaire : savoir du sorceleur, tableau d’attaques et cartes de capacités.' },
       { syntax: '::: character-sheet ... :::', desc: 'Fiche officielle 1 page de PJ / PNJ : stats côte à côte, Compétences, Clés, portrait, Magie/Combat et Équipement 4 colonnes.' },
@@ -355,6 +462,7 @@ const EN_COPY: HomebrewStudioCopy = {
     uploadImage: 'Upload Image',
     importCharacter: 'Import PC / NPC',
     importMonster: 'Import Monster',
+    createProfession: 'New Profession',
     imageUploadedToast: 'Image embedded in document.',
     imageErrorToast: 'Could not read image file.',
   },
@@ -404,6 +512,10 @@ const EN_COPY: HomebrewStudioCopy = {
       `Page ${pageNum} · Official Bestiary (2/2: Attacks & Abilities) · ${isEven ? 'Even' : 'Odd'}`,
     characterSheetMeta: (pageNum, isEven, name) =>
       `Page ${pageNum} · Official PC / NPC Sheet (${name}) · ${isEven ? 'Even' : 'Odd'}`,
+    professionOverviewMeta: (pageNum, isEven, title) =>
+      `Page ${pageNum} · Official Profession (1/2: ${title}) · ${isEven ? 'Even' : 'Odd'}`,
+    professionTreeMeta: (pageNum, isEven, title) =>
+      `Page ${pageNum} · 3×3 Skill Tree (2/2: ${title}) · ${isEven ? 'Even' : 'Odd'}`,
     parityEven: 'Even · Left',
     parityOdd: 'Odd · Right',
     noAsideHint: 'No minor block on this page (full-width 2 columns)',
@@ -452,6 +564,56 @@ const EN_COPY: HomebrewStudioCopy = {
       'No custom monsters saved in the GM Hub yet. Use the Bestiary tab or insert a blank template above.',
     insertedToast: (name) => `Sheet "${name}" inserted into Markdown.`,
   },
+  professionDialog: {
+    title: 'Create Profession (Official 2-Page Spread)',
+    desc: 'Build a complete 2-page rulebook Profession spread (Overview & Sidebar + 3×3 Skill Tree) or pre-fill from an existing profession.',
+    presetLabel: 'Clone / pre-fill from compendium',
+    loadPresetBtn: 'Pre-fill',
+    resetBlankBtn: 'Blank Template',
+    tabOverview: 'Page 1 · Overview & Profile',
+    tabTree: 'Page 2 · 3×3 Skill Tree',
+    tabTables: 'Side Sub-Tables',
+    fieldTitle: 'Profession Name',
+    fieldVigor: 'Vigor Threshold',
+    fieldTreasure: 'Starting Coin (optional)',
+    fieldImage: 'Artwork (document / default)',
+    fieldImageCustom: 'Custom key or URL',
+    defaultImageLabel: 'Default Artwork (Grimoire)',
+    fieldDefiningShort: 'Defining Skill (short label)',
+    fieldDefiningFull: 'Defining Skill (with Stat)',
+    fieldDefiningBoxText: 'Defining Skill Box Text (beneath portrait)',
+    fieldQuote: 'Opening Epigraph Quote',
+    fieldQuoteAuthor: 'Quote Attribution',
+    fieldLore: 'Lore & Chronicle (separate paragraphs with blank line)',
+    fieldLoreAuthor: 'Chronicler Attribution',
+    fieldMagicPerks: 'Magical Perks (1 per line, optional)',
+    fieldSkills: '10 Profession Skills (1 per line)',
+    fieldGear: 'Starting Gear (1 per line)',
+    fieldGearTitle: 'Gear Table Header',
+    onePerLineHint: '1 item per line…',
+    fieldTreeTitle: 'Skill Tree Page Title',
+    fieldTreeDefTitle: 'Defining Skill Subheading',
+    fieldTreeDefDesc: '2-column Mechanics Rules (blank line = new paragraph)',
+    branchLabel: (index) => `Branch ${index}`,
+    tierLabel: (tier) => `Tier ${tier}`,
+    talentNamePlaceholder: 'Talent Name (STAT)',
+    talentDescPlaceholder: 'Talent rules (**keyword** highlighted)…',
+    sideTablesHint:
+      'Optional stacked reference tables in the minor sidebar (e.g. Warrior, Localities, Modifiers…).',
+    addSideTableBtn: 'Add Table',
+    noSideTables:
+      'No side sub-tables: the 3×3 Skill Tree will span the full page width.',
+    sideTableTitle: 'Table Title',
+    sideTableCol1: 'Column 1 Header',
+    sideTableCol2: 'Column 2 Header',
+    removeTableBtn: 'Delete table',
+    sideSectionPlaceholder: 'Inner section heading (optional)',
+    addRowBtn: 'Row',
+    addSectionBtn: 'Add Section',
+    insertSpreadBtn: 'Insert Profession (2 Pages)',
+    insertedToast: (name) =>
+      `Profession "${name}" (2-page spread) inserted into Markdown.`,
+  },
   guide: {
     toggleBtn: 'Syntax Help',
     title: 'Witcher TRPG Markdown Directives',
@@ -460,6 +622,8 @@ const EN_COPY: HomebrewStudioCopy = {
       { syntax: '::: toc ... :::', desc: 'Smart Table of Contents (adaptive 1–3 columns filling left first) auto-updated from # and ## headings.' },
       { syntax: '::: art-page ... :::', desc: 'Full-page framed illustration (pairs cleanly on even left page opposite a chapter opener).' },
       { syntax: '::: signs', desc: '7-emblem Witcher Signs divider; activates Chapter Opener layout beneath a # heading.' },
+      { syntax: '::: profession ... :::', desc: 'Official Profession overview page: portrait, epigraph, lore, defining skill card, and framed sidebar tables.' },
+      { syntax: '::: profession-tree ... :::', desc: 'Official 3×3 Skill Tree page with 3 branches, 2-column defining skill rules, and optional reference sub-tables.' },
       { syntax: '::: bestiary-left ... :::', desc: 'Official Bestiary left page: framed skill/defense tables, hanging stat ribbon, physical box & superstition.' },
       { syntax: '::: bestiary-right ... :::', desc: 'Official Bestiary right page: Witcher Knowledge lore, full-width attacks table & framed ability cards.' },
       { syntax: '::: character-sheet ... :::', desc: 'Official 1-page PC / NPC sheet: side-by-side stat boxes, Skills, Key Skills, portrait, Magic/Combat & 4-col Gear.' },

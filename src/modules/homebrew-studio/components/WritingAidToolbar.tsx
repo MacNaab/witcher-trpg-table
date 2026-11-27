@@ -1,6 +1,7 @@
 import {
   BookImage,
   BookMarked,
+  Briefcase,
   Frame,
   Heading1,
   Heading2,
@@ -35,6 +36,7 @@ interface WritingAidToolbarProps {
   onUploadImageClick: () => void;
   onOpenImportCharacter: () => void;
   onOpenImportMonster: () => void;
+  onOpenCreateProfession: () => void;
 }
 
 /**
@@ -54,6 +56,7 @@ export function WritingAidToolbar({
   onUploadImageClick,
   onOpenImportCharacter,
   onOpenImportMonster,
+  onOpenCreateProfession,
 }: WritingAidToolbarProps) {
   const handleInsertCover = () => {
     const coverSnippet =
@@ -287,6 +290,16 @@ export function WritingAidToolbar({
         >
           <Skull className="size-3.5 text-primary" />
           <span>{copy.toolbar.importMonster}</span>
+        </Button>
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          className="h-7 gap-1 px-2 text-xs"
+          onClick={onOpenCreateProfession}
+        >
+          <Briefcase className="size-3.5 text-primary" />
+          <span>{copy.toolbar.createProfession}</span>
         </Button>
 
         <Button
